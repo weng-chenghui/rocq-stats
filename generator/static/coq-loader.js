@@ -113,9 +113,6 @@ function extractLemma(code, lemmaName) {
  * @returns {string} - HTML with syntax highlighting
  */
 function highlightCoq(code) {
-    // Escape HTML first
-    let html = escapeHtml(code);
-    
     // Keywords
     const keywords = [
         'Lemma', 'Theorem', 'Corollary', 'Proposition', 'Fact', 'Remark',
@@ -124,7 +121,7 @@ function highlightCoq(code) {
         'Variable', 'Variables', 'Context', 'Hypothesis', 'Hypotheses',
         'Let', 'Proof', 'Qed', 'Defined', 'Admitted', 'Abort',
         'Require', 'Import', 'Export', 'Open', 'Scope', 'Local', 'Global',
-        'Set', 'Unset', 'From', 'Module', 'Type', 'Prop', 'Set',
+        'Set', 'Unset', 'From', 'Module', 'Type', 'Prop',
         'forall', 'exists', 'fun', 'match', 'with', 'end', 'if', 'then', 'else',
         'as', 'in', 'return', 'where', 'fix', 'cofix', 'struct',
         'Arguments', 'Implicit', 'Notation', 'Infix', 'Reserved',
@@ -145,23 +142,68 @@ function highlightCoq(code) {
         'by', 'done', 'now', 'congr', 'under', 'over'
     ];
     
-    // Highlight comments (* ... *)
-    html = html.replace(/\(\*[\s\S]*?\*\)/g, '<span class="coq-comment">$&</span>');
+    // Tokenize the code to handle comments separately
+    const tokens = [];
+    let remaining = code;
     
-    // Highlight strings "..."
-    html = html.replace(/"[^"]*"/g, '<span class="coq-string">$&</span>');
+    while (remaining.length > 0) {
+        // Check for comment start
+        const commentMatch = remaining.match(/^\(\*[\s\S]*?\*\)/);
+        if (commentMatch) {
+            tokens.push({ type: 'comment', text: commentMatch[0] });
+            remaining = remaining.slice(commentMatch[0].length);
+            continue;
+        }
+        
+        // Check for string
+        const stringMatch = remaining.match(/^"[^"]*"/);
+        if (stringMatch) {
+            tokens.push({ type: 'string', text: stringMatch[0] });
+            remaining = remaining.slice(stringMatch[0].length);
+            continue;
+        }
+        
+        // Check for word (identifier or keyword)
+        const wordMatch = remaining.match(/^[a-zA-Z_][a-zA-Z0-9_']*/);
+        if (wordMatch) {
+            const word = wordMatch[0];
+            if (keywords.includes(word)) {
+                tokens.push({ type: 'keyword', text: word });
+            } else if (tactics.includes(word)) {
+                tokens.push({ type: 'tactic', text: word });
+            } else {
+                tokens.push({ type: 'text', text: word });
+            }
+            remaining = remaining.slice(word.length);
+            continue;
+        }
+        
+        // Take one character as plain text
+        tokens.push({ type: 'text', text: remaining[0] });
+        remaining = remaining.slice(1);
+    }
     
-    // Highlight keywords (word boundaries)
-    keywords.forEach(kw => {
-        const regex = new RegExp(`\\b(${kw})\\b`, 'g');
-        html = html.replace(regex, '<span class="coq-keyword">$1</span>');
-    });
-    
-    // Highlight tactics
-    tactics.forEach(tac => {
-        const regex = new RegExp(`\\b(${tac})\\b`, 'g');
-        html = html.replace(regex, '<span class="coq-tactic">$1</span>');
-    });
+    // Convert tokens to HTML
+    let html = '';
+    for (const token of tokens) {
+        const escaped = escapeHtml(token.text);
+        switch (token.type) {
+            case 'comment':
+                html += `<span class="coq-comment">${escaped}</span>`;
+                break;
+            case 'string':
+                html += `<span class="coq-string">${escaped}</span>`;
+                break;
+            case 'keyword':
+                html += `<span class="coq-keyword">${escaped}</span>`;
+                break;
+            case 'tactic':
+                html += `<span class="coq-tactic">${escaped}</span>`;
+                break;
+            default:
+                html += escaped;
+        }
+    }
     
     return html;
 }
