@@ -11,7 +11,7 @@
         <div class="nav-content">
             <a href="index.html" class="nav-brand">{{ site_title }}</a>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
-                <span class="theme-icon">🌙</span>
+                <span class="theme-icon">☀️</span>
             </button>
         </div>
     </nav>
@@ -86,7 +86,7 @@
     <script>
     function toggleTheme() {
         const html = document.documentElement;
-        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const currentTheme = html.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
@@ -101,7 +101,7 @@
     }
     
     (function() {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         document.addEventListener('DOMContentLoaded', () => updateThemeIcon(savedTheme));
     })();
