@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ site_title }} - Overview{% endblock %}
+
+{% block content %}
+<h1>{{ site_title }}</h1>
+
+<p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+    {{ site_description }}
+</p>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="value">{{ total_lemmas }}</div>
+        <div class="label">Total Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ main_count }}</div>
+        <div class="label">Main Results</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ theorem_count }}</div>
+        <div class="label">Theorems</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ helper_count }}</div>
+        <div class="label">Helper Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ total_files }}</div>
+        <div class="label">Files</div>
+    </div>
+</div>
+
+<div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+    <a href="stats.html" class="btn btn-primary">Browse Lemma Stats &rarr;</a>
+    <a href="dependencies.html" class="btn">View Dependencies &rarr;</a>
+</div>
+
+<div class="markdown-content">
+{{ layer_design_html|safe }}
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unitrK - DSDP Formalization</title>
+    <link rel="stylesheet" href="../static/style.css">
+    
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-brand">DSDP Formalization</a>
+            <ul class="nav-tabs">
+                <li><a href="../index.html" >Overview</a></li>
+                <li><a href="../stats.html" >Lemma Stats</a></li>
+                <li><a href="../dependencies.html" >Dependencies</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+    
+    <main class="container">
+        
+<div class="lemma-detail">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        
+        <span class="badge badge-helper">Helper</span>
+        
+        <h1 style="border: none; margin: 0; padding: 0;">unitrK</h1>
+    </div>
+    
+    <div class="lemma-meta">
+        <div class="lemma-meta-item">
+            <span class="label">File</span>
+            <span class="value">
+                <a href="https://github.com/weng-chenghui/infotheo/blob/dumas2017dual/dumas2017dual/zpq/fiber_zpq.v" target="_blank" rel="noopener">
+                    zpq/fiber_zpq.v
+                </a>
+            </span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Section</span>
+            <span class="value">linear_fiber_zpq</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Type</span>
+            <span class="value">Lemma</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Proof Lines</span>
+            <span class="value">6</span>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 0;">Signature</h3>
+    <div class="lemma-signature">Lemma unitrK (x y : msg) : x \is a GRing.unit -&gt; x * y / x = y.</div>
+    
+    
+    <h3>Description</h3>
+    <div class="lemma-meaning">Helper: unit cancellation - x * y / x = y when x is a unit</div>
+    
+</div>
+
+<!-- Dependencies -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+    <div class="deps-section">
+        <h3>Uses (0)</h3>
+        
+        <p class="no-deps">This lemma does not use any other lemmas from the stats.</p>
+        
+    </div>
+    
+    <div class="deps-section">
+        <h3>Used By (1)</h3>
+        
+        <div class="deps-list">
+            
+            <a href="pivot_solveE.html" class="dep-tag" title="v(i) = (target - Σ_{j≠i} u(j)*v(j)) / u(i)...">pivot_solveE</a>
+            
+        </div>
+        
+    </div>
+</div>
+
+<!-- Coq Source Code -->
+<div class="coq-source-container">
+    <div class="coq-source-header">
+        <h3>Coq Source Code</h3>
+        <a href="https://github.com/weng-chenghui/infotheo/blob/dumas2017dual/dumas2017dual/zpq/fiber_zpq.v" 
+           target="_blank" rel="noopener" class="btn" style="font-size: 0.8rem; padding: 0.3rem 0.6rem;">
+            View on GitHub
+        </a>
+    </div>
+    <pre class="coq-source" id="coq-source"><span class="loading">Loading source code...</span></pre>
+</div>
+
+<div style="margin-top: 1.5rem;">
+    <a href="../stats.html" class="btn">&larr; Back to Stats</a>
+</div>
+
+
+    </main>
+    
+    <footer class="footer container">
+        <p>Generated: 2025-12-10 00:18:21 | 141 lemmas in 11 files</p>
+    </footer>
+    
+    <script>
+    // Theme toggle
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }
+    
+    function updateThemeIcon(theme) {
+        const icon = document.querySelector('.theme-icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+    }
+    
+    // Load saved theme
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Icon will be updated after DOM loads
+        document.addEventListener('DOMContentLoaded', () => updateThemeIcon(savedTheme));
+    })();
+    </script>
+    
+<script src="../static/coq-loader.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filePath = 'dumas2017dual/zpq/fiber_zpq.v';
+    const lemmaName = 'unitrK';
+    const githubRawBase = 'https://raw.githubusercontent.com/weng-chenghui/infotheo/dumas2017dual';
+    
+    loadLemmaSource(githubRawBase, filePath, lemmaName);
+});
+</script>
+
+</body>
+</html>

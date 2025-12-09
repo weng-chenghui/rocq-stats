@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lemma.name }} - {{ site_title }}{% endblock %}
+
+{% block content %}
+<div class="lemma-detail">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        {% if lemma.declaration_type == 'Theorem' %}
+        <span class="badge badge-theorem">Theorem</span>
+        {% elif lemma.is_helper %}
+        <span class="badge badge-helper">Helper</span>
+        {% else %}
+        <span class="badge badge-main">Main</span>
+        {% endif %}
+        <h1 style="border: none; margin: 0; padding: 0;">{{ lemma.name }}</h1>
+    </div>
+    
+    <div class="lemma-meta">
+        <div class="lemma-meta-item">
+            <span class="label">File</span>
+            <span class="value">
+                <a href="{{ github_blob_base }}/{{ coq_source_root }}/{{ lemma.file_name }}" target="_blank" rel="noopener">
+                    {{ lemma.file_name }}
+                </a>
+            </span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Section</span>
+            <span class="value">{{ lemma.section }}</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Type</span>
+            <span class="value">{{ lemma.declaration_type }}</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Proof Lines</span>
+            <span class="value">{{ lemma.proof_lines }}</span>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 0;">Signature</h3>
+    <div class="lemma-signature">{{ lemma.signature }}</div>
+    
+    {% if lemma.meaning %}
+    <h3>Description</h3>
+    <div class="lemma-meaning">{{ lemma.meaning }}</div>
+    {% endif %}
+</div>
+
+<!-- Dependencies -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+    <div class="deps-section">
+        <h3>Uses ({{ uses_lemmas|length }})</h3>
+        {% if uses_lemmas %}
+        <div class="deps-list">
+            {% for dep in uses_lemmas %}
+            <a href="{{ dep.name }}.html" class="dep-tag" title="{{ dep.meaning[:100] }}...">{{ dep.name }}</a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-deps">This lemma does not use any other lemmas from the stats.</p>
+        {% endif %}
+    </div>
+    
+    <div class="deps-section">
+        <h3>Used By ({{ used_by_lemmas|length }})</h3>
+        {% if used_by_lemmas %}
+        <div class="deps-list">
+            {% for dep in used_by_lemmas %}
+            <a href="{{ dep.name }}.html" class="dep-tag" title="{{ dep.meaning[:100] }}...">{{ dep.name }}</a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-deps">No lemmas in the stats use this lemma.</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Coq Source Code -->
+<div class="coq-source-container">
+    <div class="coq-source-header">
+        <h3>Coq Source Code</h3>
+        <a href="{{ github_blob_base }}/{{ coq_source_root }}/{{ lemma.file_name }}" 
+           target="_blank" rel="noopener" class="btn" style="font-size: 0.8rem; padding: 0.3rem 0.6rem;">
+            View on GitHub
+        </a>
+    </div>
+    <pre class="coq-source" id="coq-source"><span class="loading">Loading source code...</span></pre>
+</div>
+
+<div style="margin-top: 1.5rem;">
+    <a href="../stats.html" class="btn">&larr; Back to Stats</a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="../static/coq-loader.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filePath = '{{ coq_source_root }}/{{ lemma.file_name }}';
+    const lemmaName = '{{ lemma.name }}';
+    const githubRawBase = '{{ github_raw_base }}';
+    
+    loadLemmaSource(githubRawBase, filePath, lemmaName);
+});
+</script>
+{% endblock %}
+

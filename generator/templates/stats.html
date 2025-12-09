@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block title %}Lemma Statistics - {{ site_title }}{% endblock %}
+
+{% block content %}
+<h1>Lemma Statistics</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="value">{{ total_lemmas }}</div>
+        <div class="label">Total Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ main_count }}</div>
+        <div class="label">Main Results</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ helper_count }}</div>
+        <div class="label">Helper Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ total_files }}</div>
+        <div class="label">Files</div>
+    </div>
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search lemmas by name, signature, or meaning...">
+</div>
+
+<div class="controls" style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+    <button class="btn" onclick="toggleAll(true)">Expand All</button>
+    <button class="btn" onclick="toggleAll(false)">Collapse All</button>
+    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+        <input type="checkbox" id="show-helpers" checked onchange="toggleHelpers()">
+        Show Helper Lemmas
+    </label>
+</div>
+
+<!-- Main Results Section -->
+<h2>Main Results</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+    Theorems and key lemmas ({{ main_count }} total)
+</p>
+
+{% for file_name, file_data in files.items() %}
+{% if file_data.main %}
+<div class="file-section main-section" data-file="{{ file_name }}">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">{{ file_name }}</span>
+        </div>
+        <span class="file-count">{{ file_data.main|length }} main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for lemma in file_data.main %}
+                <tr data-search="{{ lemma.name|lower }} {{ lemma.signature|lower }} {{ lemma.meaning|lower }}">
+                    <td>
+                        {% if lemma.declaration_type == 'Theorem' %}
+                        <span class="badge badge-theorem">Theorem</span>
+                        {% else %}
+                        <span class="badge badge-main">Main</span>
+                        {% endif %}
+                        <a href="lemmas/{{ lemma.name }}.html" class="lemma-name">{{ lemma.name }}</a>
+                    </td>
+                    <td class="section-name">{{ lemma.section }}</td>
+                    <td class="proof-lines">{{ lemma.proof_lines }}</td>
+                    <td><code class="signature">{{ lemma.signature }}</code></td>
+                    <td class="meaning">{{ lemma.meaning }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+
+<!-- Helper Lemmas Section -->
+<h2 id="helpers-heading">Helper Lemmas</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+    Supporting lemmas and utilities ({{ helper_count }} total)
+</p>
+
+<div id="helpers-section">
+{% for file_name, file_data in files.items() %}
+{% if file_data.helper %}
+<div class="file-section helper-section" data-file="{{ file_name }}">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">{{ file_name }}</span>
+        </div>
+        <span class="file-count">{{ file_data.helper|length }} helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for lemma in file_data.helper %}
+                <tr data-search="{{ lemma.name|lower }} {{ lemma.signature|lower }} {{ lemma.meaning|lower }}">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/{{ lemma.name }}.html" class="lemma-name">{{ lemma.name }}</a>
+                    </td>
+                    <td class="section-name">{{ lemma.section }}</td>
+                    <td class="proof-lines">{{ lemma.proof_lines }}</td>
+                    <td><code class="signature">{{ lemma.signature }}</code></td>
+                    <td class="meaning">{{ lemma.meaning }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleSection(header) {
+    header.classList.toggle('expanded');
+    const content = header.nextElementSibling;
+    content.classList.toggle('expanded');
+}
+
+function toggleAll(expand) {
+    const headers = document.querySelectorAll('.file-header');
+    const contents = document.querySelectorAll('.file-content');
+    
+    headers.forEach(h => {
+        if (expand) {
+            h.classList.add('expanded');
+        } else {
+            h.classList.remove('expanded');
+        }
+    });
+    
+    contents.forEach(c => {
+        if (expand) {
+            c.classList.add('expanded');
+        } else {
+            c.classList.remove('expanded');
+        }
+    });
+}
+
+function toggleHelpers() {
+    const show = document.getElementById('show-helpers').checked;
+    const helpersSection = document.getElementById('helpers-section');
+    const helpersHeading = document.getElementById('helpers-heading');
+    const helperP = helpersHeading.nextElementSibling;
+    
+    helpersSection.style.display = show ? '' : 'none';
+    helpersHeading.style.display = show ? '' : 'none';
+    helperP.style.display = show ? '' : 'none';
+}
+
+document.getElementById('search').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('tbody tr');
+    const sections = document.querySelectorAll('.file-section');
+    
+    if (query === '') {
+        rows.forEach(r => r.style.display = '');
+        sections.forEach(s => s.style.display = '');
+        return;
+    }
+    
+    sections.forEach(section => {
+        const sectionRows = section.querySelectorAll('tbody tr');
+        let hasVisible = false;
+        
+        sectionRows.forEach(row => {
+            const searchText = row.getAttribute('data-search');
+            if (searchText && searchText.includes(query)) {
+                row.style.display = '';
+                hasVisible = true;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        
+        section.style.display = hasVisible ? '' : 'none';
+        if (hasVisible && query) {
+            section.querySelector('.file-header').classList.add('expanded');
+            section.querySelector('.file-content').classList.add('expanded');
+        }
+    });
+});
+</script>
+{% endblock %}
+

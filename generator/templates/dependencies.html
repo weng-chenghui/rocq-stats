@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Dependencies - {{ site_title }}{% endblock %}
+
+{% block content %}
+<h1>Lemma Dependencies</h1>
+
+<!-- Legend -->
+<div class="legend" style="margin-bottom: 1.5rem; padding: 1rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px;">
+    <strong style="color: var(--text-secondary);">Badge Legend:</strong>
+    <span style="margin-left: 1rem;"><span class="badge badge-main">M</span> Main Result</span>
+    <span style="margin-left: 1rem;"><span class="badge badge-theorem">T</span> Theorem</span>
+    <span style="margin-left: 1rem;"><span class="badge badge-helper">H</span> Helper Lemma</span>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="value">{{ total_lemmas }}</div>
+        <div class="label">Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ total_deps }}</div>
+        <div class="label">Dependencies</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ lemmas|selectattr('uses')|list|length }}</div>
+        <div class="label">With Dependencies</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">{{ total_files }}</div>
+        <div class="label">Files</div>
+    </div>
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search lemmas...">
+</div>
+
+<div class="controls" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn" onclick="sortTable('name')">Sort by Name</button>
+    <button class="btn" onclick="sortTable('classification')">Sort by Classification</button>
+    <button class="btn" onclick="sortTable('deps')">Sort by Dependencies</button>
+    <button class="btn" onclick="sortTable('usedby')">Sort by Used By</button>
+</div>
+
+<div class="table-container" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; overflow-x: auto;">
+    <table id="deps-table" style="min-width: 1000px;">
+        <thead>
+            <tr>
+                <th style="width: 18%">Lemma</th>
+                <th style="width: 22%">File</th>
+                <th style="width: 10%">Section</th>
+                <th style="width: 5%; text-align: center">#Uses</th>
+                <th style="width: 5%; text-align: center">#By</th>
+                <th style="width: 40%">Uses (from stats)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lemma in lemmas %}
+            <tr data-lemma="{{ lemma.name }}" data-search="{{ lemma.name|lower }}" data-deps="{{ lemma.uses|length }}" data-usedby="{{ lemma.used_by|length }}" data-classification="{% if lemma.declaration_type == 'Theorem' %}0{% elif lemma.is_main %}1{% else %}2{% endif %}">
+                <td>
+                    {% if lemma.declaration_type == 'Theorem' %}
+                    <span class="badge badge-theorem">T</span>
+                    {% elif lemma.is_helper %}
+                    <span class="badge badge-helper">H</span>
+                    {% else %}
+                    <span class="badge badge-main">M</span>
+                    {% endif %}
+                    <a href="lemmas/{{ lemma.name }}.html" class="lemma-name">{{ lemma.name }}</a>
+                </td>
+                <td class="file-name" style="font-size: 0.85rem;">{{ lemma.file_name }}</td>
+                <td class="section-name">{{ lemma.section }}</td>
+                <td class="proof-lines" style="text-align: center;">{{ lemma.uses|length }}</td>
+                <td class="proof-lines" style="text-align: center; color: var(--purple);">{{ lemma.used_by|length }}</td>
+                <td>
+                    {% if lemma.uses %}
+                    <div class="deps-list">
+                        {% for dep in lemma.uses %}
+                        <a href="lemmas/{{ dep }}.html" class="dep-tag">{{ dep }}</a>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <span class="no-deps">No dependencies in stats</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('search').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('#deps-table tbody tr');
+    
+    rows.forEach(row => {
+        const searchText = row.getAttribute('data-search');
+        row.style.display = searchText.includes(query) ? '' : 'none';
+    });
+});
+
+function sortTable(by) {
+    const tbody = document.querySelector('#deps-table tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        if (by === 'name') {
+            return a.getAttribute('data-lemma').localeCompare(b.getAttribute('data-lemma'));
+        } else if (by === 'classification') {
+            // Sort by classification: Theorem (0) < Main (1) < Helper (2)
+            const classA = parseInt(a.getAttribute('data-classification'));
+            const classB = parseInt(b.getAttribute('data-classification'));
+            if (classA !== classB) return classA - classB;
+            // Secondary sort by name within same classification
+            return a.getAttribute('data-lemma').localeCompare(b.getAttribute('data-lemma'));
+        } else if (by === 'deps') {
+            return parseInt(b.getAttribute('data-deps')) - parseInt(a.getAttribute('data-deps'));
+        } else if (by === 'usedby') {
+            return parseInt(b.getAttribute('data-usedby')) - parseInt(a.getAttribute('data-usedby'));
+        }
+        return 0;
+    });
+    
+    rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+{% endblock %}
+

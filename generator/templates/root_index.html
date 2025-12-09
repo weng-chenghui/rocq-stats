@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_title }}</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">{{ site_title }}</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <div class="hero" style="text-align: center; padding: 3rem 0; margin-bottom: 2rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ site_title }}</h1>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                {{ site_description }}
+            </p>
+        </div>
+        
+        <h2 style="margin-bottom: 1.5rem;">Projects</h2>
+        
+        <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem;">
+            {% for project in projects %}
+            <a href="{{ project.name }}/index.html" class="project-card" style="display: block; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-decoration: none; transition: all 0.2s;">
+                <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">{{ project.title }}</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">{{ project.description }}</p>
+                
+                <div class="project-stats" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div class="stat">
+                        <span style="color: var(--accent); font-weight: 600;">{{ project.total_lemmas }}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"> lemmas</span>
+                    </div>
+                    <div class="stat">
+                        <span style="color: var(--success); font-weight: 600;">{{ project.main_count }}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"> main</span>
+                    </div>
+                    <div class="stat">
+                        <span style="color: var(--purple); font-weight: 600;">{{ project.theorem_count }}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"> theorems</span>
+                    </div>
+                    <div class="stat">
+                        <span style="color: var(--text-secondary); font-weight: 600;">{{ project.total_files }}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"> files</span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        
+        {% if not projects %}
+        <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+            <p>No projects configured yet.</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add project YAML files to the <code>projects/</code> directory.</p>
+        </div>
+        {% endif %}
+        
+        <section style="margin-top: 3rem; padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;">
+            <h2 style="margin-bottom: 1rem;">About Rocq Stats</h2>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+                Rocq Stats is a documentation generator for <a href="https://rocq-prover.org/" style="color: var(--accent);">Rocq/Coq</a> formalizations. 
+                It parses Coq source files to extract lemma information, analyze dependencies, and generate 
+                browsable documentation with statistics.
+            </p>
+            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Features</h3>
+            <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                <li>Automatic lemma extraction from <code>.v</code> files</li>
+                <li>Main/Helper classification based on declaration type and comments</li>
+                <li>Dependency analysis between lemmas</li>
+                <li>Individual lemma detail pages with source code links</li>
+                <li>Dark/light theme support</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer class="footer container">
+        <p>Generated: {{ generated_time }} | <a href="https://github.com/weng-chenghui/rocq-stats" style="color: var(--accent);">GitHub</a></p>
+    </footer>
+    
+    <script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }
+    
+    function updateThemeIcon(theme) {
+        const icon = document.querySelector('.theme-icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+    }
+    
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.addEventListener('DOMContentLoaded', () => updateThemeIcon(savedTheme));
+    })();
+    </script>
+    
+    <style>
+    .project-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    </style>
+</body>
+</html>
+

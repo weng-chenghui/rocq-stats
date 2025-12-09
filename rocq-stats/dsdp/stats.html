@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemma Statistics - DSDP Formalization</title>
+    <link rel="stylesheet" href="static/style.css">
+    
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">DSDP Formalization</a>
+            <ul class="nav-tabs">
+                <li><a href="index.html" >Overview</a></li>
+                <li><a href="stats.html" class="active">Lemma Stats</a></li>
+                <li><a href="dependencies.html" >Dependencies</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+    
+    <main class="container">
+        
+<h1>Lemma Statistics</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="value">141</div>
+        <div class="label">Total Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">16</div>
+        <div class="label">Main Results</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">125</div>
+        <div class="label">Helper Lemmas</div>
+    </div>
+    <div class="stat-card">
+        <div class="value">11</div>
+        <div class="label">Files</div>
+    </div>
+</div>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search lemmas by name, signature, or meaning...">
+</div>
+
+<div class="controls" style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+    <button class="btn" onclick="toggleAll(true)">Expand All</button>
+    <button class="btn" onclick="toggleAll(false)">Collapse All</button>
+    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+        <input type="checkbox" id="show-helpers" checked onchange="toggleHelpers()">
+        Show Helper Lemmas
+    </label>
+</div>
+
+<!-- Main Results Section -->
+<h2>Main Results</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+    Theorems and key lemmas (16 total)
+</p>
+
+
+
+<div class="file-section main-section" data-file="dsdp/dsdp_algebra.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_algebra.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_fiber_card lemma dsdp_fiber_card u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_fiber u1 u2 u3 v1 s| = m. fiber cardinality for pairs (v2, v3): |{(v2,v3) | u2*v2 + u3*v3 = s - u1*v1}| = m. with v1 fixed, the remaining 2-variable equation has m solutions (1 degree of freedom).">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_fiber_card.html" class="lemma-name">dsdp_fiber_card</a>
+                    </td>
+                    <td class="section-name">linear_system</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma dsdp_fiber_card u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_fiber u1 u2 u3 v1 s| = m.</code></td>
+                    <td class="meaning">Fiber cardinality for pairs (v2, v3): |{(v2,v3) | u2*v2 + u3*v3 = s - u1*v1}| = m. With v1 fixed, the remaining 2-variable equation has m solutions (1 degree of freedom).</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="dsdp/dsdp_entropy.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_entropy.v</span>
+        </div>
+        <span class="file-count">3 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_centropy_uniform_zpq theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; u3 t)%n) -&gt; `h(varrv | condrv) = log (m%:r : r). this establishes that alice learns nothing beyond the constraint.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_centropy_uniform_zpq.html" class="lemma-name">dsdp_centropy_uniform_zpq</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; U3 t)%N) -&gt; `H(VarRV | CondRV) = log (m%:R : R).</code></td>
+                    <td class="meaning">This establishes that Alice learns nothing beyond the constraint.</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy_uniform_solutions lemma dsdp_centropy_uniform_solutions : `h(varrv | condrv) = log (m%:r : r). main privacy lemma: h((v2,v3) | (v1,u1,u2,u3,s)) = log(m). this shows that given alice&#39;s view of the constraint, the entropy of bob and charlie&#39;s private inputs (v2,v3) equals log(m), not log(m²). the &#34;missing&#34; log(m) bits represent v3&#39;s determination by the constraint.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_centropy_uniform_solutions.html" class="lemma-name">dsdp_centropy_uniform_solutions</a>
+                    </td>
+                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma dsdp_centropy_uniform_solutions : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
+                    <td class="meaning">Main privacy lemma: H((V2,V3) | (V1,U1,U2,U3,S)) = log(m). This shows that given Alice&#39;s view of the constraint, the entropy of Bob and Charlie&#39;s private inputs (V2,V3) equals log(m), not log(m²). The &#34;missing&#34; log(m) bits represent V3&#39;s determination by the constraint.</td>
+                </tr>
+            
+                <tr data-search="us_compromised_leaks_v2 theorem us_compromised_leaks_v2 : us = constus -&gt; ~ `h(v2 | aliceview ) = `h `p_v2. this theorem shows that if an active adversary controls alice, it can set u1 and u2 as a special combination (1, 0), which allows revealing `v2` from the result that alice receives. \cite[\s5.2]{dumas2017dual}.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/US_compromised_leaks_V2.html" class="lemma-name">US_compromised_leaks_V2</a>
+                    </td>
+                    <td class="section-name">malicious_adversary_case_analysis</td>
+                    <td class="proof-lines">38</td>
+                    <td><code class="signature">Theorem US_compromised_leaks_V2 : US = ConstUS -&gt; ~ `H(V2 | AliceView ) = `H `p_V2.</code></td>
+                    <td class="meaning">This theorem shows that if an active adversary controls Alice, it can set U1 and U2 as a special combination (1, 0), which allows revealing `V2` from the result that Alice receives. \cite[\S5.2]{dumas2017dual}.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="file-section main-section" data-file="dsdp/dsdp_security.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_security.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_entropy_result theorem dsdp_entropy_result : `h(varrv | condrv) = log (m%:r : r). core entropy bound: h((v2,v3) | constraint view) = log(m). instantiates the general dsdp entropy analysis with security hypotheses. shows alice learns exactly log(m) bits about bob/charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_entropy_result.html" class="lemma-name">dsdp_entropy_result</a>
+                    </td>
+                    <td class="section-name">dsdp_security</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Theorem dsdp_entropy_result : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
+                    <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage.</td>
+                </tr>
+            
+                <tr data-search="dsdp_security_bounded_leakage theorem dsdp_security_bounded_leakage : `h(v2 | aliceview) = log (m%:r : r) /\ `h(v2 | aliceview) &gt; 0. dsdp security guarantee: h(v2 | aliceview) = log(m) &gt; 0. alice cannot learn bob&#39;s private input v2 with certainty. the conditional entropy log(m) means v2 remains uniformly distributed over m values from alice&#39;s perspective - she gains no advantage over random guessing. the protocol leaks v3&#39;s determination but not v2.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_security_bounded_leakage.html" class="lemma-name">dsdp_security_bounded_leakage</a>
+                    </td>
+                    <td class="section-name">dsdp_security</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem dsdp_security_bounded_leakage : `H(V2 | AliceView) = log (m%:R : R) /\ `H(V2 | AliceView) &gt; 0.</code></td>
+                    <td class="meaning">DSDP security guarantee: H(V2 | AliceView) = log(m) &gt; 0. Alice cannot learn Bob&#39;s private input V2 with certainty. The conditional entropy log(m) means V2 remains uniformly distributed over m values from Alice&#39;s perspective - she gains no advantage over random guessing. The protocol leaks V3&#39;s determination but not V2.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="entropy_fiber/entropy_fibers.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">entropy_fiber/entropy_fibers.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="centropy1_as_sum lemma centropy1_as_sum (c : codomaint) : `pr[y = c] != 0 -&gt; `h[x | y = c] = - \sum_(x : domaint) `pr[x = x | y = c] * log (`pr[x = x | y = c]). conditional entropy expanded as negative sum of p*log(p) over domain.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/centropy1_as_sum.html" class="lemma-name">centropy1_as_sum</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma centropy1_as_sum (c : CodomainT) : `Pr[Y = c] != 0 -&gt; `H[X | Y = c] = - \sum_(x : DomainT) `Pr[X = x | Y = c] * log (`Pr[X = x | Y = c]).</code></td>
+                    <td class="meaning">Conditional entropy expanded as negative sum of p*log(p) over domain.</td>
+                </tr>
+            
+                <tr data-search="centropy_determined_contract lemma centropy_determined_contract : `h([% x, y] | cond) = `h(x | cond). main result: auxiliary variable adds no entropy">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/centropy_determined_contract.html" class="lemma-name">centropy_determined_contract</a>
+                    </td>
+                    <td class="section-name">functional_determinacy</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma centropy_determined_contract : `H([% X, Y] | Cond) = `H(X | Cond).</code></td>
+                    <td class="meaning">Main result: auxiliary variable adds no entropy</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="entropy_fiber/entropy_linear_fibers.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">entropy_fiber/entropy_linear_fibers.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="centropy_bilinear_uniform theorem centropy_bilinear_uniform : (n &gt; 0)%n -&gt; `h(v | [% u, s]) = log ((m ^ n.-1)%:r : r). main result: conditional entropy equals log(m)">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/centropy_bilinear_uniform.html" class="lemma-name">centropy_bilinear_uniform</a>
+                    </td>
+                    <td class="section-name">bilinear_entropy_applications</td>
+                    <td class="proof-lines">42</td>
+                    <td><code class="signature">Theorem centropy_bilinear_uniform : (n &gt; 0)%N -&gt; `H(V | [% U, S]) = log ((m ^ n.-1)%:R : R).</code></td>
+                    <td class="meaning">Main result: conditional entropy equals log(m)</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="file-section main-section" data-file="lib/extra_entropy.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/extra_entropy.v</span>
+        </div>
+        <span class="file-count">3 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="cinde_centropy_eq lemma cinde_centropy_eq : p |= x _|_ y | z -&gt; `h(y | [% x, z]) = `h(y | z). main result: conditional independence implies conditional entropy equality">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/cinde_centropy_eq.html" class="lemma-name">cinde_centropy_eq</a>
+                    </td>
+                    <td class="section-name">cinde_centropy_eq</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma cinde_centropy_eq : P |= X _|_ Y | Z -&gt; `H(Y | [% X, Z]) = `H(Y | Z).</code></td>
+                    <td class="meaning">Main result: conditional independence implies conditional entropy equality</td>
+                </tr>
+            
+                <tr data-search="zero_centropy_eq_deterministic1 lemma zero_centropy_eq_deterministic1 (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) : `h(z | y) = 0 &lt;-&gt; (forall y, `pr[y = y] != 0 -&gt; exists z, `pr[z = z | y = y] = 1). main lemma 1: conditional entropy is zero iff z is a function of y">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/zero_centropy_eq_deterministic1.html" class="lemma-name">zero_centropy_eq_deterministic1</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">64</td>
+                    <td><code class="signature">Lemma zero_centropy_eq_deterministic1 (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) : `H(Z | Y) = 0 &lt;-&gt; (forall y, `Pr[Y = y] != 0 -&gt; exists z, `Pr[Z = z | Y = y] = 1).</code></td>
+                    <td class="meaning">Main lemma 1: conditional entropy is zero iff Z is a function of Y</td>
+                </tr>
+            
+                <tr data-search="zero_centropy_eq_deterministic lemma zero_centropy_eq_deterministic (v w t: fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) : `h(z | y) = 0 &lt;-&gt; (forall y, `pr[y = y] != 0 -&gt; exists! z, `pr[z = z | y = y] = 1). main lemma: conditional entropy zero means z is a unique function of y">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/zero_centropy_eq_deterministic.html" class="lemma-name">zero_centropy_eq_deterministic</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">29</td>
+                    <td><code class="signature">Lemma zero_centropy_eq_deterministic (V W T: finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) : `H(Z | Y) = 0 &lt;-&gt; (forall y, `Pr[Y = y] != 0 -&gt; exists! z, `Pr[Z = z | Y = y] = 1).</code></td>
+                    <td class="meaning">Main lemma: conditional entropy zero means Z is a unique function of Y</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="file-section main-section" data-file="lib/rouche_capelli.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/rouche_capelli.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="count_affine_solutions_explicit lemma count_affine_solutions_explicit (x0 : &#39;rv[k]_m) : x0 *m a = b -&gt; #|affine_solutions| = (#|{:k}| ^ (m - \rank a))%n. explicit affine solution count: |{x | xa = b}| = |k|^(m - rank(a)). combines count_affine_solutions with count_kernel_vectors. this is the main rouché-capelli counting formula for row systems.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/count_affine_solutions_explicit.html" class="lemma-name">count_affine_solutions_explicit</a>
+                    </td>
+                    <td class="section-name">affine_solution_counting</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma count_affine_solutions_explicit (x0 : &#39;rV[K]_m) : x0 *m A = b -&gt; #|affine_solutions| = (#|{:K}| ^ (m - \rank A))%N.</code></td>
+                    <td class="meaning">Explicit affine solution count: |{x | xA = b}| = |K|^(m - rank(A)). Combines count_affine_solutions with count_kernel_vectors. This is the main Rouché-Capelli counting formula for row systems.</td>
+                </tr>
+            
+                <tr data-search="count_affine_solutions_explicit_col lemma count_affine_solutions_explicit_col (v0 : &#39;cv[k]_n) : a *m v0 = b -&gt; #|affine_solutions_col| = (#|{:k}| ^ (n - \rank a))%n. explicit affine count (column version): |{v | av = b}| = |k|^(n - rank(a)). main rouché-capelli formula for av = b systems. used in dsdp fiber counting where constraints are expressed as column multiplication.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/count_affine_solutions_explicit_col.html" class="lemma-name">count_affine_solutions_explicit_col</a>
+                    </td>
+                    <td class="section-name">affine_solultion_counting_col</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma count_affine_solutions_explicit_col (v0 : &#39;cV[K]_n) : A *m v0 = b -&gt; #|affine_solutions_col| = (#|{:K}| ^ (n - \rank A))%N.</code></td>
+                    <td class="meaning">Explicit affine count (column version): |{v | Av = b}| = |K|^(n - rank(A)). Main Rouché-Capelli formula for Av = b systems. Used in DSDP fiber counting where constraints are expressed as column multiplication.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="zpq/fiber_zpq.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">zpq/fiber_zpq.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="linear_fiber_zpq_card lemma linear_fiber_zpq_card (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; #|linear_fiber_zpq u target| = (m ^ n.-1)%n. main cardinality theorem for generalized linear fiber. when u has a unit component at index i: |linear_fiber_zpq u target| = m^(n-1)">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/linear_fiber_zpq_card.html" class="lemma-name">linear_fiber_zpq_card</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma linear_fiber_zpq_card (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; #|linear_fiber_zpq u target| = (m ^ n.-1)%N.</code></td>
+                    <td class="meaning">Main cardinality theorem for generalized linear fiber. When u has a unit component at index i: |linear_fiber_zpq u target| = m^(n-1)</td>
+                </tr>
+            
+                <tr data-search="fiber_zpq_pair_card lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|fiber_zpq_pair u2 u3 target| = m. main result: 2d fiber cardinality = m direct proof using bijection f(v2) = (v2, (target - u2*v2) / u3)">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/fiber_zpq_pair_card.html" class="lemma-name">fiber_zpq_pair_card</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">34</td>
+                    <td><code class="signature">Lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|fiber_zpq_pair u2 u3 target| = m.</code></td>
+                    <td class="meaning">Main result: 2D fiber cardinality = m Direct proof using bijection f(v2) = (v2, (target - u2*v2) / u3)</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Helper Lemmas Section -->
+<h2 id="helpers-heading">Helper Lemmas</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+    Supporting lemmas and utilities (125 total)
+</p>
+
+<div id="helpers-section">
+
+
+<div class="file-section helper-section" data-file="dsdp/dsdp_algebra.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_algebra.v</span>
+        </div>
+        <span class="file-count">3 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_matrix_rank1 lemma dsdp_matrix_rank1 u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; \rank (dsdp_matrix u1 u2 u3) = 1. the dsdp coefficient matrix has rank 1 when at least one coefficient is nonzero. this establishes the linear system has exactly 1 constraint, giving 2 degrees of freedom.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_matrix_rank1.html" class="lemma-name">dsdp_matrix_rank1</a>
+                    </td>
+                    <td class="section-name">linear_system</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Lemma dsdp_matrix_rank1 u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; \rank (dsdp_matrix u1 u2 u3) = 1.</code></td>
+                    <td class="meaning">The DSDP coefficient matrix has rank 1 when at least one coefficient is nonzero. This establishes the linear system has exactly 1 constraint, giving 2 degrees of freedom.</td>
+                </tr>
+            
+                <tr data-search="dsdp_kernel_card lemma dsdp_kernel_card u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|dsdp_kernel u1 u2 u3| = (m ^ (3 - 1))%n. kernel cardinality: |ker(a)| = m^(n-r) = m^(3-1) = m^2 for rank-1 system. the kernel represents homogeneous solutions u1*v1 + u2*v2 + u3*v3 = 0.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_kernel_card.html" class="lemma-name">dsdp_kernel_card</a>
+                    </td>
+                    <td class="section-name">linear_system</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma dsdp_kernel_card u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|dsdp_kernel u1 u2 u3| = (m ^ (3 - 1))%N.</code></td>
+                    <td class="meaning">Kernel cardinality: |ker(A)| = m^(n-r) = m^(3-1) = m^2 for rank-1 system. The kernel represents homogeneous solutions u1*v1 + u2*v2 + u3*v3 = 0.</td>
+                </tr>
+            
+                <tr data-search="dsdp_solution_set_card_full lemma dsdp_solution_set_card_full u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_solution_set u1 u2 u3 v1 s| = (m ^ 2)%n. full solution set cardinality: |{(v1,v2,v3) | u1*v1 + u2*v2 + u3*v3 = s}| = m^2. one constraint in 3 variables gives 2 degrees of freedom, hence m^2 solutions.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_solution_set_card_full.html" class="lemma-name">dsdp_solution_set_card_full</a>
+                    </td>
+                    <td class="section-name">linear_system</td>
+                    <td class="proof-lines">28</td>
+                    <td><code class="signature">Lemma dsdp_solution_set_card_full u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_solution_set u1 u2 u3 v1 s| = (m ^ 2)%N.</code></td>
+                    <td class="meaning">Full solution set cardinality: |{(v1,v2,v3) | u1*v1 + u2*v2 + u3*v3 = s}| = m^2. One constraint in 3 variables gives 2 degrees of freedom, hence m^2 solutions.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dsdp/dsdp_entropy.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_entropy.v</span>
+        </div>
+        <span class="file-count">20 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_fiber_zpq_card lemma dsdp_fiber_zpq_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|dsdp_fiber_zpq u2 u3 target| = m. fiber cardinality: |fiber| = m = p * q follows from the generalized fiber_zpq_pair_card in fiber_zpq.v which proves the bijection f(v2) = (v2, (target - u2*v2) / u3) gives |fiber| = m.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_fiber_zpq_card.html" class="lemma-name">dsdp_fiber_zpq_card</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma dsdp_fiber_zpq_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|dsdp_fiber_zpq u2 u3 target| = m.</code></td>
+                    <td class="meaning">Fiber cardinality: |fiber| = m = p * q Follows from the generalized fiber_zpq_pair_card in fiber_zpq.v which proves the bijection f(v2) = (v2, (target - u2*v2) / u3) gives |fiber| = m.</td>
+                </tr>
+            
+                <tr data-search="dsdp_fiber_full_zpq_card lemma dsdp_fiber_full_zpq_card (u1 u2 u3 v1 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|dsdp_fiber_full_zpq u1 u2 u3 v1 s| = m. fiber cardinality for full constraint">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_fiber_full_zpq_card.html" class="lemma-name">dsdp_fiber_full_zpq_card</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma dsdp_fiber_full_zpq_card (u1 u2 u3 v1 s : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|dsdp_fiber_full_zpq u1 u2 u3 v1 s| = m.</code></td>
+                    <td class="meaning">Fiber cardinality for full constraint</td>
+                </tr>
+            
+                <tr data-search="dsdp_non_solution_zero_prob_zpq lemma dsdp_non_solution_zero_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = 0. non-solutions have zero probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_non_solution_zero_prob_zpq.html" class="lemma-name">dsdp_non_solution_zero_prob_zpq</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma dsdp_non_solution_zero_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = 0.</code></td>
+                    <td class="meaning">Non-solutions have zero probability</td>
+                </tr>
+            
+                <tr data-search="dsdp_solution_uniform_prob_zpq lemma dsdp_solution_uniform_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1. solutions have uniform probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_solution_uniform_prob_zpq.html" class="lemma-name">dsdp_solution_uniform_prob_zpq</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma dsdp_solution_uniform_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1.</code></td>
+                    <td class="meaning">Solutions have uniform probability</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy1_uniform_zpq lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: entropy at each conditioning value equals log(m)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_centropy1_uniform_zpq.html" class="lemma-name">dsdp_centropy1_uniform_zpq</a>
+                    </td>
+                    <td class="section-name">crt_reconstruct</td>
+                    <td class="proof-lines">28</td>
+                    <td><code class="signature">Lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
+                    <td class="meaning">Helper: entropy at each conditioning value equals log(m)</td>
+                </tr>
+            
+                <tr data-search="dsdp_non_solution_zero_prob lemma dsdp_non_solution_zero_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = 0. helper 1: pairs not satisfying the constraint have zero conditional probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_non_solution_zero_prob.html" class="lemma-name">dsdp_non_solution_zero_prob</a>
+                    </td>
+                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma dsdp_non_solution_zero_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = 0.</code></td>
+                    <td class="meaning">Helper 1: Pairs not satisfying the constraint have zero conditional probability</td>
+                </tr>
+            
+                <tr data-search="dsdp_solution_uniform_prob lemma dsdp_solution_uniform_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (v2, v3) \in dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1. helper 2: solutions have uniform probability 1/m">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_solution_uniform_prob.html" class="lemma-name">dsdp_solution_uniform_prob</a>
+                    </td>
+                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma dsdp_solution_uniform_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (v2, v3) \in dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1.</code></td>
+                    <td class="meaning">Helper 2: Solutions have uniform probability 1/m</td>
+                </tr>
+            
+                <tr data-search="dsdp_entropy_uniform_subset lemma dsdp_entropy_uniform_subset (u1 u2 u3 v1 s : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (forall pair : msg * msg, pair \in dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = 0) -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). single-point conditional entropy: h[varrv | condrv = (v1,u1,u2,u3,s)] = log(m). shows that for each fixed conditioning value, the conditional entropy equals log(m). this applies the general fiber entropy framework to dsdp: - fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - uniform distribution over fiber ⟹ entropy = log(m)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_entropy_uniform_subset.html" class="lemma-name">dsdp_entropy_uniform_subset</a>
+                    </td>
+                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma dsdp_entropy_uniform_subset (u1 u2 u3 v1 s : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (forall pair : msg * msg, pair \in dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = 0) -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
+                    <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber ⟹ entropy = log(m)</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy1_uniform lemma dsdp_centropy1_uniform (v1 u1 u2 u3 s : msg) : `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: each conditioning value gives entropy log(m)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_centropy1_uniform.html" class="lemma-name">dsdp_centropy1_uniform</a>
+                    </td>
+                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma dsdp_centropy1_uniform (v1 u1 u2 u3 s : msg) : `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
+                    <td class="meaning">Helper: Each conditioning value gives entropy log(m)</td>
+                </tr>
+            
+                <tr data-search="dsdp_var_entropy lemma dsdp_var_entropy : `p_varrv = fdist_uniform card_msg_pair -&gt; `h `p_varrv = log (m%:r * m%:r : r). unconditional entropy of private inputs (v2, v3) when uniformly distributed. since v2, v3 are private inputs from bob and charlie respectively, assuming uniform distribution gives h(v2,v3) = log(m²) = 2*log(m). combined with the conditional entropy result h(v2,v3 | view) = log(m), this shows dsdp leaks log(m) bits but preserves log(m) bits of entropy. the security argument (privacy_by_bonded_leakage at end of file) shows that h(v2,v3 | aliceview) = h(v2 | aliceview), i.e., knowing v3 given the constraint adds no information beyond knowing v2.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_var_entropy.html" class="lemma-name">dsdp_var_entropy</a>
+                    </td>
+                    <td class="section-name">dsdp_var_entropy</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma dsdp_var_entropy : `p_VarRV = fdist_uniform card_msg_pair -&gt; `H `p_VarRV = log (m%:R * m%:R : R).</code></td>
+                    <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (privacy_by_bonded_leakage at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
+                </tr>
+            
+                <tr data-search="alicetraces_from_viewp lemma alicetraces_from_viewp : alicetraces = alicetraces_values_from_view `o aliceview. alicetraces is a function of aliceview: the protocol trace can be reconstructed from alice&#39;s view (her inputs and received messages).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/AliceTraces_from_viewP.html" class="lemma-name">AliceTraces_from_viewP</a>
+                    </td>
+                    <td class="section-name">alice_privacy_analysis</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma AliceTraces_from_viewP : AliceTraces = AliceTraces_values_from_view `o AliceView.</code></td>
+                    <td class="meaning">AliceTraces is a function of AliceView: the protocol trace can be reconstructed from Alice&#39;s view (her inputs and received messages).</td>
+                </tr>
+            
+                <tr data-search="aliceview_values_from_tracep lemma aliceview_values_from_tracep: cancel alicetraces_values_from_view aliceview_values_from_trace. aliceview_values_from_trace is left-inverse of alicetraces_values_from_view. this establishes a bijection: aliceview ↔ alicetraces (no information loss).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/AliceView_values_from_traceP.html" class="lemma-name">AliceView_values_from_traceP</a>
+                    </td>
+                    <td class="section-name">alice_privacy_analysis</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma AliceView_values_from_traceP: cancel AliceTraces_values_from_view AliceView_values_from_trace.</code></td>
+                    <td class="meaning">AliceView_values_from_trace is left-inverse of AliceTraces_values_from_view. This establishes a bijection: AliceView ↔ AliceTraces (no information loss).</td>
+                </tr>
+            
+                <tr data-search="centropy_alicetraces_aliceview lemma centropy_alicetraces_aliceview (w : fintype) (v : {rv p -&gt; w}) : `h(v | alicetraces ) = `h(v | aliceview ). conditional entropy equivalence: conditioning on alicetraces equals conditioning on aliceview. they carry the same information.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_AliceTraces_AliceView.html" class="lemma-name">centropy_AliceTraces_AliceView</a>
+                    </td>
+                    <td class="section-name">alice_privacy_analysis</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma centropy_AliceTraces_AliceView (w : finType) (v : {RV P -&gt; w}) : `H(v | AliceTraces ) = `H(v | AliceView ).</code></td>
+                    <td class="meaning">Conditional entropy equivalence: conditioning on AliceTraces equals conditioning on AliceView. They carry the same information.</td>
+                </tr>
+            
+                <tr data-search="s_e lemma s_e : s = dotp2_rv vs us \+ vu1. s expressed as dot product: s = (v2,v3)·(u2,u3) + v1*u1. this is the dsdp constraint s = u2*v2 + u3*v3 + u1*v1 in rv form.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/S_E.html" class="lemma-name">S_E</a>
+                    </td>
+                    <td class="section-name">dotp2</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma S_E : S = Dotp2_rv VS US \+ VU1.</code></td>
+                    <td class="meaning">S expressed as dot product: S = (V2,V3)·(U2,U3) + V1*U1. This is the DSDP constraint s = u2*v2 + u3*v3 + u1*v1 in RV form.</td>
+                </tr>
+            
+                <tr data-search="s_compe lemma s_compe : let f := (fun o =&gt; let &#39;(u2, u3, v2, v3, v1, u1) := o in u2 * v2 + u3 * v3 + v1 * u1) in s = f `o [% u2, u3, v2, v3, v1, u1]. s as function composition: s = f ∘ (u2,u3,v2,v3,v1,u1) where f computes the sum. used for applying composition lemmas in entropy analysis.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/S_compE.html" class="lemma-name">S_compE</a>
+                    </td>
+                    <td class="section-name">dotp2</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma S_compE : let f := (fun o =&gt; let &#39;(u2, u3, v2, v3, v1, u1) := o in u2 * v2 + u3 * v3 + v1 * u1) in S = f `o [% U2, U3, V2, V3, V1, U1].</code></td>
+                    <td class="meaning">S as function composition: S = f ∘ (U2,U3,V2,V3,V1,U1) where f computes the sum. Used for applying composition lemmas in entropy analysis.</td>
+                </tr>
+            
+                <tr data-search="constus_discloses_v2 lemma constus_discloses_v2 : us = constus -&gt; dotp2_rv vs us = v2. if an active adversary controls alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. in contrast, if alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. finally, if bob enforce zpk check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\s5.2]{dumas2017dual}. therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ConstUS_discloses_V2.html" class="lemma-name">ConstUS_discloses_V2</a>
+                    </td>
+                    <td class="section-name">malicious_adversary_case_analysis</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma ConstUS_discloses_V2 : US = ConstUS -&gt; Dotp2_rv VS US = V2.</code></td>
+                    <td class="meaning">If an active adversary controls Alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. In contrast, if Alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. Finally, if Bob enforce ZPK check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\S5.2]{dumas2017dual}. Therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.</td>
+                </tr>
+            
+                <tr data-search="u3_nonzero lemma u3_nonzero : forall t, u3 t != 0. if u3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/U3_nonzero.html" class="lemma-name">U3_nonzero</a>
+                    </td>
+                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma U3_nonzero : forall t, U3 t != 0.</code></td>
+                    <td class="meaning">If U3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.</td>
+                </tr>
+            
+                <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
+                    </td>
+                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
+                    <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint).</td>
+                </tr>
+            
+                <tr data-search="v3_determined_centropy_v2 lemma v3_determined_centropy_v2 : `h([% v2, v3] | [% v1, u1, u2, u3, s]) = `h(v2 | [% v1, u1, u2, u3, s]). * * fundamental principle of constraint-based security when an auxiliary variable is functionally determined by a secret and a constraint, the joint entropy equals the secret&#39;s entropy alone. this formalizes the principle that &#34;knowing possible solution pairs gives exactly the same information as knowing the constraint on the secret.&#34; this principle underlies many mpc protocols where: - [v2] is the secret to protect - [v3] is an auxiliary/helper variable - [s, u2, u3] form a constraint linking them - given constraint, [v3] is determined by [v2] (or vice versa)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V3_determined_centropy_v2.html" class="lemma-name">V3_determined_centropy_v2</a>
+                    </td>
+                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma V3_determined_centropy_v2 : `H([% V2, V3] | [% V1, U1, U2, U3, S]) = `H(V2 | [% V1, U1, U2, U3, S]).</code></td>
+                    <td class="meaning">* * Fundamental Principle of Constraint-Based Security When an auxiliary variable is functionally determined by a secret and a constraint, the joint entropy equals the secret&#39;s entropy alone. This formalizes the principle that &#34;knowing possible solution pairs gives exactly the same information as knowing the constraint on the secret.&#34; This principle underlies many MPC protocols where: - [V2] is the secret to protect - [V3] is an auxiliary/helper variable - [S, U2, U3] form a constraint linking them - Given constraint, [v3] is determined by [V2] (or vice versa)</td>
+                </tr>
+            
+                <tr data-search="privacy_by_bonded_leakage lemma privacy_by_bonded_leakage : `h([% v2, v3] | aliceview ) = `h(v2 | aliceview). privacy via bounded leakage: knowing (v2,v3) given alice&#39;s view is equivalent to knowing just v2. v3 adds no additional information because it&#39;s determined by v2 and the constraint. this is the core privacy guarantee for bob&#39;s input v2.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/privacy_by_bonded_leakage.html" class="lemma-name">privacy_by_bonded_leakage</a>
+                    </td>
+                    <td class="section-name">semi_honest_case_analysis</td>
+                    <td class="proof-lines">84</td>
+                    <td><code class="signature">Lemma privacy_by_bonded_leakage : `H([% V2, V3] | AliceView ) = `H(V2 | AliceView).</code></td>
+                    <td class="meaning">Privacy via bounded leakage: knowing (V2,V3) given Alice&#39;s view is equivalent to knowing just V2. V3 adds no additional information because it&#39;s determined by V2 and the constraint. This is the core privacy guarantee for Bob&#39;s input V2.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dsdp/dsdp_program.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_program.v</span>
+        </div>
+        <span class="file-count">3 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_ok lemma dsdp_ok : dsdp 15 = ([:: finish; finish; finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]). protocol execution result: running dsdp for 15 steps produces the expected final state with all parties finished and their respective traces.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_ok.html" class="lemma-name">dsdp_ok</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_ok : dsdp 15 = ([:: Finish; Finish; Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
+                    <td class="meaning">Protocol execution result: running dsdp for 15 steps produces the expected final state with all parties finished and their respective traces.</td>
+                </tr>
+            
+                <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_traces_ok.html" class="lemma-name">dsdp_traces_ok</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]].</code></td>
+                    <td class="meaning">Trace structure: each party&#39;s trace contains their view of the protocol. Alice sees: final sum S, encrypted values, randoms r2/r3, coefficients u_i, her input v1. Bob sees: encrypted partial sums, his input v2. Charlie sees: encrypted partial sum, his input v3.</td>
+                </tr>
+            
+                <tr data-search="dsdp_is_correct lemma dsdp_is_correct: is_dsdp dsdp_traces. protocol correctness: the final result s satisfies s = u1*v1 + u2*v2 + u3*v3. this verifies the dsdp protocol computes the intended dot product.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_is_correct.html" class="lemma-name">dsdp_is_correct</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma dsdp_is_correct: is_dsdp dsdp_traces.</code></td>
+                    <td class="meaning">Protocol correctness: the final result S satisfies S = u1*v1 + u2*v2 + u3*v3. This verifies the DSDP protocol computes the intended dot product.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dsdp/dsdp_security.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_security.v</span>
+        </div>
+        <span class="file-count">1 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="aliceview_entropy_connection lemma aliceview_entropy_connection : `h([% v2, v3] | aliceview) = `h([% v2, v3] | [% v1, u1, u2, u3, s]). bridge lemma: aliceview conditioning equals base conditioning for [v2,v3]">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/AliceView_entropy_connection.html" class="lemma-name">AliceView_entropy_connection</a>
+                    </td>
+                    <td class="section-name">dsdp_security</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma AliceView_entropy_connection : `H([% V2, V3] | AliceView) = `H([% V2, V3] | [% V1, U1, U2, U3, S]).</code></td>
+                    <td class="meaning">Bridge lemma: AliceView conditioning equals base conditioning for [V2,V3]</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="entropy_fiber/entropy_fibers.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">entropy_fiber/entropy_fibers.v</span>
+        </div>
+        <span class="file-count">11 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="mem_image_set lemma mem_image_set c : (c \in image_set) = [exists x, f x == c]. alternative characterization: c is in image iff fiber is non-empty">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/mem_image_set.html" class="lemma-name">mem_image_set</a>
+                    </td>
+                    <td class="section-name">abstract_fibers</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma mem_image_set c : (c \in image_set) = [exists x, f x == c].</code></td>
+                    <td class="meaning">Alternative characterization: c is in image iff fiber is non-empty</td>
+                </tr>
+            
+                <tr data-search="fiber_non_empty_image lemma fiber_non_empty_image c : (c \in image_set) = (fiber c != set0). c is in the image of f iff its fiber (preimage) is non-empty">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fiber_non_empty_image.html" class="lemma-name">fiber_non_empty_image</a>
+                    </td>
+                    <td class="section-name">abstract_fibers</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma fiber_non_empty_image c : (c \in image_set) = (fiber c != set0).</code></td>
+                    <td class="meaning">c is in the image of f iff its fiber (preimage) is non-empty</td>
+                </tr>
+            
+                <tr data-search="mem_fiber lemma mem_fiber x c : (x \in fiber c) = (f x == c). membership in fiber">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/mem_fiber.html" class="lemma-name">mem_fiber</a>
+                    </td>
+                    <td class="section-name">abstract_fibers</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma mem_fiber x c : (x \in fiber c) = (f x == c).</code></td>
+                    <td class="meaning">Membership in fiber</td>
+                </tr>
+            
+                <tr data-search="nmem_fiber lemma nmem_fiber x c : (x \notin fiber c) = (f x != c). values outside fiber have f(x) ≠ c">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/nmem_fiber.html" class="lemma-name">nmem_fiber</a>
+                    </td>
+                    <td class="section-name">abstract_fibers</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma nmem_fiber x c : (x \notin fiber c) = (f x != c).</code></td>
+                    <td class="meaning">Values outside fiber have f(x) ≠ c</td>
+                </tr>
+            
+                <tr data-search="fiberc_cond_pr0 lemma fiberc_cond_pr0 (c : codomaint) (x : domaint) : `pr[y = c] != 0 -&gt; x \notin fiber f c -&gt; `pr[x = x | y = c] = 0. helper: values outside the fiber have zero conditional probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fiberC_cond_Pr0.html" class="lemma-name">fiberC_cond_Pr0</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma fiberC_cond_Pr0 (c : CodomainT) (x : DomainT) : `Pr[Y = c] != 0 -&gt; x \notin fiber f c -&gt; `Pr[X = x | Y = c] = 0.</code></td>
+                    <td class="meaning">Helper: values outside the fiber have zero conditional probability</td>
+                </tr>
+            
+                <tr data-search="entropy_uniform_set lemma entropy_uniform_set (s : {set domaint}) (n : nat) : #|s| = n -&gt; (0 &lt; n)%n -&gt; (- \sum_(x in s) n%:r^-1 * log (n%:r^-1 : r)) = log (n%:r : r). * entropy unfolded: sum of uniform probabilities equals log |s|.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/entropy_uniform_set.html" class="lemma-name">entropy_uniform_set</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma entropy_uniform_set (S : {set DomainT}) (n : nat) : #|S| = n -&gt; (0 &lt; n)%N -&gt; (- \sum_(x in S) n%:R^-1 * log (n%:R^-1 : R)) = log (n%:R : R).</code></td>
+                    <td class="meaning">* Entropy unfolded: sum of uniform probabilities equals log |S|.</td>
+                </tr>
+            
+                <tr data-search="entropy_fdist_uniform_set lemma entropy_fdist_uniform_set (s : {set domaint}) (n : nat) : #|s| = n -&gt; (0 &lt; n)%n -&gt; exists (p : r.-fdist domaint), (forall x, x \in s -&gt; p x = n%:r^-1) -&gt; (forall x, x \notin s -&gt; p x = 0) -&gt; `h p = log (n%:r : r). note: although this is the same as the lemma above, it is difficult to use this version in the following `centropy1_uniform_fiber` proof. so both versions are kept.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/entropy_fdist_uniform_set.html" class="lemma-name">entropy_fdist_uniform_set</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma entropy_fdist_uniform_set (S : {set DomainT}) (n : nat) : #|S| = n -&gt; (0 &lt; n)%N -&gt; exists (P : R.-fdist DomainT), (forall x, x \in S -&gt; P x = n%:R^-1) -&gt; (forall x, x \notin S -&gt; P x = 0) -&gt; `H P = log (n%:R : R).</code></td>
+                    <td class="meaning">Note: although this is the same as the lemma above, it is difficult to use this version in the following `centropy1_uniform_fiber` proof. So both versions are kept.</td>
+                </tr>
+            
+                <tr data-search="centropy1_uniform_fiber lemma centropy1_uniform_fiber (c : codomaint) : `pr[y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `pr[x = x | y = c] = #|fiber_c|%:r ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `pr[x = x | y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%n -&gt; `h[x | y = c] = log (#|fiber_c|%:r : r). if x is uniform over fiber(c) given y=c, then h(x|y=c) = log|fiber(c)|. key lemma for computing conditional entropy via fiber cardinality.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy1_uniform_fiber.html" class="lemma-name">centropy1_uniform_fiber</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma centropy1_uniform_fiber (c : CodomainT) : `Pr[Y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `Pr[X = x | Y = c] = #|fiber_c|%:R ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `Pr[X = x | Y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%N -&gt; `H[X | Y = c] = log (#|fiber_c|%:R : R).</code></td>
+                    <td class="meaning">If X is uniform over fiber(c) given Y=c, then H(X|Y=c) = log|fiber(c)|. Key lemma for computing conditional entropy via fiber cardinality.</td>
+                </tr>
+            
+                <tr data-search="centropy_constant_fibers lemma centropy_constant_fibers (fiber_card : nat) : (forall c, c \in image_set f -&gt; #|fiber f c| = fiber_card) -&gt; (0 &lt; fiber_card)%n -&gt; `h(x | y) = log (fiber_card%:r : r). then overall conditional entropy is constant">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_constant_fibers.html" class="lemma-name">centropy_constant_fibers</a>
+                    </td>
+                    <td class="section-name">constant_fiber_size</td>
+                    <td class="proof-lines">26</td>
+                    <td><code class="signature">Lemma centropy_constant_fibers (fiber_card : nat) : (forall c, c \in image_set f -&gt; #|fiber f c| = fiber_card) -&gt; (0 &lt; fiber_card)%N -&gt; `H(X | Y) = log (fiber_card%:R : R).</code></td>
+                    <td class="meaning">Then overall conditional entropy is constant</td>
+                </tr>
+            
+                <tr data-search="fiberc_jcond_pr0 lemma fiberc_jcond_pr0 (y : yt) (z : zt) (x : xt) : `pr[[% y, z] = (y, z)] != 0 -&gt; g x y != z -&gt; `pr[x = x | [% y, z] = (y, z)] = 0. helper: values outside the fiber have zero conditional probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fiberC_jcond_Pr0.html" class="lemma-name">fiberC_jcond_Pr0</a>
+                    </td>
+                    <td class="section-name">conditional_entropy_with_functional_constraint</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma fiberC_jcond_Pr0 (y : YT) (z : ZT) (x : XT) : `Pr[[% Y, Z] = (y, z)] != 0 -&gt; g x y != z -&gt; `Pr[X = x | [% Y, Z] = (y, z)] = 0.</code></td>
+                    <td class="meaning">Helper: values outside the fiber have zero conditional probability</td>
+                </tr>
+            
+                <tr data-search="centropy_jcond_determined_fibers lemma centropy_jcond_determined_fibers (fiber_card : nat) : (forall y z, `pr[[% y, z] = (y, z)] != 0 -&gt; #|[set x&#39; | g x&#39; y == z]| = fiber_card) -&gt; (0 &lt; fiber_card)%n -&gt; `h(x | [% y, z]) = log (fiber_card%:r : r). when fibers have constant cardinality and x is uniform over each fiber, the conditional entropy is log(fiber_card). joint conditioning version.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_jcond_determined_fibers.html" class="lemma-name">centropy_jcond_determined_fibers</a>
+                    </td>
+                    <td class="section-name">conditional_entropy_with_functional_constraint</td>
+                    <td class="proof-lines">48</td>
+                    <td><code class="signature">Lemma centropy_jcond_determined_fibers (fiber_card : nat) : (forall y z, `Pr[[% Y, Z] = (y, z)] != 0 -&gt; #|[set x&#39; | g x&#39; y == z]| = fiber_card) -&gt; (0 &lt; fiber_card)%N -&gt; `H(X | [% Y, Z]) = log (fiber_card%:R : R).</code></td>
+                    <td class="meaning">When fibers have constant cardinality and X is uniform over each fiber, the conditional entropy is log(fiber_card). Joint conditioning version.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="entropy_fiber/entropy_linear_fibers.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">entropy_fiber/entropy_linear_fibers.v</span>
+        </div>
+        <span class="file-count">12 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="row_neq0_exists lemma row_neq0_exists (u : &#39;rv[msg]_n) : u != 0 -&gt; exists i, u ord0 i != 0. this is a simple utility kept as-is for convenience">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/row_neq0_exists.html" class="lemma-name">row_neq0_exists</a>
+                    </td>
+                    <td class="section-name">linear_functional</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma row_neq0_exists (u : &#39;rV[msg]_n) : u != 0 -&gt; exists i, u ord0 i != 0.</code></td>
+                    <td class="meaning">This is a simple utility kept as-is for convenience</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_nonzero lemma linear_fiber_nonzero (u : &#39;rv[msg]_n) : u != 0 -&gt; forall s, (0 &lt; #|linear_fiber u s|)%n. constructive proof: explicitly builds a solution by choosing one coordinate">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_nonzero.html" class="lemma-name">linear_fiber_nonzero</a>
+                    </td>
+                    <td class="section-name">linear_functional</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma linear_fiber_nonzero (u : &#39;rV[msg]_n) : u != 0 -&gt; forall s, (0 &lt; #|linear_fiber u s|)%N.</code></td>
+                    <td class="meaning">Constructive proof: explicitly builds a solution by choosing one coordinate</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_kernel_card lemma linear_fiber_kernel_card (u : &#39;rv[msg]_n) (s : msg) (x0 : &#39;rv[msg]_n) : u *d x0 = s -&gt; #|linear_fiber u s| = #|[set v : &#39;rv[msg]_n | u *d v == 0]|. helper: fiber cardinality equals kernel cardinality">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_kernel_card.html" class="lemma-name">linear_fiber_kernel_card</a>
+                    </td>
+                    <td class="section-name">linear_functional</td>
+                    <td class="proof-lines">19</td>
+                    <td><code class="signature">Lemma linear_fiber_kernel_card (u : &#39;rV[msg]_n) (s : msg) (x0 : &#39;rV[msg]_n) : u *d x0 = s -&gt; #|linear_fiber u s| = #|[set v : &#39;rV[msg]_n | u *d v == 0]|.</code></td>
+                    <td class="meaning">Helper: fiber cardinality equals kernel cardinality</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_card_eq lemma linear_fiber_card_eq (u : &#39;rv[msg]_n) : u != 0 -&gt; forall s1 s2, #|linear_fiber u s1| = #|linear_fiber u s2|. all fibers of a linear functional have equal cardinality. why this wrapper: the general rouché-capelli theory works with matrices ax=b, but entropy applications use dot products u·v = s. this wrapper: 1. hides matrix notation - takes row vector u directly 2. provides the natural &#34;for all targets s1, s2&#34; interface 3. enables direct application in entropy_fibers.v&#39;s constant-fiber framework mathematical content: fiber(s) = x₀ + ker(u) for any solution x₀, so |fiber(s₁)| = |ker(u)| = |fiber(s₂)|.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_card_eq.html" class="lemma-name">linear_fiber_card_eq</a>
+                    </td>
+                    <td class="section-name">linear_functional</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma linear_fiber_card_eq (u : &#39;rV[msg]_n) : u != 0 -&gt; forall s1 s2, #|linear_fiber u s1| = #|linear_fiber u s2|.</code></td>
+                    <td class="meaning">All fibers of a linear functional have equal cardinality. WHY THIS WRAPPER: The general Rouché-Capelli theory works with matrices Ax=b, but entropy applications use dot products u·v = s. This wrapper: 1. Hides matrix notation - takes row vector u directly 2. Provides the natural &#34;for all targets s1, s2&#34; interface 3. Enables direct application in entropy_fibers.v&#39;s constant-fiber framework Mathematical content: fiber(s) = x₀ + ker(u) for any solution x₀, so |fiber(s₁)| = |ker(u)| = |fiber(s₂)|.</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_card lemma linear_fiber_card (u : &#39;rv[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%n -&gt; #|linear_fiber u s| = (#|msg| ^ n.-1)%n. fiber cardinality for linear functional: |{v | u·v = s}| = |f|^(n-1). why this wrapper: the general count_affine_solutions_explicit requires: - a matrix a and target b - a particular solution x₀ with ax₀ = b - explicit rank computation this wrapper provides the cleaner entropy-focused api: - takes coefficient vector u and target s directly - handles the rank(u) = 1 case (single equation) automatically - returns |field|^(n-1) directly for use in log calculations example: for 2d with |f| = m, fiber has m^1 = m elements ⟹ entropy = log(m).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_card.html" class="lemma-name">linear_fiber_card</a>
+                    </td>
+                    <td class="section-name">linear_functional</td>
+                    <td class="proof-lines">19</td>
+                    <td><code class="signature">Lemma linear_fiber_card (u : &#39;rV[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%N -&gt; #|linear_fiber u s| = (#|msg| ^ n.-1)%N.</code></td>
+                    <td class="meaning">Fiber cardinality for linear functional: |{v | u·v = s}| = |F|^(n-1). WHY THIS WRAPPER: The general count_affine_solutions_explicit requires: - A matrix A and target b - A particular solution x₀ with Ax₀ = b - Explicit rank computation This wrapper provides the cleaner entropy-focused API: - Takes coefficient vector u and target s directly - Handles the rank(u) = 1 case (single equation) automatically - Returns |field|^(n-1) directly for use in log calculations Example: For 2D with |F| = m, fiber has m^1 = m elements ⟹ entropy = log(m).</td>
+                </tr>
+            
+                <tr data-search="dotpe lemma dotpe (n : nat) (u v : &#39;rv[msg]_n) : dotp u v = \sum_(i &lt; n) u 0 i * v 0 i. alternative sum formulation (for reference)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotpE.html" class="lemma-name">dotpE</a>
+                    </td>
+                    <td class="section-name">bilinear_form</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dotpE (n : nat) (u v : &#39;rV[msg]_n) : dotp u v = \sum_(i &lt; n) u 0 i * v 0 i.</code></td>
+                    <td class="meaning">Alternative sum formulation (for reference)</td>
+                </tr>
+            
+                <tr data-search="bilinear_solutions_fibere lemma bilinear_solutions_fibere (n : nat) (u : &#39;rv[msg]_n) (s : msg) : bilinear_solutions u s = linear_fiber u s. connection to linear_fiber: dotp = linear_functional = dotmul">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bilinear_solutions_fiberE.html" class="lemma-name">bilinear_solutions_fiberE</a>
+                    </td>
+                    <td class="section-name">bilinear_form</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma bilinear_solutions_fiberE (n : nat) (u : &#39;rV[msg]_n) (s : msg) : bilinear_solutions u s = linear_fiber u s.</code></td>
+                    <td class="meaning">Connection to linear_fiber: dotp = linear_functional = dotmul</td>
+                </tr>
+            
+                <tr data-search="bilinear_solutions_card lemma bilinear_solutions_card (n : nat) (u : &#39;rv[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%n -&gt; #|bilinear_solutions u s| = (#|msg| ^ n.-1)%n. for general n, the fiber has |msg|^(n-1) elements">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bilinear_solutions_card.html" class="lemma-name">bilinear_solutions_card</a>
+                    </td>
+                    <td class="section-name">bilinear_form</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma bilinear_solutions_card (n : nat) (u : &#39;rV[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%N -&gt; #|bilinear_solutions u s| = (#|msg| ^ n.-1)%N.</code></td>
+                    <td class="meaning">For general n, the fiber has |msg|^(n-1) elements</td>
+                </tr>
+            
+                <tr data-search="dotp2_eq_matrix lemma dotp2_eq_matrix (x y : msg * msg) : dotp2 x y = tuple2_to_row x *d tuple2_to_row y. dotp2 matches dotmul of row vectors">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotp2_eq_matrix.html" class="lemma-name">dotp2_eq_matrix</a>
+                    </td>
+                    <td class="section-name">tuple_bilinear_form</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dotp2_eq_matrix (x y : msg * msg) : dotp2 x y = tuple2_to_row x *d tuple2_to_row y.</code></td>
+                    <td class="meaning">dotp2 matches dotmul of row vectors</td>
+                </tr>
+            
+                <tr data-search="dotp2_solutions_card lemma dotp2_solutions_card (u : msg * msg) (s : msg) : u != (0, 0) -&gt; #|dotp2_solutions u s| = m. direct application of count_affine_solutions_rank1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotp2_solutions_card.html" class="lemma-name">dotp2_solutions_card</a>
+                    </td>
+                    <td class="section-name">tuple_bilinear_form</td>
+                    <td class="proof-lines">31</td>
+                    <td><code class="signature">Lemma dotp2_solutions_card (u : msg * msg) (s : msg) : u != (0, 0) -&gt; #|dotp2_solutions u s| = m.</code></td>
+                    <td class="meaning">Direct application of count_affine_solutions_rank1</td>
+                </tr>
+            
+                <tr data-search="constrained_pairs_card lemma constrained_pairs_card (u2 u3 target : msg) : u3 != 0 -&gt; #|constrained_pairs u2 u3 target| = m. thin wrapper around count_affine_solutions_rank1 from rouche_capelli.v: for the rank-1 linear system u2*x + u3*y = target with u3 ≠ 0, there are exactly #|k| solutions. this is the exact theorem proven at line 409-520 of rouche_capelli.v.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/constrained_pairs_card.html" class="lemma-name">constrained_pairs_card</a>
+                    </td>
+                    <td class="section-name">multi_dimensional_solutions</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma constrained_pairs_card (u2 u3 target : msg) : u3 != 0 -&gt; #|constrained_pairs u2 u3 target| = m.</code></td>
+                    <td class="meaning">Thin wrapper around count_affine_solutions_rank1 from rouche_capelli.v: For the rank-1 linear system u2*x + u3*y = target with u3 ≠ 0, there are exactly #|K| solutions. This is the EXACT theorem proven at line 409-520 of rouche_capelli.v.</td>
+                </tr>
+            
+                <tr data-search="constrained_triples_card lemma constrained_triples_card (u1 u2 u3 target : msg) : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|constrained_triples u1 u2 u3 target| = (m ^ 2)%n. constrained_triples_card: |{(v1,v2,v3) : u1*v1 + u2*v2 + u3*v3 = s}| = m^2 status: aborted - not needed for dsdp protocol analysis reason: in dsdp, only alice (result-computing party) knows the constraint result s. alice&#39;s view already includes v1, reducing the problem from 3d to 2d: alice knows: v1, u1, u2, u3, s alice infers: (v2, v3) from u2*v2 + u3*v3 = s - u1*v1 use: constrained_pairs_card gives |{(v2,v3)}| = m when needed: this 3d lemma would be required for protocols where: - adversary sees only (u1,u2,u3,s) but no variable values example: external eavesdropper on constraint announcement - multi-round leakage analysis: h(v1,v2,v3|u,s) before revelation then h(v2,v3|v1,u,s) after, measuring δ = log(m^2) - log(m) = log(m) - protocol composition: multiple dsdp instances before any vi revealed for dsdp-specific version, see dsdp_solution_set_card_full in dsdp_algebra.v">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/constrained_triples_card.html" class="lemma-name">constrained_triples_card</a>
+                    </td>
+                    <td class="section-name">multi_dimensional_solutions</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma constrained_triples_card (u1 u2 u3 target : msg) : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|constrained_triples u1 u2 u3 target| = (m ^ 2)%N.</code></td>
+                    <td class="meaning">constrained_triples_card: |{(v1,v2,v3) : u1*v1 + u2*v2 + u3*v3 = s}| = m^2 STATUS: Aborted - not needed for DSDP protocol analysis REASON: In DSDP, only Alice (result-computing party) knows the constraint result s. Alice&#39;s view already includes v1, reducing the problem from 3D to 2D: Alice knows: v1, u1, u2, u3, s Alice infers: (v2, v3) from u2*v2 + u3*v3 = s - u1*v1 Use: constrained_pairs_card gives |{(v2,v3)}| = m WHEN NEEDED: This 3D lemma would be required for protocols where: - Adversary sees only (u1,u2,u3,s) but NO variable values Example: External eavesdropper on constraint announcement - Multi-round leakage analysis: H(V1,V2,V3|U,S) before revelation then H(V2,V3|V1,U,S) after, measuring Δ = log(m^2) - log(m) = log(m) - Protocol composition: Multiple DSDP instances before any vi revealed For DSDP-specific version, see dsdp_solution_set_card_full in dsdp_algebra.v</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="lib/extra_algebra.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/extra_algebra.v</span>
+        </div>
+        <span class="file-count">8 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="logr_eq1 lemma logr_eq1 (x : r) : 0 &lt; x -&gt; (log x = 0) &lt;-&gt; (x = 1). log x = 0 iff x = 1 (for positive x). this is fundamental for entropy calculations where log(prob) = 0 implies the probability is 1 (certainty).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/logr_eq1.html" class="lemma-name">logr_eq1</a>
+                    </td>
+                    <td class="section-name">log_extra</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma logr_eq1 (x : R) : 0 &lt; x -&gt; (log x = 0) &lt;-&gt; (x = 1).</code></td>
+                    <td class="meaning">log x = 0 iff x = 1 (for positive x). This is fundamental for entropy calculations where log(prob) = 0 implies the probability is 1 (certainty).</td>
+                </tr>
+            
+                <tr data-search="bigd1_filter lemma bigd1_filter {r : type} {op : semigroup.com_law r} {idx : r} {i : eqtype} (r : seq i) (j : i) (p : pred i) (f : i -&gt; r) : j \in r -&gt; p j -&gt; uniq r -&gt; \big[op/idx]_(i &lt;- [seq x &lt;- r | p x]) f i = op (f j) (\big[op/idx]_(i &lt;- [seq x &lt;- r | p x] | i != j) f i). extract a term from a filtered big operation: if j is in r and satisfies p, we can factor out f(j) from the sum/product over filtered elements. useful for manipulating sums over constrained index sets.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bigD1_filter.html" class="lemma-name">bigD1_filter</a>
+                    </td>
+                    <td class="section-name">bigop_extra</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma bigD1_filter {R : Type} {op : SemiGroup.com_law R} {idx : R} {I : eqType} (r : seq I) (j : I) (P : pred I) (F : I -&gt; R) : j \in r -&gt; P j -&gt; uniq r -&gt; \big[op/idx]_(i &lt;- [seq x &lt;- r | P x]) F i = op (F j) (\big[op/idx]_(i &lt;- [seq x &lt;- r | P x] | i != j) F i).</code></td>
+                    <td class="meaning">Extract a term from a filtered big operation: if j is in r and satisfies P, we can factor out F(j) from the sum/product over filtered elements. Useful for manipulating sums over constrained index sets.</td>
+                </tr>
+            
+                <tr data-search="bigd1_seq_cond lemma bigd1_seq_cond {r : type} {op : semigroup.com_law r} {idx : r} {i : eqtype} (r : seq i) (j : i) (p : pred i) (f : i -&gt; r) : j \in r -&gt; p j -&gt; uniq r -&gt; \big[op/idx]_(i &lt;- r | p i) f i = op (f j) (\big[op/idx]_(i &lt;- r | p i &amp;&amp; (i != j)) f i). extract a term from a conditional big operation over a sequence. similar to bigd1 but for conditional sums: factors out f(j) when j satisfies p, leaving the rest with an additional (i != j) condition.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bigD1_seq_cond.html" class="lemma-name">bigD1_seq_cond</a>
+                    </td>
+                    <td class="section-name">bigop_extra</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma bigD1_seq_cond {R : Type} {op : SemiGroup.com_law R} {idx : R} {I : eqType} (r : seq I) (j : I) (P : pred I) (F : I -&gt; R) : j \in r -&gt; P j -&gt; uniq r -&gt; \big[op/idx]_(i &lt;- r | P i) F i = op (F j) (\big[op/idx]_(i &lt;- r | P i &amp;&amp; (i != j)) F i).</code></td>
+                    <td class="meaning">Extract a term from a conditional big operation over a sequence. Similar to bigD1 but for conditional sums: factors out F(j) when j satisfies P, leaving the rest with an additional (i != j) condition.</td>
+                </tr>
+            
+                <tr data-search="coprime_zp_unit lemma coprime_zp_unit (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; coprime x m -&gt; x \is a gring.unit. key lemma from mathcomp: unitzpe (x%:r : &#39;z_m) \is a gring.unit = coprime m x (when 1 &lt; m) for x : &#39;z_m, we have x = (nat_of_ord x)%:r, so we can apply unitzpe directly.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/coprime_Zp_unit.html" class="lemma-name">coprime_Zp_unit</a>
+                    </td>
+                    <td class="section-name">Zp_unit_extra</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma coprime_Zp_unit (m : nat) (x : &#39;Z_m) : (1 &lt; m)%N -&gt; coprime x m -&gt; x \is a GRing.unit.</code></td>
+                    <td class="meaning">Key lemma from MathComp: unitZpE (x%:R : &#39;Z_m) \is a GRing.unit = coprime m x (when 1 &lt; m) For x : &#39;Z_m, we have x = (nat_of_ord x)%:R, so we can apply unitZpE directly.</td>
+                </tr>
+            
+                <tr data-search="zp_unit_coprime lemma zp_unit_coprime (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; x \is a gring.unit -&gt; coprime x m. uses unitzpe in reverse: (x%:r) \is a gring.unit = coprime m x">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_unit_coprime.html" class="lemma-name">Zp_unit_coprime</a>
+                    </td>
+                    <td class="section-name">Zp_unit_extra</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma Zp_unit_coprime (m : nat) (x : &#39;Z_m) : (1 &lt; m)%N -&gt; x \is a GRing.unit -&gt; coprime x m.</code></td>
+                    <td class="meaning">Uses unitZpE in reverse: (x%:R) \is a GRing.unit = coprime m x</td>
+                </tr>
+            
+                <tr data-search="zp_unitp lemma zp_unitp (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; (x \is a gring.unit) = coprime x m. equivalence form: unit status iff coprime (when m &gt; 1)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_unitP.html" class="lemma-name">Zp_unitP</a>
+                    </td>
+                    <td class="section-name">Zp_unit_extra</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma Zp_unitP (m : nat) (x : &#39;Z_m) : (1 &lt; m)%N -&gt; (x \is a GRing.unit) = coprime x m.</code></td>
+                    <td class="meaning">Equivalence form: unit status iff coprime (when m &gt; 1)</td>
+                </tr>
+            
+                <tr data-search="zp_fp_card_eq lemma zp_fp_card_eq (m_minus_2 : nat) : let m := m_minus_2.+2 in prime m -&gt; #|&#39;z_m| = #|&#39;f_m|. when m is prime, &#39;z_m and &#39;f_m have the same cardinality">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_Fp_card_eq.html" class="lemma-name">Zp_Fp_card_eq</a>
+                    </td>
+                    <td class="section-name">Zp_Fp_equivalence</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma Zp_Fp_card_eq (m_minus_2 : nat) : let m := m_minus_2.+2 in prime m -&gt; #|&#39;Z_m| = #|&#39;F_m|.</code></td>
+                    <td class="meaning">When m is prime, &#39;Z_m and &#39;F_m have the same cardinality</td>
+                </tr>
+            
+                <tr data-search="entropy_formula_same lemma entropy_formula_same (m : nat) : (1 &lt; m)%n -&gt; log (m%:r : r) = log (m%:r : r). reflexivity lemma for entropy formulas over z_m. this trivial lemma serves as a proof obligation discharge when showing that entropy calculations over different representations (e.g., &#39;z_m vs &#39;f_m when m is prime) yield identical results.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/entropy_formula_same.html" class="lemma-name">entropy_formula_same</a>
+                    </td>
+                    <td class="section-name">Zp_Fp_equivalence</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma entropy_formula_same (m : nat) : (1 &lt; m)%N -&gt; log (m%:R : R) = log (m%:R : R).</code></td>
+                    <td class="meaning">Reflexivity lemma for entropy formulas over Z_m. This trivial lemma serves as a proof obligation discharge when showing that entropy calculations over different representations (e.g., &#39;Z_m vs &#39;F_m when m is prime) yield identical results.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="lib/extra_entropy.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/extra_entropy.v</span>
+        </div>
+        <span class="file-count">8 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (prob : a -&gt; r) : (forall a, s a -&gt; prob a = p) -&gt; (forall a, ~~ s a -&gt; prob a = 0) -&gt; (- \sum_(a : a) prob a * log (prob a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/entropy_sum_split.html" class="lemma-name">entropy_sum_split</a>
+                    </td>
+                    <td class="section-name">entropy_sum</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (prob : A -&gt; R) : (forall a, S a -&gt; prob a = p) -&gt; (forall a, ~~ S a -&gt; prob a = 0) -&gt; (- \sum_(a : A) prob a * log (prob a)) = (- \sum_(a : A | S a) p * log p).</code></td>
+                    <td class="meaning">Entropy sum over a subset with uniform probability</td>
+                </tr>
+            
+                <tr data-search="cinde_cond_mutual_info0 lemma cinde_cond_mutual_info0 : p |= x _|_ y | z -&gt; cond_mutual_info `p_[% x, y, z] = 0. conditional independence implies zero conditional mutual information: if x ⊥ y | z, then i(x;y|z) = 0. this is the information-theoretic characterization of conditional independence.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cinde_cond_mutual_info0.html" class="lemma-name">cinde_cond_mutual_info0</a>
+                    </td>
+                    <td class="section-name">cinde_cond_mutual_info0</td>
+                    <td class="proof-lines">40</td>
+                    <td><code class="signature">Lemma cinde_cond_mutual_info0 : P |= X _|_ Y | Z -&gt; cond_mutual_info `p_[% X, Y, Z] = 0.</code></td>
+                    <td class="meaning">Conditional independence implies zero conditional mutual information: If X ⊥ Y | Z, then I(X;Y|Z) = 0. This is the information-theoretic characterization of conditional independence.</td>
+                </tr>
+            
+                <tr data-search="zero_entropy_eq_point_mass1 lemma zero_entropy_eq_point_mass1 (v: fintype) (z : {rv p -&gt; v}) : `h `p_z = 0 &lt;-&gt; exists z, `pr[z = z] = 1. zero entropy characterizes point mass distributions: h(z) = 0 iff there exists z with pr[z = z] = 1. this is the deterministic case - no uncertainty means one certain outcome.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/zero_entropy_eq_point_mass1.html" class="lemma-name">zero_entropy_eq_point_mass1</a>
+                    </td>
+                    <td class="section-name">zero_entropy_eq_point_mass</td>
+                    <td class="proof-lines">72</td>
+                    <td><code class="signature">Lemma zero_entropy_eq_point_mass1 (V: finType) (Z : {RV P -&gt; V}) : `H `p_Z = 0 &lt;-&gt; exists z, `Pr[Z = z] = 1.</code></td>
+                    <td class="meaning">Zero entropy characterizes point mass distributions: H(Z) = 0 iff there exists z with Pr[Z = z] = 1. This is the deterministic case - no uncertainty means one certain outcome.</td>
+                </tr>
+            
+                <tr data-search="zero_entropy_eq_point_mass lemma zero_entropy_eq_point_mass (v: fintype) (z : {rv p -&gt; v}) : `h `p_z = 0 &lt;-&gt; exists! z, `pr[z = z] = 1. unique point mass characterization: h(z) = 0 iff there exists unique z with pr[z = z] = 1. strengthens zero_entropy_eq_point_mass1 with uniqueness.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/zero_entropy_eq_point_mass.html" class="lemma-name">zero_entropy_eq_point_mass</a>
+                    </td>
+                    <td class="section-name">zero_entropy_eq_point_mass</td>
+                    <td class="proof-lines">20</td>
+                    <td><code class="signature">Lemma zero_entropy_eq_point_mass (V: finType) (Z : {RV P -&gt; V}) : `H `p_Z = 0 &lt;-&gt; exists! z, `Pr[Z = z] = 1.</code></td>
+                    <td class="meaning">Unique point mass characterization: H(Z) = 0 iff there exists UNIQUE z with Pr[Z = z] = 1. Strengthens zero_entropy_eq_point_mass1 with uniqueness.</td>
+                </tr>
+            
+                <tr data-search="centropy_term_deterministic lemma centropy_term_deterministic (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) : `pr[y = y] != 0 -&gt; (exists z, `pr[z = z | y = y] = 1) -&gt; `p_y y * centropy1 `p_[% z, y] y = 0. helper: if the conditional distribution pr[z | y = y] is deterministic (i.e., there exists z with pr[z = z | y = y] = 1), then the corresponding term in the conditional entropy sum is zero.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_term_deterministic.html" class="lemma-name">centropy_term_deterministic</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">28</td>
+                    <td><code class="signature">Lemma centropy_term_deterministic (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) : `Pr[Y = y] != 0 -&gt; (exists z, `Pr[Z = z | Y = y] = 1) -&gt; `p_Y y * centropy1 `p_[% Z, Y] y = 0.</code></td>
+                    <td class="meaning">Helper: if the conditional distribution Pr[Z | Y = y] is deterministic (i.e., there exists z with Pr[Z = z | Y = y] = 1), then the corresponding term in the conditional entropy sum is zero.</td>
+                </tr>
+            
+                <tr data-search="jfdist_cond_entropy_zero lemma jfdist_cond_entropy_zero (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) (hy_marginal : (`p_[% y, z])`1 y != 0) (hy_centropy_zero : - (\sum_(b in w) \pr_`p_[% z, y][[set b] | [set y]] * log \pr_`p_[% z, y][[set b] | [set y]]) = 0) : let cond_dist := jfdist_cond0 `p_[% y, z] y hy_marginal in `h cond_dist = 0. helper: conditional distribution has zero entropy when centropy1 is zero">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/jfdist_cond_entropy_zero.html" class="lemma-name">jfdist_cond_entropy_zero</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma jfdist_cond_entropy_zero (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (Hy_marginal : (`p_[% Y, Z])`1 y != 0) (Hy_centropy_zero : - (\sum_(b in W) \Pr_`p_[% Z, Y][[set b] | [set y]] * log \Pr_`p_[% Z, Y][[set b] | [set y]]) = 0) : let cond_dist := jfdist_cond0 `p_[% Y, Z] y Hy_marginal in `H cond_dist = 0.</code></td>
+                    <td class="meaning">Helper: Conditional distribution has zero entropy when centropy1 is zero</td>
+                </tr>
+            
+                <tr data-search="point_mass_to_cond_prob lemma point_mass_to_cond_prob (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) (z : w) (hy_marginal : (`p_[% y, z])`1 y != 0) (hz : (jfdist_cond0 `p_[% y, z] y hy_marginal) z = 1) : `pr[z = z | y = y] = 1. helper: point mass in conditional distribution implies conditional probability = 1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/point_mass_to_cond_prob.html" class="lemma-name">point_mass_to_cond_prob</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma point_mass_to_cond_prob (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (z : W) (Hy_marginal : (`p_[% Y, Z])`1 y != 0) (Hz : (jfdist_cond0 `p_[% Y, Z] y Hy_marginal) z = 1) : `Pr[Z = z | Y = y] = 1.</code></td>
+                    <td class="meaning">Helper: Point mass in conditional distribution implies conditional probability = 1</td>
+                </tr>
+            
+                <tr data-search="zero_centropy1_point_mass lemma zero_centropy1_point_mass (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) (hpryeq0 : `pr[y = y] != 0) (hy_centropy_zero : - (\sum_(b in w) \pr_`p_[% z, y][[set b] | [set y]] * log \pr_`p_[% z, y][[set b] | [set y]]) = 0) : exists z : w, `pr[z = z | y = y] = 1. helper: if the conditional entropy at y equals zero (as a prop equality = 0) then there exists z with pr[z = z | y = y] = 1.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/zero_centropy1_point_mass.html" class="lemma-name">zero_centropy1_point_mass</a>
+                    </td>
+                    <td class="section-name">zero_centropy_eq_point_mass</td>
+                    <td class="proof-lines">25</td>
+                    <td><code class="signature">Lemma zero_centropy1_point_mass (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (HPrYeq0 : `Pr[Y = y] != 0) (Hy_centropy_zero : - (\sum_(b in W) \Pr_`p_[% Z, Y][[set b] | [set y]] * log \Pr_`p_[% Z, Y][[set b] | [set y]]) = 0) : exists z : W, `Pr[Z = z | Y = y] = 1.</code></td>
+                    <td class="meaning">Helper: If the conditional entropy at y equals zero (as a Prop equality = 0) then there exists z with Pr[Z = z | Y = y] = 1.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="lib/extra_proba.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/extra_proba.v</span>
+        </div>
+        <span class="file-count">17 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="pair_notin_fin_img_fst lemma pair_notin_fin_img_fst (t a b : fintype) (p : r.-fdist t) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (a : a) (b : b) : a \notin fin_img x -&gt; (a, b) \notin fin_img [% x, y]. if a is not in the image of x, then (a, b) cannot be in the joint image. this is used to show that pairs outside the support have zero probability.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_notin_fin_img_fst.html" class="lemma-name">pair_notin_fin_img_fst</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma pair_notin_fin_img_fst (T A B : finType) (P : R.-fdist T) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (a : A) (b : B) : a \notin fin_img X -&gt; (a, b) \notin fin_img [% X, Y].</code></td>
+                    <td class="meaning">If a is not in the image of X, then (a, b) cannot be in the joint image. This is used to show that pairs outside the support have zero probability.</td>
+                </tr>
+            
+                <tr data-search="sum_cpr_eq lemma sum_cpr_eq (t a b : fintype) (p : r.-fdist t) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (y : b) : `pr[y = y] != 0 -&gt; \sum_(a in a) `pr[x = a | y = y] = 1. conditional probabilities sum to 1: σ_a pr[x = a | y = y] = 1. this is the law of total probability for conditional distributions, essential for showing that conditional distributions are valid fdists.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sum_cPr_eq.html" class="lemma-name">sum_cPr_eq</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">19</td>
+                    <td><code class="signature">Lemma sum_cPr_eq (T A B : finType) (P : R.-fdist T) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (y : B) : `Pr[Y = y] != 0 -&gt; \sum_(a in A) `Pr[X = a | Y = y] = 1.</code></td>
+                    <td class="meaning">Conditional probabilities sum to 1: Σ_a Pr[X = a | Y = y] = 1. This is the law of total probability for conditional distributions, essential for showing that conditional distributions are valid fdists.</td>
+                </tr>
+            
+                <tr data-search="cpr_eq_notin_fin_img lemma cpr_eq_notin_fin_img (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) (z : w) : z \notin fin_img z -&gt; `pr[z = z | y = y] = 0. helper lemma: if z is not in the image of z, then conditional probability is 0">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cPr_eq_notin_fin_img.html" class="lemma-name">cPr_eq_notin_fin_img</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma cPr_eq_notin_fin_img (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (z : W) : z \notin fin_img Z -&gt; `Pr[Z = z | Y = y] = 0.</code></td>
+                    <td class="meaning">Helper lemma: if z is not in the image of Z, then conditional probability is 0</td>
+                </tr>
+            
+                <tr data-search="cpr_eq_two_ones_absurd lemma cpr_eq_two_ones_absurd (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) (z z&#39; : w) : `pr[y = y] != 0 -&gt; z != z&#39; -&gt; `pr[z = z | y = y] = 1 -&gt; `pr[z = z&#39; | y = y] = 1 -&gt; false. helper: if two different values both have conditional probability 1, contradiction">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cPr_eq_two_ones_absurd.html" class="lemma-name">cPr_eq_two_ones_absurd</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma cPr_eq_two_ones_absurd (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (z z&#39; : W) : `Pr[Y = y] != 0 -&gt; z != z&#39; -&gt; `Pr[Z = z | Y = y] = 1 -&gt; `Pr[Z = z&#39; | Y = y] = 1 -&gt; False.</code></td>
+                    <td class="meaning">Helper: If two different values both have conditional probability 1, contradiction</td>
+                </tr>
+            
+                <tr data-search="jfdist_cond_cpr_eq lemma jfdist_cond_cpr_eq {t tx ty : fintype} (p : r.-fdist t) (x : {rv p -&gt; tx}) (y : {rv p -&gt; ty}) (x : tx) (y : ty) : `pr[x = x] != 0 -&gt; `p_[% x, y]`(|x) y = `pr[y = y | x = x]. conditional fdist equals conditional probability">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/jfdist_cond_cPr_eq.html" class="lemma-name">jfdist_cond_cPr_eq</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma jfdist_cond_cPr_eq {T TX TY : finType} (P : R.-fdist T) (X : {RV P -&gt; TX}) (Y : {RV P -&gt; TY}) (x : TX) (y : TY) : `Pr[X = x] != 0 -&gt; `p_[% X, Y]`(|x) y = `Pr[Y = y | X = x].</code></td>
+                    <td class="meaning">Conditional fdist equals conditional probability</td>
+                </tr>
+            
+                <tr data-search="cond_prob_zero_outside_constraint lemma cond_prob_zero_outside_constraint {t tx ty : fintype} (p : r.-fdist t) (x : {rv p -&gt; tx}) (y : {rv p -&gt; ty}) (constraint : tx -&gt; ty -&gt; bool) : (forall t, constraint (x t) (y t)) -&gt; forall x y, `pr[x = x] != 0 -&gt; ~~ constraint x y -&gt; `pr[y = y | x = x] = 0. if y must satisfy a property determined by x, then conditional probability is zero outside that property">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cond_prob_zero_outside_constraint.html" class="lemma-name">cond_prob_zero_outside_constraint</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma cond_prob_zero_outside_constraint {T TX TY : finType} (P : R.-fdist T) (X : {RV P -&gt; TX}) (Y : {RV P -&gt; TY}) (constraint : TX -&gt; TY -&gt; bool) : (forall t, constraint (X t) (Y t)) -&gt; forall x y, `Pr[X = x] != 0 -&gt; ~~ constraint x y -&gt; `Pr[Y = y | X = x] = 0.</code></td>
+                    <td class="meaning">If Y must satisfy a property determined by X, then conditional probability is zero outside that property</td>
+                </tr>
+            
+                <tr data-search="prx_fstrv lemma prx_fstrv (a b t : fintype) (p : r.-fdist t) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (x : a) : \sum_(y : b) `pr[[% x, y] = (x, y)] = `pr[x = x]. marginalization: summing joint probabilities over y yields marginal of x. σ_y pr[(x,y) = (x,y)] = pr[x = x]. fundamental for deriving marginals.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/PrX_fstRV.html" class="lemma-name">PrX_fstRV</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma PrX_fstRV (A B T : finType) (P : R.-fdist T) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (x : A) : \sum_(y : B) `Pr[[% X, Y] = (x, y)] = `Pr[X = x].</code></td>
+                    <td class="meaning">Marginalization: summing joint probabilities over Y yields marginal of X. Σ_y Pr[(X,Y) = (x,y)] = Pr[X = x]. Fundamental for deriving marginals.</td>
+                </tr>
+            
+                <tr data-search="jproduct_rulerv lemma jproduct_rulerv (a b t : fintype) (p : r.-fdist t) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (x : a) (y : b) : `pr[[% x, y] = (x, y)] = `pr[y = y] * `pr[x = x | y = y]. joint probability product rule: pr[(x,y) = (x,y)] = pr[y=y] * pr[x=x|y=y]. this is bayes&#39; theorem in product form, fundamental for decomposing joint distributions into marginal × conditional.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/jproduct_ruleRV.html" class="lemma-name">jproduct_ruleRV</a>
+                    </td>
+                    <td class="section-name">proba_extra</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma jproduct_ruleRV (A B T : finType) (P : R.-fdist T) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (x : A) (y : B) : `Pr[[% X, Y] = (x, y)] = `Pr[Y = y] * `Pr[X = x | Y = y].</code></td>
+                    <td class="meaning">Joint probability product rule: Pr[(X,Y) = (x,y)] = Pr[Y=y] * Pr[X=x|Y=y]. This is Bayes&#39; theorem in product form, fundamental for decomposing joint distributions into marginal × conditional.</td>
+                </tr>
+            
+                <tr data-search="fdist_proj23_rv3 lemma fdist_proj23_rv3 (ta tb tc : fintype) (x : {rv p -&gt; ta}) (y : {rv p -&gt; tb}) (z : {rv p -&gt; tc}) : fdist_proj23 `p_[% x, y, z] = `p_[% y, z]. projection of triple (x,y,z) onto (y,z) gives the joint distribution of (y,z). this connects fdist_proj23 with the random variable notation.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fdist_proj23_RV3.html" class="lemma-name">fdist_proj23_RV3</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma fdist_proj23_RV3 (TA TB TC : finType) (X : {RV P -&gt; TA}) (Y : {RV P -&gt; TB}) (Z : {RV P -&gt; TC}) : fdist_proj23 `p_[% X, Y, Z] = `p_[% Y, Z].</code></td>
+                    <td class="meaning">Projection of triple (X,Y,Z) onto (Y,Z) gives the joint distribution of (Y,Z). This connects fdist_proj23 with the random variable notation.</td>
+                </tr>
+            
+                <tr data-search="pfwd1_pair4_swap34 lemma pfwd1_pair4_swap34 (ta tb tc td : fintype) (x : {rv p -&gt; ta}) (y : {rv p -&gt; tb}) (z : {rv p -&gt; tc}) (w : {rv p -&gt; td}) a b c d : `pr[ [% x, y, z, w] = (a, b, c, d) ] = `pr[ [% x, y, w, z] = (a, b, d, c) ]. swap 3rd and 4th components in 4-tuple probability: pr[(x,y,z,w)=(a,b,c,d)] = pr[(x,y,w,z)=(a,b,d,c)]. used for reordering conditioning variables.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pfwd1_pair4_swap34.html" class="lemma-name">pfwd1_pair4_swap34</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma pfwd1_pair4_swap34 (TA TB TC TD : finType) (X : {RV P -&gt; TA}) (Y : {RV P -&gt; TB}) (Z : {RV P -&gt; TC}) (W : {RV P -&gt; TD}) a b c d : `Pr[ [% X, Y, Z, W] = (a, b, c, d) ] = `Pr[ [% X, Y, W, Z] = (a, b, d, c) ].</code></td>
+                    <td class="meaning">Swap 3rd and 4th components in 4-tuple probability: Pr[(X,Y,Z,W)=(a,b,c,d)] = Pr[(X,Y,W,Z)=(a,b,d,c)]. Used for reordering conditioning variables.</td>
+                </tr>
+            
+                <tr data-search="pfwd1_nested3_ac lemma pfwd1_nested3_ac (ta tb tc td : fintype) (x : {rv p -&gt; ta}) (y : {rv p -&gt; tb}) (z : {rv p -&gt; tc}) (w : {rv p -&gt; td}) a b c d : `pr[ [% x, [% y, z, w]] = (a, (b, c, d)) ] = `pr[ [% x, [% y, w, z]] = (a, (b, d, c)) ]. swap components in nested triple: (a,(b,c,d)) ↔ (a,(b,d,c)). relates different nestings of tuple probabilities.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pfwd1_nested3_AC.html" class="lemma-name">pfwd1_nested3_AC</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma pfwd1_nested3_AC (TA TB TC TD : finType) (X : {RV P -&gt; TA}) (Y : {RV P -&gt; TB}) (Z : {RV P -&gt; TC}) (W : {RV P -&gt; TD}) a b c d : `Pr[ [% X, [% Y, Z, W]] = (a, (b, c, d)) ] = `Pr[ [% X, [% Y, W, Z]] = (a, (b, d, c)) ].</code></td>
+                    <td class="meaning">Swap components in nested triple: (a,(b,c,d)) ↔ (a,(b,d,c)). Relates different nestings of tuple probabilities.</td>
+                </tr>
+            
+                <tr data-search="pfwd1_pair4_mid_a lemma pfwd1_pair4_mid_a (ta tb tc td : fintype) (x : {rv p -&gt; ta}) (y : {rv p -&gt; tb}) (z : {rv p -&gt; tc}) (w : {rv p -&gt; td}) a b c d : `pr[ [% x, y, z, w] = (a, b, c, d) ] = `pr[ [% x, [% y, z], w] = (a, (b, c), d) ]. associativity for 4-tuple: (a,b,c,d) ↔ (a,(b,c),d). shows that flat 4-tuples equal nested representations.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pfwd1_pair4_mid_A.html" class="lemma-name">pfwd1_pair4_mid_A</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma pfwd1_pair4_mid_A (TA TB TC TD : finType) (X : {RV P -&gt; TA}) (Y : {RV P -&gt; TB}) (Z : {RV P -&gt; TC}) (W : {RV P -&gt; TD}) a b c d : `Pr[ [% X, Y, Z, W] = (a, b, c, d) ] = `Pr[ [% X, [% Y, Z], W] = (a, (b, c), d) ].</code></td>
+                    <td class="meaning">Associativity for 4-tuple: (a,b,c,d) ↔ (a,(b,c),d). Shows that flat 4-tuples equal nested representations.</td>
+                </tr>
+            
+                <tr data-search="centropyac lemma centropyac (a b c d : fintype) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (z : {rv p -&gt; c}) (w : {rv p -&gt; d}) : `h(x | [% y, z, w]) = `h(x | [% y, w, z]). conditional entropy is invariant under swapping last two conditioning vars: h(x | y,z,w) = h(x | y,w,z). commutativity for conditioning tuple tail.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropyAC.html" class="lemma-name">centropyAC</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma centropyAC (A B C D : finType) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (Z : {RV P -&gt; C}) (W : {RV P -&gt; D}) : `H(X | [% Y, Z, W]) = `H(X | [% Y, W, Z]).</code></td>
+                    <td class="meaning">Conditional entropy is invariant under swapping last two conditioning vars: H(X | Y,Z,W) = H(X | Y,W,Z). Commutativity for conditioning tuple tail.</td>
+                </tr>
+            
+                <tr data-search="centropya lemma centropya (a b c d : fintype) (x : {rv p -&gt; a}) (y : {rv p -&gt; b}) (z : {rv p -&gt; c}) (w : {rv p -&gt; d}) : `h(x | [% y, [% z, w]]) = `h(x | [% y, z, w]). associativity for conditional entropy: h(x | (y,(z,w))) = h(x | y,z,w). flattens nested conditioning tuples.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropyA.html" class="lemma-name">centropyA</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">22</td>
+                    <td><code class="signature">Lemma centropyA (A B C D : finType) (X : {RV P -&gt; A}) (Y : {RV P -&gt; B}) (Z : {RV P -&gt; C}) (W : {RV P -&gt; D}) : `H(X | [% Y, [% Z, W]]) = `H(X | [% Y, Z, W]).</code></td>
+                    <td class="meaning">Associativity for conditional entropy: H(X | (Y,(Z,W))) = H(X | Y,Z,W). Flattens nested conditioning tuples.</td>
+                </tr>
+            
+                <tr data-search="centropya_middle lemma centropya_middle {a b c d e : fintype} (x : {rv p -&gt; a}) (w : {rv p -&gt; b}) (v : {rv p -&gt; c}) (z : {rv p -&gt; d}) (y : {rv p -&gt; e}) : `h(x | [% w, [% v, z], y]) = `h(x | [% w, v, z, y]). flatten nested pair in middle position: h(x | w,(v,z),y) = h(x | w,v,z,y). associativity when the nested pair is in the middle of the conditioning.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropyA_middle.html" class="lemma-name">centropyA_middle</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma centropyA_middle {A B C D E : finType} (X : {RV P -&gt; A}) (W : {RV P -&gt; B}) (V : {RV P -&gt; C}) (Z : {RV P -&gt; D}) (Y : {RV P -&gt; E}) : `H(X | [% W, [% V, Z], Y]) = `H(X | [% W, V, Z, Y]).</code></td>
+                    <td class="meaning">Flatten nested pair in middle position: H(X | W,(V,Z),Y) = H(X | W,V,Z,Y). Associativity when the nested pair is in the middle of the conditioning.</td>
+                </tr>
+            
+                <tr data-search="centropy4_swap_2_4 lemma centropy4_swap_2_4 (a b c d e : fintype) (x : {rv p -&gt; a}) (w : {rv p -&gt; b}) (y : {rv p -&gt; c}) (z : {rv p -&gt; d}) (v : {rv p -&gt; e}) : `h(x | [% w, y, z, v]) = `h(x | [% w, v, z, y]). swap 2nd and 4th positions in 4-variable conditioning: h(x | w,y,z,v) = h(x | w,v,z,y). used for reordering alice&#39;s view components.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy4_swap_2_4.html" class="lemma-name">centropy4_swap_2_4</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma centropy4_swap_2_4 (A B C D E : finType) (X : {RV P -&gt; A}) (W : {RV P -&gt; B}) (Y : {RV P -&gt; C}) (Z : {RV P -&gt; D}) (V : {RV P -&gt; E}) : `H(X | [% W, Y, Z, V]) = `H(X | [% W, V, Z, Y]).</code></td>
+                    <td class="meaning">Swap 2nd and 4th positions in 4-variable conditioning: H(X | W,Y,Z,V) = H(X | W,V,Z,Y). Used for reordering Alice&#39;s view components.</td>
+                </tr>
+            
+                <tr data-search="marginal_swap_yz lemma marginal_swap_yz (v w : fintype) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) : forall y : v, (`p_[% z, y])`2 y = (`p_[% y, z])`1 y. marginal equivalence under swap: the 2nd marginal of (z,y) equals the 1st marginal of (y,z). both give the distribution of y.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/marginal_swap_YZ.html" class="lemma-name">marginal_swap_YZ</a>
+                    </td>
+                    <td class="section-name">perm_extra</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma marginal_swap_YZ (V W : finType) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) : forall y : V, (`p_[% Z, Y])`2 y = (`p_[% Y, Z])`1 y.</code></td>
+                    <td class="meaning">Marginal equivalence under swap: the 2nd marginal of (Z,Y) equals the 1st marginal of (Y,Z). Both give the distribution of Y.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="lib/rouche_capelli.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/rouche_capelli.v</span>
+        </div>
+        <span class="file-count">28 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="card_vspace lemma card_vspace (k : finfieldtype) (fvt : finvecttype k) (u : {vspace fvt}) : #|u| = (#| {:k} | ^ (\dim u))%n. cardinality of a vector subspace: |u| = |k|^dim(u). fundamental result: a d-dimensional subspace over finite field k has |k|^d elements. this is the key formula for counting solutions to linear systems.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_vspace.html" class="lemma-name">card_vspace</a>
+                    </td>
+                    <td class="section-name">finvect_lemmas</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma card_vspace (K : finFieldType) (fvT : finVectType K) (U : {vspace fvT}) : #|U| = (#| {:K} | ^ (\dim U))%N.</code></td>
+                    <td class="meaning">Cardinality of a vector subspace: |U| = |K|^dim(U). Fundamental result: a d-dimensional subspace over finite field K has |K|^d elements. This is the key formula for counting solutions to linear systems.</td>
+                </tr>
+            
+                <tr data-search="card_lker_lfun lemma card_lker_lfun (k : fieldtype) (at : finvecttype k) (rt : vecttype k) (f : {linear at -&gt; rt}) : #|lker (linfun f)| = #|[set x : at | f x == 0]|. kernel cardinality equals the set of zeros: |ker(f)| = |{x | f(x) = 0}|. connects the linear algebra kernel with the set-theoretic preimage of 0.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_lker_lfun.html" class="lemma-name">card_lker_lfun</a>
+                    </td>
+                    <td class="section-name">finvect_lemmas</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma card_lker_lfun (K : fieldType) (aT : finVectType K) (rT : vectType K) (f : {linear aT -&gt; rT}) : #|lker (linfun f)| = #|[set x : aT | f x == 0]|.</code></td>
+                    <td class="meaning">Kernel cardinality equals the set of zeros: |ker(f)| = |{x | f(x) = 0}|. Connects the linear algebra kernel with the set-theoretic preimage of 0.</td>
+                </tr>
+            
+                <tr data-search="diffvv lemma diffvv {k : fieldtype} {vt : vecttype k} (u : {vspace vt}) : (u :\: u = 0)%vs. self-difference is zero: u \ u = 0. trivial but useful for simplification.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/diffvv.html" class="lemma-name">diffvv</a>
+                    </td>
+                    <td class="section-name">vector_ext</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma diffvv {K : fieldType} {vT : vectType K} (U : {vspace vT}) : (U :\: U = 0)%VS.</code></td>
+                    <td class="meaning">Self-difference is zero: U \ U = 0. Trivial but useful for simplification.</td>
+                </tr>
+            
+                <tr data-search="limg_lker lemma limg_lker {k : fieldtype} {at rt : vecttype k} (f : &#39;hom(at, rt)) : (f @: lker f = 0)%vs. image of kernel is zero: f(ker(f)) = 0. by definition of kernel.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/limg_lker.html" class="lemma-name">limg_lker</a>
+                    </td>
+                    <td class="section-name">vector_ext</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma limg_lker {K : fieldType} {aT rT : vectType K} (f : &#39;Hom(aT, rT)) : (f @: lker f = 0)%VS.</code></td>
+                    <td class="meaning">Image of kernel is zero: f(ker(f)) = 0. By definition of kernel.</td>
+                </tr>
+            
+                <tr data-search="homk lemma homk {r : nzringtype} {vt wt : vecttype r} (a : &#39;m_(dim vt, dim wt)) : f2mx (hom a) = a. matrix representation of hom: f2mx(hom(a)) = a. coercion identity.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/HomK.html" class="lemma-name">HomK</a>
+                    </td>
+                    <td class="section-name">vector_ext</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma HomK {R : nzRingType} {vT wT : vectType R} (A : &#39;M_(dim vT, dim wT)) : f2mx (Hom A) = A.</code></td>
+                    <td class="meaning">Matrix representation of Hom: f2mx(Hom(A)) = A. Coercion identity.</td>
+                </tr>
+            
+                <tr data-search="mxrank_sub_eqmx lemma mxrank_sub_eqmx m n p (a : &#39;m[r]_(m,n)) (b : &#39;m[r]_(p,n)) : \rank a = \rank b -&gt; (a &lt;= b)%ms -&gt; (a == b)%ms. equal rank + submx implies equivalence: if rank(a) = rank(b) and a ≤ b, then a ≡ b. key lemma for establishing row space equality.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/mxrank_sub_eqmx.html" class="lemma-name">mxrank_sub_eqmx</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma mxrank_sub_eqmx m n p (A : &#39;M[R]_(m,n)) (B : &#39;M[R]_(p,n)) : \rank A = \rank B -&gt; (A &lt;= B)%MS -&gt; (A == B)%MS.</code></td>
+                    <td class="meaning">Equal rank + submx implies equivalence: if rank(A) = rank(B) and A ≤ B, then A ≡ B. Key lemma for establishing row space equality.</td>
+                </tr>
+            
+                <tr data-search="rouche1 lemma rouche1 m n (a : &#39;m[r]_(m,n)) (b : &#39;rv_n) : (exists x, x *m a = b) &lt;-&gt; (\rank a = \rank (col_mx a b)). rouché-capelli theorem (part 1): system xa = b has a solution iff rank(a) = rank([a; b]). the augmented matrix has same rank as coefficient matrix.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/rouche1.html" class="lemma-name">rouche1</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma rouche1 m n (A : &#39;M[R]_(m,n)) (B : &#39;rV_n) : (exists x, x *m A = B) &lt;-&gt; (\rank A = \rank (col_mx A B)).</code></td>
+                    <td class="meaning">Rouché-Capelli Theorem (Part 1): System xA = B has a solution iff rank(A) = rank([A; B]). The augmented matrix has same rank as coefficient matrix.</td>
+                </tr>
+            
+                <tr data-search="rouche2 lemma rouche2 m n (a : &#39;m[r]_(m,n)) (b : &#39;rv_n) : \rank a = \rank (col_mx a b) -&gt; \rank a = m -&gt; exists! x, x *m a = b. rouché-capelli theorem (part 2): if system is consistent and rank = #rows, then the solution is unique. full rank means trivial kernel.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/rouche2.html" class="lemma-name">rouche2</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma rouche2 m n (A : &#39;M[R]_(m,n)) (B : &#39;rV_n) : \rank A = \rank (col_mx A B) -&gt; \rank A = m -&gt; exists! x, x *m A = B.</code></td>
+                    <td class="meaning">Rouché-Capelli Theorem (Part 2): If system is consistent and rank = #rows, then the solution is unique. Full rank means trivial kernel.</td>
+                </tr>
+            
+                <tr data-search="exists_nonzero_kernel lemma exists_nonzero_kernel m n (a : &#39;m[r]_(m, n)) : (\rank a &lt; m)%n -&gt; exists y : &#39;rv_m, y *m a = 0 /\ y != 0. rank-deficient matrices have nontrivial kernels: if rank(a) &lt; m, there exists nonzero y with ya = 0. foundation for solution counting.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/exists_nonzero_kernel.html" class="lemma-name">exists_nonzero_kernel</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma exists_nonzero_kernel m n (A : &#39;M[R]_(m, n)) : (\rank A &lt; m)%N -&gt; exists y : &#39;rV_m, y *m A = 0 /\ y != 0.</code></td>
+                    <td class="meaning">Rank-deficient matrices have nontrivial kernels: if rank(A) &lt; m, there exists nonzero y with yA = 0. Foundation for solution counting.</td>
+                </tr>
+            
+                <tr data-search="kernel_membership lemma kernel_membership m n p (a : &#39;m[r]_(m, n)) (x : &#39;m[r]_(n, p)) : a *m x = 0 -&gt; (x^t &lt;= kermx a^t)%ms. solutions to ax = 0 lie in the kernel: if ax = 0, then x^t ≤ ker(a^t). transposes relate left/right multiplication to kernel membership.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/kernel_membership.html" class="lemma-name">kernel_membership</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma kernel_membership m n p (A : &#39;M[R]_(m, n)) (X : &#39;M[R]_(n, p)) : A *m X = 0 -&gt; (X^T &lt;= kermx A^T)%MS.</code></td>
+                    <td class="meaning">Solutions to AX = 0 lie in the kernel: if AX = 0, then X^T ≤ ker(A^T). Transposes relate left/right multiplication to kernel membership.</td>
+                </tr>
+            
+                <tr data-search="kernel_coeff_exists lemma kernel_coeff_exists m n p (a : &#39;m[r]_(m, n)) (x : &#39;m[r]_(n, p)) : a *m x = 0 -&gt; exists p : &#39;m[r]_(p, n), x^t = p *m kermx a^t. kernel coefficient existence: if ax = 0, then x^t can be written as p * ker(a^t) for some p. explicit decomposition in kernel basis.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/kernel_coeff_exists.html" class="lemma-name">kernel_coeff_exists</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma kernel_coeff_exists m n p (A : &#39;M[R]_(m, n)) (X : &#39;M[R]_(n, p)) : A *m X = 0 -&gt; exists P : &#39;M[R]_(p, n), X^T = P *m kermx A^T.</code></td>
+                    <td class="meaning">Kernel coefficient existence: if AX = 0, then X^T can be written as P * ker(A^T) for some P. Explicit decomposition in kernel basis.</td>
+                </tr>
+            
+                <tr data-search="sub_coker_colspan lemma sub_coker_colspan m n (a : &#39;m[k]_(m, n)) : forall x : &#39;cv[k]_n, x \in colspan (cokermx a) -&gt; a *m x == 0. vectors in cokernel column span are in kernel: if x ∈ colspan(coker a), then ax = 0. connects cokernel with null space.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sub_coker_colspan.html" class="lemma-name">sub_coker_colspan</a>
+                    </td>
+                    <td class="section-name">FiniteSolutionCounting</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma sub_coker_colspan m n (A : &#39;M[K]_(m, n)) : forall x : &#39;cV[K]_n, x \in colspan (cokermx A) -&gt; A *m x == 0.</code></td>
+                    <td class="meaning">Vectors in cokernel column span are in kernel: if x ∈ colspan(coker A), then Ax = 0. Connects cokernel with null space.</td>
+                </tr>
+            
+                <tr data-search="submx_castmx lemma submx_castmx m1 m2 n (a : &#39;m[k]_(m1, n)) (b : &#39;m[k]_(m2, n)) e : (a &lt;= b)%ms -&gt; @submx.body k m1 m2 n a (castmx e b). submatrix relation preserved under dimension cast: a ≤ b implies a ≤ cast(b). technical lemma for handling dimension changes in matrix row spaces.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/submx_castmx.html" class="lemma-name">submx_castmx</a>
+                    </td>
+                    <td class="section-name">FiniteSolutionCounting</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma submx_castmx m1 m2 n (A : &#39;M[K]_(m1, n)) (B : &#39;M[K]_(m2, n)) e : (A &lt;= B)%MS -&gt; @submx.body K m1 m2 n A (castmx e B).</code></td>
+                    <td class="meaning">Submatrix relation preserved under dimension cast: A ≤ B implies A ≤ cast(B). Technical lemma for handling dimension changes in matrix row spaces.</td>
+                </tr>
+            
+                <tr data-search="castmx_mul_row lemma castmx_mul_row m n p q (e_m : m = p) (e_n : n = q) (w : &#39;rv[k]_m) (m : &#39;m[k]_(m, n)) : castmx (erefl, e_m) w *m castmx (e_m, e_n) m = castmx (erefl, e_n) (w *m m). lemma for casting matrix multiplication with row vectors">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/castmx_mul_row.html" class="lemma-name">castmx_mul_row</a>
+                    </td>
+                    <td class="section-name">FiniteSolutionCounting</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma castmx_mul_row m n p q (e_m : m = p) (e_n : n = q) (w : &#39;rV[K]_m) (M : &#39;M[K]_(m, n)) : castmx (erefl, e_m) w *m castmx (e_m, e_n) M = castmx (erefl, e_n) (w *m M).</code></td>
+                    <td class="meaning">Lemma for casting matrix multiplication with row vectors</td>
+                </tr>
+            
+                <tr data-search="card_lker_mxof lemma card_lker_mxof : #|(lker f)| = #|[set x : &#39;rv[k]_(\dim {:at}) | x *m (mxof e e&#39; f) == 0]|. kernel cardinality via matrix representation: |ker(f)| = |{x | x·m = 0}| where m is the matrix of f w.r.t. bases e, e&#39;. bridges abstract linear maps to concrete matrix equations for counting.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_lker_mxof.html" class="lemma-name">card_lker_mxof</a>
+                    </td>
+                    <td class="section-name">card_lker</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma card_lker_mxof : #|(lker f)| = #|[set x : &#39;rV[K]_(\dim {:aT}) | x *m (mxof e e&#39; f) == 0]|.</code></td>
+                    <td class="meaning">Kernel cardinality via matrix representation: |ker(f)| = |{x | x·M = 0}| where M is the matrix of f w.r.t. bases e, e&#39;. Bridges abstract linear maps to concrete matrix equations for counting.</td>
+                </tr>
+            
+                <tr data-search="dim_rv lemma dim_rv p : \dim {:&#39;rv[k]_p} = p. dimension of row vector space: dim(&#39;rv_p) = p. standard identity.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dim_rV.html" class="lemma-name">dim_rV</a>
+                    </td>
+                    <td class="section-name">counting</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dim_rV p : \dim {:&#39;rV[K]_p} = p.</code></td>
+                    <td class="meaning">Dimension of row vector space: dim(&#39;rV_p) = p. Standard identity.</td>
+                </tr>
+            
+                <tr data-search="card_lker_hom lemma card_lker_hom : #|lker (hom a)| = #|[set x : &#39;rv[k]_m | x *m a == 0]|. kernel cardinality for hom functor: |ker(hom(a))| = |{x | xa = 0}|. specializes card_lker_mxof to the standard matrix-to-linear-map coercion.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_lker_Hom.html" class="lemma-name">card_lker_Hom</a>
+                    </td>
+                    <td class="section-name">counting</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma card_lker_Hom : #|lker (Hom A)| = #|[set x : &#39;rV[K]_m | x *m A == 0]|.</code></td>
+                    <td class="meaning">Kernel cardinality for Hom functor: |ker(Hom(A))| = |{x | xA = 0}|. Specializes card_lker_mxof to the standard matrix-to-linear-map coercion.</td>
+                </tr>
+            
+                <tr data-search="cancel_row_free lemma cancel_row_free p q (g : {linear &#39;rv[k]_p -&gt; &#39;rv[k]_q}) (h : {linear &#39;rv[k]_q -&gt; &#39;rv[k]_p}) : cancel g h -&gt; row_free (lin1_mx g). cancellation implies row freedom: if g has a left inverse h, then the matrix representation of g has full row rank (row_free).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cancel_row_free.html" class="lemma-name">cancel_row_free</a>
+                    </td>
+                    <td class="section-name">counting</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma cancel_row_free p q (g : {linear &#39;rV[K]_p -&gt; &#39;rV[K]_q}) (h : {linear &#39;rV[K]_q -&gt; &#39;rV[K]_p}) : cancel g h -&gt; row_free (lin1_mx g).</code></td>
+                    <td class="meaning">Cancellation implies row freedom: if g has a left inverse h, then the matrix representation of g has full row rank (row_free).</td>
+                </tr>
+            
+                <tr data-search="row_free_tr lemma row_free_tr p q (m : &#39;m[k]_(p,q)) : p = q -&gt; row_free m^t = row_free m. row freedom is transpose-invariant for square matrices: row_free(m^t) = row_free(m) when p = q.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/row_free_tr.html" class="lemma-name">row_free_tr</a>
+                    </td>
+                    <td class="section-name">counting</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma row_free_tr p q (M : &#39;M[K]_(p,q)) : p = q -&gt; row_free M^T = row_free M.</code></td>
+                    <td class="meaning">Row freedom is transpose-invariant for square matrices: row_free(M^T) = row_free(M) when p = q.</td>
+                </tr>
+            
+                <tr data-search="count_kernel_vectors lemma count_kernel_vectors : #| [set x : &#39;rv[k]_m | x *m a == 0] | = (#| {:k} | ^ (m - \rank a))%n. kernel cardinality formula: |ker(a)| = |k|^(m - rank(a)). the kernel is a subspace of dimension (m - rank(a)), hence has this many elements. this is the core counting result for linear systems.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/count_kernel_vectors.html" class="lemma-name">count_kernel_vectors</a>
+                    </td>
+                    <td class="section-name">counting</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma count_kernel_vectors : #| [set x : &#39;rV[K]_m | x *m A == 0] | = (#| {:K} | ^ (m - \rank A))%N.</code></td>
+                    <td class="meaning">Kernel cardinality formula: |ker(A)| = |K|^(m - rank(A)). The kernel is a subspace of dimension (m - rank(A)), hence has this many elements. This is the core counting result for linear systems.</td>
+                </tr>
+            
+                <tr data-search="affine_eq_translate_kernel lemma affine_eq_translate_kernel (x0 : &#39;rv[k]_m) : x0 *m a = b -&gt; affine_solutions = [set x0 + k | k in kernel_solutions]. given a particular solution, affine set = particular + kernel">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/affine_eq_translate_kernel.html" class="lemma-name">affine_eq_translate_kernel</a>
+                    </td>
+                    <td class="section-name">affine_solution_counting</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma affine_eq_translate_kernel (x0 : &#39;rV[K]_m) : x0 *m A = b -&gt; affine_solutions = [set x0 + k | k in kernel_solutions].</code></td>
+                    <td class="meaning">Given a particular solution, affine set = particular + kernel</td>
+                </tr>
+            
+                <tr data-search="card_translate lemma card_translate (s : {set &#39;rv[k]_m}) (v : &#39;rv[k]_m) : #|[set v + s | s in s]| = #|s|. translation preserves cardinality: |v + s| = |s|. adding a constant vector v to all elements is a bijection.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_translate.html" class="lemma-name">card_translate</a>
+                    </td>
+                    <td class="section-name">affine_solution_counting</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma card_translate (S : {set &#39;rV[K]_m}) (v : &#39;rV[K]_m) : #|[set v + s | s in S]| = #|S|.</code></td>
+                    <td class="meaning">Translation preserves cardinality: |v + S| = |S|. Adding a constant vector v to all elements is a bijection.</td>
+                </tr>
+            
+                <tr data-search="count_affine_solutions lemma count_affine_solutions (x0 : &#39;rv[k]_m) : x0 *m a = b -&gt; #|affine_solutions| = #|kernel_solutions|. affine solutions = kernel cardinality: |{x | xa = b}| = |ker(a)|. since affine_solutions = x₀ + ker(a), cardinality equals kernel size.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/count_affine_solutions.html" class="lemma-name">count_affine_solutions</a>
+                    </td>
+                    <td class="section-name">affine_solution_counting</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma count_affine_solutions (x0 : &#39;rV[K]_m) : x0 *m A = b -&gt; #|affine_solutions| = #|kernel_solutions|.</code></td>
+                    <td class="meaning">Affine solutions = kernel cardinality: |{x | xA = b}| = |ker(A)|. Since affine_solutions = x₀ + ker(A), cardinality equals kernel size.</td>
+                </tr>
+            
+                <tr data-search="affine_eq_translate_kernel_col lemma affine_eq_translate_kernel_col (v0 : &#39;cv[k]_n) : a *m v0 = b -&gt; affine_solutions_col = [set v0 + k | k in kernel_solutions_col]. given a particular solution, affine set = particular + kernel">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/affine_eq_translate_kernel_col.html" class="lemma-name">affine_eq_translate_kernel_col</a>
+                    </td>
+                    <td class="section-name">affine_solultion_counting_col</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma affine_eq_translate_kernel_col (v0 : &#39;cV[K]_n) : A *m v0 = b -&gt; affine_solutions_col = [set v0 + k | k in kernel_solutions_col].</code></td>
+                    <td class="meaning">Given a particular solution, affine set = particular + kernel</td>
+                </tr>
+            
+                <tr data-search="card_translate_col lemma card_translate_col (s : {set &#39;cv[k]_n}) (v : &#39;cv[k]_n) : #|[set v + s | s in s]| = #|s|. translation preserves cardinality (column version): |v + s| = |s|. same as card_translate but for column vectors.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/card_translate_col.html" class="lemma-name">card_translate_col</a>
+                    </td>
+                    <td class="section-name">affine_solultion_counting_col</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma card_translate_col (S : {set &#39;cV[K]_n}) (v : &#39;cV[K]_n) : #|[set v + s | s in S]| = #|S|.</code></td>
+                    <td class="meaning">Translation preserves cardinality (column version): |v + S| = |S|. Same as card_translate but for column vectors.</td>
+                </tr>
+            
+                <tr data-search="count_affine_solutions_col lemma count_affine_solutions_col (v0 : &#39;cv[k]_n) : a *m v0 = b -&gt; #|affine_solutions_col| = #|kernel_solutions_col|. affine = kernel cardinality (column version): |{v | av = b}| = |ker(a)|. column version of count_affine_solutions for av = b systems.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/count_affine_solutions_col.html" class="lemma-name">count_affine_solutions_col</a>
+                    </td>
+                    <td class="section-name">affine_solultion_counting_col</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma count_affine_solutions_col (v0 : &#39;cV[K]_n) : A *m v0 = b -&gt; #|affine_solutions_col| = #|kernel_solutions_col|.</code></td>
+                    <td class="meaning">Affine = kernel cardinality (column version): |{v | Av = b}| = |ker(A)|. Column version of count_affine_solutions for Av = b systems.</td>
+                </tr>
+            
+                <tr data-search="count_kernel_vectors_col lemma count_kernel_vectors_col : #|[set v : &#39;cv[k]_n | a *m v == 0]| = (#|{:k}| ^ (n - \rank a))%n. kernel cardinality (column version): |{v | av = 0}| = |k|^(n - rank(a)). proved by transposing to row form and applying count_kernel_vectors. needed because coq treats &#39;cv and &#39;rv as distinct types.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/count_kernel_vectors_col.html" class="lemma-name">count_kernel_vectors_col</a>
+                    </td>
+                    <td class="section-name">affine_solultion_counting_col</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma count_kernel_vectors_col : #|[set v : &#39;cV[K]_n | A *m v == 0]| = (#|{:K}| ^ (n - \rank A))%N.</code></td>
+                    <td class="meaning">Kernel cardinality (column version): |{v | Av = 0}| = |K|^(n - rank(A)). Proved by transposing to row form and applying count_kernel_vectors. Needed because Coq treats &#39;cV and &#39;rV as distinct types.</td>
+                </tr>
+            
+                <tr data-search="count_affine_solutions_rank1 lemma count_affine_solutions_rank1 (x y z : k) : y != 0 -&gt; #|[set p : k * k | x * p.1 + y * p.2 == z]| = #|k|. 2d linear constraint cardinality: |{(a,b) | x*a + y*b = z}| = |k| when y ≠ 0. special case for rank-1 systems: one equation in two unknowns has |k| solutions. used directly in dsdp&#39;s constrained_pairs_card and dotp2_solutions. proof converts the pair constraint to column form and applies the general theory.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/count_affine_solutions_rank1.html" class="lemma-name">count_affine_solutions_rank1</a>
+                    </td>
+                    <td class="section-name">FiniteSolutionCounting</td>
+                    <td class="proof-lines">106</td>
+                    <td><code class="signature">Lemma count_affine_solutions_rank1 (x y z : K) : y != 0 -&gt; #|[set p : K * K | x * p.1 + y * p.2 == z]| = #|K|.</code></td>
+                    <td class="meaning">2D linear constraint cardinality: |{(a,b) | x*a + y*b = z}| = |K| when y ≠ 0. Special case for rank-1 systems: one equation in two unknowns has |K| solutions. Used directly in DSDP&#39;s constrained_pairs_card and dotp2_solutions. Proof converts the pair constraint to column form and applies the general theory.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="zpq/fiber_zpq.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">zpq/fiber_zpq.v</span>
+        </div>
+        <span class="file-count">14 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="small_component_unit lemma small_component_unit (u : &#39;rv[msg]_n) : has_small_component u -&gt; has_unit_component u. small component implies unit component">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/small_component_unit.html" class="lemma-name">small_component_unit</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma small_component_unit (u : &#39;rV[msg]_n) : has_small_component u -&gt; has_unit_component u.</code></td>
+                    <td class="meaning">Small component implies unit component</td>
+                </tr>
+            
+                <tr data-search="dotmul_bigd1 lemma dotmul_bigd1 (u v : &#39;rv[msg]_n) (i : &#39;i_n) : u *d v = u ord0 i * v ord0 i + \sum_(j &lt; n | j != i) u ord0 j * v ord0 j. helper: dot product expansion isolating index i">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotmul_bigD1.html" class="lemma-name">dotmul_bigD1</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma dotmul_bigD1 (u v : &#39;rV[msg]_n) (i : &#39;I_n) : u *d v = u ord0 i * v ord0 i + \sum_(j &lt; n | j != i) u ord0 j * v ord0 j.</code></td>
+                    <td class="meaning">Helper: dot product expansion isolating index i</td>
+                </tr>
+            
+                <tr data-search="unitrk lemma unitrk (x y : msg) : x \is a gring.unit -&gt; x * y / x = y. helper: unit cancellation - x * y / x = y when x is a unit">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/unitrK.html" class="lemma-name">unitrK</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma unitrK (x y : msg) : x \is a GRing.unit -&gt; x * y / x = y.</code></td>
+                    <td class="meaning">Helper: unit cancellation - x * y / x = y when x is a unit</td>
+                </tr>
+            
+                <tr data-search="pivot_solvee lemma pivot_solvee (u v : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; u *d v = target -&gt; v ord0 i = (target - \sum_(j &lt; n | j != i) u ord0 j * v ord0 j) * (u ord0 i)^-1. v(i) = (target - σ_{j≠i} u(j)*v(j)) / u(i)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pivot_solveE.html" class="lemma-name">pivot_solveE</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma pivot_solveE (u v : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; u *d v = target -&gt; v ord0 i = (target - \sum_(j &lt; n | j != i) u ord0 j * v ord0 j) * (u ord0 i)^-1.</code></td>
+                    <td class="meaning">v(i) = (target - Σ_{j≠i} u(j)*v(j)) / u(i)</td>
+                </tr>
+            
+                <tr data-search="make_fiber_elemp lemma make_fiber_elemp (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) (free : &#39;i_n -&gt; msg) : u ord0 i \is a gring.unit -&gt; make_fiber_elem u target i free \in linear_fiber_zpq u target. helper: make_fiber_elem is in the fiber when u_i is a unit">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/make_fiber_elemP.html" class="lemma-name">make_fiber_elemP</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma make_fiber_elemP (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) (free : &#39;I_n -&gt; msg) : u ord0 i \is a GRing.unit -&gt; make_fiber_elem u target i free \in linear_fiber_zpq u target.</code></td>
+                    <td class="meaning">Helper: make_fiber_elem is in the fiber when u_i is a unit</td>
+                </tr>
+            
+                <tr data-search="fiber_elem_inj lemma fiber_elem_inj (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) (v1 v2 : &#39;rv[msg]_n) : u ord0 i \is a gring.unit -&gt; v1 \in linear_fiber_zpq u target -&gt; v2 \in linear_fiber_zpq u target -&gt; (forall j, j != i -&gt; v1 ord0 j = v2 ord0 j) -&gt; v1 = v2. then v1 = v2 (the pivot coordinate v(i) is uniquely determined).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fiber_elem_inj.html" class="lemma-name">fiber_elem_inj</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma fiber_elem_inj (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) (v1 v2 : &#39;rV[msg]_n) : u ord0 i \is a GRing.unit -&gt; v1 \in linear_fiber_zpq u target -&gt; v2 \in linear_fiber_zpq u target -&gt; (forall j, j != i -&gt; v1 ord0 j = v2 ord0 j) -&gt; v1 = v2.</code></td>
+                    <td class="meaning">then v1 = v2 (the pivot coordinate v(i) is uniquely determined).</td>
+                </tr>
+            
+                <tr data-search="ffun_extendp lemma ffun_extendp (i : &#39;i_n) (g : {ffun &#39;i_n.-1 -&gt; msg}) : ffun_extend i g \in [set ff : {ffun &#39;i_n -&gt; msg} | ff i == 0]. extend maps into {f | f(i) = 0}">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ffun_extendP.html" class="lemma-name">ffun_extendP</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma ffun_extendP (i : &#39;I_n) (g : {ffun &#39;I_n.-1 -&gt; msg}) : ffun_extend i g \in [set ff : {ffun &#39;I_n -&gt; msg} | ff i == 0].</code></td>
+                    <td class="meaning">extend maps into {f | f(i) = 0}</td>
+                </tr>
+            
+                <tr data-search="ffun_restrictk lemma ffun_restrictk (i : &#39;i_n) : cancel (ffun_extend i) (ffun_restrict i). restrict ∘ extend = id">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ffun_restrictK.html" class="lemma-name">ffun_restrictK</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma ffun_restrictK (i : &#39;I_n) : cancel (ffun_extend i) (ffun_restrict i).</code></td>
+                    <td class="meaning">restrict ∘ extend = id</td>
+                </tr>
+            
+                <tr data-search="ffun_extendk lemma ffun_extendk (i : &#39;i_n) (ff : {ffun &#39;i_n -&gt; msg}) : ff i = 0 -&gt; ffun_extend i (ffun_restrict i ff) = ff. extend ∘ restrict = id on {f | f(i) = 0}">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ffun_extendK.html" class="lemma-name">ffun_extendK</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma ffun_extendK (i : &#39;I_n) (ff : {ffun &#39;I_n -&gt; msg}) : ff i = 0 -&gt; ffun_extend i (ffun_restrict i ff) = ff.</code></td>
+                    <td class="meaning">extend ∘ restrict = id on {f | f(i) = 0}</td>
+                </tr>
+            
+                <tr data-search="ffun_extend_inj lemma ffun_extend_inj (i : &#39;i_n) : injective (ffun_extend i). extend is injective">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ffun_extend_inj.html" class="lemma-name">ffun_extend_inj</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma ffun_extend_inj (i : &#39;I_n) : injective (ffun_extend i).</code></td>
+                    <td class="meaning">extend is injective</td>
+                </tr>
+            
+                <tr data-search="ffun_fix_coord_card lemma ffun_fix_coord_card (i : &#39;i_n) : #|[set ff : {ffun &#39;i_n -&gt; msg} | ff i == 0]| = (m ^ n.-1)%n. counting: |{f : &#39;i_n → z_m | f(i) = 0}| = m^(n-1) f(0) ∈ {0,1,...,m-1} → m choices ... f(i) = 0 → 1 choice (fixed!) ... f(n-1) ∈ {0,1,...,m-1} → m choices ───────────────────────────────────── total: m^(n-1) functions (one less free coordinate)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ffun_fix_coord_card.html" class="lemma-name">ffun_fix_coord_card</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma ffun_fix_coord_card (i : &#39;I_n) : #|[set ff : {ffun &#39;I_n -&gt; msg} | ff i == 0]| = (m ^ n.-1)%N.</code></td>
+                    <td class="meaning">Counting: |{f : &#39;I_n → Z_m | f(i) = 0}| = m^(n-1) f(0) ∈ {0,1,...,m-1} → m choices ... f(i) = 0 → 1 choice (FIXED!) ... f(n-1) ∈ {0,1,...,m-1} → m choices ───────────────────────────────────── Total: m^(n-1) functions (one less free coordinate)</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_zpq_imsete lemma linear_fiber_zpq_imsete (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; linear_fiber_zpq u target = mk_fiber u target i @: ker_eval i. the fiber {v | u·v = target} equals the image of mk_fiber over ker_eval">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_zpq_imsetE.html" class="lemma-name">linear_fiber_zpq_imsetE</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma linear_fiber_zpq_imsetE (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; linear_fiber_zpq u target = mk_fiber u target i @: ker_eval i.</code></td>
+                    <td class="meaning">The fiber {v | u·v = target} equals the image of mk_fiber over ker_eval</td>
+                </tr>
+            
+                <tr data-search="mk_fiber_inj lemma mk_fiber_inj (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; {in ker_eval i &amp;, injective (mk_fiber u target i)}. mk_fiber is injective on ker_eval">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/mk_fiber_inj.html" class="lemma-name">mk_fiber_inj</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma mk_fiber_inj (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; {in ker_eval i &amp;, injective (mk_fiber u target i)}.</code></td>
+                    <td class="meaning">mk_fiber is injective on ker_eval</td>
+                </tr>
+            
+                <tr data-search="lt_minpq_coprime lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%n -&gt; (u &lt; minn p q)%n -&gt; coprime (nat_of_ord u) m. key lemma: u &lt; min(p,q) implies u is coprime to pq. since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) therefore gcd(u, pq) = 1, so u is a unit in z/pq.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/lt_minpq_coprime.html" class="lemma-name">lt_minpq_coprime</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%N -&gt; (u &lt; minn p q)%N -&gt; coprime (nat_of_ord u) m.</code></td>
+                    <td class="meaning">Key lemma: u &lt; min(p,q) implies u is coprime to pq. Since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) Therefore gcd(u, pq) = 1, so u is a unit in Z/pq.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
+
+
+    </main>
+    
+    <footer class="footer container">
+        <p>Generated: 2025-12-10 00:18:21 | 141 lemmas in 11 files</p>
+    </footer>
+    
+    <script>
+    // Theme toggle
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }
+    
+    function updateThemeIcon(theme) {
+        const icon = document.querySelector('.theme-icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+    }
+    
+    // Load saved theme
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Icon will be updated after DOM loads
+        document.addEventListener('DOMContentLoaded', () => updateThemeIcon(savedTheme));
+    })();
+    </script>
+    
+<script>
+function toggleSection(header) {
+    header.classList.toggle('expanded');
+    const content = header.nextElementSibling;
+    content.classList.toggle('expanded');
+}
+
+function toggleAll(expand) {
+    const headers = document.querySelectorAll('.file-header');
+    const contents = document.querySelectorAll('.file-content');
+    
+    headers.forEach(h => {
+        if (expand) {
+            h.classList.add('expanded');
+        } else {
+            h.classList.remove('expanded');
+        }
+    });
+    
+    contents.forEach(c => {
+        if (expand) {
+            c.classList.add('expanded');
+        } else {
+            c.classList.remove('expanded');
+        }
+    });
+}
+
+function toggleHelpers() {
+    const show = document.getElementById('show-helpers').checked;
+    const helpersSection = document.getElementById('helpers-section');
+    const helpersHeading = document.getElementById('helpers-heading');
+    const helperP = helpersHeading.nextElementSibling;
+    
+    helpersSection.style.display = show ? '' : 'none';
+    helpersHeading.style.display = show ? '' : 'none';
+    helperP.style.display = show ? '' : 'none';
+}
+
+document.getElementById('search').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('tbody tr');
+    const sections = document.querySelectorAll('.file-section');
+    
+    if (query === '') {
+        rows.forEach(r => r.style.display = '');
+        sections.forEach(s => s.style.display = '');
+        return;
+    }
+    
+    sections.forEach(section => {
+        const sectionRows = section.querySelectorAll('tbody tr');
+        let hasVisible = false;
+        
+        sectionRows.forEach(row => {
+            const searchText = row.getAttribute('data-search');
+            if (searchText && searchText.includes(query)) {
+                row.style.display = '';
+                hasVisible = true;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        
+        section.style.display = hasVisible ? '' : 'none';
+        if (hasVisible && query) {
+            section.querySelector('.file-header').classList.add('expanded');
+            section.querySelector('.file-content').classList.add('expanded');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

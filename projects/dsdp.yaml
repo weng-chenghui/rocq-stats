@@ -1,0 +1,16 @@
+# DSDP Formalization Project Configuration
+# Part of rocq-stats - Lemma statistics for Rocq/Coq formalizations
+
+name: dsdp
+title: "DSDP Formalization"
+description: "Dual protocols for private multi-party matrix multiplication - Information-theoretic security proofs in Rocq/Coq"
+
+source:
+  repo: "https://github.com/weng-chenghui/infotheo.git"
+  branch: "dumas2017dual"
+  directories:
+    - "dumas2017dual"
+
+# Markdown file for the overview/index page (relative to repo root)
+index: "dumas2017dual/notes/20251209_stats/LAYER_DESIGN.md"
+
