@@ -1,9 +1,11 @@
 name: Auto-Merge
 
 on:
-  pull_request_target:
-    types: [labeled]
-    branches: [main]
+  # Run every 5 minutes to check for PRs ready to merge
+  schedule:
+    - cron: '*/5 * * * *'
+  # Also allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,17 +14,31 @@ permissions:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    # Only merge PRs with the ready-to-merge label, from the same repo
-    if: |
-      github.event.label.name == 'ready-to-merge' &&
-      github.event.pull_request.head.repo.full_name == github.repository
     
     steps:
-      - name: Enable auto-merge
+      - name: Find and merge PRs with ready-to-merge label
         run: |
-          echo "Enabling auto-merge for PR #$PR_NUMBER"
-          gh pr merge --auto --squash "$PR_NUMBER" --repo "$REPO"
+          # Find all open PRs with the ready-to-merge label
+          PRS=$(gh pr list --repo "$REPO" --state open --label "ready-to-merge" --json number,headRepositoryOwner --jq '.[] | select(.headRepositoryOwner.login == "weng-chenghui") | .number')
+          
+          if [ -z "$PRS" ]; then
+            echo "No PRs with ready-to-merge label found"
+            exit 0
+          fi
+          
+          for PR_NUMBER in $PRS; do
+            echo "Processing PR #$PR_NUMBER"
+            
+            # Check if auto-merge is already enabled
+            AUTO_MERGE=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json autoMergeRequest --jq '.autoMergeRequest')
+            
+            if [ "$AUTO_MERGE" = "null" ]; then
+              echo "Enabling auto-merge for PR #$PR_NUMBER"
+              gh pr merge --auto --squash "$PR_NUMBER" --repo "$REPO" || echo "Failed to enable auto-merge for PR #$PR_NUMBER"
+            else
+              echo "Auto-merge already enabled for PR #$PR_NUMBER"
+            fi
+          done
         env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
