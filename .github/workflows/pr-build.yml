@@ -114,9 +114,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Enable auto-merge after build completes.
+      # Enable auto-merge after build completes (skip if already enabled).
       - name: Enable auto-merge
-        run: gh pr merge --auto --squash "$PR_NUMBER"
+        run: |
+          AUTO_MERGE=$(gh pr view "$PR_NUMBER" --json autoMergeRequest --jq '.autoMergeRequest')
+          if [ "$AUTO_MERGE" = "null" ]; then
+            gh pr merge --auto --squash "$PR_NUMBER"
+          else
+            echo "Auto-merge already enabled, skipping"
+          fi
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
