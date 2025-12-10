@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'projects/*.yaml'
+      - 'rocq-stats/**'
 
 permissions:
   contents: write
