@@ -1,7 +1,7 @@
 name: PR Build and Auto-Merge
 
 on:
-  pull_request:
+  pull_request_target:
     branches: [main]
     paths:
       - 'projects/*.yaml'
@@ -15,12 +15,15 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Only run for PRs from the same repo (not forks) for security
+    if: github.event.pull_request.head.repo.full_name == github.repository
     
     steps:
-      - name: Checkout repository
+      - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
       
       - name: Set up Python
@@ -96,7 +99,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Build: Update generated HTML for PR #${{ github.event.pull_request.number }}"
-          git push
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
       
       # When we push a new commit, workflows don't trigger for GITHUB_TOKEN pushes.
       # We need to manually set the status check on the new commit for branch protection.
@@ -112,7 +115,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       # Enable auto-merge after build completes.
-      # Since we set the status check on any new commit above, auto-merge can proceed.
       - name: Enable auto-merge
         run: gh pr merge --auto --squash "$PR_NUMBER"
         env:
