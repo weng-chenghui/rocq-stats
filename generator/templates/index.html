@@ -30,6 +30,12 @@
         <div class="value">{{ total_files }}</div>
         <div class="label">Files</div>
     </div>
+    {% if source_commit_short %}
+    <div class="stat-card">
+        <div class="value" style="font-size: 1.2rem;"><a href="{{ github_commit_url }}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">{{ source_commit_short }}</a></div>
+        <div class="label">Source Commit</div>
+    </div>
+    {% endif %}
 </div>
 
 <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">

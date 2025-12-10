@@ -27,7 +27,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: {{ generated_time }} | {{ total_lemmas }} lemmas in {{ total_files }} files</p>
+        <p>Generated: {{ generated_time }} | {{ total_lemmas }} lemmas in {{ total_files }} files{% if source_commit_short %} | Source: <a href="{{ github_commit_url }}" target="_blank" rel="noopener" style="color: var(--accent);">{{ source_commit_short }}</a>{% endif %}</p>
     </footer>
     
     <script>

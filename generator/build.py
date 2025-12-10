@@ -45,6 +45,7 @@ class ProjectConfig:
     branch: str
     directories: List[str]
     index_file: str  # Markdown file for overview page
+    commit: Optional[str] = None  # Specific commit hash to checkout
     
     @classmethod
     def from_yaml(cls, yaml_path: Path) -> 'ProjectConfig':
@@ -60,6 +61,7 @@ class ProjectConfig:
             branch=data['source']['branch'],
             directories=data['source']['directories'],
             index_file=data.get('index', ''),
+            commit=data['source'].get('commit'),
         )
 
 
@@ -392,14 +394,30 @@ def load_index_markdown(index_path: Path) -> str:
     return html
 
 
-def clone_repo(repo_url: str, branch: str, dest_dir: Path) -> bool:
-    """Clone a git repository."""
+def clone_repo(repo_url: str, branch: str, dest_dir: Path, commit: Optional[str] = None) -> bool:
+    """Clone a git repository and optionally checkout a specific commit."""
     try:
-        cmd = ['git', 'clone', '--depth', '1', '--branch', branch, repo_url, str(dest_dir)]
+        if commit:
+            # Need full clone to checkout specific commit
+            cmd = ['git', 'clone', '--branch', branch, repo_url, str(dest_dir)]
+        else:
+            # Shallow clone is fine when no specific commit needed
+            cmd = ['git', 'clone', '--depth', '1', '--branch', branch, repo_url, str(dest_dir)]
+        
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
             print(f"Warning: Failed to clone {repo_url}: {result.stderr}", file=sys.stderr)
             return False
+        
+        # Checkout specific commit if provided
+        if commit:
+            checkout_cmd = ['git', '-C', str(dest_dir), 'checkout', commit]
+            checkout_result = subprocess.run(checkout_cmd, capture_output=True, text=True)
+            if checkout_result.returncode != 0:
+                print(f"Warning: Failed to checkout commit {commit}: {checkout_result.stderr}", file=sys.stderr)
+                return False
+            print(f"  Checked out commit: {commit[:7]}")
+        
         return True
     except Exception as e:
         print(f"Warning: Exception cloning {repo_url}: {e}", file=sys.stderr)
@@ -454,10 +472,12 @@ def build_project(
     theorems = [l for l in all_lemmas if l.declaration_type == 'Theorem']
     total_deps = sum(len(l.uses) for l in all_lemmas)
     
-    # GitHub URLs
+    # GitHub URLs - use commit hash if available for precise linking
     github_repo = config.repo_url.replace('.git', '').replace('https://github.com/', '')
-    github_blob_base = f"https://github.com/{github_repo}/blob/{config.branch}"
-    github_raw_base = f"https://raw.githubusercontent.com/{github_repo}/{config.branch}"
+    ref = config.commit if config.commit else config.branch
+    github_blob_base = f"https://github.com/{github_repo}/blob/{ref}"
+    github_raw_base = f"https://raw.githubusercontent.com/{github_repo}/{ref}"
+    github_commit_url = f"https://github.com/{github_repo}/commit/{config.commit}" if config.commit else None
     
     # Project-specific context
     project_context = {
@@ -470,6 +490,9 @@ def build_project(
         'github_blob_base': github_blob_base,
         'github_raw_base': github_raw_base,
         'coq_source_root': config.directories[0] if config.directories else '',
+        'source_commit': config.commit,
+        'source_commit_short': config.commit[:7] if config.commit else None,
+        'github_commit_url': github_commit_url,
     }
     
     # Load index markdown
@@ -561,6 +584,9 @@ def build_project(
         'helper_count': len(helper_lemmas),
         'theorem_count': len(theorems),
         'total_deps': total_deps,
+        'source_commit': config.commit,
+        'source_commit_short': config.commit[:7] if config.commit else None,
+        'github_commit_url': github_commit_url,
     }
 
 
@@ -676,8 +702,9 @@ def main():
             # Clone repo to temporary directory
             with TemporaryDirectory() as tmpdir:
                 source_root = Path(tmpdir)
-                print(f"  Cloning {config.repo_url} ({config.branch})...")
-                if clone_repo(config.repo_url, config.branch, source_root):
+                commit_info = f" @ {config.commit[:7]}" if config.commit else ""
+                print(f"  Cloning {config.repo_url} ({config.branch}{commit_info})...")
+                if clone_repo(config.repo_url, config.branch, source_root, config.commit):
                     info = build_project(config, source_root, output_dir, env, base_context)
                     projects_info.append(info)
                 else:
