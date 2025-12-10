@@ -10,6 +10,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  statuses: write
 
 jobs:
   build:
@@ -96,6 +97,19 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git commit -m "Build: Update generated HTML for PR #${{ github.event.pull_request.number }}"
           git push
+      
+      # When we push a new commit, workflows don't trigger for GITHUB_TOKEN pushes.
+      # We need to manually set the status check on the new commit for branch protection.
+      - name: Set status check on new commit
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          NEW_SHA=$(git rev-parse HEAD)
+          gh api repos/${{ github.repository }}/statuses/$NEW_SHA \
+            -f state=success \
+            -f context=build \
+            -f description="Build succeeded (status forwarded from previous commit)"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       # Only enable auto-merge when no changes were made (final build run)
       # This avoids trying to merge before the pushed commit triggers another run
