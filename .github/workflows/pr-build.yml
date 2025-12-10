@@ -1,4 +1,4 @@
-name: PR Build and Auto-Merge
+name: PR Build
 
 on:
   pull_request_target:
@@ -114,10 +114,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Enable auto-merge after build completes.
-      # Use || true to handle cases where auto-merge is already enabled or PR is already clean.
-      - name: Enable auto-merge
-        run: gh pr merge --auto --squash "$PR_NUMBER" || echo "Auto-merge may already be enabled or PR is ready to merge"
+      # Add label to signal build is complete and ready for auto-merge
+      - name: Add ready-to-merge label
+        run: gh pr edit "$PR_NUMBER" --add-label "ready-to-merge"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
