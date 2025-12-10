@@ -21,11 +21,13 @@ Currently documented projects:
 
 - **[DSDP Formalization](https://weng-chenghui.github.io/rocq-stats/dsdp/)** - Dual protocols for private multi-party matrix multiplication
 
-## Usage
+## Adding or Updating a Project
 
-### Adding a New Project
+External projects can add or update their documentation by submitting a Pull Request.
 
-1. Create a YAML configuration file in `projects/`:
+### Step 1: Prepare Your YAML Configuration
+
+Create a YAML file with your project configuration:
 
 ```yaml
 name: my-project
@@ -35,36 +37,51 @@ description: "Short description of the project"
 source:
   repo: "https://github.com/user/repo.git"
   branch: "main"
+  commit: "abc123def456789..."  # Full 40-character commit hash
   directories:
     - "src"
 
-index: "path/to/overview.md"
+index: "path/to/overview.md"  # Optional: Markdown file for overview page
 ```
 
-2. The site will be rebuilt automatically via GitHub Actions, or run manually:
+**Important:** The `commit` field must be a full 40-character SHA hash. This ensures reproducible builds and precise source code links.
 
-```bash
-cd generator
-pip install jinja2 markdown pyyaml
-python build.py
-```
+### Step 2: Submit a Pull Request
 
-### Local Development
+1. Fork this repository
+2. Add your YAML file to the `projects/` directory (or update an existing one)
+3. Submit a Pull Request
+
+The PR will automatically:
+- Validate your YAML configuration
+- Build the documentation site
+- Commit the generated HTML back to your PR
+- Auto-merge once the build succeeds
+
+### Step 3: Update Your Documentation
+
+When your source repository changes, submit a new PR with an updated `commit` hash in your YAML file.
+
+---
+
+## Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/weng-chenghui/rocq-stats.git
 cd rocq-stats
 
-# Install dependencies
+# Setup and build (using Makefile)
+make setup   # Create venv and install dependencies
+make build   # Build the site
+
+# Or manually:
 pip install jinja2 markdown pyyaml
-
-# Build with a local source directory
 cd generator
-python build.py --local /path/to/local/repo
-
-# Or build from remote repositories
 python build.py
+
+# Build with a local source directory (skip cloning)
+python build.py --local /path/to/local/repo
 ```
 
 ### Command Line Options
@@ -92,17 +109,20 @@ options:
 rocq-stats/
 ├── generator/                # Site generator scripts
 │   ├── build.py              # Main build script
-│   ├── list_lemmas.py        # Lemma parser
-│   ├── analyze_dependencies.py
 │   ├── templates/            # Jinja2 HTML templates
 │   └── static/               # CSS, JS
-├── projects/                 # Project configurations
+├── projects/                 # Project configurations (YAML files)
 │   └── dsdp.yaml
 ├── rocq-stats/               # Generated output (GitHub Pages)
 │   ├── index.html            # Root index listing all projects
 │   └── dsdp/                 # DSDP project subsite
-└── .github/workflows/
-    └── build.yml             # CI workflow
+├── .github/
+│   ├── PULL_REQUEST_TEMPLATE.md  # PR template for project submissions
+│   └── workflows/
+│       ├── build.yml         # Main build & deploy workflow
+│       └── pr-build.yml      # PR build & auto-merge workflow
+├── Makefile                  # Build automation
+└── AGENTS.md                 # AI agent instructions
 ```
 
 ## Lemma Classification
