@@ -680,8 +680,9 @@ def main():
         autoescape=True
     )
     
+    # Use date only (no time) to make builds more deterministic for CI
     base_context = {
-        'generated_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'generated_time': datetime.now().strftime('%Y-%m-%d'),
     }
     
     projects_info = []
