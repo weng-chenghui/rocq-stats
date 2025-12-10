@@ -17,14 +17,14 @@
     </nav>
     
     <main class="container">
-        <div class="hero" style="text-align: center; padding: 3rem 0; margin-bottom: 2rem;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Rocq Stats</h1>
-            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        <div class="hero" style="text-align: center; padding: 1.5rem 0; margin-bottom: 1rem;">
+            <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Rocq Stats</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
                 Lemma statistics and documentation for Rocq/Coq formalizations
             </p>
         </div>
         
-        <h2 style="margin-bottom: 1.5rem;">Projects</h2>
+        <h2 style="margin-bottom: 1rem;">Projects</h2>
         
         <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem;">
             
@@ -62,26 +62,41 @@
         
         
         
-        <section style="margin-top: 3rem; padding: 2rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;">
-            <h2 style="margin-bottom: 1rem;">About Rocq Stats</h2>
-            <p style="color: var(--text-secondary); line-height: 1.7;">
-                Rocq Stats is a documentation generator for <a href="https://rocq-prover.org/" style="color: var(--accent);">Rocq/Coq</a> formalizations. 
-                It parses Coq source files to extract lemma information, analyze dependencies, and generate 
-                browsable documentation with statistics.
-            </p>
-            <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Features</h3>
-            <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
-                <li>Automatic lemma extraction from <code>.v</code> files</li>
-                <li>Main/Helper classification based on declaration type and comments</li>
-                <li>Dependency analysis between lemmas</li>
-                <li>Individual lemma detail pages with source code links</li>
-                <li>Dark/light theme support</li>
-            </ul>
-        </section>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+            <section style="padding: 1.5rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;">
+                <h2 style="margin-bottom: 0.75rem; font-size: 1.25rem;">About Rocq Stats</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">
+                    A documentation generator for <a href="https://rocq-prover.org/" style="color: var(--accent);">Rocq/Coq</a> formalizations. 
+                    Extracts lemma information, analyzes dependencies, and generates browsable documentation.
+                </p>
+                <h3 style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem;">Features</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.25rem; font-size: 0.85rem; margin: 0;">
+                    <li>Automatic lemma extraction from <code>.v</code> files</li>
+                    <li>Main/Helper classification</li>
+                    <li>Dependency analysis between lemmas</li>
+                    <li>Source code links to specific commits</li>
+                </ul>
+            </section>
+            
+            <section style="padding: 1.5rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;">
+                <h2 style="margin-bottom: 0.75rem; font-size: 1.25rem;">Add Your Project</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem;">
+                    Want to add your Rocq/Coq project? Submit a Pull Request with a YAML config file.
+                </p>
+                <ol style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.25rem; font-size: 0.85rem; margin: 0.75rem 0 0 0;">
+                    <li>Fork the <a href="https://github.com/weng-chenghui/rocq-stats" style="color: var(--accent);">repository</a></li>
+                    <li>Add a YAML file in <code>projects/</code> with your repo URL, branch, and commit hash</li>
+                    <li>Submit a PR — it will be auto-built and merged</li>
+                </ol>
+                <p style="margin-top: 0.75rem;">
+                    <a href="https://github.com/weng-chenghui/rocq-stats#adding-or-updating-a-project" style="color: var(--accent); font-size: 0.85rem;">View full instructions →</a>
+                </p>
+            </section>
+        </div>
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-10 13:57:51 | <a href="https://github.com/weng-chenghui/rocq-stats" style="color: var(--accent);">GitHub</a></p>
+        <p>Generated: 2025-12-10 22:05:03 | <a href="https://github.com/weng-chenghui/rocq-stats" style="color: var(--accent);">GitHub</a></p>
     </footer>
     
     <script>
