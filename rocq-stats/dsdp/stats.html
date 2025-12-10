@@ -28,7 +28,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">141</div>
+        <div class="value">152</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -36,7 +36,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">125</div>
+        <div class="value">136</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -484,7 +484,7 @@
                     <td class="meaning">Main cardinality theorem for generalized linear fiber. When u has a unit component at index i: |linear_fiber_zpq u target| = m^(n-1)</td>
                 </tr>
             
-                <tr data-search="fiber_zpq_pair_card lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|fiber_zpq_pair u2 u3 target| = m. main result: 2d fiber cardinality = m direct proof using bijection f(v2) = (v2, (target - u2*v2) / u3)">
+                <tr data-search="fiber_zpq_pair_card lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|fiber_zpq_pair u2 u3 target| = m. main result: 2d fiber cardinality = m derived from linear_fiber_zpq_card by: 1. u3 &lt; min(p,q) implies u3 is a unit (at index ord_max) 2. linear_fiber_zpq_card gives |linear_fiber_zpq| = m^(2-1) = m 3. bijection preserves cardinality: |fiber_zpq_pair| = |linear_fiber_zpq|">
                     <td>
                         
                         <span class="badge badge-main">Main</span>
@@ -492,9 +492,9 @@
                         <a href="lemmas/fiber_zpq_pair_card.html" class="lemma-name">fiber_zpq_pair_card</a>
                     </td>
                     <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">34</td>
+                    <td class="proof-lines">16</td>
                     <td><code class="signature">Lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|fiber_zpq_pair u2 u3 target| = m.</code></td>
-                    <td class="meaning">Main result: 2D fiber cardinality = m Direct proof using bijection f(v2) = (v2, (target - u2*v2) / u3)</td>
+                    <td class="meaning">Main result: 2D fiber cardinality = m Derived from linear_fiber_zpq_card by: 1. u3 &lt; min(p,q) implies u3 is a unit (at index ord_max) 2. linear_fiber_zpq_card gives |linear_fiber_zpq| = m^(2-1) = m 3. Bijection preserves cardinality: |fiber_zpq_pair| = |linear_fiber_zpq|</td>
                 </tr>
             
             </tbody>
@@ -507,7 +507,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (125 total)
+    Supporting lemmas and utilities (136 total)
 </p>
 
 <div id="helpers-section">
@@ -2020,7 +2020,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">zpq/fiber_zpq.v</span>
         </div>
-        <span class="file-count">14 helper</span>
+        <span class="file-count">25 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2189,6 +2189,127 @@
                     <td class="meaning">Key lemma: u &lt; min(p,q) implies u is coprime to pq. Since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) Therefore gcd(u, pq) = 1, so u is a unit in Z/pq.</td>
                 </tr>
             
+                <tr data-search="pair_to_rowk lemma pair_to_rowk : cancel row_to_pair pair_to_row. pair_to_row ∘ row_to_pair = id">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_to_rowK.html" class="lemma-name">pair_to_rowK</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma pair_to_rowK : cancel row_to_pair pair_to_row.</code></td>
+                    <td class="meaning">pair_to_row ∘ row_to_pair = id</td>
+                </tr>
+            
+                <tr data-search="row_to_pairk lemma row_to_pairk : cancel pair_to_row row_to_pair. row_to_pair ∘ pair_to_row = id">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/row_to_pairK.html" class="lemma-name">row_to_pairK</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma row_to_pairK : cancel pair_to_row row_to_pair.</code></td>
+                    <td class="meaning">row_to_pair ∘ pair_to_row = id</td>
+                </tr>
+            
+                <tr data-search="pair_to_row_bij lemma pair_to_row_bij : bijective pair_to_row. pair_to_row is a bijection">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_to_row_bij.html" class="lemma-name">pair_to_row_bij</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pair_to_row_bij : bijective pair_to_row.</code></td>
+                    <td class="meaning">pair_to_row is a bijection</td>
+                </tr>
+            
+                <tr data-search="row_to_pair_bij lemma row_to_pair_bij : bijective row_to_pair. row_to_pair is a bijection">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/row_to_pair_bij.html" class="lemma-name">row_to_pair_bij</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma row_to_pair_bij : bijective row_to_pair.</code></td>
+                    <td class="meaning">row_to_pair is a bijection</td>
+                </tr>
+            
+                <tr data-search="pair_to_row_inj lemma pair_to_row_inj : injective pair_to_row. injectivity lemmas for set cardinality">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_to_row_inj.html" class="lemma-name">pair_to_row_inj</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pair_to_row_inj : injective pair_to_row.</code></td>
+                    <td class="meaning">Injectivity lemmas for set cardinality</td>
+                </tr>
+            
+                <tr data-search="row_to_pair_inj lemma row_to_pair_inj : injective row_to_pair. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/row_to_pair_inj.html" class="lemma-name">row_to_pair_inj</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma row_to_pair_inj : injective row_to_pair.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="pair_to_row_ord0 lemma pair_to_row_ord0 (vv : msg * msg) : (pair_to_row vv) ord0 ord0 = vv.1. helper: accessing pair_to_row at ord0">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_to_row_ord0.html" class="lemma-name">pair_to_row_ord0</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pair_to_row_ord0 (vv : msg * msg) : (pair_to_row vv) ord0 ord0 = vv.1.</code></td>
+                    <td class="meaning">Helper: accessing pair_to_row at ord0</td>
+                </tr>
+            
+                <tr data-search="pair_to_row_ord_max lemma pair_to_row_ord_max (vv : msg * msg) : (pair_to_row vv) ord0 ord_max = vv.2. helper: accessing pair_to_row at ord_max">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pair_to_row_ord_max.html" class="lemma-name">pair_to_row_ord_max</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pair_to_row_ord_max (vv : msg * msg) : (pair_to_row vv) ord0 ord_max = vv.2.</code></td>
+                    <td class="meaning">Helper: accessing pair_to_row at ord_max</td>
+                </tr>
+            
+                <tr data-search="dotmul_pair_eq lemma dotmul_pair_eq (u2 u3 : msg) (vv : msg * msg) : (coef_to_row u2 u3) *d (pair_to_row vv) = u2 * vv.1 + u3 * vv.2. the dot product u *d v equals u2*v2 + u3*v3">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotmul_pair_eq.html" class="lemma-name">dotmul_pair_eq</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma dotmul_pair_eq (u2 u3 : msg) (vv : msg * msg) : (coef_to_row u2 u3) *d (pair_to_row vv) = u2 * vv.1 + u3 * vv.2.</code></td>
+                    <td class="meaning">The dot product u *d v equals u2*v2 + u3*v3</td>
+                </tr>
+            
+                <tr data-search="fiber_zpq_pair_eq lemma fiber_zpq_pair_eq (u2 u3 target : msg) : fiber_zpq_pair u2 u3 target = row_to_pair @: linear_fiber_zpq (coef_to_row u2 u3) target. fiber_zpq_pair is the image of linear_fiber_zpq under row_to_pair">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/fiber_zpq_pair_eq.html" class="lemma-name">fiber_zpq_pair_eq</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">21</td>
+                    <td><code class="signature">Lemma fiber_zpq_pair_eq (u2 u3 target : msg) : fiber_zpq_pair u2 u3 target = row_to_pair @: linear_fiber_zpq (coef_to_row u2 u3) target.</code></td>
+                    <td class="meaning">fiber_zpq_pair is the image of linear_fiber_zpq under row_to_pair</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_zpq_card_2d lemma linear_fiber_zpq_card_2d (u : &#39;rv[msg]_2) (target : msg) (i : &#39;i_2) : u ord0 i \is a gring.unit -&gt; #|linear_fiber_zpq u target| = m. note: the general lemma&#39;s section variables match this section&#39;s variables">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/linear_fiber_zpq_card_2d.html" class="lemma-name">linear_fiber_zpq_card_2d</a>
+                    </td>
+                    <td class="section-name">fiber_zpq_2d</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma linear_fiber_zpq_card_2d (u : &#39;rV[msg]_2) (target : msg) (i : &#39;I_2) : u ord0 i \is a GRing.unit -&gt; #|linear_fiber_zpq u target| = m.</code></td>
+                    <td class="meaning">Note: The general lemma&#39;s section variables match this section&#39;s variables</td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -2201,7 +2322,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-10 21:28:41 | 141 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/fbef383006ff07b4ed1805dc6cd3e7f4a1f96449" target="_blank" rel="noopener" style="color: var(--accent);">fbef383</a></p>
+        <p>Generated: 2025-12-10 13:57:50 | 152 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/4f3af749baae30ecbf0908d02b991c2ceb2db608" target="_blank" rel="noopener" style="color: var(--accent);">4f3af74</a></p>
     </footer>
     
     <script>
