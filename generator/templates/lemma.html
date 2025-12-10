@@ -101,8 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const filePath = '{{ coq_source_root }}/{{ lemma.file_name }}';
     const lemmaName = '{{ lemma.name }}';
     const githubRawBase = '{{ github_raw_base }}';
+    const availableLemmas = {{ all_lemma_names | tojson }};
     
-    loadLemmaSource(githubRawBase, filePath, lemmaName);
+    loadLemmaSource(githubRawBase, filePath, lemmaName, availableLemmas);
 });
 </script>
 {% endblock %}

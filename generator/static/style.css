@@ -511,6 +511,19 @@ tr:hover {
 .coq-string { color: var(--success); }
 .coq-name { color: var(--gold); }
 
+/* Lemma links in Coq source code */
+.coq-lemma-link {
+    color: var(--purple);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.coq-lemma-link:hover {
+    text-decoration: underline;
+    color: var(--accent);
+}
+
 /* Markdown content */
 .markdown-content {
     line-height: 1.8;

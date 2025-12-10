@@ -536,6 +536,7 @@ def build_project(
     print(f"  Building lemma detail pages...")
     lemma_template = env.get_template('lemma.html')
     name_to_lemma = {l.name: l for l in all_lemmas}
+    all_lemma_names = [l.name for l in all_lemmas]
     
     for lemma in all_lemmas:
         lemma_content = lemma_template.render(
@@ -545,6 +546,7 @@ def build_project(
             lemma=lemma,
             uses_lemmas=[name_to_lemma[n] for n in lemma.uses if n in name_to_lemma],
             used_by_lemmas=[name_to_lemma[n] for n in lemma.used_by if n in name_to_lemma],
+            all_lemma_names=all_lemma_names,
         )
         with open(project_output / 'lemmas' / f'{lemma.name}.html', 'w', encoding='utf-8') as f:
             f.write(lemma_content)

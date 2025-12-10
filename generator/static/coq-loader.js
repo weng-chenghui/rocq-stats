@@ -3,14 +3,31 @@
  * Fetches Coq source code from GitHub and extracts/highlights specific lemmas.
  */
 
+// Global set of known lemma names that have detail pages
+let knownLemmas = new Set();
+
+/**
+ * Set the list of known lemmas that have detail pages.
+ * @param {string[]} lemmaNames - Array of lemma names
+ */
+function setKnownLemmas(lemmaNames) {
+    knownLemmas = new Set(lemmaNames);
+}
+
 /**
  * Load and display a lemma's source code from GitHub.
  * @param {string} githubRawBase - Base URL for GitHub raw content
  * @param {string} filePath - Path to the .v file relative to repo root
  * @param {string} lemmaName - Name of the lemma to extract
+ * @param {string[]} [availableLemmas] - Optional array of lemma names that have detail pages
  */
-async function loadLemmaSource(githubRawBase, filePath, lemmaName) {
+async function loadLemmaSource(githubRawBase, filePath, lemmaName, availableLemmas) {
     const container = document.getElementById('coq-source');
+    
+    // Set known lemmas if provided
+    if (availableLemmas) {
+        setKnownLemmas(availableLemmas);
+    }
     
     try {
         const url = `${githubRawBase}/${filePath}`;
@@ -24,7 +41,7 @@ async function loadLemmaSource(githubRawBase, filePath, lemmaName) {
         const extracted = extractLemma(code, lemmaName);
         
         if (extracted) {
-            container.innerHTML = highlightCoq(extracted);
+            container.innerHTML = highlightCoq(extracted, lemmaName);
         } else {
             container.innerHTML = `<span class="error">Could not find lemma "${lemmaName}" in source file.</span>`;
         }
@@ -110,9 +127,10 @@ function extractLemma(code, lemmaName) {
 /**
  * Apply syntax highlighting to Coq code.
  * @param {string} code - Coq source code
+ * @param {string} [currentLemma] - Name of the current lemma (to avoid self-links)
  * @returns {string} - HTML with syntax highlighting
  */
-function highlightCoq(code) {
+function highlightCoq(code, currentLemma) {
     // Keywords
     const keywords = [
         'Lemma', 'Theorem', 'Corollary', 'Proposition', 'Fact', 'Remark',
@@ -171,6 +189,9 @@ function highlightCoq(code) {
                 tokens.push({ type: 'keyword', text: word });
             } else if (tactics.includes(word)) {
                 tokens.push({ type: 'tactic', text: word });
+            } else if (knownLemmas.has(word) && word !== currentLemma) {
+                // This is a known lemma with a detail page (not self-referencing)
+                tokens.push({ type: 'lemma-link', text: word });
             } else {
                 tokens.push({ type: 'text', text: word });
             }
@@ -199,6 +220,9 @@ function highlightCoq(code) {
                 break;
             case 'tactic':
                 html += `<span class="coq-tactic">${escaped}</span>`;
+                break;
+            case 'lemma-link':
+                html += `<a href="${escaped}.html" class="coq-lemma-link">${escaped}</a>`;
                 break;
             default:
                 html += escaped;
