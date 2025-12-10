@@ -114,15 +114,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Enable auto-merge after build completes (skip if already enabled).
+      # Enable auto-merge after build completes.
+      # Use || true to handle cases where auto-merge is already enabled or PR is already clean.
       - name: Enable auto-merge
-        run: |
-          AUTO_MERGE=$(gh pr view "$PR_NUMBER" --json autoMergeRequest --jq '.autoMergeRequest')
-          if [ "$AUTO_MERGE" = "null" ]; then
-            gh pr merge --auto --squash "$PR_NUMBER"
-          else
-            echo "Auto-merge already enabled, skipping"
-          fi
+        run: gh pr merge --auto --squash "$PR_NUMBER" || echo "Auto-merge may already be enabled or PR is ready to merge"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
