@@ -111,10 +111,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Only enable auto-merge when no changes were made (final build run)
-      # This avoids trying to merge before the pushed commit triggers another run
+      # Enable auto-merge after build completes.
+      # Since we set the status check on any new commit above, auto-merge can proceed.
       - name: Enable auto-merge
-        if: steps.check_changes.outputs.has_changes == 'false'
         run: gh pr merge --auto --squash "$PR_NUMBER"
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
