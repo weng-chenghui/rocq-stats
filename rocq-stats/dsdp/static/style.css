@@ -70,6 +70,23 @@ body {
     gap: 2rem;
 }
 
+.nav-home {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 1rem 0;
+}
+
+.nav-home:hover {
+    color: var(--accent);
+}
+
+.nav-separator {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 -0.5rem;
+}
+
 .nav-brand {
     font-size: 1.25rem;
     font-weight: 600;
@@ -647,8 +664,18 @@ tr:hover {
         padding: 0.5rem 1rem;
     }
     
+    .nav-home {
+        padding: 0.5rem 0;
+        font-size: 0.85rem;
+    }
+    
+    .nav-separator {
+        margin: 0 -0.25rem;
+    }
+    
     .nav-brand {
         padding: 0.5rem 0;
+        font-size: 1.1rem;
     }
     
     .nav-tabs {

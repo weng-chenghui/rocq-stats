@@ -38,6 +38,13 @@ When running `pip install`, always use:
 required_permissions: ["all"]
 ```
 
+**Do NOT use sandbox mode when making git commits.** GPG signing requires access to the GPG agent which fails in sandbox mode.
+
+When running `git commit`, always use:
+```
+required_permissions: ["all"]
+```
+
 ## Building the Site
 
 After activating the venv, run the build script:
