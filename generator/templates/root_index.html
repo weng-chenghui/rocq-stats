@@ -49,6 +49,10 @@
                         <span style="color: var(--text-secondary); font-weight: 600;">{{ project.total_files }}</span>
                         <span style="color: var(--text-muted); font-size: 0.85rem;"> files</span>
                     </div>
+                    <div class="stat">
+                        <span style="color: var(--text-secondary); font-weight: 600;">{{ "{:,}".format(project.total_lines) }}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;"> lines</span>
+                    </div>
                     {% if project.source_commit_short %}
                     <div class="stat">
                         <span style="color: var(--warning); font-weight: 600; font-family: monospace;">{{ project.source_commit_short }}</span>

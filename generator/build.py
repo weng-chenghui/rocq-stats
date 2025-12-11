@@ -447,6 +447,7 @@ def build_project(
     print(f"  Parsing Coq files for {config.name}...")
     all_lemmas = []
     coq_dirs = []
+    total_lines = 0
     
     for dir_name in config.directories:
         coq_dir = source_root / dir_name
@@ -456,10 +457,16 @@ def build_project(
         
         coq_dirs.append(coq_dir)
         for vfile in sorted(coq_dir.rglob('*.v')):
+            # Count lines in each file
+            try:
+                with open(vfile, 'r', encoding='utf-8') as f:
+                    total_lines += sum(1 for _ in f)
+            except Exception:
+                pass
             lemmas = parse_coq_file(vfile, coq_dir)
             all_lemmas.extend(lemmas)
     
-    print(f"  Found {len(all_lemmas)} lemmas")
+    print(f"  Found {len(all_lemmas)} lemmas ({total_lines} lines)")
     
     # Analyze dependencies
     analyze_dependencies(all_lemmas, coq_dirs)
@@ -487,6 +494,7 @@ def build_project(
         'project_name': config.name,
         'total_lemmas': total_lemmas,
         'total_files': total_files,
+        'total_lines': total_lines,
         'github_blob_base': github_blob_base,
         'github_raw_base': github_raw_base,
         'coq_source_root': config.directories[0] if config.directories else '',
@@ -580,6 +588,7 @@ def build_project(
         'description': config.description,
         'total_lemmas': total_lemmas,
         'total_files': total_files,
+        'total_lines': total_lines,
         'main_count': len(main_lemmas),
         'helper_count': len(helper_lemmas),
         'theorem_count': len(theorems),

@@ -195,6 +195,20 @@ h3 {
     line-height: 1.2;
 }
 
+.stat-card .value a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.stat-card .value a:hover {
+    text-decoration: underline;
+}
+
+.stat-card .value.value-small {
+    font-size: 1.5rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
 .stat-card .label {
     color: var(--text-secondary);
     font-size: 0.9rem;
