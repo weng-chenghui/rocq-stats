@@ -28,15 +28,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">150</div>
+        <div class="value">139</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">16</div>
+        <div class="value">23</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">134</div>
+        <div class="value">116</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -61,7 +61,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (16 total)
+    Theorems and key lemmas (23 total)
 </p>
 
 
@@ -113,7 +113,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">3 main</span>
+        <span class="file-count">5 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -154,6 +154,19 @@
                     <td class="meaning">Main privacy lemma: H((V2,V3) | (V1,U1,U2,U3,S)) = log(m). This shows that given Alice&#39;s view of the constraint, the entropy of Bob and Charlie&#39;s private inputs (V2,V3) equals log(m), not log(m²). The &#34;missing&#34; log(m) bits represent V3&#39;s determination by the constraint.</td>
                 </tr>
             
+                <tr data-search="constus_discloses_v2 lemma constus_discloses_v2 : us = constus -&gt; dotp2_rv vs us = v2. if an active adversary controls alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. in contrast, if alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. finally, if bob enforce zpk check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\s5.2]{dumas2017dual}. therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/ConstUS_discloses_V2.html" class="lemma-name">ConstUS_discloses_V2</a>
+                    </td>
+                    <td class="section-name">malicious_adversary_case_analysis</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma ConstUS_discloses_V2 : US = ConstUS -&gt; Dotp2_rv VS US = V2.</code></td>
+                    <td class="meaning">If an active adversary controls Alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. In contrast, if Alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. Finally, if Bob enforce ZPK check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\S5.2]{dumas2017dual}. Therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.</td>
+                </tr>
+            
                 <tr data-search="us_compromised_leaks_v2 theorem us_compromised_leaks_v2 : us = constus -&gt; ~ `h(v2 | aliceview ) = `h `p_v2. this theorem shows that if an active adversary controls alice, it can set u1 and u2 as a special combination (1, 0), which allows revealing `v2` from the result that alice receives. \cite[\s5.2]{dumas2017dual}.">
                     <td>
                         
@@ -165,6 +178,19 @@
                     <td class="proof-lines">38</td>
                     <td><code class="signature">Theorem US_compromised_leaks_V2 : US = ConstUS -&gt; ~ `H(V2 | AliceView ) = `H `p_V2.</code></td>
                     <td class="meaning">This theorem shows that if an active adversary controls Alice, it can set U1 and U2 as a special combination (1, 0), which allows revealing `V2` from the result that Alice receives. \cite[\S5.2]{dumas2017dual}.</td>
+                </tr>
+            
+                <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint).">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
+                    </td>
+                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
+                    <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint).</td>
                 </tr>
             
             </tbody>
@@ -236,7 +262,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">entropy_fiber/entropy_fibers.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">3 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -262,6 +288,19 @@
                     <td class="proof-lines">8</td>
                     <td><code class="signature">Lemma centropy1_as_sum (c : CodomainT) : `Pr[Y = c] != 0 -&gt; `H[X | Y = c] = - \sum_(x : DomainT) `Pr[X = x | Y = c] * log (`Pr[X = x | Y = c]).</code></td>
                     <td class="meaning">Conditional entropy expanded as negative sum of p*log(p) over domain.</td>
+                </tr>
+            
+                <tr data-search="centropy1_uniform_fiber lemma centropy1_uniform_fiber (c : codomaint) : `pr[y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `pr[x = x | y = c] = #|fiber_c|%:r ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `pr[x = x | y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%n -&gt; `h[x | y = c] = log (#|fiber_c|%:r : r). if x is uniform over fiber(c) given y=c, then h(x|y=c) = log|fiber(c)|. key lemma for computing conditional entropy via fiber cardinality.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/centropy1_uniform_fiber.html" class="lemma-name">centropy1_uniform_fiber</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma centropy1_uniform_fiber (c : CodomainT) : `Pr[Y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `Pr[X = x | Y = c] = #|fiber_c|%:R ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `Pr[X = x | Y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%N -&gt; `H[X | Y = c] = log (#|fiber_c|%:R : R).</code></td>
+                    <td class="meaning">If X is uniform over fiber(c) given Y=c, then H(X|Y=c) = log|fiber(c)|. Key lemma for computing conditional entropy via fiber cardinality.</td>
                 </tr>
             
                 <tr data-search="centropy_determined_contract lemma centropy_determined_contract : `h([% x, y] | cond) = `h(x | cond). main result: auxiliary variable adds no entropy">
@@ -324,6 +363,45 @@
 </div>
 
 
+
+<div class="file-section main-section" data-file="lib/extra_algebra.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">lib/extra_algebra.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="coprime_zp_unit lemma coprime_zp_unit (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; coprime x m -&gt; x \is a gring.unit. key lemma from mathcomp: unitzpe (x%:r : &#39;z_m) \is a gring.unit = coprime m x (when 1 &lt; m) for x : &#39;z_m, we have x = (nat_of_ord x)%:r, so we can apply unitzpe directly.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/coprime_Zp_unit.html" class="lemma-name">coprime_Zp_unit</a>
+                    </td>
+                    <td class="section-name">Zp_unit_extra</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma coprime_Zp_unit (m : nat) (x : &#39;Z_m) : (1 &lt; m)%N -&gt; coprime x m -&gt; x \is a GRing.unit.</code></td>
+                    <td class="meaning">Key lemma from MathComp: unitZpE (x%:R : &#39;Z_m) \is a GRing.unit = coprime m x (when 1 &lt; m) For x : &#39;Z_m, we have x = (nat_of_ord x)%:R, so we can apply unitZpE directly.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
@@ -402,7 +480,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">lib/rouche_capelli.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">4 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -416,6 +494,32 @@
                 </tr>
             </thead>
             <tbody>
+            
+                <tr data-search="card_vspace lemma card_vspace (k : finfieldtype) (fvt : finvecttype k) (u : {vspace fvt}) : #|u| = (#| {:k} | ^ (\dim u))%n. cardinality of a vector subspace: |u| = |k|^dim(u). fundamental result: a d-dimensional subspace over finite field k has |k|^d elements. this is the key formula for counting solutions to linear systems.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/card_vspace.html" class="lemma-name">card_vspace</a>
+                    </td>
+                    <td class="section-name">finvect_lemmas</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma card_vspace (K : finFieldType) (fvT : finVectType K) (U : {vspace fvT}) : #|U| = (#| {:K} | ^ (\dim U))%N.</code></td>
+                    <td class="meaning">Cardinality of a vector subspace: |U| = |K|^dim(U). Fundamental result: a d-dimensional subspace over finite field K has |K|^d elements. This is the key formula for counting solutions to linear systems.</td>
+                </tr>
+            
+                <tr data-search="mxrank_sub_eqmx lemma mxrank_sub_eqmx m n p (a : &#39;m[r]_(m,n)) (b : &#39;m[r]_(p,n)) : \rank a = \rank b -&gt; (a &lt;= b)%ms -&gt; (a == b)%ms. equal rank + submx implies equivalence: if rank(a) = rank(b) and a ≤ b, then a ≡ b. key lemma for establishing row space equality.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/mxrank_sub_eqmx.html" class="lemma-name">mxrank_sub_eqmx</a>
+                    </td>
+                    <td class="section-name">RoucheCapelliTheorems</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma mxrank_sub_eqmx m n p (A : &#39;M[R]_(m,n)) (B : &#39;M[R]_(p,n)) : \rank A = \rank B -&gt; (A &lt;= B)%MS -&gt; (A == B)%MS.</code></td>
+                    <td class="meaning">Equal rank + submx implies equivalence: if rank(A) = rank(B) and A ≤ B, then A ≡ B. Key lemma for establishing row space equality.</td>
+                </tr>
             
                 <tr data-search="count_affine_solutions_explicit lemma count_affine_solutions_explicit (x0 : &#39;rv[k]_m) : x0 *m a = b -&gt; #|affine_solutions| = (#|{:k}| ^ (m - \rank a))%n. explicit affine solution count: |{x | xa = b}| = |k|^(m - rank(a)). combines count_affine_solutions with count_kernel_vectors. this is the main rouché-capelli counting formula for row systems.">
                     <td>
@@ -456,7 +560,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">zpq/fiber_zpq.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">3 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -484,6 +588,19 @@
                     <td class="meaning">Main cardinality theorem for generalized linear fiber. When u has a unit component at index i: |linear_fiber_zpq u target| = m^(n-1)</td>
                 </tr>
             
+                <tr data-search="lt_minpq_coprime lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%n -&gt; (u &lt; minn p q)%n -&gt; coprime (nat_of_ord u) m. key lemma: u &lt; min(p,q) implies u is coprime to pq. since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) therefore gcd(u, pq) = 1, so u is a unit in z/pq.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/lt_minpq_coprime.html" class="lemma-name">lt_minpq_coprime</a>
+                    </td>
+                    <td class="section-name">linear_fiber_zpq</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%N -&gt; (u &lt; minn p q)%N -&gt; coprime (nat_of_ord u) m.</code></td>
+                    <td class="meaning">Key lemma: u &lt; min(p,q) implies u is coprime to pq. Since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) Therefore gcd(u, pq) = 1, so u is a unit in Z/pq.</td>
+                </tr>
+            
                 <tr data-search="fiber_zpq_pair_card lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|fiber_zpq_pair u2 u3 target| = m. main result: 2d fiber cardinality = m derived from linear_fiber_zpq_card by: 1. u3 &lt; min(p,q) implies u3 is a unit (at index ord_max) 2. linear_fiber_zpq_card gives |linear_fiber_zpq| = m^(2-1) = m 3. bijection preserves cardinality: |fiber_zpq_pair| = |linear_fiber_zpq|">
                     <td>
                         
@@ -492,7 +609,7 @@
                         <a href="lemmas/fiber_zpq_pair_card.html" class="lemma-name">fiber_zpq_pair_card</a>
                     </td>
                     <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">16</td>
+                    <td class="proof-lines">17</td>
                     <td><code class="signature">Lemma fiber_zpq_pair_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|fiber_zpq_pair u2 u3 target| = m.</code></td>
                     <td class="meaning">Main result: 2D fiber cardinality = m Derived from linear_fiber_zpq_card by: 1. u3 &lt; min(p,q) implies u3 is a unit (at index ord_max) 2. linear_fiber_zpq_card gives |linear_fiber_zpq| = m^(2-1) = m 3. Bijection preserves cardinality: |fiber_zpq_pair| = |linear_fiber_zpq|</td>
                 </tr>
@@ -507,7 +624,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (134 total)
+    Supporting lemmas and utilities (116 total)
 </p>
 
 <div id="helpers-section">
@@ -580,7 +697,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">20 helper</span>
+        <span class="file-count">18 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -760,17 +877,6 @@
                     <td class="meaning">S as function composition: S = f ∘ (U2,U3,V2,V3,V1,U1) where f computes the sum. Used for applying composition lemmas in entropy analysis.</td>
                 </tr>
             
-                <tr data-search="constus_discloses_v2 lemma constus_discloses_v2 : us = constus -&gt; dotp2_rv vs us = v2. if an active adversary controls alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. in contrast, if alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. finally, if bob enforce zpk check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\s5.2]{dumas2017dual}. therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/ConstUS_discloses_V2.html" class="lemma-name">ConstUS_discloses_V2</a>
-                    </td>
-                    <td class="section-name">malicious_adversary_case_analysis</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma ConstUS_discloses_V2 : US = ConstUS -&gt; Dotp2_rv VS US = V2.</code></td>
-                    <td class="meaning">If an active adversary controls Alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. In contrast, if Alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. Finally, if Bob enforce ZPK check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\S5.2]{dumas2017dual}. Therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.</td>
-                </tr>
-            
                 <tr data-search="u3_nonzero lemma u3_nonzero : forall t, u3 t != 0. if u3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -780,17 +886,6 @@
                     <td class="proof-lines">11</td>
                     <td><code class="signature">Lemma U3_nonzero : forall t, U3 t != 0.</code></td>
                     <td class="meaning">If U3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.</td>
-                </tr>
-            
-                <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
-                    </td>
-                    <td class="section-name">bonded_leakage_privacy</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
-                    <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint).</td>
                 </tr>
             
                 <tr data-search="v3_determined_centropy_v2 lemma v3_determined_centropy_v2 : `h([% v2, v3] | [% v1, u1, u2, u3, s]) = `h(v2 | [% v1, u1, u2, u3, s]). * * fundamental principle of constraint-based security when an auxiliary variable is functionally determined by a secret and a constraint, the joint entropy equals the secret&#39;s entropy alone. this formalizes the principle that &#34;knowing possible solution pairs gives exactly the same information as knowing the constraint on the secret.&#34; this principle underlies many mpc protocols where: - [v2] is the secret to protect - [v3] is an auxiliary/helper variable - [s, u2, u3] form a constraint linking them - given constraint, [v3] is determined by [v2] (or vice versa)">
@@ -928,7 +1023,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">entropy_fiber/entropy_fibers.v</span>
         </div>
-        <span class="file-count">11 helper</span>
+        <span class="file-count">10 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1018,17 +1113,6 @@
                     <td class="proof-lines">16</td>
                     <td><code class="signature">Lemma entropy_fdist_uniform_set (S : {set DomainT}) (n : nat) : #|S| = n -&gt; (0 &lt; n)%N -&gt; exists (P : R.-fdist DomainT), (forall x, x \in S -&gt; P x = n%:R^-1) -&gt; (forall x, x \notin S -&gt; P x = 0) -&gt; `H P = log (n%:R : R).</code></td>
                     <td class="meaning">Note: although this is the same as the lemma above, it is difficult to use this version in the following `centropy1_uniform_fiber` proof. So both versions are kept.</td>
-                </tr>
-            
-                <tr data-search="centropy1_uniform_fiber lemma centropy1_uniform_fiber (c : codomaint) : `pr[y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `pr[x = x | y = c] = #|fiber_c|%:r ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `pr[x = x | y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%n -&gt; `h[x | y = c] = log (#|fiber_c|%:r : r). if x is uniform over fiber(c) given y=c, then h(x|y=c) = log|fiber(c)|. key lemma for computing conditional entropy via fiber cardinality.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/centropy1_uniform_fiber.html" class="lemma-name">centropy1_uniform_fiber</a>
-                    </td>
-                    <td class="section-name">fiber_entropy</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma centropy1_uniform_fiber (c : CodomainT) : `Pr[Y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `Pr[X = x | Y = c] = #|fiber_c|%:R ^-1) -&gt; (forall x, x \notin fiber_c -&gt; `Pr[X = x | Y = c] = 0) -&gt; (0 &lt; #|fiber_c|)%N -&gt; `H[X | Y = c] = log (#|fiber_c|%:R : R).</code></td>
-                    <td class="meaning">If X is uniform over fiber(c) given Y=c, then H(X|Y=c) = log|fiber(c)|. Key lemma for computing conditional entropy via fiber cardinality.</td>
                 </tr>
             
                 <tr data-search="centropy_constant_fibers lemma centropy_constant_fibers (fiber_card : nat) : (forall c, c \in image_set f -&gt; #|fiber f c| = fiber_card) -&gt; (0 &lt; fiber_card)%n -&gt; `h(x | y) = log (fiber_card%:r : r). then overall conditional entropy is constant">
@@ -1237,7 +1321,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">lib/extra_algebra.v</span>
         </div>
-        <span class="file-count">8 helper</span>
+        <span class="file-count">7 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1283,17 +1367,6 @@
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Lemma bigD1_seq_cond {R : Type} {op : SemiGroup.com_law R} {idx : R} {I : eqType} (r : seq I) (j : I) (P : pred I) (F : I -&gt; R) : j \in r -&gt; P j -&gt; uniq r -&gt; \big[op/idx]_(i &lt;- r | P i) F i = op (F j) (\big[op/idx]_(i &lt;- r | P i &amp;&amp; (i != j)) F i).</code></td>
                     <td class="meaning">Extract a term from a conditional big operation over a sequence. Similar to bigD1 but for conditional sums: factors out F(j) when j satisfies P, leaving the rest with an additional (i != j) condition.</td>
-                </tr>
-            
-                <tr data-search="coprime_zp_unit lemma coprime_zp_unit (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; coprime x m -&gt; x \is a gring.unit. key lemma from mathcomp: unitzpe (x%:r : &#39;z_m) \is a gring.unit = coprime m x (when 1 &lt; m) for x : &#39;z_m, we have x = (nat_of_ord x)%:r, so we can apply unitzpe directly.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/coprime_Zp_unit.html" class="lemma-name">coprime_Zp_unit</a>
-                    </td>
-                    <td class="section-name">Zp_unit_extra</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma coprime_Zp_unit (m : nat) (x : &#39;Z_m) : (1 &lt; m)%N -&gt; coprime x m -&gt; x \is a GRing.unit.</code></td>
-                    <td class="meaning">Key lemma from MathComp: unitZpE (x%:R : &#39;Z_m) \is a GRing.unit = coprime m x (when 1 &lt; m) For x : &#39;Z_m, we have x = (nat_of_ord x)%:R, so we can apply unitZpE directly.</td>
                 </tr>
             
                 <tr data-search="zp_unit_coprime lemma zp_unit_coprime (m : nat) (x : &#39;z_m) : (1 &lt; m)%n -&gt; x \is a gring.unit -&gt; coprime x m. uses unitzpe in reverse: (x%:r) \is a gring.unit = coprime m x">
@@ -1684,7 +1757,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">lib/rouche_capelli.v</span>
         </div>
-        <span class="file-count">28 helper</span>
+        <span class="file-count">26 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1698,17 +1771,6 @@
                 </tr>
             </thead>
             <tbody>
-            
-                <tr data-search="card_vspace lemma card_vspace (k : finfieldtype) (fvt : finvecttype k) (u : {vspace fvt}) : #|u| = (#| {:k} | ^ (\dim u))%n. cardinality of a vector subspace: |u| = |k|^dim(u). fundamental result: a d-dimensional subspace over finite field k has |k|^d elements. this is the key formula for counting solutions to linear systems.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/card_vspace.html" class="lemma-name">card_vspace</a>
-                    </td>
-                    <td class="section-name">finvect_lemmas</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma card_vspace (K : finFieldType) (fvT : finVectType K) (U : {vspace fvT}) : #|U| = (#| {:K} | ^ (\dim U))%N.</code></td>
-                    <td class="meaning">Cardinality of a vector subspace: |U| = |K|^dim(U). Fundamental result: a d-dimensional subspace over finite field K has |K|^d elements. This is the key formula for counting solutions to linear systems.</td>
-                </tr>
             
                 <tr data-search="card_lker_lfun lemma card_lker_lfun (k : fieldtype) (at : finvecttype k) (rt : vecttype k) (f : {linear at -&gt; rt}) : #|lker (linfun f)| = #|[set x : at | f x == 0]|. kernel cardinality equals the set of zeros: |ker(f)| = |{x | f(x) = 0}|. connects the linear algebra kernel with the set-theoretic preimage of 0.">
                     <td>
@@ -1752,17 +1814,6 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma HomK {R : nzRingType} {vT wT : vectType R} (A : &#39;M_(dim vT, dim wT)) : f2mx (Hom A) = A.</code></td>
                     <td class="meaning">Matrix representation of Hom: f2mx(Hom(A)) = A. Coercion identity.</td>
-                </tr>
-            
-                <tr data-search="mxrank_sub_eqmx lemma mxrank_sub_eqmx m n p (a : &#39;m[r]_(m,n)) (b : &#39;m[r]_(p,n)) : \rank a = \rank b -&gt; (a &lt;= b)%ms -&gt; (a == b)%ms. equal rank + submx implies equivalence: if rank(a) = rank(b) and a ≤ b, then a ≡ b. key lemma for establishing row space equality.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/mxrank_sub_eqmx.html" class="lemma-name">mxrank_sub_eqmx</a>
-                    </td>
-                    <td class="section-name">RoucheCapelliTheorems</td>
-                    <td class="proof-lines">3</td>
-                    <td><code class="signature">Lemma mxrank_sub_eqmx m n p (A : &#39;M[R]_(m,n)) (B : &#39;M[R]_(p,n)) : \rank A = \rank B -&gt; (A &lt;= B)%MS -&gt; (A == B)%MS.</code></td>
-                    <td class="meaning">Equal rank + submx implies equivalence: if rank(A) = rank(B) and A ≤ B, then A ≡ B. Key lemma for establishing row space equality.</td>
                 </tr>
             
                 <tr data-search="rouche1 lemma rouche1 m n (a : &#39;m[r]_(m,n)) (b : &#39;rv_n) : (exists x, x *m a = b) &lt;-&gt; (\rank a = \rank (col_mx a b)). rouché-capelli theorem (part 1): system xa = b has a solution iff rank(a) = rank([a; b]). the augmented matrix has same rank as coefficient matrix.">
@@ -2020,7 +2071,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">zpq/fiber_zpq.v</span>
         </div>
-        <span class="file-count">23 helper</span>
+        <span class="file-count">11 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2156,138 +2207,6 @@
                     <td class="meaning">Counting: |{f : &#39;I_n → Z_m | f(i) = 0}| = m^(n-1) f(0) ∈ {0,1,...,m-1} → m choices ... f(i) = 0 → 1 choice (FIXED!) ... f(n-1) ∈ {0,1,...,m-1} → m choices ───────────────────────────────────── Total: m^(n-1) functions (one less free coordinate)</td>
                 </tr>
             
-                <tr data-search="linear_fiber_zpq_imsete lemma linear_fiber_zpq_imsete (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; linear_fiber_zpq u target = mk_fiber u target i @: ker_eval i. the fiber {v | u·v = target} equals the image of mk_fiber over ker_eval">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/linear_fiber_zpq_imsetE.html" class="lemma-name">linear_fiber_zpq_imsetE</a>
-                    </td>
-                    <td class="section-name">linear_fiber_zpq</td>
-                    <td class="proof-lines">24</td>
-                    <td><code class="signature">Lemma linear_fiber_zpq_imsetE (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; linear_fiber_zpq u target = mk_fiber u target i @: ker_eval i.</code></td>
-                    <td class="meaning">The fiber {v | u·v = target} equals the image of mk_fiber over ker_eval</td>
-                </tr>
-            
-                <tr data-search="mk_fiber_inj lemma mk_fiber_inj (u : &#39;rv[msg]_n) (target : msg) (i : &#39;i_n) : u ord0 i \is a gring.unit -&gt; {in ker_eval i &amp;, injective (mk_fiber u target i)}. mk_fiber is injective on ker_eval">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/mk_fiber_inj.html" class="lemma-name">mk_fiber_inj</a>
-                    </td>
-                    <td class="section-name">linear_fiber_zpq</td>
-                    <td class="proof-lines">15</td>
-                    <td><code class="signature">Lemma mk_fiber_inj (u : &#39;rV[msg]_n) (target : msg) (i : &#39;I_n) : u ord0 i \is a GRing.unit -&gt; {in ker_eval i &amp;, injective (mk_fiber u target i)}.</code></td>
-                    <td class="meaning">mk_fiber is injective on ker_eval</td>
-                </tr>
-            
-                <tr data-search="lt_minpq_coprime lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%n -&gt; (u &lt; minn p q)%n -&gt; coprime (nat_of_ord u) m. key lemma: u &lt; min(p,q) implies u is coprime to pq. since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) therefore gcd(u, pq) = 1, so u is a unit in z/pq.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/lt_minpq_coprime.html" class="lemma-name">lt_minpq_coprime</a>
-                    </td>
-                    <td class="section-name">linear_fiber_zpq</td>
-                    <td class="proof-lines">13</td>
-                    <td><code class="signature">Lemma lt_minpq_coprime (u : msg) : (0 &lt; u)%N -&gt; (u &lt; minn p q)%N -&gt; coprime (nat_of_ord u) m.</code></td>
-                    <td class="meaning">Key lemma: u &lt; min(p,q) implies u is coprime to pq. Since 0 &lt; u &lt; min(p,q), we have: - u is not divisible by p (since u &lt; p) - u is not divisible by q (since u &lt; q) Therefore gcd(u, pq) = 1, so u is a unit in Z/pq.</td>
-                </tr>
-            
-                <tr data-search="pair_to_rowk lemma pair_to_rowk : cancel row_to_pair pair_to_row. pair_to_row ∘ row_to_pair = id">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pair_to_rowK.html" class="lemma-name">pair_to_rowK</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma pair_to_rowK : cancel row_to_pair pair_to_row.</code></td>
-                    <td class="meaning">pair_to_row ∘ row_to_pair = id</td>
-                </tr>
-            
-                <tr data-search="row_to_pairk lemma row_to_pairk : cancel pair_to_row row_to_pair. row_to_pair ∘ pair_to_row = id">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/row_to_pairK.html" class="lemma-name">row_to_pairK</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">3</td>
-                    <td><code class="signature">Lemma row_to_pairK : cancel pair_to_row row_to_pair.</code></td>
-                    <td class="meaning">row_to_pair ∘ pair_to_row = id</td>
-                </tr>
-            
-                <tr data-search="pair_to_row_bij lemma pair_to_row_bij : bijective pair_to_row. pair_to_row is a bijection">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pair_to_row_bij.html" class="lemma-name">pair_to_row_bij</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pair_to_row_bij : bijective pair_to_row.</code></td>
-                    <td class="meaning">pair_to_row is a bijection</td>
-                </tr>
-            
-                <tr data-search="row_to_pair_bij lemma row_to_pair_bij : bijective row_to_pair. row_to_pair is a bijection">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/row_to_pair_bij.html" class="lemma-name">row_to_pair_bij</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma row_to_pair_bij : bijective row_to_pair.</code></td>
-                    <td class="meaning">row_to_pair is a bijection</td>
-                </tr>
-            
-                <tr data-search="pair_to_row_inj lemma pair_to_row_inj : injective pair_to_row. injectivity lemmas for set cardinality">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pair_to_row_inj.html" class="lemma-name">pair_to_row_inj</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pair_to_row_inj : injective pair_to_row.</code></td>
-                    <td class="meaning">Injectivity lemmas for set cardinality</td>
-                </tr>
-            
-                <tr data-search="row_to_pair_inj lemma row_to_pair_inj : injective row_to_pair. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/row_to_pair_inj.html" class="lemma-name">row_to_pair_inj</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma row_to_pair_inj : injective row_to_pair.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="pair_to_row_ord0 lemma pair_to_row_ord0 (vv : msg * msg) : (pair_to_row vv) ord0 ord0 = vv.1. helper: accessing pair_to_row at ord0">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pair_to_row_ord0.html" class="lemma-name">pair_to_row_ord0</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pair_to_row_ord0 (vv : msg * msg) : (pair_to_row vv) ord0 ord0 = vv.1.</code></td>
-                    <td class="meaning">Helper: accessing pair_to_row at ord0</td>
-                </tr>
-            
-                <tr data-search="pair_to_row_ord_max lemma pair_to_row_ord_max (vv : msg * msg) : (pair_to_row vv) ord0 ord_max = vv.2. helper: accessing pair_to_row at ord_max">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pair_to_row_ord_max.html" class="lemma-name">pair_to_row_ord_max</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pair_to_row_ord_max (vv : msg * msg) : (pair_to_row vv) ord0 ord_max = vv.2.</code></td>
-                    <td class="meaning">Helper: accessing pair_to_row at ord_max</td>
-                </tr>
-            
-                <tr data-search="dotmul_pair_eq lemma dotmul_pair_eq (u2 u3 : msg) (vv : msg * msg) : (coef_to_row u2 u3) *d (pair_to_row vv) = u2 * vv.1 + u3 * vv.2. the dot product u *d v equals u2*v2 + u3*v3">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dotmul_pair_eq.html" class="lemma-name">dotmul_pair_eq</a>
-                    </td>
-                    <td class="section-name">fiber_zpq_2d</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma dotmul_pair_eq (u2 u3 : msg) (vv : msg * msg) : (coef_to_row u2 u3) *d (pair_to_row vv) = u2 * vv.1 + u3 * vv.2.</code></td>
-                    <td class="meaning">The dot product u *d v equals u2*v2 + u3*v3</td>
-                </tr>
-            
             </tbody>
         </table>
     </div>
@@ -2300,7 +2219,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-10 | 150 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/9997fab42f1998d2d23e5c9bb634adb197784ebc" target="_blank" rel="noopener" style="color: var(--accent);">9997fab</a></p>
+        <p>Generated: 2025-12-11 | 139 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/5382523b1dad7d5aeea503dba7828c096b4106bb" target="_blank" rel="noopener" style="color: var(--accent);">5382523</a></p>
     </footer>
     
     <script>
