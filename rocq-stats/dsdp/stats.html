@@ -30,15 +30,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">139</div>
+        <div class="value">134</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">23</div>
+        <div class="value">22</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">116</div>
+        <div class="value">112</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">5,192</div>
+        <div class="value">4,958</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/5382523b1dad7d5aeea503dba7828c096b4106bb" target="_blank" rel="noopener">5382523</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/9cf95bb71068b73de52cc25fbc1d37a52c57aab7" target="_blank" rel="noopener">9cf95bb</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (23 total)
+    Theorems and key lemmas (22 total)
 </p>
 
 
@@ -125,7 +125,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">5 main</span>
+        <span class="file-count">4 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -140,30 +140,17 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_centropy_uniform_zpq theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; u3 t)%n) -&gt; `h(varrv | condrv) = log (m%:r : r). this establishes that alice learns nothing beyond the constraint.">
+                <tr data-search="dsdp_centropy_uniform_zpq theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; u3 t)%n) -&gt; (forall t, (u3 t &lt; minn p q)%n) -&gt; `h(varrv | condrv) = log (m%:r : r). this establishes that alice learns nothing beyond the constraint.">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
                         
                         <a href="lemmas/dsdp_centropy_uniform_zpq.html" class="lemma-name">dsdp_centropy_uniform_zpq</a>
                     </td>
-                    <td class="section-name">crt_reconstruct</td>
-                    <td class="proof-lines">23</td>
-                    <td><code class="signature">Theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; U3 t)%N) -&gt; `H(VarRV | CondRV) = log (m%:R : R).</code></td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
+                    <td class="proof-lines">22</td>
+                    <td><code class="signature">Theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; U3 t)%N) -&gt; (forall t, (U3 t &lt; minn p q)%N) -&gt; `H(VarRV | CondRV) = log (m%:R : R).</code></td>
                     <td class="meaning">This establishes that Alice learns nothing beyond the constraint.</td>
-                </tr>
-            
-                <tr data-search="dsdp_centropy_uniform_solutions lemma dsdp_centropy_uniform_solutions : `h(varrv | condrv) = log (m%:r : r). main privacy lemma: h((v2,v3) | (v1,u1,u2,u3,s)) = log(m). this shows that given alice&#39;s view of the constraint, the entropy of bob and charlie&#39;s private inputs (v2,v3) equals log(m), not log(m²). the &#34;missing&#34; log(m) bits represent v3&#39;s determination by the constraint.">
-                    <td>
-                        
-                        <span class="badge badge-main">Main</span>
-                        
-                        <a href="lemmas/dsdp_centropy_uniform_solutions.html" class="lemma-name">dsdp_centropy_uniform_solutions</a>
-                    </td>
-                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
-                    <td class="proof-lines">18</td>
-                    <td><code class="signature">Lemma dsdp_centropy_uniform_solutions : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
-                    <td class="meaning">Main privacy lemma: H((V2,V3) | (V1,U1,U2,U3,S)) = log(m). This shows that given Alice&#39;s view of the constraint, the entropy of Bob and Charlie&#39;s private inputs (V2,V3) equals log(m), not log(m²). The &#34;missing&#34; log(m) bits represent V3&#39;s determination by the constraint.</td>
                 </tr>
             
                 <tr data-search="constus_discloses_v2 lemma constus_discloses_v2 : us = constus -&gt; dotp2_rv vs us = v2. if an active adversary controls alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. in contrast, if alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. finally, if bob enforce zpk check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\s5.2]{dumas2017dual}. therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.">
@@ -636,7 +623,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (116 total)
+    Supporting lemmas and utilities (112 total)
 </p>
 
 <div id="helpers-section">
@@ -709,7 +696,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">18 helper</span>
+        <span class="file-count">14 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -724,24 +711,13 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_fiber_zpq_card lemma dsdp_fiber_zpq_card (u2 u3 target : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|dsdp_fiber_zpq u2 u3 target| = m. fiber cardinality: |fiber| = m = p * q follows from the generalized fiber_zpq_pair_card in fiber_zpq.v which proves the bijection f(v2) = (v2, (target - u2*v2) / u3) gives |fiber| = m.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_fiber_zpq_card.html" class="lemma-name">dsdp_fiber_zpq_card</a>
-                    </td>
-                    <td class="section-name">crt_reconstruct</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Lemma dsdp_fiber_zpq_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|dsdp_fiber_zpq u2 u3 target| = m.</code></td>
-                    <td class="meaning">Fiber cardinality: |fiber| = m = p * q Follows from the generalized fiber_zpq_pair_card in fiber_zpq.v which proves the bijection f(v2) = (v2, (target - u2*v2) / u3) gives |fiber| = m.</td>
-                </tr>
-            
                 <tr data-search="dsdp_fiber_full_zpq_card lemma dsdp_fiber_full_zpq_card (u1 u2 u3 v1 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|dsdp_fiber_full_zpq u1 u2 u3 v1 s| = m. fiber cardinality for full constraint">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_fiber_full_zpq_card.html" class="lemma-name">dsdp_fiber_full_zpq_card</a>
                     </td>
-                    <td class="section-name">crt_reconstruct</td>
-                    <td class="proof-lines">4</td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
+                    <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma dsdp_fiber_full_zpq_card (u1 u2 u3 v1 s : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|dsdp_fiber_full_zpq u1 u2 u3 v1 s| = m.</code></td>
                     <td class="meaning">Fiber cardinality for full constraint</td>
                 </tr>
@@ -751,7 +727,7 @@
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_non_solution_zero_prob_zpq.html" class="lemma-name">dsdp_non_solution_zero_prob_zpq</a>
                     </td>
-                    <td class="section-name">crt_reconstruct</td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
                     <td class="proof-lines">17</td>
                     <td><code class="signature">Lemma dsdp_non_solution_zero_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = 0.</code></td>
                     <td class="meaning">Non-solutions have zero probability</td>
@@ -762,75 +738,42 @@
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_solution_uniform_prob_zpq.html" class="lemma-name">dsdp_solution_uniform_prob_zpq</a>
                     </td>
-                    <td class="section-name">crt_reconstruct</td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
                     <td class="proof-lines">9</td>
                     <td><code class="signature">Lemma dsdp_solution_uniform_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1.</code></td>
                     <td class="meaning">Solutions have uniform probability</td>
                 </tr>
             
-                <tr data-search="dsdp_centropy1_uniform_zpq lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: entropy at each conditioning value equals log(m)">
+                <tr data-search="dsdp_entropy_uniform_subset_zpq lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = 0) -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). single-point conditional entropy: h[varrv | condrv = (v1,u1,u2,u3,s)] = log(m). shows that for each fixed conditioning value, the conditional entropy equals log(m). this applies the general fiber entropy framework to dsdp: - fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - uniform distribution over fiber ⟹ entropy = log(m)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_entropy_uniform_subset_zpq.html" class="lemma-name">dsdp_entropy_uniform_subset_zpq</a>
+                    </td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = 0) -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
+                    <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber ⟹ entropy = log(m)</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy1_uniform_zpq lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: each conditioning value gives entropy log(m)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_centropy1_uniform_zpq.html" class="lemma-name">dsdp_centropy1_uniform_zpq</a>
                     </td>
-                    <td class="section-name">crt_reconstruct</td>
-                    <td class="proof-lines">28</td>
-                    <td><code class="signature">Lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
-                    <td class="meaning">Helper: entropy at each conditioning value equals log(m)</td>
-                </tr>
-            
-                <tr data-search="dsdp_non_solution_zero_prob lemma dsdp_non_solution_zero_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = 0. helper 1: pairs not satisfying the constraint have zero conditional probability">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_non_solution_zero_prob.html" class="lemma-name">dsdp_non_solution_zero_prob</a>
-                    </td>
-                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
-                    <td class="proof-lines">14</td>
-                    <td><code class="signature">Lemma dsdp_non_solution_zero_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = 0.</code></td>
-                    <td class="meaning">Helper 1: Pairs not satisfying the constraint have zero conditional probability</td>
-                </tr>
-            
-                <tr data-search="dsdp_solution_uniform_prob lemma dsdp_solution_uniform_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (v2, v3) \in dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1. helper 2: solutions have uniform probability 1/m">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_solution_uniform_prob.html" class="lemma-name">dsdp_solution_uniform_prob</a>
-                    </td>
-                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
-                    <td class="proof-lines">10</td>
-                    <td><code class="signature">Lemma dsdp_solution_uniform_prob (v1 u1 u2 u3 s : msg) (v2 v3 : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (v2, v3) \in dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1.</code></td>
-                    <td class="meaning">Helper 2: Solutions have uniform probability 1/m</td>
-                </tr>
-            
-                <tr data-search="dsdp_entropy_uniform_subset lemma dsdp_entropy_uniform_subset (u1 u2 u3 v1 s : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (forall pair : msg * msg, pair \in dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = 0) -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). single-point conditional entropy: h[varrv | condrv = (v1,u1,u2,u3,s)] = log(m). shows that for each fixed conditioning value, the conditional entropy equals log(m). this applies the general fiber entropy framework to dsdp: - fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - uniform distribution over fiber ⟹ entropy = log(m)">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_entropy_uniform_subset.html" class="lemma-name">dsdp_entropy_uniform_subset</a>
-                    </td>
-                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
-                    <td class="proof-lines">24</td>
-                    <td><code class="signature">Lemma dsdp_entropy_uniform_subset (u1 u2 u3 v1 s : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; (forall pair : msg * msg, pair \in dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = 0) -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
-                    <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber ⟹ entropy = log(m)</td>
-                </tr>
-            
-                <tr data-search="dsdp_centropy1_uniform lemma dsdp_centropy1_uniform (v1 u1 u2 u3 s : msg) : `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: each conditioning value gives entropy log(m)">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_centropy1_uniform.html" class="lemma-name">dsdp_centropy1_uniform</a>
-                    </td>
-                    <td class="section-name">dsdp_centropy_uniform_solutions</td>
+                    <td class="section-name">dsdp_entropy_zpq</td>
                     <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma dsdp_centropy1_uniform (v1 u1 u2 u3 s : msg) : `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; u3 != 0 -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
+                    <td><code class="signature">Lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
                     <td class="meaning">Helper: Each conditioning value gives entropy log(m)</td>
                 </tr>
             
-                <tr data-search="dsdp_var_entropy lemma dsdp_var_entropy : `p_varrv = fdist_uniform card_msg_pair -&gt; `h `p_varrv = log (m%:r * m%:r : r). unconditional entropy of private inputs (v2, v3) when uniformly distributed. since v2, v3 are private inputs from bob and charlie respectively, assuming uniform distribution gives h(v2,v3) = log(m²) = 2*log(m). combined with the conditional entropy result h(v2,v3 | view) = log(m), this shows dsdp leaks log(m) bits but preserves log(m) bits of entropy. the security argument (privacy_by_bonded_leakage at end of file) shows that h(v2,v3 | aliceview) = h(v2 | aliceview), i.e., knowing v3 given the constraint adds no information beyond knowing v2.">
+                <tr data-search="dsdp_var_entropy_zpq lemma dsdp_var_entropy_zpq : `p_varrv = fdist_uniform card_msg_pair -&gt; `h `p_varrv = log (m%:r * m%:r : r). unconditional entropy of private inputs (v2, v3) when uniformly distributed. since v2, v3 are private inputs from bob and charlie respectively, assuming uniform distribution gives h(v2,v3) = log(m²) = 2*log(m). combined with the conditional entropy result h(v2,v3 | view) = log(m), this shows dsdp leaks log(m) bits but preserves log(m) bits of entropy. the security argument (privacy_by_bonded_leakage at end of file) shows that h(v2,v3 | aliceview) = h(v2 | aliceview), i.e., knowing v3 given the constraint adds no information beyond knowing v2.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_var_entropy.html" class="lemma-name">dsdp_var_entropy</a>
+                        <a href="lemmas/dsdp_var_entropy_zpq.html" class="lemma-name">dsdp_var_entropy_zpq</a>
                     </td>
-                    <td class="section-name">dsdp_var_entropy</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma dsdp_var_entropy : `p_VarRV = fdist_uniform card_msg_pair -&gt; `H `p_VarRV = log (m%:R * m%:R : R).</code></td>
+                    <td class="section-name">dsdp_var_entropy_zpq</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dsdp_var_entropy_zpq : `p_VarRV = fdist_uniform card_msg_pair -&gt; `H `p_VarRV = log (m%:R * m%:R : R).</code></td>
                     <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (privacy_by_bonded_leakage at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
                 </tr>
             
@@ -884,7 +827,7 @@
                         <a href="lemmas/S_compE.html" class="lemma-name">S_compE</a>
                     </td>
                     <td class="section-name">dotp2</td>
-                    <td class="proof-lines">5</td>
+                    <td class="proof-lines">6</td>
                     <td><code class="signature">Lemma S_compE : let f := (fun o =&gt; let &#39;(u2, u3, v2, v3, v1, u1) := o in u2 * v2 + u3 * v3 + v1 * u1) in S = f `o [% U2, U3, V2, V3, V1, U1].</code></td>
                     <td class="meaning">S as function composition: S = f ∘ (U2,U3,V2,V3,V1,U1) where f computes the sum. Used for applying composition lemmas in entropy analysis.</td>
                 </tr>
@@ -2231,7 +2174,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-11 | 139 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/5382523b1dad7d5aeea503dba7828c096b4106bb" target="_blank" rel="noopener" style="color: var(--accent);">5382523</a></p>
+        <p>Generated: 2025-12-11 | 134 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/9cf95bb71068b73de52cc25fbc1d37a52c57aab7" target="_blank" rel="noopener" style="color: var(--accent);">9cf95bb</a></p>
     </footer>
     
     <script>
