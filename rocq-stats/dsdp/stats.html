@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">134</div>
+        <div class="value">135</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,20 +38,20 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">112</div>
+        <div class="value">113</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">11</div>
+        <div class="value">12</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">4,958</div>
+        <div class="value">5,234</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/9cf95bb71068b73de52cc25fbc1d37a52c57aab7" target="_blank" rel="noopener">9cf95bb</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/a2a66d2734f02968079e7599ab9874429108b198" target="_blank" rel="noopener">a2a66d2</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -179,7 +179,7 @@
                     <td class="meaning">This theorem shows that if an active adversary controls Alice, it can set U1 and U2 as a special combination (1, 0), which allows revealing `V2` from the result that Alice receives. \cite[\S5.2]{dumas2017dual}.</td>
                 </tr>
             
-                <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint).">
+                <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint). for z/pqz (ring, not field), we use: - u3 is a unit because coprime (val u3) m - division by unit: x / y = x * y^-1 - inverse property: y^-1 * y = 1 when y is unit">
                     <td>
                         
                         <span class="badge badge-main">Main</span>
@@ -187,15 +187,17 @@
                         <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
                     </td>
                     <td class="section-name">bonded_leakage_privacy</td>
-                    <td class="proof-lines">6</td>
+                    <td class="proof-lines">15</td>
                     <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
-                    <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint).</td>
+                    <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint). For Z/pqZ (ring, not field), we use: - U3 is a unit because coprime (val U3) m - Division by unit: x / y = x * y^-1 - Inverse property: y^-1 * y = 1 when y is unit</td>
                 </tr>
             
             </tbody>
         </table>
     </div>
 </div>
+
+
 
 
 
@@ -222,7 +224,7 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_entropy_result theorem dsdp_entropy_result : `h(varrv | condrv) = log (m%:r : r). core entropy bound: h((v2,v3) | constraint view) = log(m). instantiates the general dsdp entropy analysis with security hypotheses. shows alice learns exactly log(m) bits about bob/charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage.">
+                <tr data-search="dsdp_entropy_result theorem dsdp_entropy_result : `h(varrv | condrv) = log (m%:r : r). core entropy bound: h((v2,v3) | constraint view) = log(m). instantiates the general dsdp entropy analysis with security hypotheses. shows alice learns exactly log(m) bits about bob/charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage. todo: complete proof using dsdp_centropy_uniform_zpq from dsdp_entropy.v. the section-parameterized theorem needs proper instantiation.">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -232,7 +234,7 @@
                     <td class="section-name">dsdp_security</td>
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Theorem dsdp_entropy_result : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
-                    <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage.</td>
+                    <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m²) bits - proving bounded information leakage. TODO: Complete proof using dsdp_centropy_uniform_zpq from dsdp_entropy.v. The section-parameterized theorem needs proper instantiation.</td>
                 </tr>
             
                 <tr data-search="dsdp_security_bounded_leakage theorem dsdp_security_bounded_leakage : `h(v2 | aliceview) = log (m%:r : r) /\ `h(v2 | aliceview) &gt; 0. dsdp security guarantee: h(v2 | aliceview) = log(m) &gt; 0. alice cannot learn bob&#39;s private input v2 with certainty. the conditional entropy log(m) means v2 remains uniformly distributed over m values from alice&#39;s perspective - she gains no advantage over random guessing. the protocol leaks v3&#39;s determination but not v2.">
@@ -623,7 +625,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (112 total)
+    Supporting lemmas and utilities (113 total)
 </p>
 
 <div id="helpers-section">
@@ -696,7 +698,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">14 helper</span>
+        <span class="file-count">11 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -777,39 +779,6 @@
                     <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (privacy_by_bonded_leakage at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
                 </tr>
             
-                <tr data-search="alicetraces_from_viewp lemma alicetraces_from_viewp : alicetraces = alicetraces_values_from_view `o aliceview. alicetraces is a function of aliceview: the protocol trace can be reconstructed from alice&#39;s view (her inputs and received messages).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/AliceTraces_from_viewP.html" class="lemma-name">AliceTraces_from_viewP</a>
-                    </td>
-                    <td class="section-name">alice_privacy_analysis</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma AliceTraces_from_viewP : AliceTraces = AliceTraces_values_from_view `o AliceView.</code></td>
-                    <td class="meaning">AliceTraces is a function of AliceView: the protocol trace can be reconstructed from Alice&#39;s view (her inputs and received messages).</td>
-                </tr>
-            
-                <tr data-search="aliceview_values_from_tracep lemma aliceview_values_from_tracep: cancel alicetraces_values_from_view aliceview_values_from_trace. aliceview_values_from_trace is left-inverse of alicetraces_values_from_view. this establishes a bijection: aliceview ↔ alicetraces (no information loss).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/AliceView_values_from_traceP.html" class="lemma-name">AliceView_values_from_traceP</a>
-                    </td>
-                    <td class="section-name">alice_privacy_analysis</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma AliceView_values_from_traceP: cancel AliceTraces_values_from_view AliceView_values_from_trace.</code></td>
-                    <td class="meaning">AliceView_values_from_trace is left-inverse of AliceTraces_values_from_view. This establishes a bijection: AliceView ↔ AliceTraces (no information loss).</td>
-                </tr>
-            
-                <tr data-search="centropy_alicetraces_aliceview lemma centropy_alicetraces_aliceview (w : fintype) (v : {rv p -&gt; w}) : `h(v | alicetraces ) = `h(v | aliceview ). conditional entropy equivalence: conditioning on alicetraces equals conditioning on aliceview. they carry the same information.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/centropy_AliceTraces_AliceView.html" class="lemma-name">centropy_AliceTraces_AliceView</a>
-                    </td>
-                    <td class="section-name">alice_privacy_analysis</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma centropy_AliceTraces_AliceView (w : finType) (v : {RV P -&gt; w}) : `H(v | AliceTraces ) = `H(v | AliceView ).</code></td>
-                    <td class="meaning">Conditional entropy equivalence: conditioning on AliceTraces equals conditioning on AliceView. They carry the same information.</td>
-                </tr>
-            
                 <tr data-search="s_e lemma s_e : s = dotp2_rv vs us \+ vu1. s expressed as dot product: s = (v2,v3)·(u2,u3) + v1*u1. this is the dsdp constraint s = u2*v2 + u3*v3 + u1*v1 in rv form.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -863,6 +832,78 @@
                     <td class="proof-lines">84</td>
                     <td><code class="signature">Lemma privacy_by_bonded_leakage : `H([% V2, V3] | AliceView ) = `H(V2 | AliceView).</code></td>
                     <td class="meaning">Privacy via bounded leakage: knowing (V2,V3) given Alice&#39;s view is equivalent to knowing just V2. V3 adds no additional information because it&#39;s determined by V2 and the constraint. This is the core privacy guarantee for Bob&#39;s input V2.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dsdp/dsdp_entropy_trace.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dsdp/dsdp_entropy_trace.v</span>
+        </div>
+        <span class="file-count">4 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_is_correct_zpq lemma dsdp_is_correct_zpq: is_dsdp_zpq dsdp_traces_zpq. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_is_correct_zpq.html" class="lemma-name">dsdp_is_correct_zpq</a>
+                    </td>
+                    <td class="section-name">dsdp_traces_zpq</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_is_correct_zpq: is_dsdp_zpq dsdp_traces_zpq.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alicetraces_from_viewp lemma alicetraces_from_viewp : alicetraces = alicetraces_values_from_view `o aliceview. alicetraces is a function of aliceview: the protocol trace can be reconstructed from alice&#39;s view (her inputs and received messages).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/AliceTraces_from_viewP.html" class="lemma-name">AliceTraces_from_viewP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma AliceTraces_from_viewP : AliceTraces = AliceTraces_values_from_view `o AliceView.</code></td>
+                    <td class="meaning">AliceTraces is a function of AliceView: the protocol trace can be reconstructed from Alice&#39;s view (her inputs and received messages).</td>
+                </tr>
+            
+                <tr data-search="aliceview_values_from_tracep lemma aliceview_values_from_tracep: cancel alicetraces_values_from_view aliceview_values_from_trace. aliceview_values_from_trace is left-inverse of alicetraces_values_from_view. this establishes a bijection: aliceview ↔ alicetraces (no information loss).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/AliceView_values_from_traceP.html" class="lemma-name">AliceView_values_from_traceP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma AliceView_values_from_traceP: cancel AliceTraces_values_from_view AliceView_values_from_trace.</code></td>
+                    <td class="meaning">AliceView_values_from_trace is left-inverse of AliceTraces_values_from_view. This establishes a bijection: AliceView ↔ AliceTraces (no information loss).</td>
+                </tr>
+            
+                <tr data-search="centropy_alicetraces_aliceview lemma centropy_alicetraces_aliceview (w : fintype) (v : {rv p -&gt; w}) : `h(v | alicetraces ) = `h(v | aliceview ). conditional entropy equivalence: conditioning on alicetraces equals conditioning on aliceview. they carry the same information.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_AliceTraces_AliceView.html" class="lemma-name">centropy_AliceTraces_AliceView</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma centropy_AliceTraces_AliceView (w : finType) (v : {RV P -&gt; w}) : `H(v | AliceTraces ) = `H(v | AliceView ).</code></td>
+                    <td class="meaning">Conditional entropy equivalence: conditioning on AliceTraces equals conditioning on AliceView. They carry the same information.</td>
                 </tr>
             
             </tbody>
@@ -2174,7 +2215,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-11 | 134 lemmas in 11 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/9cf95bb71068b73de52cc25fbc1d37a52c57aab7" target="_blank" rel="noopener" style="color: var(--accent);">9cf95bb</a></p>
+        <p>Generated: 2025-12-11 | 135 lemmas in 12 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/a2a66d2734f02968079e7599ab9874429108b198" target="_blank" rel="noopener" style="color: var(--accent);">a2a66d2</a></p>
     </footer>
     
     <script>
