@@ -253,7 +253,7 @@ def classify_lemma(lemma: LemmaInfo) -> None:
     if lemma.declaration_type == 'Theorem':
         lemma.is_main = True
         lemma.is_helper = False
-    elif 'main' in meaning_lower:
+    elif 'main' in meaning_lower or 'key' in meaning_lower:
         lemma.is_main = True
         lemma.is_helper = False
     else:
