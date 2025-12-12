@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">138</div>
+        <div class="value">139</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">116</div>
+        <div class="value">117</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">5,465</div>
+        <div class="value">5,383</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/6700c30c3731abbf0885bf19181da5ae59568647" target="_blank" rel="noopener">6700c30</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/56b977f31e81e4c01e49e5b700878713fb5d3c03" target="_blank" rel="noopener">56b977f</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -625,7 +625,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (116 total)
+    Supporting lemmas and utilities (117 total)
 </p>
 
 <div id="helpers-section">
@@ -980,7 +980,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">4 helper</span>
+        <span class="file-count">5 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -995,15 +995,26 @@
             </thead>
             <tbody>
             
-                <tr data-search="aliceview_entropy_connection lemma aliceview_entropy_connection : `h([% v2, v3] | aliceview) = `h([% v2, v3] | [% v1, u1, u2, u3, s]). bridge lemma: aliceview conditioning equals base conditioning for [v2,v3]. aliceview = [dk_a, s, v1, u1, u2, u3, r2, r3, e_alice_d3, e_charlie_v3, e_bob_v2] the additional information [dk_a, r2, r3, encryptions] is conditionally independent of [v2,v3] given [v1,u1,u2,u3,s], so it doesn&#39;t affect the entropy. pre-proof search: about e_enc_ce_removal. about cinde_centropy_eq.">
+                <tr data-search="alice_view_to_cond lemma alice_view_to_cond (a : fintype) (xvar : {rv p -&gt; a}) : (p |= [% dk_a, r2, r3] _|_ xvar | condrv) -&gt; `h(xvar | aliceview) = `h(xvar | condrv). generic helper: strip encryptions from aliceview and apply conditional independence. this reuses the proof pattern from privacy_by_bonded_leakage in dsdp_entropy.v. given: x is conditionally independent of [dk_a, r2, r3] given condrv proves: h(x | aliceview) = h(x | condrv)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_view_to_cond.html" class="lemma-name">alice_view_to_cond</a>
+                    </td>
+                    <td class="section-name">dsdp_security</td>
+                    <td class="proof-lines">74</td>
+                    <td><code class="signature">Lemma alice_view_to_cond (A : finType) (Xvar : {RV P -&gt; A}) : (P |= [% Dk_a, R2, R3] _|_ Xvar | CondRV) -&gt; `H(Xvar | AliceView) = `H(Xvar | CondRV).</code></td>
+                    <td class="meaning">Generic helper: Strip encryptions from AliceView and apply conditional independence. This reuses the proof pattern from privacy_by_bonded_leakage in dsdp_entropy.v. Given: X is conditionally independent of [Dk_a, R2, R3] given CondRV Proves: H(X | AliceView) = H(X | CondRV)</td>
+                </tr>
+            
+                <tr data-search="aliceview_entropy_connection lemma aliceview_entropy_connection : `h([% v2, v3] | aliceview) = `h([% v2, v3] | condrv). bridge lemma: aliceview conditioning equals base conditioning for [v2,v3]. reuses alice_view_to_cond with cinde_v2v3 hypothesis.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/AliceView_entropy_connection.html" class="lemma-name">AliceView_entropy_connection</a>
                     </td>
                     <td class="section-name">dsdp_security</td>
-                    <td class="proof-lines">75</td>
-                    <td><code class="signature">Lemma AliceView_entropy_connection : `H([% V2, V3] | AliceView) = `H([% V2, V3] | [% V1, U1, U2, U3, S]).</code></td>
-                    <td class="meaning">Bridge lemma: AliceView conditioning equals base conditioning for [V2,V3]. AliceView = [Dk_a, S, V1, U1, U2, U3, R2, R3, E_alice_d3, E_charlie_v3, E_bob_v2] The additional information [Dk_a, R2, R3, encryptions] is conditionally independent of [V2,V3] given [V1,U1,U2,U3,S], so it doesn&#39;t affect the entropy. Pre-proof search: About E_enc_ce_removal. About cinde_centropy_eq.</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma AliceView_entropy_connection : `H([% V2, V3] | AliceView) = `H([% V2, V3] | CondRV).</code></td>
+                    <td class="meaning">Bridge lemma: AliceView conditioning equals base conditioning for [V2,V3]. Reuses alice_view_to_cond with cinde_V2V3 hypothesis.</td>
                 </tr>
             
                 <tr data-search="v3_determined_centropy_v2_local lemma v3_determined_centropy_v2_local : `h([% v2, v3] | condrv) = `h(v2 | condrv). helper: v3 is determined by v2 and condrv, so joint entropy equals single. uses chain rule and the fact that v3 = compute_v3(condrv, v2). follows exact pattern from dsdp_entropy.v v3_determined_centropy_v2.">
@@ -1023,20 +1034,20 @@
                         <a href="lemmas/cinde_V2_derived.html" class="lemma-name">cinde_V2_derived</a>
                     </td>
                     <td class="section-name">dsdp_security</td>
-                    <td class="proof-lines">3</td>
+                    <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma cinde_V2_derived : P |= [% Dk_a, R2, R3] _|_ V2 | CondRV.</code></td>
                     <td class="meaning">Helper: Derive V2 independence from [V2,V3] independence using decomposition. From cinde_V2V3: [Dk_a,R2,R3] _|_ [V2,V3] | CondRV We derive: [Dk_a,R2,R3] _|_ V2 | CondRV</td>
                 </tr>
             
-                <tr data-search="aliceview_v2_entropy_connection lemma aliceview_v2_entropy_connection : `h(v2 | aliceview) = `h(v2 | condrv). helper: aliceview conditioning equals base conditioning for v2. same structure as aliceview_entropy_connection but for v2 alone.">
+                <tr data-search="aliceview_v2_entropy_connection lemma aliceview_v2_entropy_connection : `h(v2 | aliceview) = `h(v2 | condrv). aliceview conditioning equals base conditioning for v2. reuses alice_view_to_cond with cinde_v2_derived.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/AliceView_V2_entropy_connection.html" class="lemma-name">AliceView_V2_entropy_connection</a>
                     </td>
                     <td class="section-name">dsdp_security</td>
-                    <td class="proof-lines">73</td>
+                    <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma AliceView_V2_entropy_connection : `H(V2 | AliceView) = `H(V2 | CondRV).</code></td>
-                    <td class="meaning">Helper: AliceView conditioning equals base conditioning for V2. Same structure as AliceView_entropy_connection but for V2 alone.</td>
+                    <td class="meaning">AliceView conditioning equals base conditioning for V2. Reuses alice_view_to_cond with cinde_V2_derived.</td>
                 </tr>
             
             </tbody>
@@ -2248,7 +2259,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-11 | 138 lemmas in 12 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/6700c30c3731abbf0885bf19181da5ae59568647" target="_blank" rel="noopener" style="color: var(--accent);">6700c30</a></p>
+        <p>Generated: 2025-12-12 | 139 lemmas in 12 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/56b977f31e81e4c01e49e5b700878713fb5d3c03" target="_blank" rel="noopener" style="color: var(--accent);">56b977f</a></p>
     </footer>
     
     <script>
