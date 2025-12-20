@@ -8,7 +8,7 @@ description: "Dual protocols for private multi-party matrix multiplication - Inf
 source:
   repo: "https://github.com/weng-chenghui/infotheo.git"
   branch: "dumas2017dual"
-  commit: "e2549b78c8e4d5ae96a8fcaaf8e45a1a47ab576e"
+  commit: "e8937953d7f8e0d9635f130e7f9f38920c7ec231"
   directories:
     - "dumas2017dual"
 
