@@ -11,6 +11,7 @@ source:
   commit: "37e499bea59da36cb873251ab7143a02b7ca4a68"
   directories:
     - "dumas2017dual"
+    - "homomorphic_encryption"
 
 # Markdown file for the overview/index page (relative to repo root)
 index: "dumas2017dual/notes/20251209_stats/LAYER_DESIGN.md"

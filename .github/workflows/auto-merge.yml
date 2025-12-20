@@ -3,7 +3,7 @@ name: Auto-Merge
 on:
   # Run every 5 minutes to check for PRs ready to merge
   schedule:
-    - cron: '*/50 * * * *'
+    - cron: '*/5 * * * *'
   # Also allow manual trigger
   workflow_dispatch:
 
