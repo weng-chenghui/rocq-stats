@@ -463,7 +463,8 @@ def build_project(
                     total_lines += sum(1 for _ in f)
             except Exception:
                 pass
-            lemmas = parse_coq_file(vfile, coq_dir)
+            # Use source_root as base so file paths are relative to repo root
+            lemmas = parse_coq_file(vfile, source_root)
             all_lemmas.extend(lemmas)
     
     print(f"  Found {len(all_lemmas)} lemmas ({total_lines} lines)")
