@@ -59,7 +59,7 @@
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f1abb275a2d260106f6621512494b41138e28eda" target="_blank" rel="noopener">f1abb27</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/37e499bea59da36cb873251ab7143a02b7ca4a68" target="_blank" rel="noopener">37e499b</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -376,6 +376,83 @@
 </tr>
 </tbody>
 </table>
+<h2 id="homomorphic-encryption-layer">Homomorphic Encryption Layer</h2>
+<p>In addition to the DSDP-specific layers, we also provide a foundational <strong>homomorphic encryption</strong> layer in <code>homomorphic_encryption/homomorphic_encryption.v</code>. This layer establishes the cryptographic primitives required for DSDP's secure computation:</p>
+<p><strong>Key Components:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>party</code></td>
+<td>Finite type for protocol participants (Alice, Bob, Charlie)</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>Key types (Dec, Enc) for encryption/decryption</td>
+</tr>
+<tr>
+<td><code>enc</code></td>
+<td>Encrypted message type <code>(party * msg)</code></td>
+</tr>
+<tr>
+<td><code>pkey</code></td>
+<td>Party key type <code>(party * key * msg)</code></td>
+</tr>
+<tr>
+<td><code>E</code>, <code>D</code></td>
+<td>Encryption and decryption operations</td>
+</tr>
+<tr>
+<td><code>Emul</code>, <code>Epow</code></td>
+<td>Homomorphic operations (addition via <code>*h</code>, scalar multiplication via <code>^h</code>)</td>
+</tr>
+<tr>
+<td><code>p.-enc T</code></td>
+<td>Type-level encryption label for party <code>p</code></td>
+</tr>
+<tr>
+<td><code>p.-key k T</code></td>
+<td>Type-level key label for party <code>p</code> with key type <code>k</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Lemmas:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Lemma</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>card_party_key</code></td>
+<td><code>#|{:p.-key k T}| = #|T|</code> — key types preserve cardinality</td>
+</tr>
+<tr>
+<td><code>card_enc_for</code></td>
+<td><code>#|{:p.-enc T}| = #|T|</code> — encryption types preserve cardinality</td>
+</tr>
+<tr>
+<td><code>E_enc_unif</code></td>
+<td>Encryptions are uniformly distributed (axiom)</td>
+</tr>
+<tr>
+<td><code>E_enc_inde</code></td>
+<td>Encryptions are independent of other random variables (axiom)</td>
+</tr>
+<tr>
+<td><code>E_enc_ce_removal</code></td>
+<td><code>H(Z | [%X, E]) = H(Z | X)</code> — encryption can be removed from conditioning</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Role in DSDP:</strong> This layer provides the semantic security axioms (<code>E_enc_unif</code>, <code>E_enc_inde</code>) that allow DSDP to treat encrypted values as independent random values, which is essential for the entropy-based security analysis.</p>
 <h2 id="related-documents">Related Documents</h2>
 <ul>
 <li><code>20251209_v2_stats.md</code>: Complete lemma listing with signatures and meanings</li>
@@ -388,7 +465,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-20 | 136 lemmas in 12 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f1abb275a2d260106f6621512494b41138e28eda" target="_blank" rel="noopener" style="color: var(--accent);">f1abb27</a></p>
+        <p>Generated: 2025-12-20 | 136 lemmas in 12 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/37e499bea59da36cb873251ab7143a02b7ca4a68" target="_blank" rel="noopener" style="color: var(--accent);">37e499b</a></p>
     </footer>
     
     <script>
