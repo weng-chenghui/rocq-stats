@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">146</div>
+        <div class="value">177</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">22</div>
+        <div class="value">26</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">124</div>
+        <div class="value">151</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">13</div>
+        <div class="value">19</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">5,562</div>
+        <div class="value">6,269</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/37e499bea59da36cb873251ab7143a02b7ca4a68" target="_blank" rel="noopener">37e499b</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/09e009b28bd3cc04cc7851961b980205c215a56b" target="_blank" rel="noopener">09e009b</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (22 total)
+    Theorems and key lemmas (26 total)
 </p>
 
 
@@ -624,10 +624,126 @@
 
 
 
+
+
+<div class="file-section main-section" data-file="homomorphic_encryption/benaloh1994/benaloh_homo.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_homo.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="benaloh_additive_homo theorem benaloh_additive_homo : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2). * additive homomorphism: multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. this enables addition on encrypted data.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/benaloh_additive_homo.html" class="lemma-name">benaloh_additive_homo</a>
+                    </td>
+                    <td class="section-name">benaloh_homomorphic</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem benaloh_additive_homo : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2).</code></td>
+                    <td class="meaning">* Additive Homomorphism: Multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. This enables addition on encrypted data.</td>
+                </tr>
+            
+                <tr data-search="benaloh_scalar_homo theorem benaloh_scalar_homo : forall (m1 : &#39;z_r) (m2 : nat) (u : &#39;z_n), (benaloh_enc y m1 u) ^+ m2 = benaloh_enc y (m1 *+ m2) (u ^+ m2). * scalar multiplication homomorphism: exponentiating a ciphertext yields a ciphertext of the product of plaintexts. this enables scalar multiplication on encrypted data.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/benaloh_scalar_homo.html" class="lemma-name">benaloh_scalar_homo</a>
+                    </td>
+                    <td class="section-name">benaloh_homomorphic</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem benaloh_scalar_homo : forall (m1 : &#39;Z_r) (m2 : nat) (u : &#39;Z_n), (benaloh_enc y m1 u) ^+ m2 = benaloh_enc y (m1 *+ m2) (u ^+ m2).</code></td>
+                    <td class="meaning">* Scalar Multiplication Homomorphism: Exponentiating a ciphertext yields a ciphertext of the product of plaintexts. This enables scalar multiplication on encrypted data.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="file-section main-section" data-file="homomorphic_encryption/paillier1999/paillier_homo.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_homo.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="paillier_additive_homo theorem paillier_additive_homo : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2). * additive homomorphism: multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. this enables addition on encrypted data.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/paillier_additive_homo.html" class="lemma-name">paillier_additive_homo</a>
+                    </td>
+                    <td class="section-name">paillier_homomorphic</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem paillier_additive_homo : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2).</code></td>
+                    <td class="meaning">* Additive Homomorphism: Multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. This enables addition on encrypted data.</td>
+                </tr>
+            
+                <tr data-search="paillier_scalar_homo theorem paillier_scalar_homo : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k). * scalar multiplication homomorphism: exponentiating a ciphertext yields a ciphertext of the scaled plaintext. this enables scalar multiplication on encrypted data.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/paillier_scalar_homo.html" class="lemma-name">paillier_scalar_homo</a>
+                    </td>
+                    <td class="section-name">paillier_homomorphic</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem paillier_scalar_homo : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k).</code></td>
+                    <td class="meaning">* Scalar Multiplication Homomorphism: Exponentiating a ciphertext yields a ciphertext of the scaled plaintext. This enables scalar multiplication on encrypted data.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (124 total)
+    Supporting lemmas and utilities (151 total)
 </p>
 
 <div id="helpers-section">
@@ -2223,6 +2339,233 @@
 
 
 
+<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_enc.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_enc.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="zp_add_eqmod lemma zp_add_eqmod (r : nat) (r_gt1 : (1 &lt; r)%n) (m1 m2 : &#39;z_r) : (m1 : nat) + m2 = (m1 + m2)%r %[mod r]. helper: nat addition of z_r elements equals z_r addition mod r">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_add_eqmod.html" class="lemma-name">Zp_add_eqmod</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma Zp_add_eqmod (r : nat) (r_gt1 : (1 &lt; r)%N) (m1 m2 : &#39;Z_r) : (m1 : nat) + m2 = (m1 + m2)%R %[mod r].</code></td>
+                    <td class="meaning">Helper: nat addition of Z_r elements equals Z_r addition mod r</td>
+                </tr>
+            
+                <tr data-search="zp_mulrn_nat lemma zp_mulrn_nat (r : nat) (r_gt1 : (1 &lt; r)%n) (m : &#39;z_r) (k : nat) : ((m *+ k)%r : nat) = (((m : nat) * k) %% (zp_trunc r).+2)%n. helper: (m *+ k : &#39;z_r) as nat equals (m * k) %% (zp_trunc r).+2">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_mulrn_nat.html" class="lemma-name">Zp_mulrn_nat</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma Zp_mulrn_nat (r : nat) (r_gt1 : (1 &lt; r)%N) (m : &#39;Z_r) (k : nat) : ((m *+ k)%R : nat) = (((m : nat) * k) %% (Zp_trunc r).+2)%N.</code></td>
+                    <td class="meaning">Helper: (m *+ k : &#39;Z_r) as nat equals (m * k) %% (Zp_trunc r).+2</td>
+                </tr>
+            
+                <tr data-search="zp_mulrn_eqmod lemma zp_mulrn_eqmod (r : nat) (r_gt1 : (1 &lt; r)%n) (m1 : &#39;z_r) (m2 : nat) : (m1 : nat) * m2 = (m1 *+ m2)%r %[mod r]. helper: nat mult of z_r element by nat equals z_r scalar mult mod r">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_mulrn_eqmod.html" class="lemma-name">Zp_mulrn_eqmod</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma Zp_mulrn_eqmod (r : nat) (r_gt1 : (1 &lt; r)%N) (m1 : &#39;Z_r) (m2 : nat) : (m1 : nat) * m2 = (m1 *+ m2)%R %[mod r].</code></td>
+                    <td class="meaning">Helper: nat mult of Z_r element by nat equals Z_r scalar mult mod r</td>
+                </tr>
+            
+                <tr data-search="expr_modr lemma expr_modr (k : nat) : y ^+ k = y ^+ (k %% r)%n. exponentiation of y depends only on exponent mod r">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/expr_modr.html" class="lemma-name">expr_modr</a>
+                    </td>
+                    <td class="section-name">benaloh_params</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma expr_modr (k : nat) : y ^+ k = y ^+ (k %% r)%N.</code></td>
+                    <td class="meaning">Exponentiation of y depends only on exponent mod r</td>
+                </tr>
+            
+                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2). encryption multiplication distributes as addition on messages">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/enc_mul_dist.html" class="lemma-name">enc_mul_dist</a>
+                    </td>
+                    <td class="section-name">benaloh_params</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2).</code></td>
+                    <td class="meaning">Encryption multiplication distributes as addition on messages</td>
+                </tr>
+            
+                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_r) (m2 : nat) (u : &#39;z_n), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2). encryption exponentiation distributes as scalar multiplication">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/enc_exp_dist.html" class="lemma-name">enc_exp_dist</a>
+                    </td>
+                    <td class="section-name">benaloh_params</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_r) (m2 : nat) (u : &#39;Z_n), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2).</code></td>
+                    <td class="meaning">Encryption exponentiation distributes as scalar multiplication</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_he_instance.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_he_instance.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="benaloh_emul_correct lemma benaloh_emul_correct : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), exists u : &#39;z_n, benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) u. benaloh satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. corresponds to abstract: emul (e i m1) (e i m2) = e i (m1 + m2) the existential captures that resulting randomness depends on inputs.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Emul_correct.html" class="lemma-name">benaloh_Emul_correct</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma benaloh_Emul_correct : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), exists u : &#39;Z_n, benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) u.</code></td>
+                    <td class="meaning">Benaloh satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. Corresponds to abstract: Emul (E i m1) (E i m2) = E i (m1 + m2) The existential captures that resulting randomness depends on inputs.</td>
+                </tr>
+            
+                <tr data-search="benaloh_epow_correct lemma benaloh_epow_correct : forall (m1 : &#39;z_r) (k : nat) (u : &#39;z_n), exists u&#39; : &#39;z_n, (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) u&#39;. benaloh satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. benaloh uses nat exponent: e(m1)^k = e(m1 *+ k) where k : nat abstract epow uses ring exponent: epow (e i m1) m2 = e i (m1 * m2) where m2 : msg these are compatible for &#39;z_r: see scalar_eq_ring_mul below.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Epow_correct.html" class="lemma-name">benaloh_Epow_correct</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma benaloh_Epow_correct : forall (m1 : &#39;Z_r) (k : nat) (u : &#39;Z_n), exists u&#39; : &#39;Z_n, (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) u&#39;.</code></td>
+                    <td class="meaning">Benaloh satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. Benaloh uses nat exponent: E(m1)^k = E(m1 *+ k) where k : nat Abstract Epow uses ring exponent: Epow (E i m1) m2 = E i (m1 * m2) where m2 : msg These are compatible for &#39;Z_r: see scalar_eq_ring_mul below.</td>
+                </tr>
+            
+                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_r), m1 * m2 = m1 *+ (m2 : nat). connection between scalar multiplication and ring multiplication for &#39;z_r. this shows that abstract epow (using m1 * m2) and benaloh (using m1 *+ k) compute the same result when the exponent is coerced appropriately. for m2 : &#39;z_r, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;z_r">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_r), m1 * m2 = m1 *+ (m2 : nat).</code></td>
+                    <td class="meaning">Connection between scalar multiplication and ring multiplication for &#39;Z_r. This shows that abstract Epow (using m1 * m2) and Benaloh (using m1 *+ k) compute the same result when the exponent is coerced appropriately. For m2 : &#39;Z_r, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;Z_r</td>
+                </tr>
+            
+                <tr data-search="benaloh_epow_ring lemma benaloh_epow_ring : forall (m1 m2 : &#39;z_r) (u : &#39;z_n), exists u&#39; : &#39;z_n, (benaloh_enc y m1 u) ^+ (m2 : nat) = benaloh_enc y (m1 * m2) u&#39;. benaloh with ring exponent (matching abstract epow signature)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Epow_ring.html" class="lemma-name">benaloh_Epow_ring</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma benaloh_Epow_ring : forall (m1 m2 : &#39;Z_r) (u : &#39;Z_n), exists u&#39; : &#39;Z_n, (benaloh_enc y m1 u) ^+ (m2 : nat) = benaloh_enc y (m1 * m2) u&#39;.</code></td>
+                    <td class="meaning">Benaloh with ring exponent (matching abstract Epow signature)</td>
+                </tr>
+            
+                <tr data-search="benaloh_emul_randomness lemma benaloh_emul_randomness : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2). concrete randomness computation for emul">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Emul_randomness.html" class="lemma-name">benaloh_Emul_randomness</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma benaloh_Emul_randomness : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2).</code></td>
+                    <td class="meaning">Concrete randomness computation for Emul</td>
+                </tr>
+            
+                <tr data-search="benaloh_epow_randomness lemma benaloh_epow_randomness : forall (m1 : &#39;z_r) (k : nat) (u : &#39;z_n), (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) (u ^+ k). concrete randomness computation for epow">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Epow_randomness.html" class="lemma-name">benaloh_Epow_randomness</a>
+                    </td>
+                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma benaloh_Epow_randomness : forall (m1 : &#39;Z_r) (k : nat) (u : &#39;Z_n), (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) (u ^+ k).</code></td>
+                    <td class="meaning">Concrete randomness computation for Epow</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_homo.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_homo.v</span>
+        </div>
+        <span class="file-count">1 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="benaloh_repeated_add corollary benaloh_repeated_add : forall (m : &#39;z_r) (k : nat) (u : &#39;z_n), iter k (fun c =&gt; c * benaloh_enc y m u) (benaloh_enc y (0 : &#39;z_r) (1 : &#39;z_n)) = benaloh_enc y (m *+ k) (u ^+ k). * corollary: repeated addition equals scalar multiplication. adding a message to itself k times is the same as scalar multiplication by k.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_repeated_add.html" class="lemma-name">benaloh_repeated_add</a>
+                    </td>
+                    <td class="section-name">benaloh_homomorphic</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Corollary benaloh_repeated_add : forall (m : &#39;Z_r) (k : nat) (u : &#39;Z_n), iter k (fun c =&gt; c * benaloh_enc y m u) (benaloh_enc y (0 : &#39;Z_r) (1 : &#39;Z_n)) = benaloh_enc y (m *+ k) (u ^+ k).</code></td>
+                    <td class="meaning">* Corollary: Repeated addition equals scalar multiplication. Adding a message to itself k times is the same as scalar multiplication by k.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
 <div class="file-section helper-section" data-file="homomorphic_encryption/homomorphic_encryption.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
@@ -2360,13 +2703,251 @@
 </div>
 
 
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_enc.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_enc.v</span>
+        </div>
+        <span class="file-count">7 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="zp_add_eqmod lemma zp_add_eqmod (n : nat) (n_gt1 : (1 &lt; n)%n) (m1 m2 : &#39;z_n) : (m1 : nat) + m2 = (m1 + m2)%r %[mod n]. helper: nat addition of z_n elements equals z_n addition mod n">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_add_eqmod.html" class="lemma-name">Zp_add_eqmod</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma Zp_add_eqmod (n : nat) (n_gt1 : (1 &lt; n)%N) (m1 m2 : &#39;Z_n) : (m1 : nat) + m2 = (m1 + m2)%R %[mod n].</code></td>
+                    <td class="meaning">Helper: nat addition of Z_n elements equals Z_n addition mod n</td>
+                </tr>
+            
+                <tr data-search="zp_mulrn_nat lemma zp_mulrn_nat (n : nat) (n_gt1 : (1 &lt; n)%n) (m : &#39;z_n) (k : nat) : ((m *+ k)%r : nat) = (((m : nat) * k) %% (zp_trunc n).+2)%n. helper: (m *+ k : &#39;z_n) as nat equals (m * k) %% (zp_trunc n).+2">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_mulrn_nat.html" class="lemma-name">Zp_mulrn_nat</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma Zp_mulrn_nat (n : nat) (n_gt1 : (1 &lt; n)%N) (m : &#39;Z_n) (k : nat) : ((m *+ k)%R : nat) = (((m : nat) * k) %% (Zp_trunc n).+2)%N.</code></td>
+                    <td class="meaning">Helper: (m *+ k : &#39;Z_n) as nat equals (m * k) %% (Zp_trunc n).+2</td>
+                </tr>
+            
+                <tr data-search="zp_mulrn_eqmod lemma zp_mulrn_eqmod (n : nat) (n_gt1 : (1 &lt; n)%n) (m1 : &#39;z_n) (m2 : nat) : (m1 : nat) * m2 = (m1 *+ m2)%r %[mod n]. helper: nat mult of z_n element by nat equals z_n scalar mult mod n">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_mulrn_eqmod.html" class="lemma-name">Zp_mulrn_eqmod</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma Zp_mulrn_eqmod (n : nat) (n_gt1 : (1 &lt; n)%N) (m1 : &#39;Z_n) (m2 : nat) : (m1 : nat) * m2 = (m1 *+ m2)%R %[mod n].</code></td>
+                    <td class="meaning">Helper: nat mult of Z_n element by nat equals Z_n scalar mult mod n</td>
+                </tr>
+            
+                <tr data-search="n2_gt1 lemma n2_gt1 : (1 &lt; n2)%n. n^2 &gt; 1 follows from n &gt; 1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/n2_gt1.html" class="lemma-name">n2_gt1</a>
+                    </td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma n2_gt1 : (1 &lt; n2)%N.</code></td>
+                    <td class="meaning">n^2 &gt; 1 follows from n &gt; 1</td>
+                </tr>
+            
+                <tr data-search="expr_modn lemma expr_modn (k : nat) : g ^+ k = g ^+ (k %% n)%n. exponentiation of g depends only on exponent mod n">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/expr_modn.html" class="lemma-name">expr_modn</a>
+                    </td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma expr_modn (k : nat) : g ^+ k = g ^+ (k %% n)%N.</code></td>
+                    <td class="meaning">Exponentiation of g depends only on exponent mod n</td>
+                </tr>
+            
+                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2). encryption multiplication distributes as addition on messages">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/enc_mul_dist.html" class="lemma-name">enc_mul_dist</a>
+                    </td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2).</code></td>
+                    <td class="meaning">Encryption multiplication distributes as addition on messages</td>
+                </tr>
+            
+                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_n) (m2 : nat) (r : &#39;z_n2), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2). encryption exponentiation distributes as scalar multiplication">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/enc_exp_dist.html" class="lemma-name">enc_exp_dist</a>
+                    </td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_n) (m2 : nat) (r : &#39;Z_n2), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2).</code></td>
+                    <td class="meaning">Encryption exponentiation distributes as scalar multiplication</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_he_instance.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_he_instance.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="paillier_emul_correct lemma paillier_emul_correct : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), exists r : &#39;z_n2, paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) r. paillier satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. corresponds to abstract: emul (e i m1) (e i m2) = e i (m1 + m2) the existential captures that resulting randomness depends on inputs.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_correct.html" class="lemma-name">paillier_Emul_correct</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma paillier_Emul_correct : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), exists r : &#39;Z_n2, paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) r.</code></td>
+                    <td class="meaning">Paillier satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. Corresponds to abstract: Emul (E i m1) (E i m2) = E i (m1 + m2) The existential captures that resulting randomness depends on inputs.</td>
+                </tr>
+            
+                <tr data-search="paillier_epow_correct lemma paillier_epow_correct : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), exists r&#39; : &#39;z_n2, (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) r&#39;. paillier satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. paillier uses nat exponent: e(m1)^k = e(m1 *+ k) where k : nat abstract epow uses ring exponent: epow (e i m1) m2 = e i (m1 * m2) where m2 : msg these are compatible for &#39;z_n: see scalar_eq_ring_mul below.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Epow_correct.html" class="lemma-name">paillier_Epow_correct</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma paillier_Epow_correct : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), exists r&#39; : &#39;Z_n2, (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) r&#39;.</code></td>
+                    <td class="meaning">Paillier satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. Paillier uses nat exponent: E(m1)^k = E(m1 *+ k) where k : nat Abstract Epow uses ring exponent: Epow (E i m1) m2 = E i (m1 * m2) where m2 : msg These are compatible for &#39;Z_n: see scalar_eq_ring_mul below.</td>
+                </tr>
+            
+                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_n), m1 * m2 = m1 *+ (m2 : nat). connection between scalar multiplication and ring multiplication for &#39;z_n. for m2 : &#39;z_n, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;z_n">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_n), m1 * m2 = m1 *+ (m2 : nat).</code></td>
+                    <td class="meaning">Connection between scalar multiplication and ring multiplication for &#39;Z_n. For m2 : &#39;Z_n, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;Z_n</td>
+                </tr>
+            
+                <tr data-search="paillier_epow_ring lemma paillier_epow_ring : forall (m1 m2 : &#39;z_n) (r : &#39;z_n2), exists r&#39; : &#39;z_n2, (paillier_enc g m1 r) ^+ (m2 : nat) = paillier_enc g (m1 * m2) r&#39;. paillier with ring exponent (matching abstract epow signature)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Epow_ring.html" class="lemma-name">paillier_Epow_ring</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma paillier_Epow_ring : forall (m1 m2 : &#39;Z_n) (r : &#39;Z_n2), exists r&#39; : &#39;Z_n2, (paillier_enc g m1 r) ^+ (m2 : nat) = paillier_enc g (m1 * m2) r&#39;.</code></td>
+                    <td class="meaning">Paillier with ring exponent (matching abstract Epow signature)</td>
+                </tr>
+            
+                <tr data-search="paillier_emul_randomness lemma paillier_emul_randomness : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2). concrete randomness computation for emul">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_randomness.html" class="lemma-name">paillier_Emul_randomness</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma paillier_Emul_randomness : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2).</code></td>
+                    <td class="meaning">Concrete randomness computation for Emul</td>
+                </tr>
+            
+                <tr data-search="paillier_epow_randomness lemma paillier_epow_randomness : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k). concrete randomness computation for epow">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Epow_randomness.html" class="lemma-name">paillier_Epow_randomness</a>
+                    </td>
+                    <td class="section-name">paillier_he_connection</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma paillier_Epow_randomness : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k).</code></td>
+                    <td class="meaning">Concrete randomness computation for Epow</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_homo.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_homo.v</span>
+        </div>
+        <span class="file-count">1 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="paillier_repeated_add corollary paillier_repeated_add : forall (m : &#39;z_n) (k : nat) (r : &#39;z_n2), iter k (fun c =&gt; c * paillier_enc g m r) (paillier_enc g (0 : &#39;z_n) (1 : &#39;z_n2)) = paillier_enc g (m *+ k) (r ^+ k). * corollary: repeated addition equals scalar multiplication.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_repeated_add.html" class="lemma-name">paillier_repeated_add</a>
+                    </td>
+                    <td class="section-name">paillier_homomorphic</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Corollary paillier_repeated_add : forall (m : &#39;Z_n) (k : nat) (r : &#39;Z_n2), iter k (fun c =&gt; c * paillier_enc g m r) (paillier_enc g (0 : &#39;Z_n) (1 : &#39;Z_n2)) = paillier_enc g (m *+ k) (r ^+ k).</code></td>
+                    <td class="meaning">* Corollary: Repeated addition equals scalar multiplication.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 </div>
 
 
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2025-12-20 | 146 lemmas in 13 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/37e499bea59da36cb873251ab7143a02b7ca4a68" target="_blank" rel="noopener" style="color: var(--accent);">37e499b</a></p>
+        <p>Generated: 2026-01-09 | 177 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/09e009b28bd3cc04cc7851961b980205c215a56b" target="_blank" rel="noopener" style="color: var(--accent);">09e009b</a></p>
     </footer>
     
     <script>
