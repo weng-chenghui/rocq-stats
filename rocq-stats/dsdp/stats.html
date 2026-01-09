@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">177</div>
+        <div class="value">179</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">151</div>
+        <div class="value">153</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">6,269</div>
+        <div class="value">6,390</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/09e009b28bd3cc04cc7851961b980205c215a56b" target="_blank" rel="noopener">09e009b</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/1e68cd4440909641cf143e39cf85067348e67656" target="_blank" rel="noopener">1e68cd4</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -743,7 +743,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (151 total)
+    Supporting lemmas and utilities (153 total)
 </p>
 
 <div id="helpers-section">
@@ -2454,70 +2454,70 @@
             </thead>
             <tbody>
             
-                <tr data-search="benaloh_emul_correct lemma benaloh_emul_correct : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), exists u : &#39;z_n, benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) u. benaloh satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. corresponds to abstract: emul (e i m1) (e i m2) = e i (m1 + m2) the existential captures that resulting randomness depends on inputs.">
+                <tr data-search="emul_hom lemma emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Emul_correct.html" class="lemma-name">benaloh_Emul_correct</a>
+                        <a href="lemmas/Emul_hom.html" class="lemma-name">Emul_hom</a>
                     </td>
-                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma benaloh_Emul_correct : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), exists u : &#39;Z_n, benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) u.</code></td>
-                    <td class="meaning">Benaloh satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. Corresponds to abstract: Emul (E i m1) (E i m2) = E i (m1 + m2) The existential captures that resulting randomness depends on inputs.</td>
+                    <td><code class="signature">Lemma Emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="benaloh_epow_correct lemma benaloh_epow_correct : forall (m1 : &#39;z_r) (k : nat) (u : &#39;z_n), exists u&#39; : &#39;z_n, (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) u&#39;. benaloh satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. benaloh uses nat exponent: e(m1)^k = e(m1 *+ k) where k : nat abstract epow uses ring exponent: epow (e i m1) m2 = e i (m1 * m2) where m2 : msg these are compatible for &#39;z_r: see scalar_eq_ring_mul below.">
+                <tr data-search="epow_hom lemma epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Epow_correct.html" class="lemma-name">benaloh_Epow_correct</a>
+                        <a href="lemmas/Epow_hom.html" class="lemma-name">Epow_hom</a>
                     </td>
-                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma benaloh_Epow_correct : forall (m1 : &#39;Z_r) (k : nat) (u : &#39;Z_n), exists u&#39; : &#39;Z_n, (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) u&#39;.</code></td>
-                    <td class="meaning">Benaloh satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. Benaloh uses nat exponent: E(m1)^k = E(m1 *+ k) where k : nat Abstract Epow uses ring exponent: Epow (E i m1) m2 = E i (m1 * m2) where m2 : msg These are compatible for &#39;Z_r: see scalar_eq_ring_mul below.</td>
+                    <td><code class="signature">Lemma Epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_r), m1 * m2 = m1 *+ (m2 : nat). connection between scalar multiplication and ring multiplication for &#39;z_r. this shows that abstract epow (using m1 * m2) and benaloh (using m1 *+ k) compute the same result when the exponent is coerced appropriately. for m2 : &#39;z_r, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;z_r">
+                <tr data-search="emul_randomness lemma emul_randomness : forall (m1 m2 : msg) (u1 u2 : rand), enc m1 u1 * enc m2 u2 = enc (m1 + m2) (u1 * u2). concrete randomness formulas">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Emul_randomness.html" class="lemma-name">Emul_randomness</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma Emul_randomness : forall (m1 m2 : msg) (u1 u2 : rand), enc m1 u1 * enc m2 u2 = enc (m1 + m2) (u1 * u2).</code></td>
+                    <td class="meaning">Concrete randomness formulas</td>
+                </tr>
+            
+                <tr data-search="epow_randomness lemma epow_randomness : forall (m : msg) (k : nat) (u : rand), (enc m u) ^+ k = enc (m *+ k) (u ^+ k). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Epow_randomness.html" class="lemma-name">Epow_randomness</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma Epow_randomness : forall (m : msg) (k : nat) (u : rand), (enc m u) ^+ k = enc (m *+ k) (u ^+ k).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : msg), m1 * m2 = m1 *+ (m2 : nat). ring multiplication version of scalar homomorphism">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
                     </td>
-                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_r), m1 * m2 = m1 *+ (m2 : nat).</code></td>
-                    <td class="meaning">Connection between scalar multiplication and ring multiplication for &#39;Z_r. This shows that abstract Epow (using m1 * m2) and Benaloh (using m1 *+ k) compute the same result when the exponent is coerced appropriately. For m2 : &#39;Z_r, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;Z_r</td>
+                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : msg), m1 * m2 = m1 *+ (m2 : nat).</code></td>
+                    <td class="meaning">Ring multiplication version of scalar homomorphism</td>
                 </tr>
             
-                <tr data-search="benaloh_epow_ring lemma benaloh_epow_ring : forall (m1 m2 : &#39;z_r) (u : &#39;z_n), exists u&#39; : &#39;z_n, (benaloh_enc y m1 u) ^+ (m2 : nat) = benaloh_enc y (m1 * m2) u&#39;. benaloh with ring exponent (matching abstract epow signature)">
+                <tr data-search="epow_ring lemma epow_ring : forall (m1 m2 : msg) (u : rand), exists u&#39; : rand, (enc m1 u) ^+ (m2 : nat) = enc (m1 * m2) u&#39;. epow with ring exponent">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Epow_ring.html" class="lemma-name">benaloh_Epow_ring</a>
+                        <a href="lemmas/Epow_ring.html" class="lemma-name">Epow_ring</a>
                     </td>
-                    <td class="section-name">benaloh_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma benaloh_Epow_ring : forall (m1 m2 : &#39;Z_r) (u : &#39;Z_n), exists u&#39; : &#39;Z_n, (benaloh_enc y m1 u) ^+ (m2 : nat) = benaloh_enc y (m1 * m2) u&#39;.</code></td>
-                    <td class="meaning">Benaloh with ring exponent (matching abstract Epow signature)</td>
-                </tr>
-            
-                <tr data-search="benaloh_emul_randomness lemma benaloh_emul_randomness : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2). concrete randomness computation for emul">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Emul_randomness.html" class="lemma-name">benaloh_Emul_randomness</a>
-                    </td>
-                    <td class="section-name">benaloh_he_connection</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma benaloh_Emul_randomness : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2).</code></td>
-                    <td class="meaning">Concrete randomness computation for Emul</td>
-                </tr>
-            
-                <tr data-search="benaloh_epow_randomness lemma benaloh_epow_randomness : forall (m1 : &#39;z_r) (k : nat) (u : &#39;z_n), (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) (u ^+ k). concrete randomness computation for epow">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Epow_randomness.html" class="lemma-name">benaloh_Epow_randomness</a>
-                    </td>
-                    <td class="section-name">benaloh_he_connection</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma benaloh_Epow_randomness : forall (m1 : &#39;Z_r) (k : nat) (u : &#39;Z_n), (benaloh_enc y m1 u) ^+ k = benaloh_enc y (m1 *+ k) (u ^+ k).</code></td>
-                    <td class="meaning">Concrete randomness computation for Epow</td>
+                    <td><code class="signature">Lemma Epow_ring : forall (m1 m2 : msg) (u : rand), exists u&#39; : rand, (enc m1 u) ^+ (m2 : nat) = enc (m1 * m2) u&#39;.</code></td>
+                    <td class="meaning">Epow with ring exponent</td>
                 </tr>
             
             </tbody>
@@ -2572,7 +2572,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">homomorphic_encryption/homomorphic_encryption.v</span>
         </div>
-        <span class="file-count">10 helper</span>
+        <span class="file-count">12 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2586,6 +2586,28 @@
                 </tr>
             </thead>
             <tbody>
+            
+                <tr data-search="emul_hom lemma emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Emul_hom.html" class="lemma-name">Emul_hom</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma Emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="epow_hom lemma epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Epow_hom.html" class="lemma-name">Epow_hom</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma Epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;.</code></td>
+                    <td class="meaning"></td>
+                </tr>
             
                 <tr data-search="party_eqp lemma party_eqp : equality.axiom party_eqb. ">
                     <td>
@@ -2830,70 +2852,70 @@
             </thead>
             <tbody>
             
-                <tr data-search="paillier_emul_correct lemma paillier_emul_correct : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), exists r : &#39;z_n2, paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) r. paillier satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. corresponds to abstract: emul (e i m1) (e i m2) = e i (m1 + m2) the existential captures that resulting randomness depends on inputs.">
+                <tr data-search="emul_hom lemma emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Emul_correct.html" class="lemma-name">paillier_Emul_correct</a>
+                        <a href="lemmas/Emul_hom.html" class="lemma-name">Emul_hom</a>
                     </td>
-                    <td class="section-name">paillier_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma paillier_Emul_correct : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), exists r : &#39;Z_n2, paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) r.</code></td>
-                    <td class="meaning">Paillier satisfies additive homomorphism: multiplying ciphertexts adds plaintexts. Corresponds to abstract: Emul (E i m1) (E i m2) = E i (m1 + m2) The existential captures that resulting randomness depends on inputs.</td>
+                    <td><code class="signature">Lemma Emul_hom : forall (m1 m2 : msg) (r1 r2 : rand), exists r : rand, enc m1 r1 * enc m2 r2 = enc (m1 + m2) r.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="paillier_epow_correct lemma paillier_epow_correct : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), exists r&#39; : &#39;z_n2, (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) r&#39;. paillier satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. paillier uses nat exponent: e(m1)^k = e(m1 *+ k) where k : nat abstract epow uses ring exponent: epow (e i m1) m2 = e i (m1 * m2) where m2 : msg these are compatible for &#39;z_n: see scalar_eq_ring_mul below.">
+                <tr data-search="epow_hom lemma epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Epow_correct.html" class="lemma-name">paillier_Epow_correct</a>
+                        <a href="lemmas/Epow_hom.html" class="lemma-name">Epow_hom</a>
                     </td>
-                    <td class="section-name">paillier_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma paillier_Epow_correct : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), exists r&#39; : &#39;Z_n2, (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) r&#39;.</code></td>
-                    <td class="meaning">Paillier satisfies scalar homomorphism: exponentiating ciphertext multiplies plaintext by scalar. Paillier uses nat exponent: E(m1)^k = E(m1 *+ k) where k : nat Abstract Epow uses ring exponent: Epow (E i m1) m2 = E i (m1 * m2) where m2 : msg These are compatible for &#39;Z_n: see scalar_eq_ring_mul below.</td>
+                    <td><code class="signature">Lemma Epow_hom : forall (m : msg) (k : nat) (r : rand), exists r&#39; : rand, (enc m r) ^+ k = enc (m *+ k) r&#39;.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_n), m1 * m2 = m1 *+ (m2 : nat). connection between scalar multiplication and ring multiplication for &#39;z_n. for m2 : &#39;z_n, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;z_n">
+                <tr data-search="emul_randomness lemma emul_randomness : forall (m1 m2 : msg) (r1 r2 : rand), enc m1 r1 * enc m2 r2 = enc (m1 + m2) (r1 * r2). concrete randomness formulas">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Emul_randomness.html" class="lemma-name">Emul_randomness</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma Emul_randomness : forall (m1 m2 : msg) (r1 r2 : rand), enc m1 r1 * enc m2 r2 = enc (m1 + m2) (r1 * r2).</code></td>
+                    <td class="meaning">Concrete randomness formulas</td>
+                </tr>
+            
+                <tr data-search="epow_randomness lemma epow_randomness : forall (m : msg) (k : nat) (r : rand), (enc m r) ^+ k = enc (m *+ k) (r ^+ k). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Epow_randomness.html" class="lemma-name">Epow_randomness</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma Epow_randomness : forall (m : msg) (k : nat) (r : rand), (enc m r) ^+ k = enc (m *+ k) (r ^+ k).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : msg), m1 * m2 = m1 *+ (m2 : nat). ring multiplication version of scalar homomorphism">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
                     </td>
-                    <td class="section-name">paillier_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_n), m1 * m2 = m1 *+ (m2 : nat).</code></td>
-                    <td class="meaning">Connection between scalar multiplication and ring multiplication for &#39;Z_n. For m2 : &#39;Z_n, we have: m1 * m2 = m1 *+ (m2 : nat) in &#39;Z_n</td>
+                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : msg), m1 * m2 = m1 *+ (m2 : nat).</code></td>
+                    <td class="meaning">Ring multiplication version of scalar homomorphism</td>
                 </tr>
             
-                <tr data-search="paillier_epow_ring lemma paillier_epow_ring : forall (m1 m2 : &#39;z_n) (r : &#39;z_n2), exists r&#39; : &#39;z_n2, (paillier_enc g m1 r) ^+ (m2 : nat) = paillier_enc g (m1 * m2) r&#39;. paillier with ring exponent (matching abstract epow signature)">
+                <tr data-search="epow_ring lemma epow_ring : forall (m1 m2 : msg) (r : rand), exists r&#39; : rand, (enc m1 r) ^+ (m2 : nat) = enc (m1 * m2) r&#39;. epow with ring exponent">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Epow_ring.html" class="lemma-name">paillier_Epow_ring</a>
+                        <a href="lemmas/Epow_ring.html" class="lemma-name">Epow_ring</a>
                     </td>
-                    <td class="section-name">paillier_he_connection</td>
+                    <td class="section-name">Top-level</td>
                     <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma paillier_Epow_ring : forall (m1 m2 : &#39;Z_n) (r : &#39;Z_n2), exists r&#39; : &#39;Z_n2, (paillier_enc g m1 r) ^+ (m2 : nat) = paillier_enc g (m1 * m2) r&#39;.</code></td>
-                    <td class="meaning">Paillier with ring exponent (matching abstract Epow signature)</td>
-                </tr>
-            
-                <tr data-search="paillier_emul_randomness lemma paillier_emul_randomness : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2). concrete randomness computation for emul">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Emul_randomness.html" class="lemma-name">paillier_Emul_randomness</a>
-                    </td>
-                    <td class="section-name">paillier_he_connection</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma paillier_Emul_randomness : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2).</code></td>
-                    <td class="meaning">Concrete randomness computation for Emul</td>
-                </tr>
-            
-                <tr data-search="paillier_epow_randomness lemma paillier_epow_randomness : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k). concrete randomness computation for epow">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Epow_randomness.html" class="lemma-name">paillier_Epow_randomness</a>
-                    </td>
-                    <td class="section-name">paillier_he_connection</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma paillier_Epow_randomness : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k).</code></td>
-                    <td class="meaning">Concrete randomness computation for Epow</td>
+                    <td><code class="signature">Lemma Epow_ring : forall (m1 m2 : msg) (r : rand), exists r&#39; : rand, (enc m1 r) ^+ (m2 : nat) = enc (m1 * m2) r&#39;.</code></td>
+                    <td class="meaning">Epow with ring exponent</td>
                 </tr>
             
             </tbody>
@@ -2947,7 +2969,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-09 | 177 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/09e009b28bd3cc04cc7851961b980205c215a56b" target="_blank" rel="noopener" style="color: var(--accent);">09e009b</a></p>
+        <p>Generated: 2026-01-09 | 179 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/1e68cd4440909641cf143e39cf85067348e67656" target="_blank" rel="noopener" style="color: var(--accent);">1e68cd4</a></p>
     </footer>
     
     <script>
