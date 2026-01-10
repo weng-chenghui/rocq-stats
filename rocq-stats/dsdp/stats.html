@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">179</div>
+        <div class="value">196</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">26</div>
+        <div class="value">31</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">153</div>
+        <div class="value">165</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">19</div>
+        <div class="value">20</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">6,494</div>
+        <div class="value">7,224</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/e236eb076b8da9955f2eb6ff28fb25c21c04655d" target="_blank" rel="noopener">e236eb0</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bd8bee953b5c512c07e5b7c5c52f1c3a81ee4d96" target="_blank" rel="noopener">bd8bee9</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (26 total)
+    Theorems and key lemmas (31 total)
 </p>
 
 
@@ -125,7 +125,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">4 main</span>
+        <span class="file-count">5 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -139,6 +139,19 @@
                 </tr>
             </thead>
             <tbody>
+            
+                <tr data-search="dsdp_uniform_over_solutions_from_joint_uniform lemma dsdp_uniform_over_solutions_from_joint_uniform : `p_ varrv = fdist_uniform card_msg_pair -&gt; p |= [%v1, u1, u2, u3] _|_ varrv -&gt; forall t v1 u1 u2 u3 s, u1 t = u1 -&gt; u2 t = u2 -&gt; u3 t = u3 -&gt; v1 t = v1 -&gt; s t = s -&gt; (* the conditioning event must have positive probability for the conditional probability to be well-defined *) `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; forall v2 v3, (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = (v2, v3) | condrv = (v1, u1, u2, u3, s) ] = (#|dsdp_fiber_full_zpq u1 u2 u3 v1 s|)%:r^-1. * main bridge lemma: derive uniform-over-solutions from joint-uniform prior and independence. mathematical reasoning: - assumption: (v2,v3) is uniform over msg×msg with distribution 1/m² - assumption: (v2,v3) is independent of (v1,u1,u2,u3) - the constraint s = u1*v1 + u2*v2 + u3*v3 determines s given the others for (v2,v3) in the fiber {(v2&#39;,v3&#39;) | u2*v2&#39; + u3*v3&#39; = s - u1*v1}: numerator: pr[(v2,v3)=(v2,v3) ∧ (v1,u1,u2,u3)=(v1,u1,u2,u3)] = pr[(v2,v3)=(v2,v3)] × pr[(v1,u1,u2,u3)=(v1,u1,u2,u3)] (indep) = (1/m²) × pr[(v1,u1,u2,u3)=(v1,u1,u2,u3)] denominator: pr[condrv=(v1,u1,u2,u3,s)] = σ_{(v2&#39;,v3&#39;) ∈ fiber} (1/m²) × pr[(v1,u1,u2,u3)=...] = |fiber|/m² × pr[(v1,u1,u2,u3)=(v1,u1,u2,u3)] result: numerator/denominator = 1/|fiber|">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_uniform_over_solutions_from_joint_uniform.html" class="lemma-name">dsdp_uniform_over_solutions_from_joint_uniform</a>
+                    </td>
+                    <td class="section-name">uniform_from_joint_uniform</td>
+                    <td class="proof-lines">44</td>
+                    <td><code class="signature">Lemma dsdp_uniform_over_solutions_from_joint_uniform : `p_ VarRV = fdist_uniform card_msg_pair -&gt; P |= [%V1, U1, U2, U3] _|_ VarRV -&gt; forall t v1 u1 u2 u3 s, U1 t = u1 -&gt; U2 t = u2 -&gt; U3 t = u3 -&gt; V1 t = v1 -&gt; S t = s -&gt; (* The conditioning event must have positive probability for the conditional probability to be well-defined *) `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; forall v2 v3, (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = (#|dsdp_fiber_full_zpq u1 u2 u3 v1 s|)%:R^-1.</code></td>
+                    <td class="meaning">* Main bridge lemma: derive uniform-over-solutions from joint-uniform prior and independence. Mathematical reasoning: - Assumption: (V2,V3) is uniform over msg×msg with distribution 1/m² - Assumption: (V2,V3) is independent of (V1,U1,U2,U3) - The constraint S = u1*v1 + u2*v2 + u3*v3 determines S given the others For (v2,v3) in the fiber {(v2&#39;,v3&#39;) | u2*v2&#39; + u3*v3&#39; = s - u1*v1}: Numerator: Pr[(V2,V3)=(v2,v3) ∧ (V1,U1,U2,U3)=(v1,u1,u2,u3)] = Pr[(V2,V3)=(v2,v3)] × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] (indep) = (1/m²) × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] Denominator: Pr[CondRV=(v1,u1,u2,u3,s)] = Σ_{(v2&#39;,v3&#39;) ∈ fiber} (1/m²) × Pr[(V1,U1,U2,U3)=...] = |fiber|/m² × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] Result: Numerator/Denominator = 1/|fiber|</td>
+                </tr>
             
                 <tr data-search="dsdp_centropy_uniform_zpq theorem dsdp_centropy_uniform_zpq : (forall t, (0 &lt; u3 t)%n) -&gt; (forall t, (u3 t &lt; minn p q)%n) -&gt; `h(varrv | condrv) = log (m%:r : r). this establishes that alice learns nothing beyond the constraint.">
                     <td>
@@ -187,7 +200,7 @@
                         <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
                     </td>
                     <td class="section-name">bonded_leakage_privacy</td>
-                    <td class="proof-lines">15</td>
+                    <td class="proof-lines">18</td>
                     <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
                     <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint). For Z/pqZ (ring, not field), we use: - U3 is a unit because coprime (val U3) m - Division by unit: x / y = x * y^-1 - Inverse property: y^-1 * y = 1 when y is unit</td>
                 </tr>
@@ -203,13 +216,15 @@
 
 
 
+
+
 <div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_security.v">
     <div class="file-header expanded" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">6 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -232,7 +247,7 @@
                         <a href="lemmas/dsdp_constraint_centropy_eqlogm.html" class="lemma-name">dsdp_constraint_centropy_eqlogm</a>
                     </td>
                     <td class="section-name">dsdp_security</td>
-                    <td class="proof-lines">10</td>
+                    <td class="proof-lines">13</td>
                     <td><code class="signature">Theorem dsdp_constraint_centropy_eqlogm : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
                     <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m^2) bits - proving bounded information leakage.</td>
                 </tr>
@@ -248,6 +263,58 @@
                     <td class="proof-lines">17</td>
                     <td><code class="signature">Theorem dsdp_security_bounded_leakage : `H(V2 | AliceView) = log (m%:R : R) /\ `H(V2 | AliceView) &gt; 0.</code></td>
                     <td class="meaning">DSDP security guarantee: H(V2 | AliceView) = log(m) &gt; 0. Alice cannot learn Bob&#39;s private input V2 with certainty. The conditional entropy log(m) means V2 remains uniformly distributed over m values from Alice&#39;s perspective - she gains no advantage over random guessing. The protocol leaks V3&#39;s determination but not V2.</td>
+                </tr>
+            
+                <tr data-search="bob_privacy_v1 theorem bob_privacy_v1 : `h(v1 | bobview) = log (m%:r : r) /\ `h(v1 | bobview) &gt; 0. bob cannot learn v1 - complete privacy">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/bob_privacy_V1.html" class="lemma-name">bob_privacy_V1</a>
+                    </td>
+                    <td class="section-name">bob_security</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem bob_privacy_V1 : `H(V1 | BobView) = log (m%:R : R) /\ `H(V1 | BobView) &gt; 0.</code></td>
+                    <td class="meaning">Bob cannot learn V1 - complete privacy</td>
+                </tr>
+            
+                <tr data-search="bob_privacy_v3 theorem bob_privacy_v3 : `h(v3 | bobview) = log (m%:r : r) /\ `h(v3 | bobview) &gt; 0. bob cannot learn v3 - complete privacy">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/bob_privacy_V3.html" class="lemma-name">bob_privacy_V3</a>
+                    </td>
+                    <td class="section-name">bob_security</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem bob_privacy_V3 : `H(V3 | BobView) = log (m%:R : R) /\ `H(V3 | BobView) &gt; 0.</code></td>
+                    <td class="meaning">Bob cannot learn V3 - complete privacy</td>
+                </tr>
+            
+                <tr data-search="charlie_privacy_v1 theorem charlie_privacy_v1 : `h(v1 | charlieview) = log (m%:r : r) /\ `h(v1 | charlieview) &gt; 0. charlie cannot learn v1 - complete privacy">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/charlie_privacy_V1.html" class="lemma-name">charlie_privacy_V1</a>
+                    </td>
+                    <td class="section-name">charlie_security</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem charlie_privacy_V1 : `H(V1 | CharlieView) = log (m%:R : R) /\ `H(V1 | CharlieView) &gt; 0.</code></td>
+                    <td class="meaning">Charlie cannot learn V1 - complete privacy</td>
+                </tr>
+            
+                <tr data-search="charlie_privacy_v2 theorem charlie_privacy_v2 : `h(v2 | charlieview) = log (m%:r : r) /\ `h(v2 | charlieview) &gt; 0. charlie cannot learn v2 - complete privacy">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/charlie_privacy_V2.html" class="lemma-name">charlie_privacy_V2</a>
+                    </td>
+                    <td class="section-name">charlie_security</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem charlie_privacy_V2 : `H(V2 | CharlieView) = log (m%:R : R) /\ `H(V2 | CharlieView) &gt; 0.</code></td>
+                    <td class="meaning">Charlie cannot learn V2 - complete privacy</td>
                 </tr>
             
             </tbody>
@@ -743,7 +810,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (153 total)
+    Supporting lemmas and utilities (165 total)
 </p>
 
 <div id="helpers-section">
@@ -816,7 +883,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">12 helper</span>
+        <span class="file-count">16 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -830,6 +897,50 @@
                 </tr>
             </thead>
             <tbody>
+            
+                <tr data-search="joint_factors_by_inde lemma joint_factors_by_inde : p |= inputrv _|_ varrv -&gt; forall v1 u1 u2 u3 v2 v3, `pr[[%varrv, inputrv] = ((v2, v3), (v1, u1, u2, u3))] = `pr[varrv = (v2, v3)] * `pr[inputrv = (v1, u1, u2, u3)]. helper 1: joint probability [%varrv, inputrv] factors by independence">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/joint_factors_by_inde.html" class="lemma-name">joint_factors_by_inde</a>
+                    </td>
+                    <td class="section-name">uniform_from_joint_uniform</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma joint_factors_by_inde : P |= InputRV _|_ VarRV -&gt; forall v1 u1 u2 u3 v2 v3, `Pr[[%VarRV, InputRV] = ((v2, v3), (v1, u1, u2, u3))] = `Pr[VarRV = (v2, v3)] * `Pr[InputRV = (v1, u1, u2, u3)].</code></td>
+                    <td class="meaning">Helper 1: Joint probability [%VarRV, InputRV] factors by independence</td>
+                </tr>
+            
+                <tr data-search="uniform_varrv_prob lemma uniform_varrv_prob : `p_ varrv = fdist_uniform card_msg_pair -&gt; forall v2 v3, `pr[varrv = (v2, v3)] = (m ^ 2)%:r^-1 :&gt; r. helper 2: uniform varrv gives probability (m²)^-1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/uniform_VarRV_prob.html" class="lemma-name">uniform_VarRV_prob</a>
+                    </td>
+                    <td class="section-name">uniform_from_joint_uniform</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma uniform_VarRV_prob : `p_ VarRV = fdist_uniform card_msg_pair -&gt; forall v2 v3, `Pr[VarRV = (v2, v3)] = (m ^ 2)%:R^-1 :&gt; R.</code></td>
+                    <td class="meaning">Helper 2: Uniform VarRV gives probability (m²)^-1</td>
+                </tr>
+            
+                <tr data-search="joint_varrv_condrv_eq_inputrv lemma joint_varrv_condrv_eq_inputrv (v1 u1 u2 u3 s v2 v3 : msg) : (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[[%varrv, condrv] = ((v2, v3), (v1, u1, u2, u3, s))] = `pr[[%varrv, inputrv] = ((v2, v3), (v1, u1, u2, u3))]. helper 3: the joint [%varrv, condrv] probability equals [%varrv, inputrv] when (v2,v3) is in the fiber (constraint is satisfied)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/joint_VarRV_CondRV_eq_InputRV.html" class="lemma-name">joint_VarRV_CondRV_eq_InputRV</a>
+                    </td>
+                    <td class="section-name">uniform_from_joint_uniform</td>
+                    <td class="proof-lines">43</td>
+                    <td><code class="signature">Lemma joint_VarRV_CondRV_eq_InputRV (v1 u1 u2 u3 s v2 v3 : msg) : (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[[%VarRV, CondRV] = ((v2, v3), (v1, u1, u2, u3, s))] = `Pr[[%VarRV, InputRV] = ((v2, v3), (v1, u1, u2, u3))].</code></td>
+                    <td class="meaning">Helper 3: The joint [%VarRV, CondRV] probability equals [%VarRV, InputRV] when (v2,v3) is in the fiber (constraint is satisfied)</td>
+                </tr>
+            
+                <tr data-search="cond_prob_denom lemma cond_prob_denom (v1 u1 u2 u3 s : msg) : p |= inputrv _|_ varrv -&gt; `p_ varrv = fdist_uniform card_msg_pair -&gt; `pr[inputrv = (v1, u1, u2, u3)] != 0 -&gt; `pr[condrv = (v1, u1, u2, u3, s)] = #|dsdp_fiber_full_zpq u1 u2 u3 v1 s|%:r * (m ^ 2)%:r^-1 * `pr[inputrv = (v1, u1, u2, u3)]. helper 4: denominator computation - sum over fiber">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cond_prob_denom.html" class="lemma-name">cond_prob_denom</a>
+                    </td>
+                    <td class="section-name">uniform_from_joint_uniform</td>
+                    <td class="proof-lines">37</td>
+                    <td><code class="signature">Lemma cond_prob_denom (v1 u1 u2 u3 s : msg) : P |= InputRV _|_ VarRV -&gt; `p_ VarRV = fdist_uniform card_msg_pair -&gt; `Pr[InputRV = (v1, u1, u2, u3)] != 0 -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] = #|dsdp_fiber_full_zpq u1 u2 u3 v1 s|%:R * (m ^ 2)%:R^-1 * `Pr[InputRV = (v1, u1, u2, u3)].</code></td>
+                    <td class="meaning">Helper 4: Denominator computation - sum over fiber</td>
+                </tr>
             
                 <tr data-search="dsdp_fiber_full_zpq_card lemma dsdp_fiber_full_zpq_card (u1 u2 u3 v1 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; #|dsdp_fiber_full_zpq u1 u2 u3 v1 s| = m. fiber cardinality for full constraint">
                     <td>
@@ -859,12 +970,12 @@
                         <a href="lemmas/dsdp_solution_uniform_prob_zpq.html" class="lemma-name">dsdp_solution_uniform_prob_zpq</a>
                     </td>
                     <td class="section-name">dsdp_entropy_zpq</td>
-                    <td class="proof-lines">9</td>
+                    <td class="proof-lines">10</td>
                     <td><code class="signature">Lemma dsdp_solution_uniform_prob_zpq (u1 u2 u3 v1 s : msg) (v2 v3 : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1.</code></td>
                     <td class="meaning">Solutions have uniform probability</td>
                 </tr>
             
-                <tr data-search="dsdp_entropy_uniform_subset_zpq lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = 0) -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). single-point conditional entropy: h[varrv | condrv = (v1,u1,u2,u3,s)] = log(m). shows that for each fixed conditioning value, the conditional entropy equals log(m). this applies the general fiber entropy framework to dsdp: - fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - uniform distribution over fiber ⟹ entropy = log(m)">
+                <tr data-search="dsdp_entropy_uniform_subset_zpq lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `pr[ condrv = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = m%:r^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[ varrv = pair | condrv = (v1, u1, u2, u3, s) ] = 0) -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). single-point conditional entropy: h[varrv | condrv = (v1,u1,u2,u3,s)] = log(m). shows that for each fixed conditioning value, the conditional entropy equals log(m). this applies the general fiber entropy framework to dsdp: - fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - uniform distribution over fiber implies entropy = log(m)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_entropy_uniform_subset_zpq.html" class="lemma-name">dsdp_entropy_uniform_subset_zpq</a>
@@ -872,7 +983,7 @@
                     <td class="section-name">dsdp_entropy_zpq</td>
                     <td class="proof-lines">23</td>
                     <td><code class="signature">Lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = 0) -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
-                    <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber ⟹ entropy = log(m)</td>
+                    <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber implies entropy = log(m)</td>
                 </tr>
             
                 <tr data-search="dsdp_centropy1_uniform_zpq lemma dsdp_centropy1_uniform_zpq (v1 u1 u2 u3 s : msg) : (0 &lt; u3)%n -&gt; (u3 &lt; minn p q)%n -&gt; `pr[condrv = (v1, u1, u2, u3, s)] != 0 -&gt; `h[ varrv | condrv = (v1, u1, u2, u3, s) ] = log (m%:r : r). helper: each conditioning value gives entropy log(m)">
@@ -952,7 +1063,7 @@
                     <td class="meaning">Generic helper: Strip encryptions from AliceView and apply conditional independence. Given: X is conditionally independent of [Dk_a, R2, R3] given CondRV Proves: H(X | AliceView) = H(X | CondRV) This is reused in dsdp_security.v for the bounded leakage proof.</td>
                 </tr>
             
-                <tr data-search="privacy_by_bonded_leakage lemma privacy_by_bonded_leakage : `h([% v2, v3] | aliceview ) = `h(v2 | aliceview). privacy via bounded leakage: knowing (v2,v3) given alice&#39;s view is equivalent to knowing just v2. v3 adds no additional information because it&#39;s determined by v2 and the constraint. this is the core privacy guarantee for bob&#39;s input v2.">
+                <tr data-search="privacy_by_bonded_leakage lemma privacy_by_bonded_leakage : `h([% v2, v3] | aliceview ) = `h(v2 | aliceview). privacy via bounded leakage: knowing (v2,v3) given alice&#39;s view is equivalent to knowing just v2. v3 adds no additional information because it is determined by v2 and the constraint. this is the core privacy guarantee for bob&#39;s input v2.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/privacy_by_bonded_leakage.html" class="lemma-name">privacy_by_bonded_leakage</a>
@@ -960,7 +1071,7 @@
                     <td class="section-name">semi_honest_case_analysis</td>
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma privacy_by_bonded_leakage : `H([% V2, V3] | AliceView ) = `H(V2 | AliceView).</code></td>
-                    <td class="meaning">Privacy via bounded leakage: knowing (V2,V3) given Alice&#39;s view is equivalent to knowing just V2. V3 adds no additional information because it&#39;s determined by V2 and the constraint. This is the core privacy guarantee for Bob&#39;s input V2.</td>
+                    <td class="meaning">Privacy via bounded leakage: knowing (V2,V3) given Alice&#39;s view is equivalent to knowing just V2. V3 adds no additional information because it is determined by V2 and the constraint. This is the core privacy guarantee for Bob&#39;s input V2.</td>
                 </tr>
             
             </tbody>
@@ -976,7 +1087,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy_trace.v</span>
         </div>
-        <span class="file-count">4 helper</span>
+        <span class="file-count">10 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1033,6 +1144,111 @@
                     <td class="proof-lines">9</td>
                     <td><code class="signature">Lemma centropy_AliceTraces_AliceView (w : finType) (v : {RV P -&gt; w}) : `H(v | AliceTraces ) = `H(v | AliceView ).</code></td>
                     <td class="meaning">Conditional entropy equivalence: conditioning on AliceTraces equals conditioning on AliceView. They carry the same information.</td>
+                </tr>
+            
+                <tr data-search="bobtraces_from_viewp lemma bobtraces_from_viewp : bobtraces = bobtraces_values_from_view `o bobview. bobtraces is a function of bobview">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/BobTraces_from_viewP.html" class="lemma-name">BobTraces_from_viewP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma BobTraces_from_viewP : BobTraces = BobTraces_values_from_view `o BobView.</code></td>
+                    <td class="meaning">BobTraces is a function of BobView</td>
+                </tr>
+            
+                <tr data-search="bobview_values_from_tracep lemma bobview_values_from_tracep : cancel bobtraces_values_from_view bobview_values_from_trace. bobview_values_from_trace is left-inverse of bobtraces_values_from_view">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/BobView_values_from_traceP.html" class="lemma-name">BobView_values_from_traceP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma BobView_values_from_traceP : cancel BobTraces_values_from_view BobView_values_from_trace.</code></td>
+                    <td class="meaning">BobView_values_from_trace is left-inverse of BobTraces_values_from_view</td>
+                </tr>
+            
+                <tr data-search="centropy_bobtraces_bobview lemma centropy_bobtraces_bobview (w : fintype) (v : {rv p -&gt; w}) : `h(v | bobtraces) = `h(v | bobview). conditional entropy equivalence for bob: conditioning on bobtraces equals conditioning on bobview.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_BobTraces_BobView.html" class="lemma-name">centropy_BobTraces_BobView</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma centropy_BobTraces_BobView (w : finType) (v : {RV P -&gt; w}) : `H(v | BobTraces) = `H(v | BobView).</code></td>
+                    <td class="meaning">Conditional entropy equivalence for Bob: conditioning on BobTraces equals conditioning on BobView.</td>
+                </tr>
+            
+                <tr data-search="charlietraces_from_viewp lemma charlietraces_from_viewp : charlietraces = charlietraces_values_from_view `o charlieview. charlietraces is a function of charlieview">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/CharlieTraces_from_viewP.html" class="lemma-name">CharlieTraces_from_viewP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma CharlieTraces_from_viewP : CharlieTraces = CharlieTraces_values_from_view `o CharlieView.</code></td>
+                    <td class="meaning">CharlieTraces is a function of CharlieView</td>
+                </tr>
+            
+                <tr data-search="charlieview_values_from_tracep lemma charlieview_values_from_tracep : cancel charlietraces_values_from_view charlieview_values_from_trace. charlieview_values_from_trace is left-inverse of charlietraces_values_from_view">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/CharlieView_values_from_traceP.html" class="lemma-name">CharlieView_values_from_traceP</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma CharlieView_values_from_traceP : cancel CharlieTraces_values_from_view CharlieView_values_from_trace.</code></td>
+                    <td class="meaning">CharlieView_values_from_trace is left-inverse of CharlieTraces_values_from_view</td>
+                </tr>
+            
+                <tr data-search="centropy_charlietraces_charlieview lemma centropy_charlietraces_charlieview (w : fintype) (v : {rv p -&gt; w}) : `h(v | charlietraces) = `h(v | charlieview). conditional entropy equivalence for charlie: conditioning on charlietraces equals conditioning on charlieview.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/centropy_CharlieTraces_CharlieView.html" class="lemma-name">centropy_CharlieTraces_CharlieView</a>
+                    </td>
+                    <td class="section-name">trace_entropy_analysis</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma centropy_CharlieTraces_CharlieView (w : finType) (v : {RV P -&gt; w}) : `H(v | CharlieTraces) = `H(v | CharlieView).</code></td>
+                    <td class="meaning">Conditional entropy equivalence for Charlie: conditioning on CharlieTraces equals conditioning on CharlieView.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_extra.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_extra.v</span>
+        </div>
+        <span class="file-count">1 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="inde_cond_entropy lemma inde_cond_entropy (u a b : fintype) (p : rdefinitions.r.-fdist u) (view : {rv p -&gt; a}) (x : {rv p -&gt; b}) : p |= view _|_ x -&gt; `h(x | view) = `h `p_ x. independence implies conditional entropy equals unconditional: h(x|v) = h(x)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inde_cond_entropy.html" class="lemma-name">inde_cond_entropy</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma inde_cond_entropy (U A B : finType) (P : Rdefinitions.R.-fdist U) (View : {RV P -&gt; A}) (X : {RV P -&gt; B}) : P |= View _|_ X -&gt; `H(X | View) = `H `p_ X.</code></td>
+                    <td class="meaning">Independence implies conditional entropy equals unconditional: H(X|V) = H(X)</td>
                 </tr>
             
             </tbody>
@@ -1148,7 +1364,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/entropy_fiber/entropy_fiber.v</span>
         </div>
-        <span class="file-count">10 helper</span>
+        <span class="file-count">11 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1240,6 +1456,17 @@
                     <td class="meaning">Note: although this is the same as the lemma above, it is difficult to use this version in the following `centropy1_uniform_fiber` proof. So both versions are kept.</td>
                 </tr>
             
+                <tr data-search="uniform_prior_cond_uniform_fiber lemma uniform_prior_cond_uniform_fiber (card_dom : nat) (hcard : #|domaint| = card_dom.+1) (c : codomaint) : `p_ x = fdist_uniform hcard -&gt; `pr[y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `pr[x = x | y = c] = #|fiber_c|%:r ^-1) /\ (forall x, x \notin fiber_c -&gt; `pr[x = x | y = c] = 0). * uniform prior implies uniform posterior on fibers. note: fdist_uniform requires a proof that #|a| = n.+1 (successor form)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/uniform_prior_cond_uniform_fiber.html" class="lemma-name">uniform_prior_cond_uniform_fiber</a>
+                    </td>
+                    <td class="section-name">fiber_entropy</td>
+                    <td class="proof-lines">2</td>
+                    <td><code class="signature">Lemma uniform_prior_cond_uniform_fiber (card_dom : nat) (Hcard : #|DomainT| = card_dom.+1) (c : CodomainT) : `p_ X = fdist_uniform Hcard -&gt; `Pr[Y = c] != 0 -&gt; let fiber_c := fiber f c in (forall x, x \in fiber_c -&gt; `Pr[X = x | Y = c] = #|fiber_c|%:R ^-1) /\ (forall x, x \notin fiber_c -&gt; `Pr[X = x | Y = c] = 0).</code></td>
+                    <td class="meaning">* Uniform prior implies uniform posterior on fibers. Note: fdist_uniform requires a proof that #|A| = n.+1 (successor form)</td>
+                </tr>
+            
                 <tr data-search="centropy_constant_fibers lemma centropy_constant_fibers (fiber_card : nat) : (forall c, c \in image_set f -&gt; #|fiber f c| = fiber_card) -&gt; (0 &lt; fiber_card)%n -&gt; `h(x | y) = log (fiber_card%:r : r). then overall conditional entropy is constant">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -1268,7 +1495,7 @@
                         <a href="lemmas/centropy_jcond_determined_fibers.html" class="lemma-name">centropy_jcond_determined_fibers</a>
                     </td>
                     <td class="section-name">conditional_entropy_with_functional_constraint</td>
-                    <td class="proof-lines">48</td>
+                    <td class="proof-lines">50</td>
                     <td><code class="signature">Lemma centropy_jcond_determined_fibers (fiber_card : nat) : (forall y z, `Pr[[% Y, Z] = (y, z)] != 0 -&gt; #|[set x&#39; | g x&#39; y == z]| = fiber_card) -&gt; (0 &lt; fiber_card)%N -&gt; `H(X | [% Y, Z]) = log (fiber_card%:R : R).</code></td>
                     <td class="meaning">When fibers have constant cardinality and X is uniform over each fiber, the conditional entropy is log(fiber_card). Joint conditioning version.</td>
                 </tr>
@@ -2969,7 +3196,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-10 | 179 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/e236eb076b8da9955f2eb6ff28fb25c21c04655d" target="_blank" rel="noopener" style="color: var(--accent);">e236eb0</a></p>
+        <p>Generated: 2026-01-10 | 196 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bd8bee953b5c512c07e5b7c5c52f1c3a81ee4d96" target="_blank" rel="noopener" style="color: var(--accent);">bd8bee9</a></p>
     </footer>
     
     <script>
