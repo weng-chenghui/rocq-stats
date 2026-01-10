@@ -59,7 +59,7 @@
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/1bb72e44b4c8e9f614d16011400eec708bdcb1d9" target="_blank" rel="noopener">1bb72e4</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/e236eb076b8da9955f2eb6ff28fb25c21c04655d" target="_blank" rel="noopener">e236eb0</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -82,8 +82,8 @@
 │   └── rouche_capelli.v          # Linear system solution counting (Rouché-Capelli)
 │
 ├── entropy_fiber/                 # Layers 2-3: Abstract + linear fiber entropy
-│   ├── entropy_fibers.v          # Abstract fiber entropy framework
-│   └── entropy_linear_fibers.v   # Linear algebra specialization
+│   ├── entropy_fiber.v           # Abstract fiber entropy framework
+│   └── entropy_linear_fiber.v    # Linear algebra specialization
 │
 ├── zpq/                           # Layer 4: Z/pqZ specialization
 │   └── fiber_zpq.v               # Fiber cardinality over composite moduli
@@ -111,12 +111,12 @@
                                    │
                     ┌──────────────▼──────────────────┐
                     │   Layer 3: Linear Fibers        │
-                    │   entropy_linear_fibers.v       │
+                    │   entropy_linear_fiber.v        │
                     └──────────────┬──────────────────┘
                                    │
                     ┌──────────────▼──────────────────┐
                     │   Layer 2: Abstract Fibers      │
-                    │   entropy_fibers.v              │
+                    │   entropy_fiber.v               │
                     └──────────────┬──────────────────┘
                                    │
         ┌──────────────────────────┼──────────────────────────┐
@@ -168,7 +168,7 @@
 </tbody>
 </table>
 <p><strong>Design Principle:</strong> These lemmas could potentially be contributed upstream to infotheo or mathcomp-analysis.</p>
-<h3 id="layer-2-abstract-fiber-entropy-entropy_fiberentropy_fibersv">Layer 2: Abstract Fiber Entropy (<code>entropy_fiber/entropy_fibers.v</code>)</h3>
+<h3 id="layer-2-abstract-fiber-entropy-entropy_fiberentropy_fiberv">Layer 2: Abstract Fiber Entropy (<code>entropy_fiber/entropy_fiber.v</code>)</h3>
 <p><strong>Purpose:</strong> Establish the connection between fiber (preimage) structure and entropy calculations in a type-generic way.</p>
 <p><strong>Key Concepts:</strong>
 - <strong>Fiber:</strong> The preimage <code>{x | f(x) = c}</code> of a value c under function f
@@ -196,7 +196,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="layer-3-linear-fiber-entropy-entropy_fiberentropy_linear_fibersv">Layer 3: Linear Fiber Entropy (<code>entropy_fiber/entropy_linear_fibers.v</code>)</h3>
+<h3 id="layer-3-linear-fiber-entropy-entropy_fiberentropy_linear_fiberv">Layer 3: Linear Fiber Entropy (<code>entropy_fiber/entropy_linear_fiber.v</code>)</h3>
 <p><strong>Purpose:</strong> Specialize the abstract fiber framework to linear algebra structures over finite fields.</p>
 <p><strong>Key Concepts:</strong>
 - <strong>Linear fiber:</strong> Solution set <code>{v | u·v = s}</code> of a dot product equation
@@ -377,8 +377,55 @@
 </tbody>
 </table>
 <h2 id="homomorphic-encryption-layer">Homomorphic Encryption Layer</h2>
-<p>In addition to the DSDP-specific layers, we also provide a foundational <strong>homomorphic encryption</strong> layer in <code>homomorphic_encryption/homomorphic_encryption.v</code>. This layer establishes the cryptographic primitives required for DSDP's secure computation:</p>
-<p><strong>Key Components:</strong></p>
+<p>The <code>homomorphic_encryption/</code> directory provides a layered architecture for homomorphic encryption:</p>
+<pre><code>  Section he_ideal (backward compatible, used by dsdp)
+  ≈ Party_Ideal_HE(Ideal_HE(msg))
+                      |
+                      v uses
+  Party_Ideal_HE (party labels + Ideal_HE)
+  - enc = (party * ct)
+  - E, D, Emul, Epow with party labels
+                      |
+                      v wraps
+  HE_SIG (abstract interface in he_sig.v)
+  - msg, ct, rand, enc
+  - Emul : ct -&gt; ct -&gt; ct
+  - Epow : ct -&gt; msg -&gt; ct
+        /              |               \
+       v               v                v
+  Ideal_HE         Benaloh_HE       Paillier_HE
+  ct = msg         ct = 'Z_n        ct = 'Z_{n²}
+  Emul = +         Emul = *         Emul = *
+  Epow = *         Epow = ^+        Epow = ^+
+</code></pre>
+<p><strong>Files:</strong></p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>he_sig.v</code></td>
+<td><code>HE_SIG</code> module signature: abstract HE interface</td>
+</tr>
+<tr>
+<td><code>homomorphic_encryption.v</code></td>
+<td><code>Ideal_HE</code>, <code>Party_Ideal_HE</code>, <code>Section he_ideal</code>, party/key types</td>
+</tr>
+<tr>
+<td><code>benaloh1994/benaloh_he_instance.v</code></td>
+<td><code>Benaloh_HE</code> functor implementing <code>HE_SIG</code></td>
+</tr>
+<tr>
+<td><code>paillier1999/paillier_he_instance.v</code></td>
+<td><code>Paillier_HE</code> functor implementing <code>HE_SIG</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Components (from <code>homomorphic_encryption.v</code>):</strong></p>
 <table>
 <thead>
 <tr>
@@ -396,20 +443,20 @@
 <td>Key types (Dec, Enc) for encryption/decryption</td>
 </tr>
 <tr>
-<td><code>enc</code></td>
-<td>Encrypted message type <code>(party * msg)</code></td>
+<td><code>HE_SIG</code></td>
+<td>Abstract module signature with <code>enc</code>, <code>Emul</code>, <code>Epow</code></td>
 </tr>
 <tr>
-<td><code>pkey</code></td>
-<td>Party key type <code>(party * key * msg)</code></td>
+<td><code>Ideal_HE</code></td>
+<td>Implements <code>HE_SIG</code> with <code>ct = msg</code> (identity encryption)</td>
 </tr>
 <tr>
-<td><code>E</code>, <code>D</code></td>
-<td>Encryption and decryption operations</td>
+<td><code>Party_Ideal_HE</code></td>
+<td>Wraps <code>Ideal_HE</code> with party labels</td>
 </tr>
 <tr>
-<td><code>Emul</code>, <code>Epow</code></td>
-<td>Homomorphic operations (addition via <code>*h</code>, scalar multiplication via <code>^h</code>)</td>
+<td><code>Section he_ideal</code></td>
+<td>Backward-compatible interface for dsdp (E, D, Emul, Epow)</td>
 </tr>
 <tr>
 <td><code>p.-enc T</code></td>
@@ -430,6 +477,14 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>Emul_hom</code></td>
+<td><code>Emul(enc m1, enc m2) = enc(m1 + m2)</code> — homomorphic addition</td>
+</tr>
+<tr>
+<td><code>Epow_hom</code></td>
+<td><code>Epow(enc m1, m2) = enc(m1 * m2)</code> — homomorphic scalar mult</td>
+</tr>
 <tr>
 <td><code>card_party_key</code></td>
 <td><code>#|{:p.-key k T}| = #|T|</code> — key types preserve cardinality</td>
@@ -452,7 +507,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Role in DSDP:</strong> This layer provides the semantic security axioms (<code>E_enc_unif</code>, <code>E_enc_inde</code>) that allow DSDP to treat encrypted values as independent random values, which is essential for the entropy-based security analysis.</p>
+<p><strong>Role in DSDP:</strong> The <code>Section he_ideal</code> provides party-labeled encryption operations (<code>E</code>, <code>D</code>, <code>Emul</code>, <code>Epow</code>) used by dsdp protocol proofs. The semantic security axioms (<code>E_enc_unif</code>, <code>E_enc_inde</code>) allow DSDP to treat encrypted values as independent random values, which is essential for the entropy-based security analysis.</p>
 <h2 id="related-documents">Related Documents</h2>
 <ul>
 <li><code>20251209_v2_stats.md</code>: Complete lemma listing with signatures and meanings</li>
@@ -465,7 +520,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-10 | 179 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/1bb72e44b4c8e9f614d16011400eec708bdcb1d9" target="_blank" rel="noopener" style="color: var(--accent);">1bb72e4</a></p>
+        <p>Generated: 2026-01-10 | 179 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/e236eb076b8da9955f2eb6ff28fb25c21c04655d" target="_blank" rel="noopener" style="color: var(--accent);">e236eb0</a></p>
     </footer>
     
     <script>
