@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charlie_privacy_V2_alt - DSDP Formalization</title>
+    <link rel="stylesheet" href="../static/style.css">
+    
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-home" title="All Projects">Rocq Stats</a>
+            <span class="nav-separator">›</span>
+            <a href="../index.html" class="nav-brand">DSDP Formalization</a>
+            <ul class="nav-tabs">
+                <li><a href="../index.html" >Overview</a></li>
+                <li><a href="../stats.html" >Lemma Stats</a></li>
+                <li><a href="../dependencies.html" >Dependencies</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                <span class="theme-icon">☀️</span>
+            </button>
+        </div>
+    </nav>
+    
+    <main class="container">
+        
+<div class="lemma-detail">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        
+        <span class="badge badge-theorem">Theorem</span>
+        
+        <h1 style="border: none; margin: 0; padding: 0;">charlie_privacy_V2_alt</h1>
+    </div>
+    
+    <div class="lemma-meta">
+        <div class="lemma-meta-item">
+            <span class="label">File</span>
+            <span class="value">
+                <a href="https://github.com/weng-chenghui/infotheo/blob/21f3189b1a9ab315397464777b370bb62528b86a/dumas2017dual/dsdp/dsdp_security.v" target="_blank" rel="noopener">
+                    dumas2017dual/dsdp/dsdp_security.v
+                </a>
+            </span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Section</span>
+            <span class="value">charlie_security</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Type</span>
+            <span class="value">Theorem</span>
+        </div>
+        <div class="lemma-meta-item">
+            <span class="label">Proof Lines</span>
+            <span class="value">3</span>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 0;">Signature</h3>
+    <div class="lemma-signature">Theorem charlie_privacy_V2_alt : `H(V2 | CharlieView) = `H `p_ V2.</div>
+    
+    
+    <h3>Description</h3>
+    <div class="lemma-meaning">Charlie cannot learn V2 - complete privacy. Alternative formulation: H(V2 | CharlieView) = H(V2) This directly expresses that conditioning on CharlieView reveals nothing about V2, i.e., observing Charlie&#39;s view does not reduce uncertainty about Bob&#39;s private input V2. Mathematical reasoning: - CharlieView _|_ V2 (independence hypothesis) - By definition of independence: observing CharlieView gives no information about V2 - Therefore: H(V2 | CharlieView) = H(V2) This is more fundamental than stating H(V2|CharlieView) = log(m), as it captures the independence relationship directly.</div>
+    
+</div>
+
+<!-- Dependencies -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+    <div class="deps-section">
+        <h3>Uses (0)</h3>
+        
+        <p class="no-deps">This lemma does not use any other lemmas from the stats.</p>
+        
+    </div>
+    
+    <div class="deps-section">
+        <h3>Used By (0)</h3>
+        
+        <p class="no-deps">No lemmas in the stats use this lemma.</p>
+        
+    </div>
+</div>
+
+<!-- Coq Source Code -->
+<div class="coq-source-container">
+    <div class="coq-source-header">
+        <h3>Coq Source Code</h3>
+        <a href="https://github.com/weng-chenghui/infotheo/blob/21f3189b1a9ab315397464777b370bb62528b86a/dumas2017dual/dsdp/dsdp_security.v" 
+           target="_blank" rel="noopener" class="btn" style="font-size: 0.8rem; padding: 0.3rem 0.6rem;">
+            View on GitHub
+        </a>
+    </div>
+    <pre class="coq-source" id="coq-source"><span class="loading">Loading source code...</span></pre>
+</div>
+
+<div style="margin-top: 1.5rem;">
+    <a href="../stats.html" class="btn">&larr; Back to Stats</a>
+</div>
+
+
+    </main>
+    
+    <footer class="footer container">
+        <p>Generated: 2026-01-11 | 223 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/21f3189b1a9ab315397464777b370bb62528b86a" target="_blank" rel="noopener" style="color: var(--accent);">21f3189</a></p>
+    </footer>
+    
+    <script>
+    // Theme toggle
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }
+    
+    function updateThemeIcon(theme) {
+        const icon = document.querySelector('.theme-icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+    }
+    
+    // Load saved theme
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Icon will be updated after DOM loads
+        document.addEventListener('DOMContentLoaded', () => updateThemeIcon(savedTheme));
+    })();
+    </script>
+    
+<script src="../static/coq-loader.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filePath = 'dumas2017dual/dsdp/dsdp_security.v';
+    const lemmaName = 'charlie_privacy_V2_alt';
+    const githubRawBase = 'https://raw.githubusercontent.com/weng-chenghui/infotheo/21f3189b1a9ab315397464777b370bb62528b86a';
+    const availableLemmas = ["dsdp_matrix_rank1", "dsdp_kernel_card", "dsdp_fiber_card", "dsdp_solution_set_card_full", "joint_factors_by_inde", "uniform_VarRV_prob", "joint_VarRV_CondRV_eq_InputRV", "cond_prob_denom", "dsdp_uniform_over_solutions_from_joint_uniform", "dsdp_fiber_full_zpq_card", "dsdp_non_solution_zero_prob_zpq", "dsdp_solution_uniform_prob_zpq", "dsdp_entropy_uniform_subset_zpq", "dsdp_centropy1_uniform_zpq", "dsdp_centropy_uniform_zpq", "dsdp_var_entropy_zpq", "S_E", "S_compE", "ConstUS_discloses_V2", "US_compromised_leaks_V2", "U3_nonzero", "V3_determined", "V3_determined_centropy_v2", "alice_view_to_cond", "privacy_by_bonded_leakage", "dsdp_is_correct_zpq", "AliceTraces_from_viewP", "AliceView_values_from_traceP", "centropy_AliceTraces_AliceView", "BobTraces_from_viewP", "BobView_values_from_traceP", "centropy_BobTraces_BobView", "CharlieTraces_from_viewP", "CharlieView_values_from_traceP", "centropy_CharlieTraces_CharlieView", "inde_cond_entropy", "dsdp_ok", "dsdp_traces_ok", "dsdp_is_correct", "dsdp_constraint_centropy_eqlogm", "V3_determined_centropy_v2_local", "dsdp_security_bounded_leakage", "U3_R3_indep_V1", "VU3_indep_V1", "VU3R_indep_V1", "E_charlie_vur3_indep_V1", "E_bob_d2_indep_V1", "BobView_indep_V1_proven", "D2_indep_V3", "E_bob_d2_indep_V3", "BobView_indep_V3_proven", "bob_privacy_V1_alt", "bob_privacy_V1", "bob_privacy_V3_alt", "bob_privacy_V3", "D2_indep_V2", "D2_indep_VU3R_V2", "D3_indep_V2", "E_charlie_d3_indep_V2", "CharlieView_indep_V2_proven", "V2V3_indep_V1", "V1_indep_U2U3R2R3", "alice_indep_no_Dka", "alice_indep_no_Dka_U1", "V2V3_indep_V1_randoms", "V2V3_indep_V1_randoms_structured", "D3_indep_V1", "E_charlie_d3_indep_V1", "CharlieView_indep_V1_proven", "charlie_privacy_V1_alt", "charlie_privacy_V1", "charlie_privacy_V2_alt", "charlie_privacy_V2", "mem_image_set", "fiber_non_empty_image", "mem_fiber", "nmem_fiber", "fiberC_cond_Pr0", "centropy1_as_sum", "entropy_uniform_set", "entropy_fdist_uniform_set", "centropy1_uniform_fiber", "uniform_prior_cond_uniform_fiber", "centropy_constant_fibers", "centropy_determined_contract", "fiberC_jcond_Pr0", "centropy_jcond_determined_fibers", "row_neq0_exists", "linear_fiber_nonzero", "linear_fiber_kernel_card", "linear_fiber_card_eq", "linear_fiber_card", "dotpE", "bilinear_solutions_fiberE", "bilinear_solutions_card", "dotp2_eq_matrix", "dotp2_solutions_card", "centropy_bilinear_uniform", "constrained_pairs_card", "constrained_triples_card", "logr_eq1", "bigD1_filter", "bigD1_seq_cond", "coprime_Zp_unit", "Zp_unit_coprime", "Zp_unitP", "Zp_Fp_card_eq", "entropy_formula_same", "entropy_sum_split", "cinde_cond_mutual_info0", "cinde_centropy_eq", "zero_entropy_eq_point_mass1", "zero_entropy_eq_point_mass", "centropy_term_deterministic", "jfdist_cond_entropy_zero", "point_mass_to_cond_prob", "zero_centropy1_point_mass", "zero_centropy_eq_deterministic1", "zero_centropy_eq_deterministic", "pair_notin_fin_img_fst", "sum_cPr_eq", "cPr_eq_notin_fin_img", "cPr_eq_two_ones_absurd", "jfdist_cond_cPr_eq", "cond_prob_zero_outside_constraint", "PrX_fstRV", "jproduct_ruleRV", "fdist_proj23_RV3", "pfwd1_pair4_swap34", "pfwd1_nested3_AC", "pfwd1_pair4_mid_A", "centropyAC", "centropyA", "centropyA_middle", "centropy4_swap_2_4", "marginal_swap_YZ", "card_vspace", "card_lker_lfun", "diffvv", "limg_lker", "HomK", "mxrank_sub_eqmx", "rouche1", "rouche2", "exists_nonzero_kernel", "kernel_membership", "kernel_coeff_exists", "sub_coker_colspan", "submx_castmx", "castmx_mul_row", "card_lker_mxof", "dim_rV", "card_lker_Hom", "cancel_row_free", "row_free_tr", "count_kernel_vectors", "affine_eq_translate_kernel", "card_translate", "count_affine_solutions", "count_affine_solutions_explicit", "affine_eq_translate_kernel_col", "card_translate_col", "count_affine_solutions_col", "count_kernel_vectors_col", "count_affine_solutions_explicit_col", "count_affine_solutions_rank1", "small_component_unit", "dotmul_bigD1", "unitrK", "pivot_solveE", "make_fiber_elemP", "fiber_elem_inj", "ffun_extendP", "ffun_restrictK", "ffun_extendK", "ffun_extend_inj", "ffun_fix_coord_card", "linear_fiber_zpq_card", "lt_minpq_coprime", "fiber_zpq_pair_card", "Zp_add_eqmod", "Zp_mulrn_nat", "Zp_mulrn_eqmod", "expr_modr", "enc_mul_dist", "enc_exp_dist", "Emul_hom", "Epow_hom", "Emul_randomness", "Epow_randomness", "scalar_eq_ring_mul", "Epow_ring", "benaloh_additive_homo", "benaloh_scalar_homo", "benaloh_repeated_add", "party_eqP", "party_natK", "party_enumP", "key_eqP", "key_natK", "key_enumP", "Emul_hom", "Epow_hom", "card_party_key", "card_enc_for", "card_enc_for", "E_enc_ce_removal", "Zp_add_eqmod", "Zp_mulrn_nat", "Zp_mulrn_eqmod", "n2_gt1", "expr_modn", "enc_mul_dist", "enc_exp_dist", "Emul_hom", "Epow_hom", "Emul_randomness", "Epow_randomness", "scalar_eq_ring_mul", "Epow_ring", "paillier_additive_homo", "paillier_scalar_homo", "paillier_repeated_add"];
+    
+    loadLemmaSource(githubRawBase, filePath, lemmaName, availableLemmas);
+});
+</script>
+
+</body>
+</html>
