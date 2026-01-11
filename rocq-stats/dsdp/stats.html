@@ -30,15 +30,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">196</div>
+        <div class="value">223</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">31</div>
+        <div class="value">40</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">165</div>
+        <div class="value">183</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">7,224</div>
+        <div class="value">8,128</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bd8bee953b5c512c07e5b7c5c52f1c3a81ee4d96" target="_blank" rel="noopener">bd8bee9</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/21f3189b1a9ab315397464777b370bb62528b86a" target="_blank" rel="noopener">21f3189</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (31 total)
+    Theorems and key lemmas (40 total)
 </p>
 
 
@@ -224,7 +224,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">6 main</span>
+        <span class="file-count">15 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -265,7 +265,46 @@
                     <td class="meaning">DSDP security guarantee: H(V2 | AliceView) = log(m) &gt; 0. Alice cannot learn Bob&#39;s private input V2 with certainty. The conditional entropy log(m) means V2 remains uniformly distributed over m values from Alice&#39;s perspective - she gains no advantage over random guessing. The protocol leaks V3&#39;s determination but not V2.</td>
                 </tr>
             
-                <tr data-search="bob_privacy_v1 theorem bob_privacy_v1 : `h(v1 | bobview) = log (m%:r : r) /\ `h(v1 | bobview) &gt; 0. bob cannot learn v1 - complete privacy">
+                <tr data-search="bobview_indep_v1_proven theorem bobview_indep_v1_proven : p |= bobview _|_ v1. main theorem: bobview is independent of v1">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/BobView_indep_V1_proven.html" class="lemma-name">BobView_indep_V1_proven</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Theorem BobView_indep_V1_proven : P |= BobView _|_ V1.</code></td>
+                    <td class="meaning">Main theorem: BobView is independent of V1</td>
+                </tr>
+            
+                <tr data-search="bobview_indep_v3_proven theorem bobview_indep_v3_proven : p |= bobview _|_ v3. main theorem: bobview is independent of v3">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/BobView_indep_V3_proven.html" class="lemma-name">BobView_indep_V3_proven</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Theorem BobView_indep_V3_proven : P |= BobView _|_ V3.</code></td>
+                    <td class="meaning">Main theorem: BobView is independent of V3</td>
+                </tr>
+            
+                <tr data-search="bob_privacy_v1_alt theorem bob_privacy_v1_alt : `h(v1 | bobview) = `h `p_ v1. bob cannot learn v1 - complete privacy. alternative formulation: h(v1 | bobview) = h(v1) this directly expresses that conditioning on bobview reveals nothing about v1, i.e., observing bob&#39;s view does not reduce uncertainty about alice&#39;s private input v1. mathematical reasoning: - bobview _|_ v1 (independence hypothesis) - by definition of independence: observing bobview gives no information about v1 - therefore: h(v1 | bobview) = h(v1)">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/bob_privacy_V1_alt.html" class="lemma-name">bob_privacy_V1_alt</a>
+                    </td>
+                    <td class="section-name">bob_security</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem bob_privacy_V1_alt : `H(V1 | BobView) = `H `p_ V1.</code></td>
+                    <td class="meaning">Bob cannot learn V1 - complete privacy. Alternative formulation: H(V1 | BobView) = H(V1) This directly expresses that conditioning on BobView reveals nothing about V1, i.e., observing Bob&#39;s view does not reduce uncertainty about Alice&#39;s private input V1. Mathematical reasoning: - BobView _|_ V1 (independence hypothesis) - By definition of independence: observing BobView gives no information about V1 - Therefore: H(V1 | BobView) = H(V1)</td>
+                </tr>
+            
+                <tr data-search="bob_privacy_v1 theorem bob_privacy_v1 : `h(v1 | bobview) = log (m%:r : r) /\ `h(v1 | bobview) &gt; 0. bob cannot learn v1 - complete privacy (concrete entropy value)">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -275,10 +314,23 @@
                     <td class="section-name">bob_security</td>
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Theorem bob_privacy_V1 : `H(V1 | BobView) = log (m%:R : R) /\ `H(V1 | BobView) &gt; 0.</code></td>
-                    <td class="meaning">Bob cannot learn V1 - complete privacy</td>
+                    <td class="meaning">Bob cannot learn V1 - complete privacy (concrete entropy value)</td>
                 </tr>
             
-                <tr data-search="bob_privacy_v3 theorem bob_privacy_v3 : `h(v3 | bobview) = log (m%:r : r) /\ `h(v3 | bobview) &gt; 0. bob cannot learn v3 - complete privacy">
+                <tr data-search="bob_privacy_v3_alt theorem bob_privacy_v3_alt : `h(v3 | bobview) = `h `p_ v3. bob cannot learn v3 - complete privacy. alternative formulation: h(v3 | bobview) = h(v3) this directly expresses that conditioning on bobview reveals nothing about v3, i.e., observing bob&#39;s view does not reduce uncertainty about charlie&#39;s private input v3. mathematical reasoning: - bobview _|_ v3 (independence hypothesis) - by definition of independence: observing bobview gives no information about v3 - therefore: h(v3 | bobview) = h(v3)">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/bob_privacy_V3_alt.html" class="lemma-name">bob_privacy_V3_alt</a>
+                    </td>
+                    <td class="section-name">bob_security</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem bob_privacy_V3_alt : `H(V3 | BobView) = `H `p_ V3.</code></td>
+                    <td class="meaning">Bob cannot learn V3 - complete privacy. Alternative formulation: H(V3 | BobView) = H(V3) This directly expresses that conditioning on BobView reveals nothing about V3, i.e., observing Bob&#39;s view does not reduce uncertainty about Charlie&#39;s private input V3. Mathematical reasoning: - BobView _|_ V3 (independence hypothesis) - By definition of independence: observing BobView gives no information about V3 - Therefore: H(V3 | BobView) = H(V3)</td>
+                </tr>
+            
+                <tr data-search="bob_privacy_v3 theorem bob_privacy_v3 : `h(v3 | bobview) = log (m%:r : r) /\ `h(v3 | bobview) &gt; 0. bob cannot learn v3 - complete privacy (concrete entropy value)">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -288,10 +340,62 @@
                     <td class="section-name">bob_security</td>
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Theorem bob_privacy_V3 : `H(V3 | BobView) = log (m%:R : R) /\ `H(V3 | BobView) &gt; 0.</code></td>
-                    <td class="meaning">Bob cannot learn V3 - complete privacy</td>
+                    <td class="meaning">Bob cannot learn V3 - complete privacy (concrete entropy value)</td>
                 </tr>
             
-                <tr data-search="charlie_privacy_v1 theorem charlie_privacy_v1 : `h(v1 | charlieview) = log (m%:r : r) /\ `h(v1 | charlieview) &gt; 0. charlie cannot learn v1 - complete privacy">
+                <tr data-search="charlieview_indep_v2_proven theorem charlieview_indep_v2_proven : p |= charlieview _|_ v2. main theorem: charlieview is independent of v2">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/CharlieView_indep_V2_proven.html" class="lemma-name">CharlieView_indep_V2_proven</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Theorem CharlieView_indep_V2_proven : P |= CharlieView _|_ V2.</code></td>
+                    <td class="meaning">Main theorem: CharlieView is independent of V2</td>
+                </tr>
+            
+                <tr data-search="d3_indep_v1 lemma d3_indep_v1 : p |= d3 _|_ v1. main lemma: d3 is independent of v1">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/D3_indep_V1.html" class="lemma-name">D3_indep_V1</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma D3_indep_V1 : P |= D3 _|_ V1.</code></td>
+                    <td class="meaning">Main lemma: D3 is independent of V1</td>
+                </tr>
+            
+                <tr data-search="charlieview_indep_v1_proven theorem charlieview_indep_v1_proven : p |= charlieview _|_ v1. main theorem: charlieview is independent of v1">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/CharlieView_indep_V1_proven.html" class="lemma-name">CharlieView_indep_V1_proven</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Theorem CharlieView_indep_V1_proven : P |= CharlieView _|_ V1.</code></td>
+                    <td class="meaning">Main theorem: CharlieView is independent of V1</td>
+                </tr>
+            
+                <tr data-search="charlie_privacy_v1_alt theorem charlie_privacy_v1_alt : `h(v1 | charlieview) = `h `p_ v1. charlie cannot learn v1 - complete privacy. alternative formulation: h(v1 | charlieview) = h(v1) this directly expresses that conditioning on charlieview reveals nothing about v1, i.e., observing charlie&#39;s view does not reduce uncertainty about alice&#39;s private input v1. mathematical reasoning: - charlieview _|_ v1 (independence hypothesis) - by definition of independence: observing charlieview gives no information about v1 - therefore: h(v1 | charlieview) = h(v1)">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/charlie_privacy_V1_alt.html" class="lemma-name">charlie_privacy_V1_alt</a>
+                    </td>
+                    <td class="section-name">charlie_security</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem charlie_privacy_V1_alt : `H(V1 | CharlieView) = `H `p_ V1.</code></td>
+                    <td class="meaning">Charlie cannot learn V1 - complete privacy. Alternative formulation: H(V1 | CharlieView) = H(V1) This directly expresses that conditioning on CharlieView reveals nothing about V1, i.e., observing Charlie&#39;s view does not reduce uncertainty about Alice&#39;s private input V1. Mathematical reasoning: - CharlieView _|_ V1 (independence hypothesis) - By definition of independence: observing CharlieView gives no information about V1 - Therefore: H(V1 | CharlieView) = H(V1)</td>
+                </tr>
+            
+                <tr data-search="charlie_privacy_v1 theorem charlie_privacy_v1 : `h(v1 | charlieview) = log (m%:r : r) /\ `h(v1 | charlieview) &gt; 0. charlie cannot learn v1 - complete privacy (concrete entropy value)">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -301,10 +405,23 @@
                     <td class="section-name">charlie_security</td>
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Theorem charlie_privacy_V1 : `H(V1 | CharlieView) = log (m%:R : R) /\ `H(V1 | CharlieView) &gt; 0.</code></td>
-                    <td class="meaning">Charlie cannot learn V1 - complete privacy</td>
+                    <td class="meaning">Charlie cannot learn V1 - complete privacy (concrete entropy value)</td>
                 </tr>
             
-                <tr data-search="charlie_privacy_v2 theorem charlie_privacy_v2 : `h(v2 | charlieview) = log (m%:r : r) /\ `h(v2 | charlieview) &gt; 0. charlie cannot learn v2 - complete privacy">
+                <tr data-search="charlie_privacy_v2_alt theorem charlie_privacy_v2_alt : `h(v2 | charlieview) = `h `p_ v2. charlie cannot learn v2 - complete privacy. alternative formulation: h(v2 | charlieview) = h(v2) this directly expresses that conditioning on charlieview reveals nothing about v2, i.e., observing charlie&#39;s view does not reduce uncertainty about bob&#39;s private input v2. mathematical reasoning: - charlieview _|_ v2 (independence hypothesis) - by definition of independence: observing charlieview gives no information about v2 - therefore: h(v2 | charlieview) = h(v2) this is more fundamental than stating h(v2|charlieview) = log(m), as it captures the independence relationship directly.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/charlie_privacy_V2_alt.html" class="lemma-name">charlie_privacy_V2_alt</a>
+                    </td>
+                    <td class="section-name">charlie_security</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem charlie_privacy_V2_alt : `H(V2 | CharlieView) = `H `p_ V2.</code></td>
+                    <td class="meaning">Charlie cannot learn V2 - complete privacy. Alternative formulation: H(V2 | CharlieView) = H(V2) This directly expresses that conditioning on CharlieView reveals nothing about V2, i.e., observing Charlie&#39;s view does not reduce uncertainty about Bob&#39;s private input V2. Mathematical reasoning: - CharlieView _|_ V2 (independence hypothesis) - By definition of independence: observing CharlieView gives no information about V2 - Therefore: H(V2 | CharlieView) = H(V2) This is more fundamental than stating H(V2|CharlieView) = log(m), as it captures the independence relationship directly.</td>
+                </tr>
+            
+                <tr data-search="charlie_privacy_v2 theorem charlie_privacy_v2 : `h(v2 | charlieview) = log (m%:r : r) /\ `h(v2 | charlieview) &gt; 0. charlie cannot learn v2 - complete privacy (concrete entropy value)">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -314,7 +431,7 @@
                     <td class="section-name">charlie_security</td>
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Theorem charlie_privacy_V2 : `H(V2 | CharlieView) = log (m%:R : R) /\ `H(V2 | CharlieView) &gt; 0.</code></td>
-                    <td class="meaning">Charlie cannot learn V2 - complete privacy</td>
+                    <td class="meaning">Charlie cannot learn V2 - complete privacy (concrete entropy value)</td>
                 </tr>
             
             </tbody>
@@ -810,7 +927,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (165 total)
+    Supporting lemmas and utilities (183 total)
 </p>
 
 <div id="helpers-section">
@@ -1240,14 +1357,14 @@
             </thead>
             <tbody>
             
-                <tr data-search="inde_cond_entropy lemma inde_cond_entropy (u a b : fintype) (p : rdefinitions.r.-fdist u) (view : {rv p -&gt; a}) (x : {rv p -&gt; b}) : p |= view _|_ x -&gt; `h(x | view) = `h `p_ x. independence implies conditional entropy equals unconditional: h(x|v) = h(x)">
+                <tr data-search="inde_cond_entropy lemma inde_cond_entropy (u a b : fintype) (p : r.-fdist u) (view : {rv p -&gt; a}) (x : {rv p -&gt; b}) : p |= view _|_ x -&gt; `h(x | view) = `h `p_ x. independence implies conditional entropy equals unconditional: h(x|v) = h(x)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/inde_cond_entropy.html" class="lemma-name">inde_cond_entropy</a>
                     </td>
-                    <td class="section-name">Top-level</td>
+                    <td class="section-name">inde_entropy_lemmas</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma inde_cond_entropy (U A B : finType) (P : Rdefinitions.R.-fdist U) (View : {RV P -&gt; A}) (X : {RV P -&gt; B}) : P |= View _|_ X -&gt; `H(X | View) = `H `p_ X.</code></td>
+                    <td><code class="signature">Lemma inde_cond_entropy (U A B : finType) (P : R.-fdist U) (View : {RV P -&gt; A}) (X : {RV P -&gt; B}) : P |= View _|_ X -&gt; `H(X | View) = `H `p_ X.</code></td>
                     <td class="meaning">Independence implies conditional entropy equals unconditional: H(X|V) = H(X)</td>
                 </tr>
             
@@ -1325,7 +1442,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">1 helper</span>
+        <span class="file-count">19 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1349,6 +1466,204 @@
                     <td class="proof-lines">15</td>
                     <td><code class="signature">Lemma V3_determined_centropy_v2_local : `H([% V2, V3] | CondRV) = `H(V2 | CondRV).</code></td>
                     <td class="meaning">V3 is determined by V2 and CondRV, so joint entropy equals single. Uses chain rule and the fact that V3 = compute_v3(CondRV, V2). Follows exact pattern from dsdp_entropy.v V3_determined_centropy_v2.</td>
+                </tr>
+            
+                <tr data-search="u3_r3_indep_v1 lemma u3_r3_indep_v1 : p |= [%u3, r3] _|_ v1. extract u3 _|_ v1 and r3 _|_ v1 from alice_v1_indep_randoms">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/U3_R3_indep_V1.html" class="lemma-name">U3_R3_indep_V1</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma U3_R3_indep_V1 : P |= [%U3, R3] _|_ V1.</code></td>
+                    <td class="meaning">Extract U3 _|_ V1 and R3 _|_ V1 from alice_V1_indep_randoms</td>
+                </tr>
+            
+                <tr data-search="vu3_indep_v1 lemma vu3_indep_v1 : p |= vu3 _|_ v1. vu3 = v3*u3 is independent of v1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/VU3_indep_V1.html" class="lemma-name">VU3_indep_V1</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma VU3_indep_V1 : P |= VU3 _|_ V1.</code></td>
+                    <td class="meaning">VU3 = V3*U3 is independent of V1</td>
+                </tr>
+            
+                <tr data-search="vu3r_indep_v1 lemma vu3r_indep_v1 : p |= vu3r _|_ v1. vu3r = v3*u3 + r3 is independent of v1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/VU3R_indep_V1.html" class="lemma-name">VU3R_indep_V1</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma VU3R_indep_V1 : P |= VU3R _|_ V1.</code></td>
+                    <td class="meaning">VU3R = V3*U3 + R3 is independent of V1</td>
+                </tr>
+            
+                <tr data-search="e_charlie_vur3_indep_v1 lemma e_charlie_vur3_indep_v1 : p |= e_charlie_vur3 _|_ v1. e_charlie_vur3 is independent of v1 because vu3r is">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_charlie_vur3_indep_V1.html" class="lemma-name">E_charlie_vur3_indep_V1</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma E_charlie_vur3_indep_V1 : P |= E_charlie_vur3 _|_ V1.</code></td>
+                    <td class="meaning">E_charlie_vur3 is independent of V1 because VU3R is</td>
+                </tr>
+            
+                <tr data-search="e_bob_d2_indep_v1 lemma e_bob_d2_indep_v1 : p |= e_bob_d2 _|_ v1. e_bob_d2 is independent of v1 because d2 is">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_bob_d2_indep_V1.html" class="lemma-name">E_bob_d2_indep_V1</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma E_bob_d2_indep_V1 : P |= E_bob_d2 _|_ V1.</code></td>
+                    <td class="meaning">E_bob_d2 is independent of V1 because D2 is</td>
+                </tr>
+            
+                <tr data-search="d2_indep_v3 lemma d2_indep_v3 : p |= d2 _|_ v3. d2 = vu2 + r2 is independent of v3 by one-time-pad masking">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/D2_indep_V3.html" class="lemma-name">D2_indep_V3</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma D2_indep_V3 : P |= D2 _|_ V3.</code></td>
+                    <td class="meaning">D2 = VU2 + R2 is independent of V3 by one-time-pad masking</td>
+                </tr>
+            
+                <tr data-search="e_bob_d2_indep_v3 lemma e_bob_d2_indep_v3 : p |= e_bob_d2 _|_ v3. e_bob_d2 is independent of v3 because d2 is">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_bob_d2_indep_V3.html" class="lemma-name">E_bob_d2_indep_V3</a>
+                    </td>
+                    <td class="section-name">bob_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma E_bob_d2_indep_V3 : P |= E_bob_d2 _|_ V3.</code></td>
+                    <td class="meaning">E_bob_d2 is independent of V3 because D2 is</td>
+                </tr>
+            
+                <tr data-search="d2_indep_v2 lemma d2_indep_v2 : p |= d2 _|_ v2. d2 = vu2 + r2 is independent of v2 by one-time-pad masking. mathematical reasoning (using lemma_3_5&#39; from smc_proba.v): theorem (one-time pad independence): if z is uniform over a finite group g and z _|_ [%x, y], then (x + z) _|_ y. application to d2: - x = vu2 = v2 * u2 (the value to be masked) - z = r2 (the uniform random mask) - y = v2 (what we want to prove independence from) - x + z = d2 = vu2 + r2 the hypothesis r2_indep_vu2_v2 states r2 _|_ [%vu2, v2]. since r2 is uniform (from dsdp_random_inputs.pr2_unif), by lemma_3_5&#39;, we get d2 = vu2 + r2 _|_ v2. technical note: full mechanized proof requires careful handling of realtype parameter alignment with the smc_proba.lemma_3_5&#39; signature.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/D2_indep_V2.html" class="lemma-name">D2_indep_V2</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">21</td>
+                    <td><code class="signature">Lemma D2_indep_V2 : P |= D2 _|_ V2.</code></td>
+                    <td class="meaning">D2 = VU2 + R2 is independent of V2 by one-time-pad masking. Mathematical reasoning (using lemma_3_5&#39; from smc_proba.v): Theorem (One-Time Pad Independence): If Z is uniform over a finite group G and Z _|_ [%X, Y], then (X + Z) _|_ Y. Application to D2: - X = VU2 = V2 * U2 (the value to be masked) - Z = R2 (the uniform random mask) - Y = V2 (what we want to prove independence from) - X + Z = D2 = VU2 + R2 The hypothesis R2_indep_VU2_V2 states R2 _|_ [%VU2, V2]. Since R2 is uniform (from dsdp_random_inputs.pR2_unif), by lemma_3_5&#39;, we get D2 = VU2 + R2 _|_ V2. Technical note: Full mechanized proof requires careful handling of realType parameter alignment with the smc_proba.lemma_3_5&#39; signature.</td>
+                </tr>
+            
+                <tr data-search="d2_indep_vu3r_v2 lemma d2_indep_vu3r_v2 : p |= d2 _|_ [%vu3r, v2]. intermediate lemma: d2 is independent of [%vu3r, v2] this follows from lemma_3_5&#39; applied to d2 = vu2 + r2">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/D2_indep_VU3R_V2.html" class="lemma-name">D2_indep_VU3R_V2</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma D2_indep_VU3R_V2 : P |= D2 _|_ [%VU3R, V2].</code></td>
+                    <td class="meaning">Intermediate lemma: D2 is independent of [%VU3R, V2] This follows from lemma_3_5&#39; applied to D2 = VU2 + R2</td>
+                </tr>
+            
+                <tr data-search="d3_indep_v2 lemma d3_indep_v2 : p |= d3 _|_ v2. d3 = vu3r + d2 is independent of v2. since d2 is uniform and d2 _|_ [%vu3r, v2], by lemma_3_5&#39;, vu3r + d2 = d3 _|_ v2.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/D3_indep_V2.html" class="lemma-name">D3_indep_V2</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">25</td>
+                    <td><code class="signature">Lemma D3_indep_V2 : P |= D3 _|_ V2.</code></td>
+                    <td class="meaning">D3 = VU3R + D2 is independent of V2. Since D2 is uniform and D2 _|_ [%VU3R, V2], by lemma_3_5&#39;, VU3R + D2 = D3 _|_ V2.</td>
+                </tr>
+            
+                <tr data-search="e_charlie_d3_indep_v2 lemma e_charlie_d3_indep_v2 : p |= e_charlie_d3 _|_ v2. e_charlie_d3 is independent of v2 because d3 is independent of v2 and encryption is a deterministic function of d3.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_charlie_d3_indep_V2.html" class="lemma-name">E_charlie_d3_indep_V2</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma E_charlie_d3_indep_V2 : P |= E_charlie_d3 _|_ V2.</code></td>
+                    <td class="meaning">E_charlie_d3 is independent of V2 because D3 is independent of V2 and encryption is a deterministic function of D3.</td>
+                </tr>
+            
+                <tr data-search="v2v3_indep_v1 lemma v2v3_indep_v1 : p |= [%v2, v3] _|_ v1. helper: extract [%v2, v3] _|_ v1 from alice_indep">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V2V3_indep_V1.html" class="lemma-name">V2V3_indep_V1</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Lemma V2V3_indep_V1 : P |= [%V2, V3] _|_ V1.</code></td>
+                    <td class="meaning">Helper: Extract [%V2, V3] _|_ V1 from alice_indep</td>
+                </tr>
+            
+                <tr data-search="v1_indep_u2u3r2r3 lemma v1_indep_u2u3r2r3 : p |= v1 _|_ [%u2, u3, r2, r3]. helper: extract v1 _|_ [%u2, u3, r2, r3] from alice_v1_indep_randoms">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V1_indep_U2U3R2R3.html" class="lemma-name">V1_indep_U2U3R2R3</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma V1_indep_U2U3R2R3 : P |= V1 _|_ [%U2, U3, R2, R3].</code></td>
+                    <td class="meaning">Helper: Extract V1 _|_ [%U2, U3, R2, R3] from alice_V1_indep_randoms</td>
+                </tr>
+            
+                <tr data-search="alice_indep_no_dka lemma alice_indep_no_dka : p |= [%v1, dsdp_entropy.u1 inputs, u2, u3, r2, r3] _|_ [%v2, v3]. helper: remove first element from 7-tuple using projection">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_indep_no_Dka.html" class="lemma-name">alice_indep_no_Dka</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma alice_indep_no_Dka : P |= [%V1, dsdp_entropy.U1 inputs, U2, U3, R2, R3] _|_ [%V2, V3].</code></td>
+                    <td class="meaning">Helper: Remove first element from 7-tuple using projection</td>
+                </tr>
+            
+                <tr data-search="alice_indep_no_dka_u1 lemma alice_indep_no_dka_u1 : p |= [%v1, u2, u3, r2, r3] _|_ [%v2, v3]. helper: remove u1 from 6-tuple using projection">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_indep_no_Dka_U1.html" class="lemma-name">alice_indep_no_Dka_U1</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma alice_indep_no_Dka_U1 : P |= [%V1, U2, U3, R2, R3] _|_ [%V2, V3].</code></td>
+                    <td class="meaning">Helper: Remove U1 from 6-tuple using projection</td>
+                </tr>
+            
+                <tr data-search="v2v3_indep_v1_randoms lemma v2v3_indep_v1_randoms : p |= [%v2, v3] _|_ [%v1, u2, u3, r2, r3]. helper: [%v2, v3] _|_ [%v1, u2, u3, r2, r3] from alice_indep">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V2V3_indep_V1_randoms.html" class="lemma-name">V2V3_indep_V1_randoms</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma V2V3_indep_V1_randoms : P |= [%V2, V3] _|_ [%V1, U2, U3, R2, R3].</code></td>
+                    <td class="meaning">Helper: [%V2, V3] _|_ [%V1, U2, U3, R2, R3] from alice_indep</td>
+                </tr>
+            
+                <tr data-search="v2v3_indep_v1_randoms_structured lemma v2v3_indep_v1_randoms_structured : p |= [%v2, v3] _|_ [%v1, [%u2, u3, r2, r3]]. this is the structure needed for mixing_rule">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/V2V3_indep_V1_randoms_structured.html" class="lemma-name">V2V3_indep_V1_randoms_structured</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">21</td>
+                    <td><code class="signature">Lemma V2V3_indep_V1_randoms_structured : P |= [%V2, V3] _|_ [%V1, [%U2, U3, R2, R3]].</code></td>
+                    <td class="meaning">This is the structure needed for mixing_rule</td>
+                </tr>
+            
+                <tr data-search="e_charlie_d3_indep_v1 lemma e_charlie_d3_indep_v1 : p |= e_charlie_d3 _|_ v1. e_charlie_d3 is independent of v1 because d3 is independent of v1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_charlie_d3_indep_V1.html" class="lemma-name">E_charlie_d3_indep_V1</a>
+                    </td>
+                    <td class="section-name">charlie_security_independence</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma E_charlie_d3_indep_V1 : P |= E_charlie_d3 _|_ V1.</code></td>
+                    <td class="meaning">E_charlie_d3 is independent of V1 because D3 is independent of V1</td>
                 </tr>
             
             </tbody>
@@ -3196,7 +3511,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-10 | 196 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bd8bee953b5c512c07e5b7c5c52f1c3a81ee4d96" target="_blank" rel="noopener" style="color: var(--accent);">bd8bee9</a></p>
+        <p>Generated: 2026-01-11 | 223 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/21f3189b1a9ab315397464777b370bb62528b86a" target="_blank" rel="noopener" style="color: var(--accent);">21f3189</a></p>
     </footer>
     
     <script>
