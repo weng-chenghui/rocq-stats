@@ -30,11 +30,11 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">223</div>
+        <div class="value">224</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">40</div>
+        <div class="value">41</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,128</div>
+        <div class="value">8,158</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/21f3189b1a9ab315397464777b370bb62528b86a" target="_blank" rel="noopener">21f3189</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/3cc61f109227adef375be779f8e18948e8838d95" target="_blank" rel="noopener">3cc61f1</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (40 total)
+    Theorems and key lemmas (41 total)
 </p>
 
 
@@ -447,7 +447,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/entropy_fiber/entropy_fiber.v</span>
         </div>
-        <span class="file-count">3 main</span>
+        <span class="file-count">4 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -461,6 +461,19 @@
                 </tr>
             </thead>
             <tbody>
+            
+                <tr data-search="centropy1_uniform_over_set lemma centropy1_uniform_over_set (s : {set domaint}) (c : codomaint) : `pr[y = c] != 0 -&gt; (forall x, x \in s -&gt; `pr[x = x | y = c] = #|s|%:r^-1) -&gt; (forall x, x \notin s -&gt; `pr[x = x | y = c] = 0) -&gt; (0 &lt; #|s|)%n -&gt; `h[x | y = c] = log (#|s|%:r : r). general pointwise conditional entropy when distribution is uniform over a set. key: this does not require y = f `o x - works for any relationship between x and y, making it applicable to dsdp and other protocols where the conditioning variable is not simply a function of the variable of interest. usage: when x is uniformly distributed over set s given y = c, and has zero probability outside s, the conditional entropy equals log(|s|).">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/centropy1_uniform_over_set.html" class="lemma-name">centropy1_uniform_over_set</a>
+                    </td>
+                    <td class="section-name">general_pointwise_entropy</td>
+                    <td class="proof-lines">22</td>
+                    <td><code class="signature">Lemma centropy1_uniform_over_set (S : {set DomainT}) (c : CodomainT) : `Pr[Y = c] != 0 -&gt; (forall x, x \in S -&gt; `Pr[X = x | Y = c] = #|S|%:R^-1) -&gt; (forall x, x \notin S -&gt; `Pr[X = x | Y = c] = 0) -&gt; (0 &lt; #|S|)%N -&gt; `H[X | Y = c] = log (#|S|%:R : R).</code></td>
+                    <td class="meaning">General pointwise conditional entropy when distribution is uniform over a set. KEY: This does NOT require Y = f `o X - works for any relationship between X and Y, making it applicable to DSDP and other protocols where the conditioning variable is not simply a function of the variable of interest. Usage: When X is uniformly distributed over set S given Y = c, and has zero probability outside S, the conditional entropy equals log(|S|).</td>
+                </tr>
             
                 <tr data-search="centropy1_as_sum lemma centropy1_as_sum (c : codomaint) : `pr[y = c] != 0 -&gt; `h[x | y = c] = - \sum_(x : domaint) `pr[x = x | y = c] * log (`pr[x = x | y = c]). conditional entropy expanded as negative sum of p*log(p) over domain.">
                     <td>
@@ -1098,7 +1111,7 @@
                         <a href="lemmas/dsdp_entropy_uniform_subset_zpq.html" class="lemma-name">dsdp_entropy_uniform_subset_zpq</a>
                     </td>
                     <td class="section-name">dsdp_entropy_zpq</td>
-                    <td class="proof-lines">23</td>
+                    <td class="proof-lines">14</td>
                     <td><code class="signature">Lemma dsdp_entropy_uniform_subset_zpq (u1 u2 u3 v1 s : msg) : `Pr[ CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; (forall pair : msg * msg, pair \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = m%:R^-1) -&gt; (forall pair : msg * msg, pair \notin dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = pair | CondRV = (v1, u1, u2, u3, s) ] = 0) -&gt; `H[ VarRV | CondRV = (v1, u1, u2, u3, s) ] = log (m%:R : R).</code></td>
                     <td class="meaning">Single-point conditional entropy: H[VarRV | CondRV = (v1,u1,u2,u3,s)] = log(m). Shows that for each fixed conditioning value, the conditional entropy equals log(m). This applies the general fiber entropy framework to DSDP: - Fiber = {(v2,v3) | u2*v2 + u3*v3 = s - u1*v1} has cardinality m - Uniform distribution over fiber implies entropy = log(m)</td>
                 </tr>
@@ -3511,7 +3524,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-11 | 223 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/21f3189b1a9ab315397464777b370bb62528b86a" target="_blank" rel="noopener" style="color: var(--accent);">21f3189</a></p>
+        <p>Generated: 2026-01-11 | 224 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/3cc61f109227adef375be779f8e18948e8838d95" target="_blank" rel="noopener" style="color: var(--accent);">3cc61f1</a></p>
     </footer>
     
     <script>
