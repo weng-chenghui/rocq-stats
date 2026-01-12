@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">224</div>
+        <div class="value">209</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">41</div>
+        <div class="value">40</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">183</div>
+        <div class="value">169</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">20</div>
+        <div class="value">19</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,158</div>
+        <div class="value">7,640</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/3cc61f109227adef375be779f8e18948e8838d95" target="_blank" rel="noopener">3cc61f1</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener">bc81b52</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,49 +73,8 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (41 total)
+    Theorems and key lemmas (40 total)
 </p>
-
-
-
-<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_algebra.v">
-    <div class="file-header expanded" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/dsdp/dsdp_algebra.v</span>
-        </div>
-        <span class="file-count">1 main</span>
-    </div>
-    <div class="file-content expanded">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="dsdp_fiber_card lemma dsdp_fiber_card u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_fiber u1 u2 u3 v1 s| = m. fiber cardinality for pairs (v2, v3): |{(v2,v3) | u2*v2 + u3*v3 = s - u1*v1}| = m. with v1 fixed, the remaining 2-variable equation has m solutions (1 degree of freedom).">
-                    <td>
-                        
-                        <span class="badge badge-main">Main</span>
-                        
-                        <a href="lemmas/dsdp_fiber_card.html" class="lemma-name">dsdp_fiber_card</a>
-                    </td>
-                    <td class="section-name">linear_system</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Lemma dsdp_fiber_card u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_fiber u1 u2 u3 v1 s| = m.</code></td>
-                    <td class="meaning">Fiber cardinality for pairs (v2, v3): |{(v2,v3) | u2*v2 + u3*v3 = s - u1*v1}| = m. With v1 fixed, the remaining 2-variable equation has m solutions (1 degree of freedom).</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-</div>
 
 
 
@@ -148,7 +107,7 @@
                         <a href="lemmas/dsdp_uniform_over_solutions_from_joint_uniform.html" class="lemma-name">dsdp_uniform_over_solutions_from_joint_uniform</a>
                     </td>
                     <td class="section-name">uniform_from_joint_uniform</td>
-                    <td class="proof-lines">44</td>
+                    <td class="proof-lines">45</td>
                     <td><code class="signature">Lemma dsdp_uniform_over_solutions_from_joint_uniform : `p_ VarRV = fdist_uniform card_msg_pair -&gt; P |= [%V1, U1, U2, U3] _|_ VarRV -&gt; forall t v1 u1 u2 u3 s, U1 t = u1 -&gt; U2 t = u2 -&gt; U3 t = u3 -&gt; V1 t = v1 -&gt; S t = s -&gt; (* The conditioning event must have positive probability for the conditional probability to be well-defined *) `Pr[CondRV = (v1, u1, u2, u3, s)] != 0 -&gt; forall v2 v3, (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[ VarRV = (v2, v3) | CondRV = (v1, u1, u2, u3, s) ] = (#|dsdp_fiber_full_zpq u1 u2 u3 v1 s|)%:R^-1.</code></td>
                     <td class="meaning">* Main bridge lemma: derive uniform-over-solutions from joint-uniform prior and independence. Mathematical reasoning: - Assumption: (V2,V3) is uniform over msg×msg with distribution 1/m² - Assumption: (V2,V3) is independent of (V1,U1,U2,U3) - The constraint S = u1*v1 + u2*v2 + u3*v3 determines S given the others For (v2,v3) in the fiber {(v2&#39;,v3&#39;) | u2*v2&#39; + u3*v3&#39; = s - u1*v1}: Numerator: Pr[(V2,V3)=(v2,v3) ∧ (V1,U1,U2,U3)=(v1,u1,u2,u3)] = Pr[(V2,V3)=(v2,v3)] × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] (indep) = (1/m²) × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] Denominator: Pr[CondRV=(v1,u1,u2,u3,s)] = Σ_{(v2&#39;,v3&#39;) ∈ fiber} (1/m²) × Pr[(V1,U1,U2,U3)=...] = |fiber|/m² × Pr[(V1,U1,U2,U3)=(v1,u1,u2,u3)] Result: Numerator/Denominator = 1/|fiber|</td>
                 </tr>
@@ -521,11 +480,11 @@
 
 
 
-<div class="file-section main-section" data-file="dumas2017dual/entropy_fiber/entropy_linear_fiber.v">
+<div class="file-section main-section" data-file="dumas2017dual/entropy_fiber/entropy_fiber_zpq.v">
     <div class="file-header expanded" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/entropy_fiber/entropy_linear_fiber.v</span>
+            <span class="file-name">dumas2017dual/entropy_fiber/entropy_fiber_zpq.v</span>
         </div>
         <span class="file-count">1 main</span>
     </div>
@@ -542,17 +501,17 @@
             </thead>
             <tbody>
             
-                <tr data-search="centropy_bilinear_uniform theorem centropy_bilinear_uniform : (n &gt; 0)%n -&gt; `h(v | [% u, s]) = log ((m ^ n.-1)%:r : r). main result: conditional entropy equals log(m)">
+                <tr data-search="cpr_uniform_fiber lemma cpr_uniform_fiber (cond : condt) (v : msg * msg) : `pr[condrv = cond] != 0 -&gt; v \in fiber cond -&gt; `pr[varrv = v | condrv = cond] = #|fiber cond|%:r^-1. * uniform conditional probability over fiber. pr[varrv = v | condrv = cond] = |fiber(cond)|^-1 when: 1. varrv is uniform over msg × msg 2. varrv is independent of inputrv 3. the conditioning event has positive probability 4. v is in the fiber of cond this is the key lemma for deriving entropy bounds in protocols where the constraint creates a fiber structure.">
                     <td>
                         
-                        <span class="badge badge-theorem">Theorem</span>
+                        <span class="badge badge-main">Main</span>
                         
-                        <a href="lemmas/centropy_bilinear_uniform.html" class="lemma-name">centropy_bilinear_uniform</a>
+                        <a href="lemmas/cPr_uniform_fiber.html" class="lemma-name">cPr_uniform_fiber</a>
                     </td>
-                    <td class="section-name">bilinear_entropy_applications</td>
-                    <td class="proof-lines">42</td>
-                    <td><code class="signature">Theorem centropy_bilinear_uniform : (n &gt; 0)%N -&gt; `H(V | [% U, S]) = log ((m ^ n.-1)%:R : R).</code></td>
-                    <td class="meaning">Main result: conditional entropy equals log(m)</td>
+                    <td class="section-name">conditional_probability</td>
+                    <td class="proof-lines">39</td>
+                    <td><code class="signature">Lemma cPr_uniform_fiber (cond : CondT) (v : msg * msg) : `Pr[CondRV = cond] != 0 -&gt; v \in fiber cond -&gt; `Pr[VarRV = v | CondRV = cond] = #|fiber cond|%:R^-1.</code></td>
+                    <td class="meaning">* Uniform conditional probability over fiber. Pr[VarRV = v | CondRV = cond] = |fiber(cond)|^-1 When: 1. VarRV is uniform over msg × msg 2. VarRV is independent of InputRV 3. The conditioning event has positive probability 4. v is in the fiber of cond This is the key lemma for deriving entropy bounds in protocols where the constraint creates a fiber structure.</td>
                 </tr>
             
             </tbody>
@@ -940,71 +899,10 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (183 total)
+    Supporting lemmas and utilities (169 total)
 </p>
 
 <div id="helpers-section">
-
-
-<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_algebra.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/dsdp/dsdp_algebra.v</span>
-        </div>
-        <span class="file-count">3 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="dsdp_matrix_rank1 lemma dsdp_matrix_rank1 u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; \rank (dsdp_matrix u1 u2 u3) = 1. the dsdp coefficient matrix has rank 1 when at least one coefficient is nonzero. this establishes the linear system has exactly 1 constraint, giving 2 degrees of freedom.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_matrix_rank1.html" class="lemma-name">dsdp_matrix_rank1</a>
-                    </td>
-                    <td class="section-name">linear_system</td>
-                    <td class="proof-lines">23</td>
-                    <td><code class="signature">Lemma dsdp_matrix_rank1 u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; \rank (dsdp_matrix u1 u2 u3) = 1.</code></td>
-                    <td class="meaning">The DSDP coefficient matrix has rank 1 when at least one coefficient is nonzero. This establishes the linear system has exactly 1 constraint, giving 2 degrees of freedom.</td>
-                </tr>
-            
-                <tr data-search="dsdp_kernel_card lemma dsdp_kernel_card u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|dsdp_kernel u1 u2 u3| = (m ^ (3 - 1))%n. kernel cardinality: |ker(a)| = m^(n-r) = m^(3-1) = m^2 for rank-1 system. the kernel represents homogeneous solutions u1*v1 + u2*v2 + u3*v3 = 0.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_kernel_card.html" class="lemma-name">dsdp_kernel_card</a>
-                    </td>
-                    <td class="section-name">linear_system</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma dsdp_kernel_card u1 u2 u3 : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|dsdp_kernel u1 u2 u3| = (m ^ (3 - 1))%N.</code></td>
-                    <td class="meaning">Kernel cardinality: |ker(A)| = m^(n-r) = m^(3-1) = m^2 for rank-1 system. The kernel represents homogeneous solutions u1*v1 + u2*v2 + u3*v3 = 0.</td>
-                </tr>
-            
-                <tr data-search="dsdp_solution_set_card_full lemma dsdp_solution_set_card_full u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_solution_set u1 u2 u3 v1 s| = (m ^ 2)%n. full solution set cardinality: |{(v1,v2,v3) | u1*v1 + u2*v2 + u3*v3 = s}| = m^2. one constraint in 3 variables gives 2 degrees of freedom, hence m^2 solutions.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_solution_set_card_full.html" class="lemma-name">dsdp_solution_set_card_full</a>
-                    </td>
-                    <td class="section-name">linear_system</td>
-                    <td class="proof-lines">28</td>
-                    <td><code class="signature">Lemma dsdp_solution_set_card_full u1 u2 u3 v1 s : u3 != 0 -&gt; #|dsdp_solution_set u1 u2 u3 v1 s| = (m ^ 2)%N.</code></td>
-                    <td class="meaning">Full solution set cardinality: |{(v1,v2,v3) | u1*v1 + u2*v2 + u3*v3 = s}| = m^2. One constraint in 3 variables gives 2 degrees of freedom, hence m^2 solutions.</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-</div>
-
 
 
 <div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_entropy.v">
@@ -1013,7 +911,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">16 helper</span>
+        <span class="file-count">14 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1028,29 +926,7 @@
             </thead>
             <tbody>
             
-                <tr data-search="joint_factors_by_inde lemma joint_factors_by_inde : p |= inputrv _|_ varrv -&gt; forall v1 u1 u2 u3 v2 v3, `pr[[%varrv, inputrv] = ((v2, v3), (v1, u1, u2, u3))] = `pr[varrv = (v2, v3)] * `pr[inputrv = (v1, u1, u2, u3)]. helper 1: joint probability [%varrv, inputrv] factors by independence">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/joint_factors_by_inde.html" class="lemma-name">joint_factors_by_inde</a>
-                    </td>
-                    <td class="section-name">uniform_from_joint_uniform</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma joint_factors_by_inde : P |= InputRV _|_ VarRV -&gt; forall v1 u1 u2 u3 v2 v3, `Pr[[%VarRV, InputRV] = ((v2, v3), (v1, u1, u2, u3))] = `Pr[VarRV = (v2, v3)] * `Pr[InputRV = (v1, u1, u2, u3)].</code></td>
-                    <td class="meaning">Helper 1: Joint probability [%VarRV, InputRV] factors by independence</td>
-                </tr>
-            
-                <tr data-search="uniform_varrv_prob lemma uniform_varrv_prob : `p_ varrv = fdist_uniform card_msg_pair -&gt; forall v2 v3, `pr[varrv = (v2, v3)] = (m ^ 2)%:r^-1 :&gt; r. helper 2: uniform varrv gives probability (m²)^-1">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/uniform_VarRV_prob.html" class="lemma-name">uniform_VarRV_prob</a>
-                    </td>
-                    <td class="section-name">uniform_from_joint_uniform</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma uniform_VarRV_prob : `p_ VarRV = fdist_uniform card_msg_pair -&gt; forall v2 v3, `Pr[VarRV = (v2, v3)] = (m ^ 2)%:R^-1 :&gt; R.</code></td>
-                    <td class="meaning">Helper 2: Uniform VarRV gives probability (m²)^-1</td>
-                </tr>
-            
-                <tr data-search="joint_varrv_condrv_eq_inputrv lemma joint_varrv_condrv_eq_inputrv (v1 u1 u2 u3 s v2 v3 : msg) : (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[[%varrv, condrv] = ((v2, v3), (v1, u1, u2, u3, s))] = `pr[[%varrv, inputrv] = ((v2, v3), (v1, u1, u2, u3))]. helper 3: the joint [%varrv, condrv] probability equals [%varrv, inputrv] when (v2,v3) is in the fiber (constraint is satisfied)">
+                <tr data-search="joint_varrv_condrv_eq_inputrv lemma joint_varrv_condrv_eq_inputrv (v1 u1 u2 u3 s v2 v3 : msg) : (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `pr[[%varrv, condrv] = ((v2, v3), (v1, u1, u2, u3, s))] = `pr[[%varrv, inputrv] = ((v2, v3), (v1, u1, u2, u3))]. the joint [%varrv, condrv] probability equals [%varrv, inputrv] when (v2,v3) is in the fiber (constraint is satisfied)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/joint_VarRV_CondRV_eq_InputRV.html" class="lemma-name">joint_VarRV_CondRV_eq_InputRV</a>
@@ -1058,7 +934,7 @@
                     <td class="section-name">uniform_from_joint_uniform</td>
                     <td class="proof-lines">43</td>
                     <td><code class="signature">Lemma joint_VarRV_CondRV_eq_InputRV (v1 u1 u2 u3 s v2 v3 : msg) : (v2, v3) \in dsdp_fiber_full_zpq u1 u2 u3 v1 s -&gt; `Pr[[%VarRV, CondRV] = ((v2, v3), (v1, u1, u2, u3, s))] = `Pr[[%VarRV, InputRV] = ((v2, v3), (v1, u1, u2, u3))].</code></td>
-                    <td class="meaning">Helper 3: The joint [%VarRV, CondRV] probability equals [%VarRV, InputRV] when (v2,v3) is in the fiber (constraint is satisfied)</td>
+                    <td class="meaning">The joint [%VarRV, CondRV] probability equals [%VarRV, InputRV] when (v2,v3) is in the fiber (constraint is satisfied)</td>
                 </tr>
             
                 <tr data-search="cond_prob_denom lemma cond_prob_denom (v1 u1 u2 u3 s : msg) : p |= inputrv _|_ varrv -&gt; `p_ varrv = fdist_uniform card_msg_pair -&gt; `pr[inputrv = (v1, u1, u2, u3)] != 0 -&gt; `pr[condrv = (v1, u1, u2, u3, s)] = #|dsdp_fiber_full_zpq u1 u2 u3 v1 s|%:r * (m ^ 2)%:r^-1 * `pr[inputrv = (v1, u1, u2, u3)]. helper 4: denominator computation - sum over fiber">
@@ -1067,7 +943,7 @@
                         <a href="lemmas/cond_prob_denom.html" class="lemma-name">cond_prob_denom</a>
                     </td>
                     <td class="section-name">uniform_from_joint_uniform</td>
-                    <td class="proof-lines">37</td>
+                    <td class="proof-lines">38</td>
                     <td><code class="signature">Lemma cond_prob_denom (v1 u1 u2 u3 s : msg) : P |= InputRV _|_ VarRV -&gt; `p_ VarRV = fdist_uniform card_msg_pair -&gt; `Pr[InputRV = (v1, u1, u2, u3)] != 0 -&gt; `Pr[CondRV = (v1, u1, u2, u3, s)] = #|dsdp_fiber_full_zpq u1 u2 u3 v1 s|%:R * (m ^ 2)%:R^-1 * `Pr[InputRV = (v1, u1, u2, u3)].</code></td>
                     <td class="meaning">Helper 4: Denominator computation - sum over fiber</td>
                 </tr>
@@ -1835,13 +1711,13 @@
 
 
 
-<div class="file-section helper-section" data-file="dumas2017dual/entropy_fiber/entropy_linear_fiber.v">
+<div class="file-section helper-section" data-file="dumas2017dual/entropy_fiber/entropy_fiber_zpq.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/entropy_fiber/entropy_linear_fiber.v</span>
+            <span class="file-name">dumas2017dual/entropy_fiber/entropy_fiber_zpq.v</span>
         </div>
-        <span class="file-count">12 helper</span>
+        <span class="file-count">3 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1856,136 +1732,37 @@
             </thead>
             <tbody>
             
-                <tr data-search="row_neq0_exists lemma row_neq0_exists (u : &#39;rv[msg]_n) : u != 0 -&gt; exists i, u ord0 i != 0. this is a simple utility kept as-is for convenience">
+                <tr data-search="joint_factors_by_indee lemma joint_factors_by_indee (input : inputt) (var : msg * msg) : `pr[[%varrv, inputrv] = (var, input)] = `pr[varrv = var] * `pr[inputrv = input]. joint probability factors by independence">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/row_neq0_exists.html" class="lemma-name">row_neq0_exists</a>
+                        <a href="lemmas/joint_factors_by_indeE.html" class="lemma-name">joint_factors_by_indeE</a>
                     </td>
-                    <td class="section-name">linear_functional</td>
-                    <td class="proof-lines">17</td>
-                    <td><code class="signature">Lemma row_neq0_exists (u : &#39;rV[msg]_n) : u != 0 -&gt; exists i, u ord0 i != 0.</code></td>
-                    <td class="meaning">This is a simple utility kept as-is for convenience</td>
-                </tr>
-            
-                <tr data-search="linear_fiber_nonzero lemma linear_fiber_nonzero (u : &#39;rv[msg]_n) : u != 0 -&gt; forall s, (0 &lt; #|linear_fiber u s|)%n. constructive proof: explicitly builds a solution by choosing one coordinate">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/linear_fiber_nonzero.html" class="lemma-name">linear_fiber_nonzero</a>
-                    </td>
-                    <td class="section-name">linear_functional</td>
+                    <td class="section-name">fiber_entropy_zpq</td>
                     <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma linear_fiber_nonzero (u : &#39;rV[msg]_n) : u != 0 -&gt; forall s, (0 &lt; #|linear_fiber u s|)%N.</code></td>
-                    <td class="meaning">Constructive proof: explicitly builds a solution by choosing one coordinate</td>
+                    <td><code class="signature">Lemma joint_factors_by_indeE (input : InputT) (var : msg * msg) : `Pr[[%VarRV, InputRV] = (var, input)] = `Pr[VarRV = var] * `Pr[InputRV = input].</code></td>
+                    <td class="meaning">Joint probability factors by independence</td>
                 </tr>
             
-                <tr data-search="linear_fiber_kernel_card lemma linear_fiber_kernel_card (u : &#39;rv[msg]_n) (s : msg) (x0 : &#39;rv[msg]_n) : u *d x0 = s -&gt; #|linear_fiber u s| = #|[set v : &#39;rv[msg]_n | u *d v == 0]|. helper: fiber cardinality equals kernel cardinality">
+                <tr data-search="uniform_varrv_probe lemma uniform_varrv_probe (var : msg * msg) : `pr[varrv = var] = (m ^ 2)%:r^-1 :&gt; r. uniform varrv gives probability (m²)^-1">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/linear_fiber_kernel_card.html" class="lemma-name">linear_fiber_kernel_card</a>
+                        <a href="lemmas/uniform_VarRV_probE.html" class="lemma-name">uniform_VarRV_probE</a>
                     </td>
-                    <td class="section-name">linear_functional</td>
-                    <td class="proof-lines">19</td>
-                    <td><code class="signature">Lemma linear_fiber_kernel_card (u : &#39;rV[msg]_n) (s : msg) (x0 : &#39;rV[msg]_n) : u *d x0 = s -&gt; #|linear_fiber u s| = #|[set v : &#39;rV[msg]_n | u *d v == 0]|.</code></td>
-                    <td class="meaning">Helper: fiber cardinality equals kernel cardinality</td>
+                    <td class="section-name">fiber_entropy_zpq</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma uniform_VarRV_probE (var : msg * msg) : `Pr[VarRV = var] = (m ^ 2)%:R^-1 :&gt; R.</code></td>
+                    <td class="meaning">Uniform VarRV gives probability (m²)^-1</td>
                 </tr>
             
-                <tr data-search="linear_fiber_card_eq lemma linear_fiber_card_eq (u : &#39;rv[msg]_n) : u != 0 -&gt; forall s1 s2, #|linear_fiber u s1| = #|linear_fiber u s2|. all fibers of a linear functional have equal cardinality. why this wrapper: the general rouché-capelli theory works with matrices ax=b, but entropy applications use dot products u·v = s. this wrapper: 1. hides matrix notation - takes row vector u directly 2. provides the natural &#34;for all targets s1, s2&#34; interface 3. enables direct application in entropy_fiber.v&#39;s constant-fiber framework mathematical content: fiber(s) = x₀ + ker(u) for any solution x₀, so |fiber(s₁)| = |ker(u)| = |fiber(s₂)|.">
+                <tr data-search="pr_cond_fiber_margine lemma pr_cond_fiber_margine (cond : condt) : `pr[inputrv = proj_input cond] != 0 -&gt; `pr[condrv = cond] = #|fiber cond|%:r * (m ^ 2)%:r^-1 * `pr[inputrv = proj_input cond]. * marginal probability over fiber. pr[condrv = cond] = |fiber(cond)| × (m²)^-1 × pr[inputrv = proj_input(cond)] this expresses the marginal probability of the conditioning event as a product of: 1. the fiber cardinality (number of solutions) 2. the uniform probability (m²)^-1 for each solution 3. the probability of the input values">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/linear_fiber_card_eq.html" class="lemma-name">linear_fiber_card_eq</a>
+                        <a href="lemmas/Pr_cond_fiber_marginE.html" class="lemma-name">Pr_cond_fiber_marginE</a>
                     </td>
-                    <td class="section-name">linear_functional</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma linear_fiber_card_eq (u : &#39;rV[msg]_n) : u != 0 -&gt; forall s1 s2, #|linear_fiber u s1| = #|linear_fiber u s2|.</code></td>
-                    <td class="meaning">All fibers of a linear functional have equal cardinality. WHY THIS WRAPPER: The general Rouché-Capelli theory works with matrices Ax=b, but entropy applications use dot products u·v = s. This wrapper: 1. Hides matrix notation - takes row vector u directly 2. Provides the natural &#34;for all targets s1, s2&#34; interface 3. Enables direct application in entropy_fiber.v&#39;s constant-fiber framework Mathematical content: fiber(s) = x₀ + ker(u) for any solution x₀, so |fiber(s₁)| = |ker(u)| = |fiber(s₂)|.</td>
-                </tr>
-            
-                <tr data-search="linear_fiber_card lemma linear_fiber_card (u : &#39;rv[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%n -&gt; #|linear_fiber u s| = (#|msg| ^ n.-1)%n. fiber cardinality for linear functional: |{v | u·v = s}| = |f|^(n-1). why this wrapper: the general count_affine_solutions_explicit requires: - a matrix a and target b - a particular solution x₀ with ax₀ = b - explicit rank computation this wrapper provides the cleaner entropy-focused api: - takes coefficient vector u and target s directly - handles the rank(u) = 1 case (single equation) automatically - returns |field|^(n-1) directly for use in log calculations example: for 2d with |f| = m, fiber has m^1 = m elements ⟹ entropy = log(m).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/linear_fiber_card.html" class="lemma-name">linear_fiber_card</a>
-                    </td>
-                    <td class="section-name">linear_functional</td>
-                    <td class="proof-lines">19</td>
-                    <td><code class="signature">Lemma linear_fiber_card (u : &#39;rV[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%N -&gt; #|linear_fiber u s| = (#|msg| ^ n.-1)%N.</code></td>
-                    <td class="meaning">Fiber cardinality for linear functional: |{v | u·v = s}| = |F|^(n-1). WHY THIS WRAPPER: The general count_affine_solutions_explicit requires: - A matrix A and target b - A particular solution x₀ with Ax₀ = b - Explicit rank computation This wrapper provides the cleaner entropy-focused API: - Takes coefficient vector u and target s directly - Handles the rank(u) = 1 case (single equation) automatically - Returns |field|^(n-1) directly for use in log calculations Example: For 2D with |F| = m, fiber has m^1 = m elements ⟹ entropy = log(m).</td>
-                </tr>
-            
-                <tr data-search="dotpe lemma dotpe (n : nat) (u v : &#39;rv[msg]_n) : dotp u v = \sum_(i &lt; n) u 0 i * v 0 i. alternative sum formulation (for reference)">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dotpE.html" class="lemma-name">dotpE</a>
-                    </td>
-                    <td class="section-name">bilinear_form</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dotpE (n : nat) (u v : &#39;rV[msg]_n) : dotp u v = \sum_(i &lt; n) u 0 i * v 0 i.</code></td>
-                    <td class="meaning">Alternative sum formulation (for reference)</td>
-                </tr>
-            
-                <tr data-search="bilinear_solutions_fibere lemma bilinear_solutions_fibere (n : nat) (u : &#39;rv[msg]_n) (s : msg) : bilinear_solutions u s = linear_fiber u s. connection to linear_fiber: dotp = linear_functional = dotmul">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bilinear_solutions_fiberE.html" class="lemma-name">bilinear_solutions_fiberE</a>
-                    </td>
-                    <td class="section-name">bilinear_form</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma bilinear_solutions_fiberE (n : nat) (u : &#39;rV[msg]_n) (s : msg) : bilinear_solutions u s = linear_fiber u s.</code></td>
-                    <td class="meaning">Connection to linear_fiber: dotp = linear_functional = dotmul</td>
-                </tr>
-            
-                <tr data-search="bilinear_solutions_card lemma bilinear_solutions_card (n : nat) (u : &#39;rv[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%n -&gt; #|bilinear_solutions u s| = (#|msg| ^ n.-1)%n. for general n, the fiber has |msg|^(n-1) elements">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bilinear_solutions_card.html" class="lemma-name">bilinear_solutions_card</a>
-                    </td>
-                    <td class="section-name">bilinear_form</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma bilinear_solutions_card (n : nat) (u : &#39;rV[msg]_n) (s : msg) : u != 0 -&gt; (n &gt; 0)%N -&gt; #|bilinear_solutions u s| = (#|msg| ^ n.-1)%N.</code></td>
-                    <td class="meaning">For general n, the fiber has |msg|^(n-1) elements</td>
-                </tr>
-            
-                <tr data-search="dotp2_eq_matrix lemma dotp2_eq_matrix (x y : msg * msg) : dotp2 x y = tuple2_to_row x *d tuple2_to_row y. dotp2 matches dotmul of row vectors">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dotp2_eq_matrix.html" class="lemma-name">dotp2_eq_matrix</a>
-                    </td>
-                    <td class="section-name">tuple_bilinear_form</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma dotp2_eq_matrix (x y : msg * msg) : dotp2 x y = tuple2_to_row x *d tuple2_to_row y.</code></td>
-                    <td class="meaning">dotp2 matches dotmul of row vectors</td>
-                </tr>
-            
-                <tr data-search="dotp2_solutions_card lemma dotp2_solutions_card (u : msg * msg) (s : msg) : u != (0, 0) -&gt; #|dotp2_solutions u s| = m. direct application of count_affine_solutions_rank1">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dotp2_solutions_card.html" class="lemma-name">dotp2_solutions_card</a>
-                    </td>
-                    <td class="section-name">tuple_bilinear_form</td>
-                    <td class="proof-lines">31</td>
-                    <td><code class="signature">Lemma dotp2_solutions_card (u : msg * msg) (s : msg) : u != (0, 0) -&gt; #|dotp2_solutions u s| = m.</code></td>
-                    <td class="meaning">Direct application of count_affine_solutions_rank1</td>
-                </tr>
-            
-                <tr data-search="constrained_pairs_card lemma constrained_pairs_card (u2 u3 target : msg) : u3 != 0 -&gt; #|constrained_pairs u2 u3 target| = m. thin wrapper around count_affine_solutions_rank1 from rouche_capelli.v: for the rank-1 linear system u2*x + u3*y = target with u3 ≠ 0, there are exactly #|k| solutions. this is the exact theorem proven at line 409-520 of rouche_capelli.v.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/constrained_pairs_card.html" class="lemma-name">constrained_pairs_card</a>
-                    </td>
-                    <td class="section-name">multi_dimensional_solutions</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma constrained_pairs_card (u2 u3 target : msg) : u3 != 0 -&gt; #|constrained_pairs u2 u3 target| = m.</code></td>
-                    <td class="meaning">Thin wrapper around count_affine_solutions_rank1 from rouche_capelli.v: For the rank-1 linear system u2*x + u3*y = target with u3 ≠ 0, there are exactly #|K| solutions. This is the EXACT theorem proven at line 409-520 of rouche_capelli.v.</td>
-                </tr>
-            
-                <tr data-search="constrained_triples_card lemma constrained_triples_card (u1 u2 u3 target : msg) : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|constrained_triples u1 u2 u3 target| = (m ^ 2)%n. constrained_triples_card: |{(v1,v2,v3) : u1*v1 + u2*v2 + u3*v3 = s}| = m^2 status: aborted - not needed for dsdp protocol analysis reason: in dsdp, only alice (result-computing party) knows the constraint result s. alice&#39;s view already includes v1, reducing the problem from 3d to 2d: alice knows: v1, u1, u2, u3, s alice infers: (v2, v3) from u2*v2 + u3*v3 = s - u1*v1 use: constrained_pairs_card gives |{(v2,v3)}| = m when needed: this 3d lemma would be required for protocols where: - adversary sees only (u1,u2,u3,s) but no variable values example: external eavesdropper on constraint announcement - multi-round leakage analysis: h(v1,v2,v3|u,s) before revelation then h(v2,v3|v1,u,s) after, measuring δ = log(m^2) - log(m) = log(m) - protocol composition: multiple dsdp instances before any vi revealed for dsdp-specific version, see dsdp_solution_set_card_full in dsdp_algebra.v">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/constrained_triples_card.html" class="lemma-name">constrained_triples_card</a>
-                    </td>
-                    <td class="section-name">multi_dimensional_solutions</td>
-                    <td class="proof-lines">3</td>
-                    <td><code class="signature">Lemma constrained_triples_card (u1 u2 u3 target : msg) : (u1 != 0) || (u2 != 0) || (u3 != 0) -&gt; #|constrained_triples u1 u2 u3 target| = (m ^ 2)%N.</code></td>
-                    <td class="meaning">constrained_triples_card: |{(v1,v2,v3) : u1*v1 + u2*v2 + u3*v3 = s}| = m^2 STATUS: Aborted - not needed for DSDP protocol analysis REASON: In DSDP, only Alice (result-computing party) knows the constraint result s. Alice&#39;s view already includes v1, reducing the problem from 3D to 2D: Alice knows: v1, u1, u2, u3, s Alice infers: (v2, v3) from u2*v2 + u3*v3 = s - u1*v1 Use: constrained_pairs_card gives |{(v2,v3)}| = m WHEN NEEDED: This 3D lemma would be required for protocols where: - Adversary sees only (u1,u2,u3,s) but NO variable values Example: External eavesdropper on constraint announcement - Multi-round leakage analysis: H(V1,V2,V3|U,S) before revelation then H(V2,V3|V1,U,S) after, measuring Δ = log(m^2) - log(m) = log(m) - Protocol composition: Multiple DSDP instances before any vi revealed For DSDP-specific version, see dsdp_solution_set_card_full in dsdp_algebra.v</td>
+                    <td class="section-name">marginal_probability</td>
+                    <td class="proof-lines">34</td>
+                    <td><code class="signature">Lemma Pr_cond_fiber_marginE (cond : CondT) : `Pr[InputRV = proj_input cond] != 0 -&gt; `Pr[CondRV = cond] = #|fiber cond|%:R * (m ^ 2)%:R^-1 * `Pr[InputRV = proj_input cond].</code></td>
+                    <td class="meaning">* Marginal probability over fiber. Pr[CondRV = cond] = |fiber(cond)| × (m²)^-1 × Pr[InputRV = proj_input(cond)] This expresses the marginal probability of the conditioning event as a product of: 1. The fiber cardinality (number of solutions) 2. The uniform probability (m²)^-1 for each solution 3. The probability of the input values</td>
                 </tr>
             
             </tbody>
@@ -3524,7 +3301,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-11 | 224 lemmas in 20 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/3cc61f109227adef375be779f8e18948e8838d95" target="_blank" rel="noopener" style="color: var(--accent);">3cc61f1</a></p>
+        <p>Generated: 2026-01-12 | 209 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener" style="color: var(--accent);">bc81b52</a></p>
     </footer>
     
     <script>
