@@ -50,16 +50,16 @@
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">19</div>
+        <div class="value">18</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">7,640</div>
+        <div class="value">7,590</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener">bc81b52</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener">f369df4</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -85,52 +85,50 @@
 │   ├── entropy_fiber.v           # Abstract fiber entropy framework
 │   └── entropy_fiber_zpq.v       # Entropy framework for Z/pqZ (rings)
 │
-├── zpq/                           # Layer 4: Z/pqZ specialization
+├── zpq/                           # Layer 3: Z/pqZ fiber cardinality (parallel)
 │   └── fiber_zpq.v               # Fiber cardinality over composite moduli
 │
-└── dsdp/                          # Layer 5: DSDP protocol-specific
-    ├── dsdp_extra.v              # DSDP auxiliary definitions
-    ├── dsdp_program.v            # Protocol execution model
-    ├── dsdp_entropy.v            # DSDP entropy analysis
-    └── dsdp_security.v           # Main security theorems
+└── dsdp/                          # Layer 4: DSDP protocol-specific
+   ├── dsdp_program.v            # Protocol execution model
+   ├── dsdp_entropy.v            # DSDP entropy analysis
+   └── dsdp_security.v           # Main security theorems
 </code></pre>
 <p><strong>Note (2026-01-12):</strong> Field-based files (<code>entropy_linear_fiber.v</code>, <code>dsdp_algebra.v</code>) were removed as field analysis is out of scope. The architecture now uses a single ring-based path via Z/pqZ.</p>
 <h2 id="dependency-hierarchy">Dependency Hierarchy</h2>
 <pre><code>                    ┌─────────────────────────────────┐
-                    │         Layer 5: DSDP           │
+                    │         Layer 4: DSDP           │
                     │  dsdp_security.v                │
                     │  dsdp_entropy.v                 │
-                    │  dsdp_program.v, dsdp_extra.v   │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │      Layer 4: Z/pqZ             │
-                    │      fiber_zpq.v                │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │ Layer 3: Z/pqZ Entropy Framework│
-                    │   entropy_fiber_zpq.v           │
-                    └──────────────┬──────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │   Layer 2: Abstract Fibers      │
-                    │   entropy_fiber.v               │
-                    └──────────────┬──────────────────┘
-                                   │
-        ┌──────────────────────────┼──────────────────────────┐
-        │                          │                          │
-┌───────▼───────┐    ┌─────────────▼────────────┐    ┌────────▼────────┐
-│ extra_algebra │    │     extra_entropy        │    │ rouche_capelli  │
-│    (.v)       │    │        (.v)              │    │     (.v)        │
-└───────┬───────┘    └─────────────┬────────────┘    └────────┬────────┘
-        │                          │                          │
-        └──────────────────────────┼──────────────────────────┘
-                                   │
-                    ┌──────────────▼──────────────────┐
-                    │      Layer 1: Infrastructure    │
-                    │      (infotheo core libraries)  │
-                    └─────────────────────────────────┘
+                    │  dsdp_program.v                 │
+                    └────────────┬────────────────────┘
+                                 │
+                      ┌──────────┴──────────┐
+                      │                     │
+        ┌─────────────▼─────────┐  ┌────────▼──────────────┐
+        │ Layer 3: fiber_zpq.v  │  │ entropy_fiber_zpq.v   │
+        │ (fiber cardinality)   │  │ (entropy framework)   │
+        └─────────────┬─────────┘  └────────┬──────────────┘
+                      │                     │
+                      └──────────┬──────────┘
+                                 │
+                    ┌────────────▼──────────────────┐
+                    │   Layer 2: Abstract Fibers    │
+                    │   entropy_fiber.v             │
+                    └────────────┬──────────────────┘
+                                 │
+        ┌────────────────────────┼──────────────────────────┐
+        │                        │                          │
+┌───────▼───────┐  ┌─────────────▼────────────┐  ┌─────────▼────────┐
+│ extra_algebra │  │     extra_entropy        │  │ rouche_capelli   │
+│    (.v)       │  │        (.v)              │  │     (.v)         │
+└───────┬───────┘  └─────────────┬────────────┘  └─────────┬────────┘
+        │                        │                          │
+        └────────────────────────┼──────────────────────────┘
+                                 │
+                    ┌────────────▼──────────────────┐
+                    │      Layer 1: Infrastructure  │
+                    │   (infotheo core libraries)   │
+                    └───────────────────────────────┘
 </code></pre>
 <h2 id="layer-descriptions">Layer Descriptions</h2>
 <h3 id="layer-1-general-infrastructure-lib">Layer 1: General Infrastructure (<code>lib/</code>)</h3>
@@ -157,7 +155,7 @@
 <tr>
 <td><code>extra_entropy.v</code></td>
 <td>Entropy characterization, conditional independence</td>
-<td><code>cinde_centropy_eq</code>, <code>zero_centropy_eq_deterministic</code></td>
+<td><code>cinde_centropy_eq</code>, <code>zero_centropy_eq_deterministic</code>, <code>inde_cond_entropy</code></td>
 </tr>
 <tr>
 <td><code>rouche_capelli.v</code></td>
@@ -195,12 +193,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="layer-3-zpqz-entropy-framework-entropy_fiberentropy_fiber_zpqv">Layer 3: Z/pqZ Entropy Framework (<code>entropy_fiber/entropy_fiber_zpq.v</code>)</h3>
+<h3 id="layer-3-zpqz-specialization-parallel">Layer 3: Z/pqZ Specialization (Parallel)</h3>
+<p>This layer has two parallel modules, both depending only on Layer 2:</p>
+<h4 id="entropy_fiber_zpqv-entropy-framework">entropy_fiber_zpq.v - Entropy Framework</h4>
 <p><strong>Purpose:</strong> Provide entropy lemmas for reasoning about conditional probabilities when random variables are constrained by linear equations over the ring Z/(pq)Z.</p>
-<p><strong>Key Concepts:</strong>
-- <strong>Composite modulus:</strong> m = p × q where p, q are distinct primes
-- <strong>Fiber:</strong> Solution set of constraint equation over Z/pqZ
-- <strong>Uniform conditional probability:</strong> When VarRV is uniform and independent of InputRV</p>
 <p><strong>Key Lemmas:</strong></p>
 <table>
 <thead>
@@ -220,8 +216,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Design:</strong> This layer specializes the abstract <code>entropy_fiber.v</code> framework for the ring Z/pqZ, providing the mathematical foundation for DSDP entropy analysis.</p>
-<h3 id="layer-4-zpqz-specialization-zpqfiber_zpqv">Layer 4: Z/pqZ Specialization (<code>zpq/fiber_zpq.v</code>)</h3>
+<h4 id="fiber_zpqv-fiber-cardinality">fiber_zpq.v - Fiber Cardinality</h4>
 <p><strong>Purpose:</strong> Handle fiber cardinality over composite moduli Z/(pq)Z where p, q are primes.</p>
 <p><strong>Key Challenge:</strong> In Z/pqZ, not all elements are units, so the standard field-based fiber counting doesn't directly apply.</p>
 <p><strong>Key Concepts:</strong>
@@ -250,7 +245,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="layer-5-dsdp-protocol-dsdp">Layer 5: DSDP Protocol (<code>dsdp/</code>)</h3>
+<h3 id="layer-4-dsdp-protocol-dsdp">Layer 4: DSDP Protocol (<code>dsdp/</code>)</h3>
 <p><strong>Purpose:</strong> Formalize the specific DSDP protocol and prove its security properties.</p>
 <table>
 <thead>
@@ -333,6 +328,7 @@
 <p><strong>Current Design:</strong> Simplified to single ring-based path:
 - <strong>Ring path only:</strong> <code>entropy_fiber_zpq.v</code> → <code>fiber_zpq.v</code> → <code>dsdp_entropy.v</code></p>
 <p><strong>Rationale:</strong> Field-based analysis was out of scope for the DSDP formalization. The protocol operates over composite modulus Z/pqZ (ring), not prime field. Removing unused field-based files (~755 lines) clarifies the architecture and reduces maintenance burden.</p>
+<p><strong>Key insight:</strong> <code>fiber_zpq.v</code> and <code>entropy_fiber_zpq.v</code> are <strong>parallel at Layer 3</strong>, not hierarchical. Both depend only on Layer 2 (<code>entropy_fiber.v</code>), and Layer 4 (<code>dsdp_entropy.v</code>) imports both.</p>
 <p><strong>Changes Made:</strong>
 - Created <code>entropy_fiber_zpq.v</code> with general entropy lemmas for Z/pqZ
 - Deleted <code>entropy_linear_fiber.v</code> (field-based, ~540 lines)
@@ -356,32 +352,32 @@
 <td>~2000</td>
 </tr>
 <tr>
-<td>2-3 (entropy_fiber)</td>
-<td>2</td>
-<td>~15</td>
-<td>~650</td>
-</tr>
-<tr>
-<td>4 (zpq)</td>
+<td>2 (entropy_fiber)</td>
 <td>1</td>
-<td>17</td>
-<td>~600</td>
+<td>~12</td>
+<td>~400</td>
 </tr>
 <tr>
-<td>5 (dsdp)</td>
-<td>4</td>
+<td>3 (parallel: zpq + entropy_fiber_zpq)</td>
+<td>2</td>
+<td>~17</td>
+<td>~850</td>
+</tr>
+<tr>
+<td>4 (dsdp)</td>
+<td>3</td>
 <td>~40</td>
 <td>~2100</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td><strong>11</strong></td>
-<td><strong>~124</strong></td>
+<td><strong>10</strong></td>
+<td><strong>~121</strong></td>
 <td><strong>~5350</strong></td>
 </tr>
 </tbody>
 </table>
-<p><em>Note: Statistics updated 2026-01-12 after removing <code>entropy_linear_fiber.v</code> (~540 lines) and <code>dsdp_algebra.v</code> (~215 lines).</em></p>
+<p><em>Note: Statistics updated 2026-01-12 after removing <code>entropy_linear_fiber.v</code> (~540 lines), <code>dsdp_algebra.v</code> (~215 lines), and <code>dsdp_extra.v</code> (~77 lines, refactored into <code>extra_entropy.v</code>).</em></p>
 <h2 id="homomorphic-encryption-layer">Homomorphic Encryption Layer</h2>
 <p>The <code>homomorphic_encryption/</code> directory provides a layered architecture for homomorphic encryption:</p>
 <pre><code>  Section he_ideal (backward compatible, used by dsdp)
@@ -526,7 +522,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-12 | 209 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener" style="color: var(--accent);">bc81b52</a></p>
+        <p>Generated: 2026-01-12 | 209 lemmas in 18 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener" style="color: var(--accent);">f369df4</a></p>
     </footer>
     
     <script>

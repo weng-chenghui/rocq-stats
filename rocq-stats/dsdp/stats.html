@@ -42,16 +42,16 @@
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">19</div>
+        <div class="value">18</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">7,640</div>
+        <div class="value">7,590</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener">bc81b52</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener">f369df4</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -168,8 +168,6 @@
         </table>
     </div>
 </div>
-
-
 
 
 
@@ -1225,45 +1223,6 @@
 
 
 
-<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_extra.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/dsdp/dsdp_extra.v</span>
-        </div>
-        <span class="file-count">1 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="inde_cond_entropy lemma inde_cond_entropy (u a b : fintype) (p : r.-fdist u) (view : {rv p -&gt; a}) (x : {rv p -&gt; b}) : p |= view _|_ x -&gt; `h(x | view) = `h `p_ x. independence implies conditional entropy equals unconditional: h(x|v) = h(x)">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/inde_cond_entropy.html" class="lemma-name">inde_cond_entropy</a>
-                    </td>
-                    <td class="section-name">inde_entropy_lemmas</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma inde_cond_entropy (U A B : finType) (P : R.-fdist U) (View : {RV P -&gt; A}) (X : {RV P -&gt; B}) : P |= View _|_ X -&gt; `H(X | View) = `H `p_ X.</code></td>
-                    <td class="meaning">Independence implies conditional entropy equals unconditional: H(X|V) = H(X)</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
 <div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_program.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
@@ -1883,7 +1842,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/lib/extra_entropy.v</span>
         </div>
-        <span class="file-count">8 helper</span>
+        <span class="file-count">9 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1984,6 +1943,17 @@
                     <td class="proof-lines">25</td>
                     <td><code class="signature">Lemma zero_centropy1_point_mass (V W T : finType) (P : R.-fdist T) (Y : {RV P -&gt; V}) (Z : {RV P -&gt; W}) (y : V) (HPrYeq0 : `Pr[Y = y] != 0) (Hy_centropy_zero : - (\sum_(b in W) \Pr_`p_[% Z, Y][[set b] | [set y]] * log \Pr_`p_[% Z, Y][[set b] | [set y]]) = 0) : exists z : W, `Pr[Z = z | Y = y] = 1.</code></td>
                     <td class="meaning">Helper: If the conditional entropy at y equals zero (as a Prop equality = 0) then there exists z with Pr[Z = z | Y = y] = 1.</td>
+                </tr>
+            
+                <tr data-search="inde_cond_entropy lemma inde_cond_entropy (u a b : fintype) (p : r.-fdist u) (view : {rv p -&gt; a}) (x : {rv p -&gt; b}) : p |= view _|_ x -&gt; `h(x | view) = `h `p_ x. independence implies conditional entropy equals unconditional: h(x|v) = h(x)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inde_cond_entropy.html" class="lemma-name">inde_cond_entropy</a>
+                    </td>
+                    <td class="section-name">inde_entropy_lemmas</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma inde_cond_entropy (U A B : finType) (P : R.-fdist U) (View : {RV P -&gt; A}) (X : {RV P -&gt; B}) : P |= View _|_ X -&gt; `H(X | View) = `H `p_ X.</code></td>
+                    <td class="meaning">Independence implies conditional entropy equals unconditional: H(X|V) = H(X)</td>
                 </tr>
             
             </tbody>
@@ -3301,7 +3271,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-12 | 209 lemmas in 19 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bc81b52caf3f16b468b6ae04a9234c4c057f1066" target="_blank" rel="noopener" style="color: var(--accent);">bc81b52</a></p>
+        <p>Generated: 2026-01-12 | 209 lemmas in 18 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener" style="color: var(--accent);">f369df4</a></p>
     </footer>
     
     <script>
