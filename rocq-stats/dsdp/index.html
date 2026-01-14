@@ -34,11 +34,11 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">209</div>
+        <div class="value">207</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">40</div>
+        <div class="value">39</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
@@ -46,7 +46,7 @@
         <div class="label">Theorems</div>
     </div>
     <div class="stat-card">
-        <div class="value">169</div>
+        <div class="value">168</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -54,12 +54,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">7,590</div>
+        <div class="value">7,481</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener">f369df4</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/a9a45ae790079cdeba69e3039790fbcd6023b880" target="_blank" rel="noopener">a9a45ae</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -85,15 +85,16 @@
 │   ├── entropy_fiber.v           # Abstract fiber entropy framework
 │   └── entropy_fiber_zpq.v       # Entropy framework for Z/pqZ (rings)
 │
-├── zpq/                           # Layer 3: Z/pqZ fiber cardinality (parallel)
-│   └── fiber_zpq.v               # Fiber cardinality over composite moduli
+├── fiber/                         # Layer 3: Z/pqZ fiber cardinality
+│   └── linear_fiber_zpq.v        # Fiber cardinality over composite moduli
+│                                  # Includes CRT projections to F_p, F_q
 │
 └── dsdp/                          # Layer 4: DSDP protocol-specific
    ├── dsdp_program.v            # Protocol execution model
    ├── dsdp_entropy.v            # DSDP entropy analysis
+   ├── dsdp_entropy_trace.v      # Trace-based entropy analysis
    └── dsdp_security.v           # Main security theorems
 </code></pre>
-<p><strong>Note (2026-01-12):</strong> Field-based files (<code>entropy_linear_fiber.v</code>, <code>dsdp_algebra.v</code>) were removed as field analysis is out of scope. The architecture now uses a single ring-based path via Z/pqZ.</p>
 <h2 id="dependency-hierarchy">Dependency Hierarchy</h2>
 <pre><code>                    ┌─────────────────────────────────┐
                     │         Layer 4: DSDP           │
@@ -104,12 +105,12 @@
                                  │
                       ┌──────────┴──────────┐
                       │                     │
-        ┌─────────────▼─────────┐  ┌────────▼──────────────┐
-        │ Layer 3: fiber_zpq.v  │  │ entropy_fiber_zpq.v   │
-        │ (fiber cardinality)   │  │ (entropy framework)   │
-        └─────────────┬─────────┘  └────────┬──────────────┘
-                      │                     │
-                      └──────────┬──────────┘
+        ┌─────────────▼─────────────┐  ┌────▼──────────────────┐
+        │ Layer 3: linear_fiber_zpq │  │ entropy_fiber_zpq.v   │
+        │ (fiber card + CRT proj)   │  │ (entropy framework)   │
+        └─────────────┬─────────────┘  └────────┬──────────────┘
+                      │                         │
+                      └──────────┬──────────────┘
                                  │
                     ┌────────────▼──────────────────┐
                     │   Layer 2: Abstract Fibers    │
@@ -130,6 +131,8 @@
                     │   (infotheo core libraries)   │
                     └───────────────────────────────┘
 </code></pre>
+<p><strong>Note:</strong> <code>linear_fiber_zpq.v</code> imports <code>rouche_capelli.v</code> and provides CRT projections
+(<code>proj_Fp</code>, <code>proj_Fq</code>) for applying field-based theorems to ring problems.</p>
 <h2 id="layer-descriptions">Layer Descriptions</h2>
 <h3 id="layer-1-general-infrastructure-lib">Layer 1: General Infrastructure (<code>lib/</code>)</h3>
 <p><strong>Purpose:</strong> Provide general-purpose lemmas extending MathComp and infotheo that are not specific to DSDP or even to secure computation.</p>
@@ -216,12 +219,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="fiber_zpqv-fiber-cardinality">fiber_zpq.v - Fiber Cardinality</h4>
+<h4 id="linear_fiber_zpqv-fiber-cardinality">linear_fiber_zpq.v - Fiber Cardinality</h4>
 <p><strong>Purpose:</strong> Handle fiber cardinality over composite moduli Z/(pq)Z where p, q are primes.</p>
-<p><strong>Key Challenge:</strong> In Z/pqZ, not all elements are units, so the standard field-based fiber counting doesn't directly apply.</p>
 <p><strong>Key Concepts:</strong>
 - <strong>Small component:</strong> An element u &lt; min(p,q) is coprime to pq, hence a unit
-- <strong>Pivot solve:</strong> Given u·v = target with u a unit, solve for one coordinate</p>
+- <strong>CRT Projections:</strong> <code>proj_Fp</code>, <code>proj_Fq</code> project Z/(pq)Z → F_p, F_q for applying field theorems</p>
 <p><strong>Key Lemmas:</strong></p>
 <table>
 <thead>
@@ -236,12 +238,16 @@
 <td>u &lt; min(p,q) ⟹ gcd(u, pq) = 1</td>
 </tr>
 <tr>
-<td><code>linear_fiber_zpq_card</code></td>
+<td><code>linear_fiber_card</code></td>
 <td>|{v | u·v = s}| = m^(n-1) when u has a unit component</td>
 </tr>
 <tr>
-<td><code>fiber_zpq_pair_card</code></td>
+<td><code>linear_fiber_2d_card</code></td>
 <td>2D fiber cardinality = m for small coefficients</td>
+</tr>
+<tr>
+<td><code>proj_Fp_add</code>, <code>proj_Fp_mul</code></td>
+<td>CRT projections are ring homomorphisms</td>
 </tr>
 </tbody>
 </table>
@@ -320,64 +326,43 @@
 - What it states (in plain mathematical terms)
 - Why it's needed (its role in the overall proof)
 - How it relates to other lemmas (wrappers, specializations)</p>
-<h2 id="design-evolution">Design Evolution</h2>
-<h3 id="2026-01-12-simplification-to-ring-only-architecture">2026-01-12: Simplification to Ring-Only Architecture</h3>
-<p><strong>Original Design:</strong> The formalization had two parallel paths:
-- <strong>Field path:</strong> <code>entropy_linear_fiber.v</code> → <code>dsdp_algebra.v</code> (for prime field 'F_m)
-- <strong>Ring path:</strong> <code>fiber_zpq.v</code> → <code>dsdp_entropy.v</code> (for composite Z/pqZ)</p>
-<p><strong>Current Design:</strong> Simplified to single ring-based path:
-- <strong>Ring path only:</strong> <code>entropy_fiber_zpq.v</code> → <code>fiber_zpq.v</code> → <code>dsdp_entropy.v</code></p>
-<p><strong>Rationale:</strong> Field-based analysis was out of scope for the DSDP formalization. The protocol operates over composite modulus Z/pqZ (ring), not prime field. Removing unused field-based files (~755 lines) clarifies the architecture and reduces maintenance burden.</p>
-<p><strong>Key insight:</strong> <code>fiber_zpq.v</code> and <code>entropy_fiber_zpq.v</code> are <strong>parallel at Layer 3</strong>, not hierarchical. Both depend only on Layer 2 (<code>entropy_fiber.v</code>), and Layer 4 (<code>dsdp_entropy.v</code>) imports both.</p>
-<p><strong>Changes Made:</strong>
-- Created <code>entropy_fiber_zpq.v</code> with general entropy lemmas for Z/pqZ
-- Deleted <code>entropy_linear_fiber.v</code> (field-based, ~540 lines)
-- Deleted <code>dsdp_algebra.v</code> (field-based, ~215 lines)
-- Updated <code>dsdp_entropy.v</code> and <code>dsdp_security.v</code> imports</p>
 <h2 id="file-statistics">File Statistics</h2>
 <table>
 <thead>
 <tr>
 <th>Layer</th>
 <th>Files</th>
-<th>Lemmas</th>
-<th>Lines</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1 (lib)</td>
 <td>4</td>
-<td>52</td>
-<td>~2000</td>
+<td>extra_algebra, extra_proba, extra_entropy, rouche_capelli</td>
 </tr>
 <tr>
 <td>2 (entropy_fiber)</td>
 <td>1</td>
-<td>~12</td>
-<td>~400</td>
+<td>entropy_fiber.v</td>
 </tr>
 <tr>
-<td>3 (parallel: zpq + entropy_fiber_zpq)</td>
+<td>3 (fiber + entropy_zpq)</td>
 <td>2</td>
-<td>~17</td>
-<td>~850</td>
+<td>linear_fiber_zpq.v, entropy_fiber_zpq.v</td>
 </tr>
 <tr>
 <td>4 (dsdp)</td>
-<td>3</td>
-<td>~40</td>
-<td>~2100</td>
+<td>4</td>
+<td>dsdp_program, dsdp_entropy, dsdp_entropy_trace, dsdp_security</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td><strong>10</strong></td>
-<td><strong>~121</strong></td>
-<td><strong>~5350</strong></td>
+<td><strong>11</strong></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p><em>Note: Statistics updated 2026-01-12 after removing <code>entropy_linear_fiber.v</code> (~540 lines), <code>dsdp_algebra.v</code> (~215 lines), and <code>dsdp_extra.v</code> (~77 lines, refactored into <code>extra_entropy.v</code>).</em></p>
 <h2 id="homomorphic-encryption-layer">Homomorphic Encryption Layer</h2>
 <p>The <code>homomorphic_encryption/</code> directory provides a layered architecture for homomorphic encryption:</p>
 <pre><code>  Section he_ideal (backward compatible, used by dsdp)
@@ -522,7 +507,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-12 | 209 lemmas in 18 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f369df40dba312f516992c22ee50eb0976577d71" target="_blank" rel="noopener" style="color: var(--accent);">f369df4</a></p>
+        <p>Generated: 2026-01-14 | 207 lemmas in 18 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/a9a45ae790079cdeba69e3039790fbcd6023b880" target="_blank" rel="noopener" style="color: var(--accent);">a9a45ae</a></p>
     </footer>
     
     <script>
