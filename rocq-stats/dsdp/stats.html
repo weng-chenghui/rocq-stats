@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">258</div>
+        <div class="value">260</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">219</div>
+        <div class="value">221</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,904</div>
+        <div class="value">8,916</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener">5e53ec7</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/011903304387d5ed90f17ebb1900ead6a17c911a" target="_blank" rel="noopener">0119033</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -890,7 +890,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (219 total)
+    Supporting lemmas and utilities (221 total)
 </p>
 
 <div id="helpers-section">
@@ -902,7 +902,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_correctness.v</span>
         </div>
-        <span class="file-count">7 helper</span>
+        <span class="file-count">8 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -970,6 +970,17 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
                     <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                </tr>
+            
+                <tr data-search="dsdp_terminates lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1. with fuel equal to sum_fuel, evaluation reaches a final state">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminates.html" class="lemma-name">dsdp_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_correctness</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1.</code></td>
+                    <td class="meaning">With fuel equal to sum_fuel, evaluation reaches a final state</td>
                 </tr>
             
                 <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
@@ -1272,7 +1283,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
         </div>
-        <span class="file-count">4 helper</span>
+        <span class="file-count">5 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1307,6 +1318,17 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
                     <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                </tr>
+            
+                <tr data-search="dsdp_terminates lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1. with fuel equal to sum_fuel, evaluation reaches a final state">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminates.html" class="lemma-name">dsdp_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1.</code></td>
+                    <td class="meaning">With fuel equal to sum_fuel, evaluation reaches a final state</td>
                 </tr>
             
                 <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
@@ -2622,14 +2644,14 @@
             </thead>
             <tbody>
             
-                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (prob : a -&gt; r) : (forall a, s a -&gt; prob a = p) -&gt; (forall a, ~~ s a -&gt; prob a = 0) -&gt; (- \sum_(a : a) prob a * log (prob a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
+                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (pmf : a -&gt; r) : (forall a, s a -&gt; pmf a = p) -&gt; (forall a, ~~ s a -&gt; pmf a = 0) -&gt; (- \sum_(a : a) pmf a * log (pmf a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/entropy_sum_split.html" class="lemma-name">entropy_sum_split</a>
                     </td>
                     <td class="section-name">entropy_sum</td>
                     <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (prob : A -&gt; R) : (forall a, S a -&gt; prob a = p) -&gt; (forall a, ~~ S a -&gt; prob a = 0) -&gt; (- \sum_(a : A) prob a * log (prob a)) = (- \sum_(a : A | S a) p * log p).</code></td>
+                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (pmf : A -&gt; R) : (forall a, S a -&gt; pmf a = p) -&gt; (forall a, ~~ S a -&gt; pmf a = 0) -&gt; (- \sum_(a : A) pmf a * log (pmf a)) = (- \sum_(a : A | S a) p * log p).</code></td>
                     <td class="meaning">Entropy sum over a subset with uniform probability</td>
                 </tr>
             
@@ -3898,7 +3920,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-15 | 258 lemmas in 21 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener" style="color: var(--accent);">5e53ec7</a></p>
+        <p>Generated: 2026-01-16 | 260 lemmas in 21 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/011903304387d5ed90f17ebb1900ead6a17c911a" target="_blank" rel="noopener" style="color: var(--accent);">0119033</a></p>
     </footer>
     
     <script>
