@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">258</div>
+        <div class="value">260</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">219</div>
+        <div class="value">221</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,904</div>
+        <div class="value">8,944</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener">5e53ec7</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/ef3c0af3231fecd01dc0b5d4d9f4580d46d950eb" target="_blank" rel="noopener">ef3c0af</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -890,7 +890,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (219 total)
+    Supporting lemmas and utilities (221 total)
 </p>
 
 <div id="helpers-section">
@@ -902,7 +902,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_correctness.v</span>
         </div>
-        <span class="file-count">7 helper</span>
+        <span class="file-count">8 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -970,6 +970,17 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
                     <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                </tr>
+            
+                <tr data-search="dsdp_terminates lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1. with fuel equal to sum_fuel, evaluation reaches a final state">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminates.html" class="lemma-name">dsdp_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_correctness</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1.</code></td>
+                    <td class="meaning">With fuel equal to sum_fuel, evaluation reaches a final state</td>
                 </tr>
             
                 <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
@@ -1272,7 +1283,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
         </div>
-        <span class="file-count">4 helper</span>
+        <span class="file-count">5 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1307,6 +1318,17 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
                     <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                </tr>
+            
+                <tr data-search="dsdp_terminates lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1. with fuel equal to sum_fuel, evaluation reaches a final state">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminates.html" class="lemma-name">dsdp_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_terminates : all_final (dsdp [&gt; dsdp_procs]).1.</code></td>
+                    <td class="meaning">With fuel equal to sum_fuel, evaluation reaches a final state</td>
                 </tr>
             
                 <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
@@ -1359,36 +1381,36 @@
             </thead>
             <tbody>
             
-                <tr data-search="pbob_ascii_eq lemma pbob_ascii_eq dk v2 : pbob dk v2 = pbob_ascii dk v2. verify ascii and unicode versions are equivalent">
+                <tr data-search="pbob_unicode_eq lemma pbob_unicode_eq dk v2 : pbob dk v2 = pbob_unicode dk v2. verify ascii and unicode versions are equivalent">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pbob_ascii_eq.html" class="lemma-name">pbob_ascii_eq</a>
+                        <a href="lemmas/pbob_unicode_eq.html" class="lemma-name">pbob_unicode_eq</a>
                     </td>
                     <td class="section-name">dsdp</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pbob_ascii_eq dk v2 : pbob dk v2 = pbob_ascii dk v2.</code></td>
+                    <td><code class="signature">Lemma pbob_unicode_eq dk v2 : pbob dk v2 = pbob_unicode dk v2.</code></td>
                     <td class="meaning">Verify ASCII and Unicode versions are equivalent</td>
                 </tr>
             
-                <tr data-search="pcharlie_ascii_eq lemma pcharlie_ascii_eq dk v3 : pcharlie dk v3 = pcharlie_ascii dk v3. ">
+                <tr data-search="pcharlie_unicode_eq lemma pcharlie_unicode_eq dk v3 : pcharlie dk v3 = pcharlie_unicode dk v3. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pcharlie_ascii_eq.html" class="lemma-name">pcharlie_ascii_eq</a>
+                        <a href="lemmas/pcharlie_unicode_eq.html" class="lemma-name">pcharlie_unicode_eq</a>
                     </td>
                     <td class="section-name">dsdp</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pcharlie_ascii_eq dk v3 : pcharlie dk v3 = pcharlie_ascii dk v3.</code></td>
+                    <td><code class="signature">Lemma pcharlie_unicode_eq dk v3 : pcharlie dk v3 = pcharlie_unicode dk v3.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="palice_ascii_eq lemma palice_ascii_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_ascii dk v1 u1 u2 u3 r2 r3. ">
+                <tr data-search="palice_unicode_eq lemma palice_unicode_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_unicode dk v1 u1 u2 u3 r2 r3. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/palice_ascii_eq.html" class="lemma-name">palice_ascii_eq</a>
+                        <a href="lemmas/palice_unicode_eq.html" class="lemma-name">palice_unicode_eq</a>
                     </td>
                     <td class="section-name">dsdp</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma palice_ascii_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_ascii dk v1 u1 u2 u3 r2 r3.</code></td>
+                    <td><code class="signature">Lemma palice_unicode_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_unicode dk v1 u1 u2 u3 r2 r3.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
@@ -2622,14 +2644,14 @@
             </thead>
             <tbody>
             
-                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (prob : a -&gt; r) : (forall a, s a -&gt; prob a = p) -&gt; (forall a, ~~ s a -&gt; prob a = 0) -&gt; (- \sum_(a : a) prob a * log (prob a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
+                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (pmf : a -&gt; r) : (forall a, s a -&gt; pmf a = p) -&gt; (forall a, ~~ s a -&gt; pmf a = 0) -&gt; (- \sum_(a : a) pmf a * log (pmf a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/entropy_sum_split.html" class="lemma-name">entropy_sum_split</a>
                     </td>
                     <td class="section-name">entropy_sum</td>
                     <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (prob : A -&gt; R) : (forall a, S a -&gt; prob a = p) -&gt; (forall a, ~~ S a -&gt; prob a = 0) -&gt; (- \sum_(a : A) prob a * log (prob a)) = (- \sum_(a : A | S a) p * log p).</code></td>
+                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (pmf : A -&gt; R) : (forall a, S a -&gt; pmf a = p) -&gt; (forall a, ~~ S a -&gt; pmf a = 0) -&gt; (- \sum_(a : A) pmf a * log (pmf a)) = (- \sum_(a : A | S a) p * log p).</code></td>
                     <td class="meaning">Entropy sum over a subset with uniform probability</td>
                 </tr>
             
@@ -3626,7 +3648,7 @@
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="e_enc_ce_removal lemma e_enc_ce_removal (a b c : fintype) (p : party) (x : {rv p -&gt; a})(e : {rv p -&gt; p.-enc b})(z : {rv p -&gt; c})(n : nat): #|b| = n.+1 -&gt; (forall x e, `pr[ [%x, e] = (x, e)] != 0) -&gt; `h(z | [%x, e]) = `h(z | x). todo: what if b is (p.-enc a) ? whether we need a way to judge if b is (p.-enc a) or not?">
+                <tr data-search="e_enc_ce_removal lemma e_enc_ce_removal (a b c : fintype) (p : party) (x : {rv p -&gt; a})(e : {rv p -&gt; p.-enc b})(z : {rv p -&gt; c})(n : nat): #|b| = n.+1 -&gt; (forall x e, `pr[ [%x, e] = (x, e)] != 0) -&gt; `h(z | [%x, e]) = `h(z | x). &#34;ciphertext conditioning removal&#34;: if `e` is a fresh encryption value (uniform over `p.-enc b` and independent from everything else), then conditioning on `e` does not change the conditional entropy of `z` given `x`. the hypothesis `(forall x e, pr[[x,e]=(x,e)] != 0)` is a technical condition to make all the conditional probabilities `pr[ z=c | [x,e]=(x,e) ]` well-defined in the cpr/centropy lemmas used below.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/E_enc_ce_removal.html" class="lemma-name">E_enc_ce_removal</a>
@@ -3634,7 +3656,7 @@
                     <td class="section-name">enc_lemmas</td>
                     <td class="proof-lines">25</td>
                     <td><code class="signature">Lemma E_enc_ce_removal (A B C : finType) (p : party) (X : {RV P -&gt; A})(E : {RV P -&gt; p.-enc B})(Z : {RV P -&gt; C})(n : nat): #|B| = n.+1 -&gt; (forall x e, `Pr[ [%X, E] = (x, e)] != 0) -&gt; `H(Z | [%X, E]) = `H(Z | X).</code></td>
-                    <td class="meaning">TODO: what if B is (p.-enc A) ? Whether we need a way to judge if B is (p.-enc A) or not?</td>
+                    <td class="meaning">&#34;Ciphertext conditioning removal&#34;: if `E` is a fresh encryption value (uniform over `p.-enc B` and independent from everything else), then conditioning on `E` does not change the conditional entropy of `Z` given `X`. The hypothesis `(forall x e, Pr[[X,E]=(x,e)] != 0)` is a technical condition to make all the conditional probabilities `Pr[ Z=c | [X,E]=(x,e) ]` well-defined in the cpr/centropy lemmas used below.</td>
                 </tr>
             
             </tbody>
@@ -3898,7 +3920,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-15 | 258 lemmas in 21 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener" style="color: var(--accent);">5e53ec7</a></p>
+        <p>Generated: 2026-01-20 | 260 lemmas in 21 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/ef3c0af3231fecd01dc0b5d4d9f4580d46d950eb" target="_blank" rel="noopener" style="color: var(--accent);">ef3c0af</a></p>
     </footer>
     
     <script>
