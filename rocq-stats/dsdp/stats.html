@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">258</div>
+        <div class="value">273</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">39</div>
+        <div class="value">42</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">219</div>
+        <div class="value">231</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">21</div>
+        <div class="value">23</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,904</div>
+        <div class="value">9,880</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener">5e53ec7</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/c2e61b0ff1cb5ed5fb03ebc5ab9e2b6b4c78d982" target="_blank" rel="noopener">c2e61b0</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,10 +73,62 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (39 total)
+    Theorems and key lemmas (42 total)
 </p>
 
 
+
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_correctness.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_correctness.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_computes_dot_product_benaloh theorem dsdp_computes_dot_product_benaloh : @alice_result phe v1 v2 v3 u1 u2 u3 r2 r3 = u1 * v1 + u2 * v2 + u3 * v3. main theorem: dsdp computes the dot product using benaloh encryption">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_computes_dot_product_benaloh.html" class="lemma-name">dsdp_computes_dot_product_benaloh</a>
+                    </td>
+                    <td class="section-name">dsdp_computational_benaloh</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem dsdp_computes_dot_product_benaloh : @alice_result PHE v1 v2 v3 u1 u2 u3 r2 r3 = u1 * v1 + u2 * v2 + u3 * v3.</code></td>
+                    <td class="meaning">Main theorem: DSDP computes the dot product using Benaloh encryption</td>
+                </tr>
+            
+                <tr data-search="dsdp_computes_dot_product_paillier theorem dsdp_computes_dot_product_paillier : @alice_result phe v1 v2 v3 u1 u2 u3 r2 r3 = u1 * v1 + u2 * v2 + u3 * v3. main theorem: dsdp computes the dot product using paillier encryption">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_computes_dot_product_paillier.html" class="lemma-name">dsdp_computes_dot_product_paillier</a>
+                    </td>
+                    <td class="section-name">dsdp_computational_paillier</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Theorem dsdp_computes_dot_product_paillier : @alice_result PHE v1 v2 v3 u1 u2 u3 r2 r3 = u1 * v1 + u2 * v2 + u3 * v3.</code></td>
+                    <td class="meaning">Main theorem: DSDP computes the dot product using Paillier encryption</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
@@ -134,9 +186,141 @@
 
 
 
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_entropy_trace.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_entropy_trace.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_result_correct theorem dsdp_result_correct : v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1 = u1 * v1 + u2 * v2 + u3 * v3. protocol correctness is now proved algebraically using ring arithmetic. the final result s = v3*u3 + r3 + (v2*u2 + r2) - r2 - r3 + u1*v1 simplifies to u1*v1 + u2*v2 + u3*v3 by ring.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_result_correct.html" class="lemma-name">dsdp_result_correct</a>
+                    </td>
+                    <td class="section-name">dsdp_traces</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Theorem dsdp_result_correct : v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1 = u1 * v1 + u2 * v2 + u3 * v3.</code></td>
+                    <td class="meaning">Protocol correctness is now proved algebraically using ring arithmetic. The final result S = v3*u3 + r3 + (v2*u2 + r2) - r2 - r3 + u1*v1 simplifies to u1*v1 + u2*v2 + u3*v3 by ring.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
+
+
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_pismc.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
+        </div>
+        <span class="file-count">2 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_senv_zero theorem dsdp_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_saprocs] dsdp_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2] aps&#39; = 0. ">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_senv_zero.html" class="lemma-name">dsdp_senv_zero</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Theorem dsdp_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_saprocs] dsdp_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2] aps&#39; = 0.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_ideal_senv_zero theorem dsdp_ideal_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2] aps&#39; = 0. main theorem: dsdp (idealized) session environment converges to empty.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_ideal_senv_zero.html" class="lemma-name">dsdp_ideal_senv_zero</a>
+                    </td>
+                    <td class="section-name">dsdp_idealized_termination</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem dsdp_ideal_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2] aps&#39; = 0.</code></td>
+                    <td class="meaning">Main theorem: DSDP (Idealized) session environment converges to empty.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_program.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_computes_dot_product theorem dsdp_computes_dot_product : alice_result = u1 * v1 + u2 * v2 + u3 * v3. main correctness theorem: alice computes the dot product">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_computes_dot_product.html" class="lemma-name">dsdp_computes_dot_product</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem dsdp_computes_dot_product : alice_result = u1 * v1 + u2 * v2 + u3 * v3.</code></td>
+                    <td class="meaning">Main correctness theorem: Alice computes the dot product</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
@@ -208,7 +392,7 @@
                         <a href="lemmas/US_compromised_leaks_V2.html" class="lemma-name">US_compromised_leaks_V2</a>
                     </td>
                     <td class="section-name">malicious_adversary_case_analysis</td>
-                    <td class="proof-lines">38</td>
+                    <td class="proof-lines">37</td>
                     <td><code class="signature">Theorem US_compromised_leaks_V2 : US = ConstUS -&gt; ~ `H(V2 | AliceView ) = `H `p_V2.</code></td>
                     <td class="meaning">This theorem shows that if an active adversary controls Alice, it can set U1 and U2 as a special combination (1, 0), which allows revealing `V2` from the result that Alice receives. \cite[\S5.2]{dumas2017dual}.</td>
                 </tr>
@@ -773,13 +957,23 @@
 
 
 
-<div class="file-section main-section" data-file="homomorphic_encryption/benaloh1994/benaloh_homo.v">
+
+
+
+
+
+
+
+
+
+
+<div class="file-section main-section" data-file="homomorphic_encryption/paillier1999/paillier_enc.v">
     <div class="file-header expanded" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_homo.v</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_enc.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">1 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -794,90 +988,17 @@
             </thead>
             <tbody>
             
-                <tr data-search="benaloh_additive_homo theorem benaloh_additive_homo : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2). * additive homomorphism: multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. this enables addition on encrypted data.">
+                <tr data-search="paillier_dec_correct lemma paillier_dec_correct (m : &#39;z_n) (r : {unit &#39;z_n2}) : paillier_dec lambda (paillier_enc m r) = some m. decryption with the canonical key recovers the original message">
                     <td>
                         
-                        <span class="badge badge-theorem">Theorem</span>
+                        <span class="badge badge-main">Main</span>
                         
-                        <a href="lemmas/benaloh_additive_homo.html" class="lemma-name">benaloh_additive_homo</a>
+                        <a href="lemmas/paillier_dec_correct.html" class="lemma-name">paillier_dec_correct</a>
                     </td>
-                    <td class="section-name">benaloh_homomorphic</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Theorem benaloh_additive_homo : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc y m1 u1 * benaloh_enc y m2 u2 = benaloh_enc y (m1 + m2) (u1 * u2).</code></td>
-                    <td class="meaning">* Additive Homomorphism: Multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. This enables addition on encrypted data.</td>
-                </tr>
-            
-                <tr data-search="benaloh_scalar_homo theorem benaloh_scalar_homo : forall (m1 : &#39;z_r) (m2 : nat) (u : &#39;z_n), (benaloh_enc y m1 u) ^+ m2 = benaloh_enc y (m1 *+ m2) (u ^+ m2). * scalar multiplication homomorphism: exponentiating a ciphertext yields a ciphertext of the product of plaintexts. this enables scalar multiplication on encrypted data.">
-                    <td>
-                        
-                        <span class="badge badge-theorem">Theorem</span>
-                        
-                        <a href="lemmas/benaloh_scalar_homo.html" class="lemma-name">benaloh_scalar_homo</a>
-                    </td>
-                    <td class="section-name">benaloh_homomorphic</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Theorem benaloh_scalar_homo : forall (m1 : &#39;Z_r) (m2 : nat) (u : &#39;Z_n), (benaloh_enc y m1 u) ^+ m2 = benaloh_enc y (m1 *+ m2) (u ^+ m2).</code></td>
-                    <td class="meaning">* Scalar Multiplication Homomorphism: Exponentiating a ciphertext yields a ciphertext of the product of plaintexts. This enables scalar multiplication on encrypted data.</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-<div class="file-section main-section" data-file="homomorphic_encryption/paillier1999/paillier_homo.v">
-    <div class="file-header expanded" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/paillier1999/paillier_homo.v</span>
-        </div>
-        <span class="file-count">2 main</span>
-    </div>
-    <div class="file-content expanded">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="paillier_additive_homo theorem paillier_additive_homo : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2). * additive homomorphism: multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. this enables addition on encrypted data.">
-                    <td>
-                        
-                        <span class="badge badge-theorem">Theorem</span>
-                        
-                        <a href="lemmas/paillier_additive_homo.html" class="lemma-name">paillier_additive_homo</a>
-                    </td>
-                    <td class="section-name">paillier_homomorphic</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Theorem paillier_additive_homo : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc g m1 r1 * paillier_enc g m2 r2 = paillier_enc g (m1 + m2) (r1 * r2).</code></td>
-                    <td class="meaning">* Additive Homomorphism: Multiplying two ciphertexts yields a ciphertext of the sum of plaintexts. This enables addition on encrypted data.</td>
-                </tr>
-            
-                <tr data-search="paillier_scalar_homo theorem paillier_scalar_homo : forall (m1 : &#39;z_n) (k : nat) (r : &#39;z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k). * scalar multiplication homomorphism: exponentiating a ciphertext yields a ciphertext of the scaled plaintext. this enables scalar multiplication on encrypted data.">
-                    <td>
-                        
-                        <span class="badge badge-theorem">Theorem</span>
-                        
-                        <a href="lemmas/paillier_scalar_homo.html" class="lemma-name">paillier_scalar_homo</a>
-                    </td>
-                    <td class="section-name">paillier_homomorphic</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Theorem paillier_scalar_homo : forall (m1 : &#39;Z_n) (k : nat) (r : &#39;Z_n2), (paillier_enc g m1 r) ^+ k = paillier_enc g (m1 *+ k) (r ^+ k).</code></td>
-                    <td class="meaning">* Scalar Multiplication Homomorphism: Exponentiating a ciphertext yields a ciphertext of the scaled plaintext. This enables scalar multiplication on encrypted data.</td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma paillier_dec_correct (m : &#39;Z_n) (r : {unit &#39;Z_n2}) : paillier_dec lambda (paillier_enc m r) = Some m.</code></td>
+                    <td class="meaning">Decryption with the canonical key recovers the original message</td>
                 </tr>
             
             </tbody>
@@ -890,7 +1011,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (219 total)
+    Supporting lemmas and utilities (231 total)
 </p>
 
 <div id="helpers-section">
@@ -902,7 +1023,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_correctness.v</span>
         </div>
-        <span class="file-count">7 helper</span>
+        <span class="file-count">3 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -917,81 +1038,37 @@
             </thead>
             <tbody>
             
-                <tr data-search="pbob_cross_eq lemma pbob_cross_eq dk v : pbob dk v = pbob_orig dk v. verify that the alt_syntax programs are definitionally equal to the original">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pbob_cross_eq.html" class="lemma-name">pbob_cross_eq</a>
-                    </td>
-                    <td class="section-name">dsdp_correctness</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pbob_cross_eq dk v : pbob dk v = pbob_orig dk v.</code></td>
-                    <td class="meaning">Verify that the alt_syntax programs are definitionally equal to the original</td>
-                </tr>
-            
-                <tr data-search="pcharlie_cross_eq lemma pcharlie_cross_eq dk v : pcharlie dk v = pcharlie_orig dk v. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pcharlie_cross_eq.html" class="lemma-name">pcharlie_cross_eq</a>
-                    </td>
-                    <td class="section-name">dsdp_correctness</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pcharlie_cross_eq dk v : pcharlie dk v = pcharlie_orig dk v.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="palice_cross_eq lemma palice_cross_eq dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; : palice dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; = palice_orig dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39;. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/palice_cross_eq.html" class="lemma-name">palice_cross_eq</a>
-                    </td>
-                    <td class="section-name">dsdp_correctness</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma palice_cross_eq dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; : palice dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; = palice_orig dk v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39;.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="dsdp_max_fuel_ok lemma dsdp_max_fuel_ok : dsdp_max_fuel = [&gt; dsdp_procs]. verify the computed fuel matches">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_max_fuel_ok.html" class="lemma-name">dsdp_max_fuel_ok</a>
-                    </td>
-                    <td class="section-name">dsdp_correctness</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_max_fuel_ok : dsdp_max_fuel = [&gt; dsdp_procs].</code></td>
-                    <td class="meaning">Verify the computed fuel matches</td>
-                </tr>
-            
-                <tr data-search="dsdp_ok lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack finish; pack finish; pack finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]). protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.">
+                <tr data-search="dsdp_ok lemma dsdp_ok : dsdp 15 = ([:: finish; finish; finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2)) runit); e (e charlie v3 runit); e (e bob v2 runit); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (e charlie (v3 * u3 + r3) runit); e (e bob (v2 * u2 + r2) runit); d v2; k dk_b]; [:: e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2)) runit); d v3; k dk_c] ]). protocol execution result: running dsdp for 15 steps produces the expected final state with all parties finished and their respective traces.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_ok.html" class="lemma-name">dsdp_ok</a>
                     </td>
-                    <td class="section-name">dsdp_correctness</td>
+                    <td class="section-name">dsdp_computational</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
-                    <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                    <td><code class="signature">Lemma dsdp_ok : dsdp 15 = ([:: Finish; Finish; Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2)) runit); e (E charlie v3 runit); e (E bob v2 runit); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3) runit); e (E bob (v2 * u2 + r2) runit); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2)) runit); d v3; k dk_c] ]).</code></td>
+                    <td class="meaning">Protocol execution result: running dsdp for 15 steps produces the expected final state with all parties finished and their respective traces.</td>
                 </tr>
             
-                <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
+                <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2)) runit); e (e charlie v3 runit); e (e bob v2 runit); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3) runit); e (e bob (v2 * u2 + r2) runit); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2)) runit); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_traces_ok.html" class="lemma-name">dsdp_traces_ok</a>
                     </td>
-                    <td class="section-name">dsdp_correctness</td>
+                    <td class="section-name">dsdp_computational</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]].</code></td>
-                    <td class="meaning">Trace structure: each party&#39;s trace contains their view of the protocol. Alice sees: final sum S, encrypted values, randoms r2/r3, coefficients u_i, her input v1. Bob sees: encrypted partial sums, his input v2. Charlie sees: encrypted partial sum, his input v3.</td>
+                    <td><code class="signature">Lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2)) runit); e (E charlie v3 runit); e (E bob v2 runit); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (E charlie (v3 * u3 + r3) runit); e (E bob (v2 * u2 + r2) runit); d v2; k dk_b]; [bseq e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2)) runit); d v3; k dk_c]].</code></td>
+                    <td class="meaning">Trace structure: each party&#39;s trace contains their view of the protocol.</td>
                 </tr>
             
-                <tr data-search="dsdp_is_correct lemma dsdp_is_correct: is_dsdp dsdp_traces. protocol correctness: the final result s satisfies s = u1*v1 + u2*v2 + u3*v3. this verifies the dsdp protocol computes the intended dot product.">
+                <tr data-search="dsdp_is_correct lemma dsdp_is_correct: is_dsdp dsdp_traces. protocol correctness: the final result s satisfies s = u1*v1 + u2*v2 + u3*v3.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_is_correct.html" class="lemma-name">dsdp_is_correct</a>
                     </td>
-                    <td class="section-name">dsdp_correctness</td>
-                    <td class="proof-lines">3</td>
+                    <td class="section-name">dsdp_computational</td>
+                    <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_is_correct: is_dsdp dsdp_traces.</code></td>
-                    <td class="meaning">Protocol correctness: the final result S satisfies S = u1*v1 + u2*v2 + u3*v3. This verifies the DSDP protocol computes the intended dot product.</td>
+                    <td class="meaning">Protocol correctness: the final result S satisfies S = u1*v1 + u2*v2 + u3*v3.</td>
                 </tr>
             
             </tbody>
@@ -1134,7 +1211,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy_trace.v</span>
         </div>
-        <span class="file-count">10 helper</span>
+        <span class="file-count">1 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1149,114 +1226,15 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_correct lemma dsdp_correct: is_dsdp_trace dsdp_traces. ">
+                <tr data-search="dsdp_algebraic_correctness lemma dsdp_algebraic_correctness : forall t, s t = (u1 \* v1 \+ u2 \* v2 \+ u3 \* v3) t. the protocol correctness theorem: the sum s equals the dot product. this is proved algebraically without depending on trace structure.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_correct.html" class="lemma-name">dsdp_correct</a>
-                    </td>
-                    <td class="section-name">dsdp_traces</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_correct: is_dsdp_trace dsdp_traces.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="alicetraces_from_viewp lemma alicetraces_from_viewp : alicetraces = alicetraces_values_from_view `o aliceview. alicetraces is a function of aliceview: the protocol trace can be reconstructed from alice&#39;s view (her inputs and received messages).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/AliceTraces_from_viewP.html" class="lemma-name">AliceTraces_from_viewP</a>
+                        <a href="lemmas/dsdp_algebraic_correctness.html" class="lemma-name">dsdp_algebraic_correctness</a>
                     </td>
                     <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma AliceTraces_from_viewP : AliceTraces = AliceTraces_values_from_view `o AliceView.</code></td>
-                    <td class="meaning">AliceTraces is a function of AliceView: the protocol trace can be reconstructed from Alice&#39;s view (her inputs and received messages).</td>
-                </tr>
-            
-                <tr data-search="aliceview_values_from_tracep lemma aliceview_values_from_tracep: cancel alicetraces_values_from_view aliceview_values_from_trace. aliceview_values_from_trace is left-inverse of alicetraces_values_from_view. this establishes a bijection: aliceview ↔ alicetraces (no information loss).">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/AliceView_values_from_traceP.html" class="lemma-name">AliceView_values_from_traceP</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma AliceView_values_from_traceP: cancel AliceTraces_values_from_view AliceView_values_from_trace.</code></td>
-                    <td class="meaning">AliceView_values_from_trace is left-inverse of AliceTraces_values_from_view. This establishes a bijection: AliceView ↔ AliceTraces (no information loss).</td>
-                </tr>
-            
-                <tr data-search="centropy_alicetraces_aliceview lemma centropy_alicetraces_aliceview (w : fintype) (v : {rv p -&gt; w}) : `h(v | alicetraces ) = `h(v | aliceview ). conditional entropy equivalence: conditioning on alicetraces equals conditioning on aliceview. they carry the same information.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/centropy_AliceTraces_AliceView.html" class="lemma-name">centropy_AliceTraces_AliceView</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma centropy_AliceTraces_AliceView (w : finType) (v : {RV P -&gt; w}) : `H(v | AliceTraces ) = `H(v | AliceView ).</code></td>
-                    <td class="meaning">Conditional entropy equivalence: conditioning on AliceTraces equals conditioning on AliceView. They carry the same information.</td>
-                </tr>
-            
-                <tr data-search="bobtraces_from_viewp lemma bobtraces_from_viewp : bobtraces = bobtraces_values_from_view `o bobview. bobtraces is a function of bobview">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/BobTraces_from_viewP.html" class="lemma-name">BobTraces_from_viewP</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma BobTraces_from_viewP : BobTraces = BobTraces_values_from_view `o BobView.</code></td>
-                    <td class="meaning">BobTraces is a function of BobView</td>
-                </tr>
-            
-                <tr data-search="bobview_values_from_tracep lemma bobview_values_from_tracep : cancel bobtraces_values_from_view bobview_values_from_trace. bobview_values_from_trace is left-inverse of bobtraces_values_from_view">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/BobView_values_from_traceP.html" class="lemma-name">BobView_values_from_traceP</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma BobView_values_from_traceP : cancel BobTraces_values_from_view BobView_values_from_trace.</code></td>
-                    <td class="meaning">BobView_values_from_trace is left-inverse of BobTraces_values_from_view</td>
-                </tr>
-            
-                <tr data-search="centropy_bobtraces_bobview lemma centropy_bobtraces_bobview (w : fintype) (v : {rv p -&gt; w}) : `h(v | bobtraces) = `h(v | bobview). conditional entropy equivalence for bob: conditioning on bobtraces equals conditioning on bobview.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/centropy_BobTraces_BobView.html" class="lemma-name">centropy_BobTraces_BobView</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma centropy_BobTraces_BobView (w : finType) (v : {RV P -&gt; w}) : `H(v | BobTraces) = `H(v | BobView).</code></td>
-                    <td class="meaning">Conditional entropy equivalence for Bob: conditioning on BobTraces equals conditioning on BobView.</td>
-                </tr>
-            
-                <tr data-search="charlietraces_from_viewp lemma charlietraces_from_viewp : charlietraces = charlietraces_values_from_view `o charlieview. charlietraces is a function of charlieview">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/CharlieTraces_from_viewP.html" class="lemma-name">CharlieTraces_from_viewP</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma CharlieTraces_from_viewP : CharlieTraces = CharlieTraces_values_from_view `o CharlieView.</code></td>
-                    <td class="meaning">CharlieTraces is a function of CharlieView</td>
-                </tr>
-            
-                <tr data-search="charlieview_values_from_tracep lemma charlieview_values_from_tracep : cancel charlietraces_values_from_view charlieview_values_from_trace. charlieview_values_from_trace is left-inverse of charlietraces_values_from_view">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/CharlieView_values_from_traceP.html" class="lemma-name">CharlieView_values_from_traceP</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma CharlieView_values_from_traceP : cancel CharlieTraces_values_from_view CharlieView_values_from_trace.</code></td>
-                    <td class="meaning">CharlieView_values_from_trace is left-inverse of CharlieTraces_values_from_view</td>
-                </tr>
-            
-                <tr data-search="centropy_charlietraces_charlieview lemma centropy_charlietraces_charlieview (w : fintype) (v : {rv p -&gt; w}) : `h(v | charlietraces) = `h(v | charlieview). conditional entropy equivalence for charlie: conditioning on charlietraces equals conditioning on charlieview.">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/centropy_CharlieTraces_CharlieView.html" class="lemma-name">centropy_CharlieTraces_CharlieView</a>
-                    </td>
-                    <td class="section-name">trace_entropy_analysis</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma centropy_CharlieTraces_CharlieView (w : finType) (v : {RV P -&gt; w}) : `H(v | CharlieTraces) = `H(v | CharlieView).</code></td>
-                    <td class="meaning">Conditional entropy equivalence for Charlie: conditioning on CharlieTraces equals conditioning on CharlieView.</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dsdp_algebraic_correctness : forall t, S t = (U1 \* V1 \+ U2 \* V2 \+ U3 \* V3) t.</code></td>
+                    <td class="meaning">The protocol correctness theorem: the sum S equals the dot product. This is proved algebraically without depending on trace structure.</td>
                 </tr>
             
             </tbody>
@@ -1266,11 +1244,11 @@
 
 
 
-<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_program.v">
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_interface.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_interface.v</span>
         </div>
         <span class="file-count">4 helper</span>
     </div>
@@ -1287,48 +1265,48 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_max_fuel_ok lemma dsdp_max_fuel_ok : dsdp_max_fuel = [&gt; dsdp_procs]. verify the computed fuel matches">
+                <tr data-search="dsdp_dtype_eqp lemma dsdp_dtype_eqp : equality.axiom dsdp_dtype_eqb. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_max_fuel_ok.html" class="lemma-name">dsdp_max_fuel_ok</a>
+                        <a href="lemmas/dsdp_dtype_eqP.html" class="lemma-name">dsdp_dtype_eqP</a>
                     </td>
-                    <td class="section-name">dsdp</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_max_fuel_ok : dsdp_max_fuel = [&gt; dsdp_procs].</code></td>
-                    <td class="meaning">Verify the computed fuel matches</td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dsdp_dtype_eqP : Equality.axiom dsdp_dtype_eqb.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="dsdp_ok lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack finish; pack finish; pack finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]). protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.">
+                <tr data-search="std_from_enc_e lemma std_from_enc_e (x : party_cipher ahe) : di_from_enc di (di_e di x) = some x. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_ok.html" class="lemma-name">dsdp_ok</a>
+                        <a href="lemmas/std_from_enc_e.html" class="lemma-name">std_from_enc_e</a>
                     </td>
-                    <td class="section-name">dsdp</td>
+                    <td class="section-name">Standard_Interface_Properties</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_ok : dsdp [&gt; dsdp_procs] = ([:: pack Finish; pack Finish; pack Finish], [:: [:: d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [:: e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [:: e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c] ]).</code></td>
-                    <td class="meaning">Protocol execution result: running dsdp with computed fuel produces the expected final state with all parties finished and their respective traces.</td>
+                    <td><code class="signature">Lemma std_from_enc_e (x : party_cipher AHE) : di_from_enc DI (di_e DI x) = Some x.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="dsdp_traces_ok lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (e alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (e charlie v3); e (e bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (e charlie (v3 * u3 + r3)); e (e bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (e charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]]. trace structure: each party&#39;s trace contains their view of the protocol. alice sees: final sum s, encrypted values, randoms r2/r3, coefficients u_i, her input v1. bob sees: encrypted partial sums, his input v2. charlie sees: encrypted partial sum, his input v3.">
+                <tr data-search="std_from_enc_d lemma std_from_enc_d (x : plain ahe) : di_from_enc di (di_d di x) = none. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_traces_ok.html" class="lemma-name">dsdp_traces_ok</a>
+                        <a href="lemmas/std_from_enc_d.html" class="lemma-name">std_from_enc_d</a>
                     </td>
-                    <td class="section-name">dsdp</td>
+                    <td class="section-name">Standard_Interface_Properties</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma dsdp_traces_ok : dsdp_traces = [tuple [bseq d (v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1); e (E alice (v3 * u3 + r3 + (v2 * u2 + r2))); e (E charlie v3); e (E bob v2); d r3; d r2; d u3; d u2; d u1; d v1; k dk_a]; [bseq e (E charlie (v3 * u3 + r3)); e (E bob (v2 * u2 + r2)); d v2; k dk_b]; [bseq e (E charlie (v3 * u3 + r3 + (v2 * u2 + r2))); d v3; k dk_c]].</code></td>
-                    <td class="meaning">Trace structure: each party&#39;s trace contains their view of the protocol. Alice sees: final sum S, encrypted values, randoms r2/r3, coefficients u_i, her input v1. Bob sees: encrypted partial sums, his input v2. Charlie sees: encrypted partial sum, his input v3.</td>
+                    <td><code class="signature">Lemma std_from_enc_d (x : plain AHE) : di_from_enc DI (di_d DI x) = None.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="dsdp_is_correct lemma dsdp_is_correct: is_dsdp dsdp_traces. protocol correctness: the final result s satisfies s = u1*v1 + u2*v2 + u3*v3. this verifies the dsdp protocol computes the intended dot product.">
+                <tr data-search="std_from_enc_k lemma std_from_enc_k (x : pkey ahe) : di_from_enc di (di_k di x) = none. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/dsdp_is_correct.html" class="lemma-name">dsdp_is_correct</a>
+                        <a href="lemmas/std_from_enc_k.html" class="lemma-name">std_from_enc_k</a>
                     </td>
-                    <td class="section-name">dsdp</td>
-                    <td class="proof-lines">3</td>
-                    <td><code class="signature">Lemma dsdp_is_correct: is_dsdp dsdp_traces.</code></td>
-                    <td class="meaning">Protocol correctness: the final result S satisfies S = u1*v1 + u2*v2 + u3*v3. This verifies the DSDP protocol computes the intended dot product.</td>
+                    <td class="section-name">Standard_Interface_Properties</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma std_from_enc_k (x : pkey AHE) : di_from_enc DI (di_k DI x) = None.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
             </tbody>
@@ -1338,13 +1316,13 @@
 
 
 
-<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_program_alt_syntax.v">
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_pismc.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
-            <span class="file-name">dumas2017dual/dsdp/dsdp_program_alt_syntax.v</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">6 helper</span>
+        <span class="file-count">12 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1359,70 +1337,197 @@
             </thead>
             <tbody>
             
-                <tr data-search="pbob_ascii_eq lemma pbob_ascii_eq dk v2 : pbob dk v2 = pbob_ascii dk v2. verify ascii and unicode versions are equivalent">
+                <tr data-search="alice_cross_eq lemma alice_cross_eq dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39; : erase (palice dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39;) = erase (palice_orig dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39;). cross-equality proofs on erased processes (proc, not sproc). the sproc types differ in session env indices, but erased procs are equal when pn maps parties to the expected concrete indices.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pbob_ascii_eq.html" class="lemma-name">pbob_ascii_eq</a>
+                        <a href="lemmas/alice_cross_eq.html" class="lemma-name">alice_cross_eq</a>
                     </td>
-                    <td class="section-name">dsdp</td>
+                    <td class="section-name">smc_dsdp_program</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pbob_ascii_eq dk v2 : pbob dk v2 = pbob_ascii dk v2.</code></td>
-                    <td class="meaning">Verify ASCII and Unicode versions are equivalent</td>
+                    <td><code class="signature">Lemma alice_cross_eq dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39; : erase (palice dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39;) = erase (palice_orig dk&#39; v1&#39; u1&#39; u2&#39; u3&#39; r2&#39; r3&#39; ra1&#39; ra2&#39;).</code></td>
+                    <td class="meaning">Cross-equality proofs on erased processes (proc, not sproc). The sproc types differ in session env indices, but erased procs are equal when pn maps parties to the expected concrete indices.</td>
                 </tr>
             
-                <tr data-search="pcharlie_ascii_eq lemma pcharlie_ascii_eq dk v3 : pcharlie dk v3 = pcharlie_ascii dk v3. ">
+                <tr data-search="bob_cross_eq lemma bob_cross_eq dk&#39; v2&#39; rb1&#39; rb2&#39; : erase (pbob dk&#39; v2&#39; rb1&#39; rb2&#39;) = erase (pbob_orig dk&#39; v2&#39; rb1&#39; rb2&#39;). ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pcharlie_ascii_eq.html" class="lemma-name">pcharlie_ascii_eq</a>
+                        <a href="lemmas/bob_cross_eq.html" class="lemma-name">bob_cross_eq</a>
                     </td>
-                    <td class="section-name">dsdp</td>
+                    <td class="section-name">smc_dsdp_program</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pcharlie_ascii_eq dk v3 : pcharlie dk v3 = pcharlie_ascii dk v3.</code></td>
+                    <td><code class="signature">Lemma bob_cross_eq dk&#39; v2&#39; rb1&#39; rb2&#39; : erase (pbob dk&#39; v2&#39; rb1&#39; rb2&#39;) = erase (pbob_orig dk&#39; v2&#39; rb1&#39; rb2&#39;).</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="palice_ascii_eq lemma palice_ascii_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_ascii dk v1 u1 u2 u3 r2 r3. ">
+                <tr data-search="charlie_cross_eq lemma charlie_cross_eq dk&#39; v3&#39; rc1&#39; rc2&#39; : erase (pcharlie dk&#39; v3&#39; rc1&#39; rc2&#39;) = erase (pcharlie_orig dk&#39; v3&#39; rc1&#39; rc2&#39;). ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/palice_ascii_eq.html" class="lemma-name">palice_ascii_eq</a>
+                        <a href="lemmas/charlie_cross_eq.html" class="lemma-name">charlie_cross_eq</a>
                     </td>
-                    <td class="section-name">dsdp</td>
+                    <td class="section-name">smc_dsdp_program</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma palice_ascii_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = palice_ascii dk v1 u1 u2 u3 r2 r3.</code></td>
+                    <td><code class="signature">Lemma charlie_cross_eq dk&#39; v3&#39; rc1&#39; rc2&#39; : erase (pcharlie dk&#39; v3&#39; rc1&#39; rc2&#39;) = erase (pcharlie_orig dk&#39; v3&#39; rc1&#39; rc2&#39;).</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="pbob_eq lemma pbob_eq dk v2 : pbob dk v2 = pinit (k dk) ( pinit (d v2) ( psend n(alice) (e (e bob v2)) ( recv_dec n(alice) dk (fun d2 =&gt; recv_enc n(alice) (fun a3 =&gt; psend n(charlie) (e (a3 *h (e charlie d2))) ( finish)))))). verify pbob expands to the original nested structure">
+                <tr data-search="alice_bob_dual lemma alice_bob_dual : channels_dual aproc_alice aproc_bob. three-party duality verification">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pbob_eq.html" class="lemma-name">pbob_eq</a>
+                        <a href="lemmas/alice_bob_dual.html" class="lemma-name">alice_bob_dual</a>
                     </td>
-                    <td class="section-name">dsdp</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pbob_eq dk v2 : pbob dk v2 = PInit (k dk) ( PInit (d v2) ( PSend n(alice) (e (E bob v2)) ( Recv_dec n(alice) dk (fun d2 =&gt; Recv_enc n(alice) (fun a3 =&gt; PSend n(charlie) (e (a3 *h (E charlie d2))) ( Finish)))))).</code></td>
-                    <td class="meaning">Verify pbob expands to the original nested structure</td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma alice_bob_dual : channels_dual aproc_alice aproc_bob.</code></td>
+                    <td class="meaning">Three-party duality verification</td>
                 </tr>
             
-                <tr data-search="pcharlie_eq lemma pcharlie_eq dk v3 : pcharlie dk v3 = pinit (k dk) ( pinit (d v3) ( psend n(alice) (e (e charlie v3)) ( recv_dec n(bob) dk (fun d3 =&gt; ( psend n(alice) (e (e alice d3)) finish))))). verify pcharlie expands correctly">
+                <tr data-search="alice_charlie_dual lemma alice_charlie_dual : channels_dual aproc_alice aproc_charlie. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/pcharlie_eq.html" class="lemma-name">pcharlie_eq</a>
+                        <a href="lemmas/alice_charlie_dual.html" class="lemma-name">alice_charlie_dual</a>
                     </td>
-                    <td class="section-name">dsdp</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma pcharlie_eq dk v3 : pcharlie dk v3 = PInit (k dk) ( PInit (d v3) ( PSend n(alice) (e (E charlie v3)) ( Recv_dec n(bob) dk (fun d3 =&gt; ( PSend n(alice) (e (E alice d3)) Finish))))).</code></td>
-                    <td class="meaning">Verify pcharlie expands correctly</td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma alice_charlie_dual : channels_dual aproc_alice aproc_charlie.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="palice_eq lemma palice_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = pinit (k dk) (pinit (d v1) (pinit (d u1) (pinit (d u2) (pinit (d u3) (pinit (d r2) (pinit (d r3) (recv_enc n(bob) (fun c2 =&gt; recv_enc n(charlie) (fun c3 =&gt; psend n(bob) (e (c2 ^h u2 *h (e bob r2))) (psend n(bob) (e (c3 ^h u3 *h (e charlie r3))) (recv_dec n(charlie) dk (fun g =&gt; pret (d (g - r2 - r3 + (u1 * v1))))))))))))))). verify palice expands correctly - note: let expressions are inlined">
+                <tr data-search="bob_charlie_dual lemma bob_charlie_dual : channels_dual aproc_bob aproc_charlie. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/palice_eq.html" class="lemma-name">palice_eq</a>
+                        <a href="lemmas/bob_charlie_dual.html" class="lemma-name">bob_charlie_dual</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma bob_charlie_dual : channels_dual aproc_bob aproc_charlie.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_max_fuel_ok lemma dsdp_max_fuel_ok : [&gt; dsdp_saprocs] = 27. fuel bound computed from program structure: - palice: 15 (7*init + 2*recv_enc + 2*send + recv_dec + ret=2) - pbob: 7 (2*init + send + recv_dec + recv_enc + send + finish=1) - pcharlie: 6 (2*init + send + recv_dec + send + finish=1) total: 15 + 7 + 6 = 28, but actually computed as 27">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_max_fuel_ok.html" class="lemma-name">dsdp_max_fuel_ok</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_max_fuel_ok : [&gt; dsdp_saprocs] = 27.</code></td>
+                    <td class="meaning">Fuel bound computed from program structure: - palice: 15 (7*Init + 2*Recv_enc + 2*Send + Recv_dec + Ret=2) - pbob: 7 (2*Init + Send + Recv_dec + Recv_enc + Send + Finish=1) - pcharlie: 6 (2*Init + Send + Recv_dec + Send + Finish=1) Total: 15 + 7 + 6 = 28, but actually computed as 27</td>
+                </tr>
+            
+                <tr data-search="dsdp_no_fail lemma dsdp_no_fail traces : all_nonfail (interp [&gt; dsdp_saprocs] dsdp_procs traces).1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_no_fail.html" class="lemma-name">dsdp_no_fail</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">2</td>
+                    <td><code class="signature">Lemma dsdp_no_fail traces : all_nonfail (interp [&gt; dsdp_saprocs] dsdp_procs traces).1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_terminates lemma dsdp_terminates traces : all_terminated (interp [&gt; dsdp_saprocs] dsdp_procs traces).1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminates.html" class="lemma-name">dsdp_terminates</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">2</td>
+                    <td><code class="signature">Lemma dsdp_terminates traces : all_terminated (interp [&gt; dsdp_saprocs] dsdp_procs traces).1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_ideal_max_fuel_ok lemma dsdp_ideal_max_fuel_ok : [&gt; dsdp_ideal_saprocs] = 27. fuel bound">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_ideal_max_fuel_ok.html" class="lemma-name">dsdp_ideal_max_fuel_ok</a>
+                    </td>
+                    <td class="section-name">dsdp_idealized_termination</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_ideal_max_fuel_ok : [&gt; dsdp_ideal_saprocs] = 27.</code></td>
+                    <td class="meaning">Fuel bound</td>
+                </tr>
+            
+                <tr data-search="dsdp_ideal_terminates lemma dsdp_ideal_terminates traces : all_terminated (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1. dsdp (idealized): after interpretation, all processes are terminal.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_ideal_terminates.html" class="lemma-name">dsdp_ideal_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_idealized_termination</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_ideal_terminates traces : all_terminated (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1.</code></td>
+                    <td class="meaning">DSDP (Idealized): after interpretation, all processes are terminal.</td>
+                </tr>
+            
+                <tr data-search="dsdp_ideal_no_fail lemma dsdp_ideal_no_fail traces : all_nonfail (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1. dsdp (idealized): after interpretation, no process is fail.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_ideal_no_fail.html" class="lemma-name">dsdp_ideal_no_fail</a>
+                    </td>
+                    <td class="section-name">dsdp_idealized_termination</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_ideal_no_fail traces : all_nonfail (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1.</code></td>
+                    <td class="meaning">DSDP (Idealized): after interpretation, no process is Fail.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_program.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
+        </div>
+        <span class="file-count">3 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="alice_a2_value lemma alice_a2_value : exists rr, alice_a2 = e bob (v2 * u2 + r2) rr. lemma: alice_a2 encrypts v2*u2 + r2">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_a2_value.html" class="lemma-name">alice_a2_value</a>
                     </td>
                     <td class="section-name">dsdp</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma palice_eq dk v1 u1 u2 u3 r2 r3 : palice dk v1 u1 u2 u3 r2 r3 = PInit (k dk) (PInit (d v1) (PInit (d u1) (PInit (d u2) (PInit (d u3) (PInit (d r2) (PInit (d r3) (Recv_enc n(bob) (fun c2 =&gt; Recv_enc n(charlie) (fun c3 =&gt; PSend n(bob) (e (c2 ^h u2 *h (E bob r2))) (PSend n(bob) (e (c3 ^h u3 *h (E charlie r3))) (Recv_dec n(charlie) dk (fun g =&gt; PRet (d (g - r2 - r3 + (u1 * v1))))))))))))))).</code></td>
-                    <td class="meaning">Verify palice expands correctly - note: let expressions are inlined</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma alice_a2_value : exists rr, alice_a2 = E bob (v2 * u2 + r2) rr.</code></td>
+                    <td class="meaning">Lemma: alice_a2 encrypts v2*u2 + r2</td>
+                </tr>
+            
+                <tr data-search="alice_a3_value lemma alice_a3_value : exists rr, alice_a3 = e charlie (v3 * u3 + r3) rr. lemma: alice_a3 encrypts v3*u3 + r3">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_a3_value.html" class="lemma-name">alice_a3_value</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma alice_a3_value : exists rr, alice_a3 = E charlie (v3 * u3 + r3) rr.</code></td>
+                    <td class="meaning">Lemma: alice_a3 encrypts v3*u3 + r3</td>
+                </tr>
+            
+                <tr data-search="bob_combined_value lemma bob_combined_value : exists rr, bob_combined alice_a3 = e charlie (v3 * u3 + r3 + d2_value) rr. lemma: bob&#39;s combined ciphertext encrypts the sum">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bob_combined_value.html" class="lemma-name">bob_combined_value</a>
+                    </td>
+                    <td class="section-name">dsdp</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma bob_combined_value : exists rr, bob_combined alice_a3 = E charlie (v3 * u3 + r3 + d2_value) rr.</code></td>
+                    <td class="meaning">Lemma: Bob&#39;s combined ciphertext encrypts the sum</td>
                 </tr>
             
             </tbody>
@@ -1933,7 +2038,7 @@
                         <a href="lemmas/entropy_uniform_set.html" class="lemma-name">entropy_uniform_set</a>
                     </td>
                     <td class="section-name">fiber_entropy</td>
-                    <td class="proof-lines">7</td>
+                    <td class="proof-lines">6</td>
                     <td><code class="signature">Lemma entropy_uniform_set (S : {set DomainT}) (n : nat) : #|S| = n -&gt; (0 &lt; n)%N -&gt; (- \sum_(x in S) n%:R^-1 * log (n%:R^-1 : R)) = log (n%:R : R).</code></td>
                     <td class="meaning">* Entropy unfolded: sum of uniform probabilities equals log |S|.</td>
                 </tr>
@@ -1944,7 +2049,7 @@
                         <a href="lemmas/entropy_fdist_uniform_set.html" class="lemma-name">entropy_fdist_uniform_set</a>
                     </td>
                     <td class="section-name">fiber_entropy</td>
-                    <td class="proof-lines">16</td>
+                    <td class="proof-lines">15</td>
                     <td><code class="signature">Lemma entropy_fdist_uniform_set (S : {set DomainT}) (n : nat) : #|S| = n -&gt; (0 &lt; n)%N -&gt; exists (P : R.-fdist DomainT), (forall x, x \in S -&gt; P x = n%:R^-1) -&gt; (forall x, x \notin S -&gt; P x = 0) -&gt; `H P = log (n%:R : R).</code></td>
                     <td class="meaning">Note: although this is the same as the lemma above, it is difficult to use this version in the following `centropy1_uniform_fiber` proof. So both versions are kept.</td>
                 </tr>
@@ -2622,14 +2727,14 @@
             </thead>
             <tbody>
             
-                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (prob : a -&gt; r) : (forall a, s a -&gt; prob a = p) -&gt; (forall a, ~~ s a -&gt; prob a = 0) -&gt; (- \sum_(a : a) prob a * log (prob a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
+                <tr data-search="entropy_sum_split lemma entropy_sum_split (a : fintype) (s : pred a) (p : r) (pmf : a -&gt; r) : (forall a, s a -&gt; pmf a = p) -&gt; (forall a, ~~ s a -&gt; pmf a = 0) -&gt; (- \sum_(a : a) pmf a * log (pmf a)) = (- \sum_(a : a | s a) p * log p). entropy sum over a subset with uniform probability">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/entropy_sum_split.html" class="lemma-name">entropy_sum_split</a>
                     </td>
                     <td class="section-name">entropy_sum</td>
                     <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (prob : A -&gt; R) : (forall a, S a -&gt; prob a = p) -&gt; (forall a, ~~ S a -&gt; prob a = 0) -&gt; (- \sum_(a : A) prob a * log (prob a)) = (- \sum_(a : A | S a) p * log p).</code></td>
+                    <td><code class="signature">Lemma entropy_sum_split (A : finType) (S : pred A) (p : R) (pmf : A -&gt; R) : (forall a, S a -&gt; pmf a = p) -&gt; (forall a, ~~ S a -&gt; pmf a = 0) -&gt; (- \sum_(a : A) pmf a * log (pmf a)) = (- \sum_(a : A | S a) p * log p).</code></td>
                     <td class="meaning">Entropy sum over a subset with uniform probability</td>
                 </tr>
             
@@ -3257,13 +3362,146 @@
 
 
 
+<div class="file-section helper-section" data-file="homomorphic_encryption/ahe_monoid.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/ahe_monoid.v</span>
+        </div>
+        <span class="file-count">1 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="emul_big_cons lemma emul_big_cons (c : cipher t) : \emul[k]_(x &lt;- c :: cs) x = c (.) (\emul[k]_(x &lt;- cs) x). simple lemma using monoid properties">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Emul_big_cons.html" class="lemma-name">Emul_big_cons</a>
+                    </td>
+                    <td class="section-name">test_bigop</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma Emul_big_cons (c : cipher T) : \Emul[k]_(x &lt;- c :: cs) x = c (.) (\Emul[k]_(x &lt;- cs) x).</code></td>
+                    <td class="meaning">Simple lemma using monoid properties</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_ahe.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_ahe.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dec_correct_mixin lemma dec_correct_mixin (dk : benalohprivkey n r) (u : {unit &#39;z_n}) (m : &#39;z_r) : dec_for_mixin dk (enc_for_mixin (pub_of_priv dk) m u) = some m. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dec_correct_mixin.html" class="lemma-name">dec_correct_mixin</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dec_correct_mixin (dk : BenalohPrivKey n r) (u : {unit &#39;Z_n}) (m : &#39;Z_r) : dec_for_mixin dk (enc_for_mixin (pub_of_priv dk) m u) = Some m.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="emul_addm lemma emul_addm : forall (k : benalohpubkey n r), {morph e[k] : mr1 mr2 / mr1 {[ +%r ; *r ]} mr2 &gt;-&gt; emul mr1 mr2}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Emul_addM.html" class="lemma-name">Emul_addM</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma Emul_addM : forall (k : BenalohPubKey n r), {morph E[k] : mr1 mr2 / mr1 {[ +%R ; *r ]} mr2 &gt;-&gt; Emul mr1 mr2}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="epow_scalarm lemma epow_scalarm : forall (k : benalohpubkey n r) (j : &#39;z_r), {morph e[k] : mr / mr {&lt; *%r ; ^r &gt;} j &gt;-&gt; epow mr j}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Epow_scalarM.html" class="lemma-name">Epow_scalarM</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma Epow_scalarM : forall (k : BenalohPubKey n r) (j : &#39;Z_r), {morph E[k] : mr / mr {&lt; *%R ; ^r &gt;} j &gt;-&gt; Epow mr j}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="benaloh_emul_assoc lemma benaloh_emul_assoc : associative emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Emul_assoc.html" class="lemma-name">benaloh_Emul_assoc</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma benaloh_Emul_assoc : associative Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="benaloh_emul_comm lemma benaloh_emul_comm : commutative emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Emul_comm.html" class="lemma-name">benaloh_Emul_comm</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma benaloh_Emul_comm : commutative Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="benaloh_emul_id lemma benaloh_emul_id : forall k : pub_key bt, left_id (ahe_enc.enc_curry bt k (0, benaloh_rand_id)) (@emul). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_Emul_id.html" class="lemma-name">benaloh_Emul_id</a>
+                    </td>
+                    <td class="section-name">benaloh_instance</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma benaloh_Emul_id : forall k : pub_key BT, left_id (ahe_enc.enc_curry BT k (0, benaloh_rand_id)) (@Emul).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
 <div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_enc.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
             <span class="toggle">▶</span>
             <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_enc.v</span>
         </div>
-        <span class="file-count">6 helper</span>
+        <span class="file-count">14 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -3311,170 +3549,125 @@
                     <td class="meaning">Helper: nat mult of Z_r element by nat equals Z_r scalar mult mod r</td>
                 </tr>
             
-                <tr data-search="expr_modr lemma expr_modr (k : nat) : y ^+ k = y ^+ (k %% r)%n. exponentiation of y depends only on exponent mod r">
+                <tr data-search="val_unit_exp lemma val_unit_exp (u : {unit &#39;z_n}) k : val (u ^+ k)%g = (val u) ^+ k. helper: val of group exponent = ring exponent of val">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/val_unit_exp.html" class="lemma-name">val_unit_exp</a>
+                    </td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma val_unit_exp (u : {unit &#39;Z_n}) k : val (u ^+ k)%g = (val u) ^+ k.</code></td>
+                    <td class="meaning">Helper: val of group exponent = ring exponent of val</td>
+                </tr>
+            
+                <tr data-search="euler_unit lemma euler_unit (x : {unit &#39;z_n}) : (val x) ^+ phi_n = 1. euler&#39;s theorem: any unit raised to phi(n) equals 1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/euler_unit.html" class="lemma-name">euler_unit</a>
+                    </td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma euler_unit (x : {unit &#39;Z_n}) : (val x) ^+ phi_n = 1.</code></td>
+                    <td class="meaning">Euler&#39;s theorem: any unit raised to phi(n) equals 1</td>
+                </tr>
+            
+                <tr data-search="expr_modr lemma expr_modr (k : nat) : (val y) ^+ k = (val y) ^+ (k %% r)%n. exponentiation of y depends only on exponent mod r">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/expr_modr.html" class="lemma-name">expr_modr</a>
                     </td>
-                    <td class="section-name">benaloh_params</td>
+                    <td class="section-name">BenalohEuler</td>
                     <td class="proof-lines">4</td>
-                    <td><code class="signature">Lemma expr_modr (k : nat) : y ^+ k = y ^+ (k %% r)%N.</code></td>
+                    <td><code class="signature">Lemma expr_modr (k : nat) : (val y) ^+ k = (val y) ^+ (k %% r)%N.</code></td>
                     <td class="meaning">Exponentiation of y depends only on exponent mod r</td>
                 </tr>
             
-                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2). encryption multiplication distributes as addition on messages">
+                <tr data-search="zp_val_ltn lemma zp_val_ltn (x : &#39;z_r) : ((x : nat) &lt; r)%n. helper: &#39;z_r elements as nats are bounded by r">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/Zp_val_ltn.html" class="lemma-name">Zp_val_ltn</a>
+                    </td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma Zp_val_ltn (x : &#39;Z_r) : ((x : nat) &lt; r)%N.</code></td>
+                    <td class="meaning">Helper: &#39;Z_r elements as nats are bounded by r</td>
+                </tr>
+            
+                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_r) (u1 u2 : {unit &#39;z_n}), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2). encryption multiplication distributes as addition on messages">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/enc_mul_dist.html" class="lemma-name">enc_mul_dist</a>
                     </td>
-                    <td class="section-name">benaloh_params</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2).</code></td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_r) (u1 u2 : {unit &#39;Z_n}), benaloh_enc m1 u1 * benaloh_enc m2 u2 = benaloh_enc (m1 + m2) (u1 * u2).</code></td>
                     <td class="meaning">Encryption multiplication distributes as addition on messages</td>
                 </tr>
             
-                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_r) (m2 : nat) (u : &#39;z_n), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2). encryption exponentiation distributes as scalar multiplication">
+                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_r) (m2 : nat) (u : {unit &#39;z_n}), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2). encryption exponentiation distributes as scalar multiplication">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/enc_exp_dist.html" class="lemma-name">enc_exp_dist</a>
                     </td>
-                    <td class="section-name">benaloh_params</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_r) (m2 : nat) (u : &#39;Z_n), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2).</code></td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_r) (m2 : nat) (u : {unit &#39;Z_n}), (benaloh_enc m1 u) ^+ m2 = benaloh_enc (m1 *+ m2) (u ^+ m2).</code></td>
                     <td class="meaning">Encryption exponentiation distributes as scalar multiplication</td>
                 </tr>
             
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_he_instance.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_he_instance.v</span>
-        </div>
-        <span class="file-count">6 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="benaloh_emul_eq_add lemma benaloh_emul_eq_add : forall (m1 m2 : &#39;z_r) (r1 r2 : &#39;z_n), exists rr : &#39;z_n, benaloh_emul (benaloh_he_enc m1 r1) (benaloh_he_enc m2 r2) = benaloh_he_enc (m1 + m2) rr. ">
+                <tr data-search="alpha_phi lemma alpha_phi : (alpha * r = phi_n)%n. alpha * r = phi_n (alpha is well-defined)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Emul_eq_add.html" class="lemma-name">benaloh_Emul_eq_add</a>
+                        <a href="lemmas/alpha_phi.html" class="lemma-name">alpha_phi</a>
                     </td>
-                    <td class="section-name">Benaloh_HE</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma benaloh_Emul_eq_add : forall (m1 m2 : &#39;Z_r) (r1 r2 : &#39;Z_n), exists rr : &#39;Z_n, benaloh_Emul (benaloh_he_enc m1 r1) (benaloh_he_enc m2 r2) = benaloh_he_enc (m1 + m2) rr.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="benaloh_epow_eq_mul lemma benaloh_epow_eq_mul : forall (m1 m2 : &#39;z_r) (rr : &#39;z_n), exists r&#39; : &#39;z_n, benaloh_epow (benaloh_he_enc m1 rr) m2 = benaloh_he_enc (m1 * m2) r&#39;. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_Epow_eq_mul.html" class="lemma-name">benaloh_Epow_eq_mul</a>
-                    </td>
-                    <td class="section-name">Benaloh_HE</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma benaloh_Epow_eq_mul : forall (m1 m2 : &#39;Z_r) (rr : &#39;Z_n), exists r&#39; : &#39;Z_n, benaloh_Epow (benaloh_he_enc m1 rr) m2 = benaloh_he_enc (m1 * m2) r&#39;.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="emul_randomness lemma emul_randomness : forall (m1 m2 : &#39;z_r) (u1 u2 : &#39;z_n), benaloh_extra_enc m1 u1 * benaloh_extra_enc m2 u2 = benaloh_extra_enc (m1 + m2) (u1 * u2). concrete randomness formulas">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Emul_randomness.html" class="lemma-name">Emul_randomness</a>
-                    </td>
-                    <td class="section-name">Benaloh_Extra</td>
+                    <td class="section-name">BenalohEuler</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma Emul_randomness : forall (m1 m2 : &#39;Z_r) (u1 u2 : &#39;Z_n), benaloh_extra_enc m1 u1 * benaloh_extra_enc m2 u2 = benaloh_extra_enc (m1 + m2) (u1 * u2).</code></td>
-                    <td class="meaning">Concrete randomness formulas</td>
+                    <td><code class="signature">Lemma alpha_phi : (alpha * r = phi_n)%N.</code></td>
+                    <td class="meaning">alpha * r = phi_n (alpha is well-defined)</td>
                 </tr>
             
-                <tr data-search="epow_randomness lemma epow_randomness : forall (m : &#39;z_r) (k : nat) (u : &#39;z_n), (benaloh_extra_enc m u) ^+ k = benaloh_extra_enc (m *+ k) (u ^+ k). ">
+                <tr data-search="rth_powers_vanish lemma rth_powers_vanish (u : {unit &#39;z_n}) : (val u) ^+ r ^+ alpha = 1. r-th powers vanish when raised to alpha (subgroup structure)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Epow_randomness.html" class="lemma-name">Epow_randomness</a>
+                        <a href="lemmas/rth_powers_vanish.html" class="lemma-name">rth_powers_vanish</a>
                     </td>
-                    <td class="section-name">Benaloh_Extra</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma Epow_randomness : forall (m : &#39;Z_r) (k : nat) (u : &#39;Z_n), (benaloh_extra_enc m u) ^+ k = benaloh_extra_enc (m *+ k) (u ^+ k).</code></td>
-                    <td class="meaning"></td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma rth_powers_vanish (u : {unit &#39;Z_n}) : (val u) ^+ r ^+ alpha = 1.</code></td>
+                    <td class="meaning">r-th powers vanish when raised to alpha (subgroup structure)</td>
                 </tr>
             
-                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_r), m1 * m2 = m1 *+ (m2 : nat). ring multiplication version of scalar homomorphism">
+                <tr data-search="ciphertext_to_alpha lemma ciphertext_to_alpha (m : &#39;z_r) (u : {unit &#39;z_n}) : (benaloh_enc m u) ^+ alpha = (val y) ^+ (alpha * m). raising ciphertext to alpha strips randomness">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
+                        <a href="lemmas/ciphertext_to_alpha.html" class="lemma-name">ciphertext_to_alpha</a>
                     </td>
-                    <td class="section-name">Benaloh_Extra</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_r), m1 * m2 = m1 *+ (m2 : nat).</code></td>
-                    <td class="meaning">Ring multiplication version of scalar homomorphism</td>
-                </tr>
-            
-                <tr data-search="epow_ring lemma epow_ring : forall (m1 m2 : &#39;z_r) (u : &#39;z_n), exists u&#39; : &#39;z_n, (benaloh_extra_enc m1 u) ^+ (m2 : nat) = benaloh_extra_enc (m1 * m2) u&#39;. epow with ring exponent">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Epow_ring.html" class="lemma-name">Epow_ring</a>
-                    </td>
-                    <td class="section-name">Benaloh_Extra</td>
+                    <td class="section-name">BenalohEuler</td>
                     <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma Epow_ring : forall (m1 m2 : &#39;Z_r) (u : &#39;Z_n), exists u&#39; : &#39;Z_n, (benaloh_extra_enc m1 u) ^+ (m2 : nat) = benaloh_extra_enc (m1 * m2) u&#39;.</code></td>
-                    <td class="meaning">Epow with ring exponent</td>
+                    <td><code class="signature">Lemma ciphertext_to_alpha (m : &#39;Z_r) (u : {unit &#39;Z_n}) : (benaloh_enc m u) ^+ alpha = (val y) ^+ (alpha * m).</code></td>
+                    <td class="meaning">Raising ciphertext to alpha strips randomness</td>
                 </tr>
             
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_homo.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/benaloh1994/benaloh_homo.v</span>
-        </div>
-        <span class="file-count">1 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="benaloh_repeated_add corollary benaloh_repeated_add : forall (m : &#39;z_r) (k : nat) (u : &#39;z_n), iter k (fun c =&gt; c * benaloh_enc y m u) (benaloh_enc y (0 : &#39;z_r) (1 : &#39;z_n)) = benaloh_enc y (m *+ k) (u ^+ k). * corollary: repeated addition equals scalar multiplication. adding a message to itself k times is the same as scalar multiplication by k.">
+                <tr data-search="decryption_unique lemma decryption_unique (m1 m2 : &#39;z_r) (u1 u2 : {unit &#39;z_n}) : (benaloh_enc m1 u1) ^+ alpha = (benaloh_enc m2 u2) ^+ alpha -&gt; m1 = m2. distinct messages give distinct alpha-powers (unique decryption)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/benaloh_repeated_add.html" class="lemma-name">benaloh_repeated_add</a>
+                        <a href="lemmas/decryption_unique.html" class="lemma-name">decryption_unique</a>
                     </td>
-                    <td class="section-name">benaloh_homomorphic</td>
-                    <td class="proof-lines">9</td>
-                    <td><code class="signature">Corollary benaloh_repeated_add : forall (m : &#39;Z_r) (k : nat) (u : &#39;Z_n), iter k (fun c =&gt; c * benaloh_enc y m u) (benaloh_enc y (0 : &#39;Z_r) (1 : &#39;Z_n)) = benaloh_enc y (m *+ k) (u ^+ k).</code></td>
-                    <td class="meaning">* Corollary: Repeated addition equals scalar multiplication. Adding a message to itself k times is the same as scalar multiplication by k.</td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma decryption_unique (m1 m2 : &#39;Z_r) (u1 u2 : {unit &#39;Z_n}) : (benaloh_enc m1 u1) ^+ alpha = (benaloh_enc m2 u2) ^+ alpha -&gt; m1 = m2.</code></td>
+                    <td class="meaning">Distinct messages give distinct alpha-powers (unique decryption)</td>
+                </tr>
+            
+                <tr data-search="benaloh_dec_correct lemma benaloh_dec_correct (m : &#39;z_r) (u : {unit &#39;z_n}) : benaloh_dec alpha (benaloh_enc m u) = some m. decryption with alpha recovers the original message">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/benaloh_dec_correct.html" class="lemma-name">benaloh_dec_correct</a>
+                    </td>
+                    <td class="section-name">BenalohEuler</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma benaloh_dec_correct (m : &#39;Z_r) (u : {unit &#39;Z_n}) : benaloh_dec alpha (benaloh_enc m u) = Some m.</code></td>
+                    <td class="meaning">Decryption with alpha recovers the original message</td>
                 </tr>
             
             </tbody>
@@ -3490,7 +3683,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">homomorphic_encryption/homomorphic_encryption.v</span>
         </div>
-        <span class="file-count">12 helper</span>
+        <span class="file-count">7 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -3505,91 +3698,36 @@
             </thead>
             <tbody>
             
-                <tr data-search="party_eqp lemma party_eqp : equality.axiom party_eqb. ">
+                <tr data-search="party_id_eqp lemma party_id_eqp : equality.axiom party_id_eqb. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/party_eqP.html" class="lemma-name">party_eqP</a>
+                        <a href="lemmas/party_id_eqP.html" class="lemma-name">party_id_eqP</a>
                     </td>
-                    <td class="section-name">party_def</td>
+                    <td class="section-name">party_id_def</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma party_eqP : Equality.axiom party_eqb.</code></td>
+                    <td><code class="signature">Lemma party_id_eqP : Equality.axiom party_id_eqb.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="party_natk lemma party_natk : cancel party_to_nat nat_to_party. ">
+                <tr data-search="party_id_natk lemma party_id_natk : cancel party_id_to_nat nat_to_party_id. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/party_natK.html" class="lemma-name">party_natK</a>
+                        <a href="lemmas/party_id_natK.html" class="lemma-name">party_id_natK</a>
                     </td>
-                    <td class="section-name">party_def</td>
+                    <td class="section-name">party_id_def</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma party_natK : cancel party_to_nat nat_to_party.</code></td>
+                    <td><code class="signature">Lemma party_id_natK : cancel party_id_to_nat nat_to_party_id.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="party_enump lemma party_enump : finite.axiom party_enum. ">
+                <tr data-search="party_id_enump lemma party_id_enump : finite.axiom party_id_enum. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/party_enumP.html" class="lemma-name">party_enumP</a>
+                        <a href="lemmas/party_id_enumP.html" class="lemma-name">party_id_enumP</a>
                     </td>
-                    <td class="section-name">party_def</td>
+                    <td class="section-name">party_id_def</td>
                     <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma party_enumP : Finite.axiom party_enum.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="key_eqp lemma key_eqp : equality.axiom key_eqb. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/key_eqP.html" class="lemma-name">key_eqP</a>
-                    </td>
-                    <td class="section-name">key_def</td>
-                    <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma key_eqP : Equality.axiom key_eqb.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="key_natk lemma key_natk : cancel key_to_nat nat_to_key. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/key_natK.html" class="lemma-name">key_natK</a>
-                    </td>
-                    <td class="section-name">key_def</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma key_natK : cancel key_to_nat nat_to_key.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="key_enump lemma key_enump : finite.axiom key_enum. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/key_enumP.html" class="lemma-name">key_enumP</a>
-                    </td>
-                    <td class="section-name">key_def</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma key_enumP : Finite.axiom key_enum.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="ideal_emul_eq_add lemma ideal_emul_eq_add : forall (m1 m2 : m) (r1 r2 : unit), exists r : unit, ideal_emul (ideal_enc m1 r1) (ideal_enc m2 r2) = ideal_enc (m1 + m2) r. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/ideal_Emul_eq_add.html" class="lemma-name">ideal_Emul_eq_add</a>
-                    </td>
-                    <td class="section-name">Ideal_HE</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma ideal_Emul_eq_add : forall (m1 m2 : M) (r1 r2 : unit), exists r : unit, ideal_Emul (ideal_enc m1 r1) (ideal_enc m2 r2) = ideal_enc (m1 + m2) r.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="ideal_epow_eq_mul lemma ideal_epow_eq_mul : forall (m1 m2 : m) (r : unit), exists r&#39; : unit, ideal_epow (ideal_enc m1 r) m2 = ideal_enc (m1 * m2) r&#39;. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/ideal_Epow_eq_mul.html" class="lemma-name">ideal_Epow_eq_mul</a>
-                    </td>
-                    <td class="section-name">Ideal_HE</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma ideal_Epow_eq_mul : forall (m1 m2 : M) (r : unit), exists r&#39; : unit, ideal_Epow (ideal_enc m1 r) m2 = ideal_enc (m1 * m2) r&#39;.</code></td>
+                    <td><code class="signature">Lemma party_id_enumP : Finite.axiom party_id_enum.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
@@ -3626,15 +3764,264 @@
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="e_enc_ce_removal lemma e_enc_ce_removal (a b c : fintype) (p : party) (x : {rv p -&gt; a})(e : {rv p -&gt; p.-enc b})(z : {rv p -&gt; c})(n : nat): #|b| = n.+1 -&gt; (forall x e, `pr[ [%x, e] = (x, e)] != 0) -&gt; `h(z | [%x, e]) = `h(z | x). todo: what if b is (p.-enc a) ? whether we need a way to judge if b is (p.-enc a) or not?">
+                <tr data-search="e_enc_ce_contract lemma e_enc_ce_contract (a b c : fintype) (p : party_id) (x : {rv p -&gt; a})(e : {rv p -&gt; p.-enc b})(z : {rv p -&gt; c})(n : nat): #|b| = n.+1 -&gt; (forall x e, `pr[ [%x, e] = (x, e)] != 0) -&gt; `h(z | [%x, e]) = `h(z | x). &#34;ciphertext conditioning contract&#34;: if `e` is a fresh encryption value (uniform over `p.-enc b` and independent from everything else), then conditioning on `e` does not change the conditional entropy of `z` given `x`. the hypothesis `(forall x e, pr[[x,e]=(x,e)] != 0)` is a technical condition to make all the conditional probabilities `pr[ z=c | [x,e]=(x,e) ]` well-defined in the cpr/centropy lemmas used below.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/E_enc_ce_removal.html" class="lemma-name">E_enc_ce_removal</a>
+                        <a href="lemmas/E_enc_ce_contract.html" class="lemma-name">E_enc_ce_contract</a>
                     </td>
                     <td class="section-name">enc_lemmas</td>
                     <td class="proof-lines">25</td>
-                    <td><code class="signature">Lemma E_enc_ce_removal (A B C : finType) (p : party) (X : {RV P -&gt; A})(E : {RV P -&gt; p.-enc B})(Z : {RV P -&gt; C})(n : nat): #|B| = n.+1 -&gt; (forall x e, `Pr[ [%X, E] = (x, e)] != 0) -&gt; `H(Z | [%X, E]) = `H(Z | X).</code></td>
-                    <td class="meaning">TODO: what if B is (p.-enc A) ? Whether we need a way to judge if B is (p.-enc A) or not?</td>
+                    <td><code class="signature">Lemma E_enc_ce_contract (A B C : finType) (p : party_id) (X : {RV P -&gt; A})(E : {RV P -&gt; p.-enc B})(Z : {RV P -&gt; C})(n : nat): #|B| = n.+1 -&gt; (forall x e, `Pr[ [%X, E] = (x, e)] != 0) -&gt; `H(Z | [%X, E]) = `H(Z | X).</code></td>
+                    <td class="meaning">&#34;Ciphertext conditioning contract&#34;: if `E` is a fresh encryption value (uniform over `p.-enc B` and independent from everything else), then conditioning on `E` does not change the conditional entropy of `Z` given `X`. The hypothesis `(forall x e, Pr[[X,E]=(x,e)] != 0)` is a technical condition to make all the conditional probabilities `Pr[ Z=c | [X,E]=(x,e) ]` well-defined in the cpr/centropy lemmas used below.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/idealized/idealized_ahe.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/idealized/idealized_ahe.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="idealized_dec_correct lemma idealized_dec_correct : forall (dk : msgt) (r m : msgt), idealized_dec dk (idealized_enc (idealized_pub_of_priv dk) m r) = some m. decryption correctness - straightforward computation">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_dec_correct.html" class="lemma-name">idealized_dec_correct</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma idealized_dec_correct : forall (dk : msgT) (r m : msgT), idealized_dec dk (idealized_enc (idealized_pub_of_priv dk) m r) = Some m.</code></td>
+                    <td class="meaning">Decryption correctness - straightforward computation</td>
+                </tr>
+            
+                <tr data-search="idealized_emul_addm lemma idealized_emul_addm : forall (k : pub_key it), {morph enc_curry it k : mr1 mr2 / mr_bop it +%r idealized_rand_mul mr1 mr2 &gt;-&gt; idealized_emul mr1 mr2}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_Emul_addM.html" class="lemma-name">idealized_Emul_addM</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma idealized_Emul_addM : forall (k : pub_key IT), {morph enc_curry IT k : mr1 mr2 / mr_bop IT +%R idealized_rand_mul mr1 mr2 &gt;-&gt; idealized_Emul mr1 mr2}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="idealized_epow_scalarm lemma idealized_epow_scalarm : forall (k : pub_key it) (j : plain it), {morph enc_curry it k : mr / mr_bop_rplain it *%r idealized_rand_pow mr j &gt;-&gt; idealized_epow mr j}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_Epow_scalarM.html" class="lemma-name">idealized_Epow_scalarM</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma idealized_Epow_scalarM : forall (k : pub_key IT) (j : plain IT), {morph enc_curry IT k : mr / mr_bop_rplain IT *%R idealized_rand_pow mr j &gt;-&gt; idealized_Epow mr j}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="idealized_emul_assoc lemma idealized_emul_assoc : associative idealized_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_Emul_assoc.html" class="lemma-name">idealized_Emul_assoc</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma idealized_Emul_assoc : associative idealized_Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="idealized_emul_comm lemma idealized_emul_comm : commutative idealized_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_Emul_comm.html" class="lemma-name">idealized_Emul_comm</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma idealized_Emul_comm : commutative idealized_Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="idealized_emul_id lemma idealized_emul_id : forall k : pub_key it, left_id (enc_curry it k (0, idealized_rand_id)) idealized_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/idealized_Emul_id.html" class="lemma-name">idealized_Emul_id</a>
+                    </td>
+                    <td class="section-name">Idealized_AHE</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma idealized_Emul_id : forall k : pub_key IT, left_id (enc_curry IT k (0, idealized_rand_id)) idealized_Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/key_type.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/key_type.v</span>
+        </div>
+        <span class="file-count">3 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="key_type_eqp lemma key_type_eqp : equality.axiom key_type_eqb. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/key_type_eqP.html" class="lemma-name">key_type_eqP</a>
+                    </td>
+                    <td class="section-name">key_type_def</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma key_type_eqP : Equality.axiom key_type_eqb.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="key_type_natk lemma key_type_natk : cancel key_type_to_nat nat_to_key_type. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/key_type_natK.html" class="lemma-name">key_type_natK</a>
+                    </td>
+                    <td class="section-name">key_type_def</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma key_type_natK : cancel key_type_to_nat nat_to_key_type.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="key_type_enump lemma key_type_enump : finite.axiom key_type_enum. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/key_type_enumP.html" class="lemma-name">key_type_enumP</a>
+                    </td>
+                    <td class="section-name">key_type_def</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma key_type_enumP : Finite.axiom key_type_enum.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_ahe.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">homomorphic_encryption/paillier1999/paillier_ahe.v</span>
+        </div>
+        <span class="file-count">6 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="paillier_dec_correct_mixin lemma paillier_dec_correct_mixin (dk : paillierprivkey n) (u : {unit &#39;z_n2}) (m : &#39;z_n) : paillier_dec_for_mixin dk (paillier_enc_for_mixin (pub_of_priv dk) m u) = some m. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_dec_correct_mixin.html" class="lemma-name">paillier_dec_correct_mixin</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma paillier_dec_correct_mixin (dk : PaillierPrivKey n) (u : {unit &#39;Z_n2}) (m : &#39;Z_n) : paillier_dec_for_mixin dk (paillier_enc_for_mixin (pub_of_priv dk) m u) = Some m.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="paillier_emul_addm lemma paillier_emul_addm : forall (k : pub_key paillierhetypes), {morph enc_curry paillierhetypes k : mr1 mr2 / mr_bop paillierhetypes +%r paillier_rand_mul mr1 mr2 &gt;-&gt; paillier_emul mr1 mr2}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_addM.html" class="lemma-name">paillier_Emul_addM</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma paillier_Emul_addM : forall (k : pub_key PaillierHETypes), {morph enc_curry PaillierHETypes k : mr1 mr2 / mr_bop PaillierHETypes +%R paillier_rand_mul mr1 mr2 &gt;-&gt; paillier_Emul mr1 mr2}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="paillier_epow_scalarm lemma paillier_epow_scalarm : forall (k : pub_key paillierhetypes) (j : plain paillierhetypes), {morph enc_curry paillierhetypes k : mr / mr_bop_rplain paillierhetypes *%r paillier_rand_pow mr j &gt;-&gt; paillier_epow mr j}. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Epow_scalarM.html" class="lemma-name">paillier_Epow_scalarM</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma paillier_Epow_scalarM : forall (k : pub_key PaillierHETypes) (j : plain PaillierHETypes), {morph enc_curry PaillierHETypes k : mr / mr_bop_rplain PaillierHETypes *%R paillier_rand_pow mr j &gt;-&gt; paillier_Epow mr j}.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="paillier_emul_assoc lemma paillier_emul_assoc : associative paillier_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_assoc.html" class="lemma-name">paillier_Emul_assoc</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma paillier_Emul_assoc : associative paillier_Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="paillier_emul_comm lemma paillier_emul_comm : commutative paillier_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_comm.html" class="lemma-name">paillier_Emul_comm</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma paillier_Emul_comm : commutative paillier_Emul.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="paillier_emul_id lemma paillier_emul_id : forall k : pub_key pt, left_id (enc_curry pt k (0, paillier_rand_id)) paillier_emul. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/paillier_Emul_id.html" class="lemma-name">paillier_Emul_id</a>
+                    </td>
+                    <td class="section-name">paillier_instance</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma paillier_Emul_id : forall k : pub_key PT, left_id (enc_curry PT k (0, paillier_rand_id)) paillier_Emul.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
             </tbody>
@@ -3650,7 +4037,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">homomorphic_encryption/paillier1999/paillier_enc.v</span>
         </div>
-        <span class="file-count">7 helper</span>
+        <span class="file-count">13 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -3698,6 +4085,28 @@
                     <td class="meaning">Helper: nat mult of Z_n element by nat equals Z_n scalar mult mod n</td>
                 </tr>
             
+                <tr data-search="val_unit_exp lemma val_unit_exp (n : nat) (u : {unit &#39;z_(n ^ 2)}) k : val (u ^+ k)%g = (val u) ^+ k. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/val_unit_exp.html" class="lemma-name">val_unit_exp</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma val_unit_exp (n : nat) (u : {unit &#39;Z_(n ^ 2)}) k : val (u ^+ k)%g = (val u) ^+ k.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="val_unit_mul lemma val_unit_mul (n : nat) (u v : {unit &#39;z_(n ^ 2)}) : val (u * v)%g = val u * val v. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/val_unit_mul.html" class="lemma-name">val_unit_mul</a>
+                    </td>
+                    <td class="section-name">Top-level</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma val_unit_mul (n : nat) (u v : {unit &#39;Z_(n ^ 2)}) : val (u * v)%g = val u * val v.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
                 <tr data-search="n2_gt1 lemma n2_gt1 : (1 &lt; n2)%n. n^2 &gt; 1 follows from n &gt; 1">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -3715,175 +4124,75 @@
                         <a href="lemmas/expr_modn.html" class="lemma-name">expr_modn</a>
                     </td>
                     <td class="section-name">paillier_params</td>
-                    <td class="proof-lines">4</td>
+                    <td class="proof-lines">3</td>
                     <td><code class="signature">Lemma expr_modn (k : nat) : g ^+ k = g ^+ (k %% n)%N.</code></td>
                     <td class="meaning">Exponentiation of g depends only on exponent mod n</td>
                 </tr>
             
-                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2). encryption multiplication distributes as addition on messages">
+                <tr data-search="enc_mul_dist lemma enc_mul_dist : forall (m1 m2 : &#39;z_n) (r1 r2 : {unit &#39;z_n2}), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2)%g. encryption multiplication distributes as addition on messages">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/enc_mul_dist.html" class="lemma-name">enc_mul_dist</a>
                     </td>
                     <td class="section-name">paillier_params</td>
                     <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2).</code></td>
+                    <td><code class="signature">Lemma enc_mul_dist : forall (m1 m2 : &#39;Z_n) (r1 r2 : {unit &#39;Z_n2}), paillier_enc m1 r1 * paillier_enc m2 r2 = paillier_enc (m1 + m2) (r1 * r2)%g.</code></td>
                     <td class="meaning">Encryption multiplication distributes as addition on messages</td>
                 </tr>
             
-                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_n) (m2 : nat) (r : &#39;z_n2), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2). encryption exponentiation distributes as scalar multiplication">
+                <tr data-search="enc_exp_dist lemma enc_exp_dist : forall (m1 : &#39;z_n) (m2 : nat) (r : {unit &#39;z_n2}), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2)%g. encryption exponentiation distributes as scalar multiplication">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/enc_exp_dist.html" class="lemma-name">enc_exp_dist</a>
                     </td>
                     <td class="section-name">paillier_params</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_n) (m2 : nat) (r : &#39;Z_n2), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2).</code></td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma enc_exp_dist : forall (m1 : &#39;Z_n) (m2 : nat) (r : {unit &#39;Z_n2}), (paillier_enc m1 r) ^+ m2 = paillier_enc (m1 *+ m2) (r ^+ m2)%g.</code></td>
                     <td class="meaning">Encryption exponentiation distributes as scalar multiplication</td>
                 </tr>
             
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_he_instance.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/paillier1999/paillier_he_instance.v</span>
-        </div>
-        <span class="file-count">7 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="n2_gt1 lemma n2_gt1 : (1 &lt; n2)%n. n^2 &gt; 1 follows from n &gt; 1">
+                <tr data-search="euler_unit lemma euler_unit (x : {unit &#39;z_n2}) : (val x) ^+ phi_n2 = 1. euler&#39;s theorem: any unit raised to phi(n^2) equals 1">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/n2_gt1.html" class="lemma-name">n2_gt1</a>
+                        <a href="lemmas/euler_unit.html" class="lemma-name">euler_unit</a>
                     </td>
-                    <td class="section-name">Paillier_HE</td>
-                    <td class="proof-lines">4</td>
-                    <td><code class="signature">Lemma n2_gt1 : (1 &lt; n2)%N.</code></td>
-                    <td class="meaning">n^2 &gt; 1 follows from n &gt; 1</td>
-                </tr>
-            
-                <tr data-search="paillier_emul_eq_add lemma paillier_emul_eq_add : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), exists rr : &#39;z_n2, paillier_emul (paillier_he_enc m1 r1) (paillier_he_enc m2 r2) = paillier_he_enc (m1 + m2) rr. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Emul_eq_add.html" class="lemma-name">paillier_Emul_eq_add</a>
-                    </td>
-                    <td class="section-name">Paillier_HE</td>
-                    <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma paillier_Emul_eq_add : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), exists rr : &#39;Z_n2, paillier_Emul (paillier_he_enc m1 r1) (paillier_he_enc m2 r2) = paillier_he_enc (m1 + m2) rr.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="paillier_epow_eq_mul lemma paillier_epow_eq_mul : forall (m1 m2 : &#39;z_n) (rr : &#39;z_n2), exists r&#39; : &#39;z_n2, paillier_epow (paillier_he_enc m1 rr) m2 = paillier_he_enc (m1 * m2) r&#39;. ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_Epow_eq_mul.html" class="lemma-name">paillier_Epow_eq_mul</a>
-                    </td>
-                    <td class="section-name">Paillier_HE</td>
-                    <td class="proof-lines">8</td>
-                    <td><code class="signature">Lemma paillier_Epow_eq_mul : forall (m1 m2 : &#39;Z_n) (rr : &#39;Z_n2), exists r&#39; : &#39;Z_n2, paillier_Epow (paillier_he_enc m1 rr) m2 = paillier_he_enc (m1 * m2) r&#39;.</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="emul_randomness lemma emul_randomness : forall (m1 m2 : &#39;z_n) (r1 r2 : &#39;z_n2), paillier_extra_enc m1 r1 * paillier_extra_enc m2 r2 = paillier_extra_enc (m1 + m2) (r1 * r2). concrete randomness formulas">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Emul_randomness.html" class="lemma-name">Emul_randomness</a>
-                    </td>
-                    <td class="section-name">Paillier_Extra</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma Emul_randomness : forall (m1 m2 : &#39;Z_n) (r1 r2 : &#39;Z_n2), paillier_extra_enc m1 r1 * paillier_extra_enc m2 r2 = paillier_extra_enc (m1 + m2) (r1 * r2).</code></td>
-                    <td class="meaning">Concrete randomness formulas</td>
-                </tr>
-            
-                <tr data-search="epow_randomness lemma epow_randomness : forall (m : &#39;z_n) (k : nat) (r : &#39;z_n2), (paillier_extra_enc m r) ^+ k = paillier_extra_enc (m *+ k) (r ^+ k). ">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Epow_randomness.html" class="lemma-name">Epow_randomness</a>
-                    </td>
-                    <td class="section-name">Paillier_Extra</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma Epow_randomness : forall (m : &#39;Z_n) (k : nat) (r : &#39;Z_n2), (paillier_extra_enc m r) ^+ k = paillier_extra_enc (m *+ k) (r ^+ k).</code></td>
-                    <td class="meaning"></td>
-                </tr>
-            
-                <tr data-search="scalar_eq_ring_mul lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;z_n), m1 * m2 = m1 *+ (m2 : nat). ring multiplication version of scalar homomorphism">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/scalar_eq_ring_mul.html" class="lemma-name">scalar_eq_ring_mul</a>
-                    </td>
-                    <td class="section-name">Paillier_Extra</td>
+                    <td class="section-name">paillier_params</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma scalar_eq_ring_mul : forall (m1 m2 : &#39;Z_n), m1 * m2 = m1 *+ (m2 : nat).</code></td>
-                    <td class="meaning">Ring multiplication version of scalar homomorphism</td>
+                    <td><code class="signature">Lemma euler_unit (x : {unit &#39;Z_n2}) : (val x) ^+ phi_n2 = 1.</code></td>
+                    <td class="meaning">Euler&#39;s theorem: any unit raised to phi(n^2) equals 1</td>
                 </tr>
             
-                <tr data-search="epow_ring lemma epow_ring : forall (m1 m2 : &#39;z_n) (r : &#39;z_n2), exists r&#39; : &#39;z_n2, (paillier_extra_enc m1 r) ^+ (m2 : nat) = paillier_extra_enc (m1 * m2) r&#39;. epow with ring exponent">
+                <tr data-search="nth_powers_vanish lemma nth_powers_vanish (r : {unit &#39;z_n2}) : (val r) ^+ n ^+ lambda = 1. n-th powers vanish when raised to lambda (subgroup structure)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Epow_ring.html" class="lemma-name">Epow_ring</a>
+                        <a href="lemmas/nth_powers_vanish.html" class="lemma-name">nth_powers_vanish</a>
                     </td>
-                    <td class="section-name">Paillier_Extra</td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma nth_powers_vanish (r : {unit &#39;Z_n2}) : (val r) ^+ n ^+ lambda = 1.</code></td>
+                    <td class="meaning">n-th powers vanish when raised to lambda (subgroup structure)</td>
+                </tr>
+            
+                <tr data-search="ciphertext_to_lambda lemma ciphertext_to_lambda (m : &#39;z_n) (r : {unit &#39;z_n2}) : (paillier_enc m r) ^+ lambda = g ^+ (lambda * m). raising ciphertext to lambda strips randomness">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ciphertext_to_lambda.html" class="lemma-name">ciphertext_to_lambda</a>
+                    </td>
+                    <td class="section-name">paillier_params</td>
                     <td class="proof-lines">6</td>
-                    <td><code class="signature">Lemma Epow_ring : forall (m1 m2 : &#39;Z_n) (r : &#39;Z_n2), exists r&#39; : &#39;Z_n2, (paillier_extra_enc m1 r) ^+ (m2 : nat) = paillier_extra_enc (m1 * m2) r&#39;.</code></td>
-                    <td class="meaning">Epow with ring exponent</td>
+                    <td><code class="signature">Lemma ciphertext_to_lambda (m : &#39;Z_n) (r : {unit &#39;Z_n2}) : (paillier_enc m r) ^+ lambda = g ^+ (lambda * m).</code></td>
+                    <td class="meaning">Raising ciphertext to lambda strips randomness</td>
                 </tr>
             
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<div class="file-section helper-section" data-file="homomorphic_encryption/paillier1999/paillier_homo.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/paillier1999/paillier_homo.v</span>
-        </div>
-        <span class="file-count">1 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="paillier_repeated_add corollary paillier_repeated_add : forall (m : &#39;z_n) (k : nat) (r : &#39;z_n2), iter k (fun c =&gt; c * paillier_enc g m r) (paillier_enc g (0 : &#39;z_n) (1 : &#39;z_n2)) = paillier_enc g (m *+ k) (r ^+ k). * corollary: repeated addition equals scalar multiplication.">
+                <tr data-search="decryption_unique lemma decryption_unique (m1 m2 : &#39;z_n) (r1 r2 : {unit &#39;z_n2}) : (paillier_enc m1 r1) ^+ lambda = (paillier_enc m2 r2) ^+ lambda -&gt; m1 = m2. distinct messages give distinct lambda-powers (unique decryption)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/paillier_repeated_add.html" class="lemma-name">paillier_repeated_add</a>
+                        <a href="lemmas/decryption_unique.html" class="lemma-name">decryption_unique</a>
                     </td>
-                    <td class="section-name">paillier_homomorphic</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Corollary paillier_repeated_add : forall (m : &#39;Z_n) (k : nat) (r : &#39;Z_n2), iter k (fun c =&gt; c * paillier_enc g m r) (paillier_enc g (0 : &#39;Z_n) (1 : &#39;Z_n2)) = paillier_enc g (m *+ k) (r ^+ k).</code></td>
-                    <td class="meaning">* Corollary: Repeated addition equals scalar multiplication.</td>
+                    <td class="section-name">paillier_params</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma decryption_unique (m1 m2 : &#39;Z_n) (r1 r2 : {unit &#39;Z_n2}) : (paillier_enc m1 r1) ^+ lambda = (paillier_enc m2 r2) ^+ lambda -&gt; m1 = m2.</code></td>
+                    <td class="meaning">Distinct messages give distinct lambda-powers (unique decryption)</td>
                 </tr>
             
             </tbody>
@@ -3898,7 +4207,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-01-15 | 258 lemmas in 21 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/5e53ec78f54e3e5fbc9a1ff66edc2d6f3cb452c4" target="_blank" rel="noopener" style="color: var(--accent);">5e53ec7</a></p>
+        <p>Generated: 2026-02-08 | 273 lemmas in 23 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/c2e61b0ff1cb5ed5fb03ebc5ab9e2b6b4c78d982" target="_blank" rel="noopener" style="color: var(--accent);">c2e61b0</a></p>
     </footer>
     
     <script>
