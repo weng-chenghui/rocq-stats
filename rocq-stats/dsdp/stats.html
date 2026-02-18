@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">270</div>
+        <div class="value">269</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,20 +38,20 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">229</div>
+        <div class="value">228</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">23</div>
+        <div class="value">22</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">9,618</div>
+        <div class="value">9,581</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/64e08d378b714589ee5f3a5675e846d10761eebc" target="_blank" rel="noopener">64e08d3</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/325c8969fa3efdeba48a65348e5b581ea823a154" target="_blank" rel="noopener">325c896</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -173,7 +173,7 @@
                         
                         <a href="lemmas/V3_determined.html" class="lemma-name">V3_determined</a>
                     </td>
-                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="section-name">functional_determination</td>
                     <td class="proof-lines">18</td>
                     <td><code class="signature">Lemma V3_determined : V3 = compute_v3 `o [% V1, U1, U2, U3, S, V2].</code></td>
                     <td class="meaning">V3 is functionally determined by the other variables via the constraint. Given V1, U1, U2, U3, S, V2, we can compute: V3 = (S - U2*V2 - U1*V1) / U3. This is key for showing H(V2,V3|constraint) = H(V2|constraint). For Z/pqZ (ring, not field), we use: - U3 is a unit because coprime (val U3) m - Division by unit: x / y = x * y^-1 - Inverse property: y^-1 * y = 1 when y is unit</td>
@@ -332,7 +332,7 @@
             </thead>
             <tbody>
             
-                <tr data-search="dsdp_constraint_centropy_eqlogm theorem dsdp_constraint_centropy_eqlogm : `h(varrv | condrv) = log (m%:r : r). core entropy bound: h((v2,v3) | constraint view) = log(m). instantiates the general dsdp entropy analysis with security hypotheses. shows alice learns exactly log(m) bits about bob/charlie&#39;s joint input, not the full log(m^2) bits - proving bounded information leakage.">
+                <tr data-search="dsdp_constraint_centropy_eqlogm theorem dsdp_constraint_centropy_eqlogm : `h(varrv | condrv) = log (m%:r : r). core entropy bound: h((v2,v3) | constraint view) = log(m). instantiates the general dsdp entropy analysis with security hypotheses. shows alice learns exactly log(m) bits about bob/charlie&#39;s joint input, not the full log(m^2) bits - proving entropic security.">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -342,20 +342,20 @@
                     <td class="section-name">dsdp_security</td>
                     <td class="proof-lines">13</td>
                     <td><code class="signature">Theorem dsdp_constraint_centropy_eqlogm : `H(VarRV | CondRV) = log (m%:R : R).</code></td>
-                    <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m^2) bits - proving bounded information leakage.</td>
+                    <td class="meaning">Core entropy bound: H((V2,V3) | constraint view) = log(m). Instantiates the general DSDP entropy analysis with security hypotheses. Shows Alice learns exactly log(m) bits about Bob/Charlie&#39;s joint input, not the full log(m^2) bits - proving entropic security.</td>
                 </tr>
             
-                <tr data-search="dsdp_security_bounded_leakage theorem dsdp_security_bounded_leakage : `h(v2 | aliceview) = log (m%:r : r) /\ `h(v2 | aliceview) &gt; 0. dsdp security guarantee: h(v2 | aliceview) = log(m) &gt; 0. alice cannot learn bob&#39;s private input v2 with certainty. the conditional entropy log(m) means v2 remains uniformly distributed over m values from alice&#39;s perspective - she gains no advantage over random guessing. the protocol leaks v3&#39;s determination but not v2.">
+                <tr data-search="dsdp_entropic_security theorem dsdp_entropic_security : `h(v2 | aliceview) = log (m%:r : r) /\ `h(v2 | aliceview) &gt; 0. dsdp entropic security: h(v2 | aliceview) = log(m) = h(v2) &gt; 0. since log(m) is the maximum entropy for v2 over z/pqz, this means alice&#39;s view is statistically independent of v2: individual secrets enjoy perfect privacy in the sense of dodis-smith entropic security.">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
                         
-                        <a href="lemmas/dsdp_security_bounded_leakage.html" class="lemma-name">dsdp_security_bounded_leakage</a>
+                        <a href="lemmas/dsdp_entropic_security.html" class="lemma-name">dsdp_entropic_security</a>
                     </td>
                     <td class="section-name">dsdp_security</td>
                     <td class="proof-lines">17</td>
-                    <td><code class="signature">Theorem dsdp_security_bounded_leakage : `H(V2 | AliceView) = log (m%:R : R) /\ `H(V2 | AliceView) &gt; 0.</code></td>
-                    <td class="meaning">DSDP security guarantee: H(V2 | AliceView) = log(m) &gt; 0. Alice cannot learn Bob&#39;s private input V2 with certainty. The conditional entropy log(m) means V2 remains uniformly distributed over m values from Alice&#39;s perspective - she gains no advantage over random guessing. The protocol leaks V3&#39;s determination but not V2.</td>
+                    <td><code class="signature">Theorem dsdp_entropic_security : `H(V2 | AliceView) = log (m%:R : R) /\ `H(V2 | AliceView) &gt; 0.</code></td>
+                    <td class="meaning">DSDP entropic security: H(V2 | AliceView) = log(m) = H(V2) &gt; 0. Since log(m) is the maximum entropy for V2 over Z/pqZ, this means Alice&#39;s view is statistically independent of V2: individual secrets enjoy perfect privacy in the sense of Dodis-Smith entropic security.</td>
                 </tr>
             
                 <tr data-search="constus_discloses_v2 lemma constus_discloses_v2 : us = constus -&gt; dotp2_rv vs us = v2. if an active adversary controls alice, force `us` always output `(1, 0)`, then the key privacy premise `v2 _|_ dotp2_rv us vs` is impossible. in contrast, if alice is an fair player, the probability that `us` outputs that specific value `(1, 0)` is 1/m^2. finally, if bob enforce zpk check to abort the protocol when that value is generated, `v2 _|_ dotp2_rv us vs` is guaranteed, and the protocol is secure with that mitigation (&#34;security with abort&#34;) \cite[\s5.2]{dumas2017dual}. therefore, here we examine the compromised case: `us = (1, 0) -&gt; ~ v2 _|_ dotp2_rv us vs` and the secure case: `us != (1, 0) -&gt; v2 _|_ dotp2_rv us vs`.">
@@ -952,8 +952,6 @@
 
 
 
-
-
 <div class="file-section main-section" data-file="homomorphic_encryption/paillier1999/paillier_enc.v">
     <div class="file-header expanded" onclick="toggleSection(this)">
         <div>
@@ -998,7 +996,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (229 total)
+    Supporting lemmas and utilities (228 total)
 </p>
 
 <div id="helpers-section">
@@ -1130,7 +1128,7 @@
                     <td class="meaning">Helper: Each conditioning value gives entropy log(m). Uses centropy1_uniform_over_set directly with DSDP-specific probability lemmas.</td>
                 </tr>
             
-                <tr data-search="dsdp_var_entropy lemma dsdp_var_entropy : `p_varrv = fdist_uniform card_msg_pair -&gt; `h `p_varrv = log (m%:r * m%:r : r). unconditional entropy of private inputs (v2, v3) when uniformly distributed. since v2, v3 are private inputs from bob and charlie respectively, assuming uniform distribution gives h(v2,v3) = log(m²) = 2*log(m). combined with the conditional entropy result h(v2,v3 | view) = log(m), this shows dsdp leaks log(m) bits but preserves log(m) bits of entropy. the security argument (privacy_by_bonded_leakage at end of file) shows that h(v2,v3 | aliceview) = h(v2 | aliceview), i.e., knowing v3 given the constraint adds no information beyond knowing v2.">
+                <tr data-search="dsdp_var_entropy lemma dsdp_var_entropy : `p_varrv = fdist_uniform card_msg_pair -&gt; `h `p_varrv = log (m%:r * m%:r : r). unconditional entropy of private inputs (v2, v3) when uniformly distributed. since v2, v3 are private inputs from bob and charlie respectively, assuming uniform distribution gives h(v2,v3) = log(m²) = 2*log(m). combined with the conditional entropy result h(v2,v3 | view) = log(m), this shows dsdp leaks log(m) bits but preserves log(m) bits of entropy. the security argument (joint_centropy_reduction at end of file) shows that h(v2,v3 | aliceview) = h(v2 | aliceview), i.e., knowing v3 given the constraint adds no information beyond knowing v2.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_var_entropy.html" class="lemma-name">dsdp_var_entropy</a>
@@ -1138,7 +1136,7 @@
                     <td class="section-name">dsdp_var_entropy</td>
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma dsdp_var_entropy : `p_VarRV = fdist_uniform card_msg_pair -&gt; `H `p_VarRV = log (m%:R * m%:R : R).</code></td>
-                    <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (privacy_by_bonded_leakage at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
+                    <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (joint_centropy_reduction at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
                 </tr>
             
                 <tr data-search="u3_nonzero lemma u3_nonzero : forall t, u3 t != 0. if u3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.">
@@ -1146,7 +1144,7 @@
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/U3_nonzero.html" class="lemma-name">U3_nonzero</a>
                     </td>
-                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="section-name">functional_determination</td>
                     <td class="proof-lines">11</td>
                     <td><code class="signature">Lemma U3_nonzero : forall t, U3 t != 0.</code></td>
                     <td class="meaning">If U3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.</td>
@@ -1157,13 +1155,13 @@
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/V3_determined_centropy_v2.html" class="lemma-name">V3_determined_centropy_v2</a>
                     </td>
-                    <td class="section-name">bonded_leakage_privacy</td>
+                    <td class="section-name">functional_determination</td>
                     <td class="proof-lines">14</td>
                     <td><code class="signature">Lemma V3_determined_centropy_v2 : `H([% V2, V3] | [% V1, U1, U2, U3, S]) = `H(V2 | [% V1, U1, U2, U3, S]).</code></td>
                     <td class="meaning">* * Fundamental Principle of Constraint-Based Security When an auxiliary variable is functionally determined by a secret and a constraint, the joint entropy equals the secret&#39;s entropy alone. This formalizes the principle that &#34;knowing possible solution pairs gives exactly the same information as knowing the constraint on the secret.&#34; This principle underlies many MPC protocols where: - [V2] is the secret to protect - [V3] is an auxiliary/helper variable - [S, U2, U3] form a constraint linking them - Given constraint, [v3] is determined by [V2] (or vice versa)</td>
                 </tr>
             
-                <tr data-search="alice_view_to_cond lemma alice_view_to_cond (a : fintype) (xvar : {rv p -&gt; a}) : (p |= [% dk_a, r2, r3] _|_ xvar | [% v1, u1, u2, u3, s]) -&gt; `h(xvar | aliceview) = `h(xvar | [% v1, u1, u2, u3, s]). generic helper: strip encryptions from aliceview and apply conditional independence. given: x is conditionally independent of [dk_a, r2, r3] given condrv proves: h(x | aliceview) = h(x | condrv) this is reused in dsdp_security.v for the bounded leakage proof.">
+                <tr data-search="alice_view_to_cond lemma alice_view_to_cond (a : fintype) (xvar : {rv p -&gt; a}) : (p |= [% dk_a, r2, r3] _|_ xvar | [% v1, u1, u2, u3, s]) -&gt; `h(xvar | aliceview) = `h(xvar | [% v1, u1, u2, u3, s]). generic helper: strip encryptions from aliceview and apply conditional independence. given: x is conditionally independent of [dk_a, r2, r3] given condrv proves: h(x | aliceview) = h(x | condrv) this is reused in dsdp_security.v for the entropic security proof.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/alice_view_to_cond.html" class="lemma-name">alice_view_to_cond</a>
@@ -1171,18 +1169,18 @@
                     <td class="section-name">semi_honest_case_analysis</td>
                     <td class="proof-lines">74</td>
                     <td><code class="signature">Lemma alice_view_to_cond (A : finType) (Xvar : {RV P -&gt; A}) : (P |= [% Dk_a, R2, R3] _|_ Xvar | [% V1, U1, U2, U3, S]) -&gt; `H(Xvar | AliceView) = `H(Xvar | [% V1, U1, U2, U3, S]).</code></td>
-                    <td class="meaning">Generic helper: Strip encryptions from AliceView and apply conditional independence. Given: X is conditionally independent of [Dk_a, R2, R3] given CondRV Proves: H(X | AliceView) = H(X | CondRV) This is reused in dsdp_security.v for the bounded leakage proof.</td>
+                    <td class="meaning">Generic helper: Strip encryptions from AliceView and apply conditional independence. Given: X is conditionally independent of [Dk_a, R2, R3] given CondRV Proves: H(X | AliceView) = H(X | CondRV) This is reused in dsdp_security.v for the entropic security proof.</td>
                 </tr>
             
-                <tr data-search="privacy_by_bonded_leakage lemma privacy_by_bonded_leakage : `h([% v2, v3] | aliceview ) = `h(v2 | aliceview). privacy via bounded leakage: knowing (v2,v3) given alice&#39;s view is equivalent to knowing just v2. v3 adds no additional information because it is determined by v2 and the constraint. this is the core privacy guarantee for bob&#39;s input v2.">
+                <tr data-search="joint_centropy_reduction lemma joint_centropy_reduction : `h([% v2, v3] | aliceview ) = `h(v2 | aliceview). joint conditional entropy reduction: h(v2,v3 | aliceview) = h(v2 | aliceview). v3 adds no additional entropy because it is functionally determined by v2 and the constraint. used in the entropic security proof (dsdp_security.v).">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/privacy_by_bonded_leakage.html" class="lemma-name">privacy_by_bonded_leakage</a>
+                        <a href="lemmas/joint_centropy_reduction.html" class="lemma-name">joint_centropy_reduction</a>
                     </td>
                     <td class="section-name">semi_honest_case_analysis</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma privacy_by_bonded_leakage : `H([% V2, V3] | AliceView ) = `H(V2 | AliceView).</code></td>
-                    <td class="meaning">Privacy via bounded leakage: knowing (V2,V3) given Alice&#39;s view is equivalent to knowing just V2. V3 adds no additional information because it is determined by V2 and the constraint. This is the core privacy guarantee for Bob&#39;s input V2.</td>
+                    <td><code class="signature">Lemma joint_centropy_reduction : `H([% V2, V3] | AliceView ) = `H(V2 | AliceView).</code></td>
+                    <td class="meaning">Joint conditional entropy reduction: H(V2,V3 | AliceView) = H(V2 | AliceView). V3 adds no additional entropy because it is functionally determined by V2 and the constraint. Used in the entropic security proof (dsdp_security.v).</td>
                 </tr>
             
             </tbody>
@@ -3327,45 +3325,6 @@
 
 
 
-<div class="file-section helper-section" data-file="homomorphic_encryption/ahe_monoid.v">
-    <div class="file-header" onclick="toggleSection(this)">
-        <div>
-            <span class="toggle">▶</span>
-            <span class="file-name">homomorphic_encryption/ahe_monoid.v</span>
-        </div>
-        <span class="file-count">1 helper</span>
-    </div>
-    <div class="file-content">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 12%">Section</th>
-                    <th style="width: 5%">Lines</th>
-                    <th style="width: 30%">Signature</th>
-                    <th style="width: 33%">Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-                <tr data-search="emul_big_cons lemma emul_big_cons (c : cipher t) : \emul[k]_(x &lt;- c :: cs) x = c (.) (\emul[k]_(x &lt;- cs) x). simple lemma using monoid properties">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/Emul_big_cons.html" class="lemma-name">Emul_big_cons</a>
-                    </td>
-                    <td class="section-name">test_bigop</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Lemma Emul_big_cons (c : cipher T) : \Emul[k]_(x &lt;- c :: cs) x = c (.) (\Emul[k]_(x &lt;- cs) x).</code></td>
-                    <td class="meaning">Simple lemma using monoid properties</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
 <div class="file-section helper-section" data-file="homomorphic_encryption/benaloh1994/benaloh_ahe.v">
     <div class="file-header" onclick="toggleSection(this)">
         <div>
@@ -4172,7 +4131,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-02-14 | 270 lemmas in 23 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/64e08d378b714589ee5f3a5675e846d10761eebc" target="_blank" rel="noopener" style="color: var(--accent);">64e08d3</a></p>
+        <p>Generated: 2026-02-18 | 269 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/325c8969fa3efdeba48a65348e5b581ea823a154" target="_blank" rel="noopener" style="color: var(--accent);">325c896</a></p>
     </footer>
     
     <script>
