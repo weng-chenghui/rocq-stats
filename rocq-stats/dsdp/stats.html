@@ -30,15 +30,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">254</div>
+        <div class="value">308</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">39</div>
+        <div class="value">46</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">215</div>
+        <div class="value">262</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">8,884</div>
+        <div class="value">10,196</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f0e8568d23f9f7d2e4a6eb1a326f2f414668213c" target="_blank" rel="noopener">f0e8568</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/744bea39286692c61ac266f65062e2f9da9bdaec" target="_blank" rel="noopener">744bea3</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (39 total)
+    Theorems and key lemmas (46 total)
 </p>
 
 
@@ -138,7 +138,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">2 main</span>
+        <span class="file-count">3 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -164,6 +164,19 @@
                     <td class="proof-lines">22</td>
                     <td><code class="signature">Theorem dsdp_centropy_uniform : (forall t, (0 &lt; U3 t)%N) -&gt; (forall t, (U3 t &lt; minn p q)%N) -&gt; `H(VarRV | CondRV) = log (m%:R : R).</code></td>
                     <td class="meaning">This establishes that Alice learns nothing beyond the constraint.</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy_uniform_n theorem dsdp_centropy_uniform_n : (forall t, (0 &lt; val (u_of_cond (condrv t) ord_max))%n) -&gt; (forall t, (val (u_of_cond (condrv t) ord_max) &lt; minn p q)%n) -&gt; `h(varrv | condrv) = log ((m ^ n_relay)%:r : r). main n-party entropy result: h(v_relay | condrv) = log(m^n_relay) where v_relay are the relay parties&#39; private inputs.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_centropy_uniform_n.html" class="lemma-name">dsdp_centropy_uniform_n</a>
+                    </td>
+                    <td class="section-name">dsdp_entropy_n</td>
+                    <td class="proof-lines">22</td>
+                    <td><code class="signature">Theorem dsdp_centropy_uniform_n : (forall t, (0 &lt; val (u_of_cond (CondRV t) ord_max))%N) -&gt; (forall t, (val (u_of_cond (CondRV t) ord_max) &lt; minn p q)%N) -&gt; `H(VarRV | CondRV) = log ((m ^ n_relay)%:R : R).</code></td>
+                    <td class="meaning">Main N-party entropy result: H(V_relay | CondRV) = log(m^n_relay) where V_relay are the relay parties&#39; private inputs.</td>
                 </tr>
             
                 <tr data-search="v3_determined lemma v3_determined : v3 = compute_v3 `o [% v1, u1, u2, u3, s, v2]. v3 is functionally determined by the other variables via the constraint. given v1, u1, u2, u3, s, v2, we can compute: v3 = (s - u2*v2 - u1*v1) / u3. this is key for showing h(v2,v3|constraint) = h(v2|constraint). for z/pqz (ring, not field), we use: - u3 is a unit because coprime (val u3) m - division by unit: x / y = x * y^-1 - inverse property: y^-1 * y = 1 when y is unit">
@@ -235,7 +248,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">1 main</span>
+        <span class="file-count">2 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -263,6 +276,19 @@
                     <td class="meaning">Main theorem: DSDP (Idealized) session environment converges to empty.</td>
                 </tr>
             
+                <tr data-search="dsdp_n4_senv_zero theorem dsdp_n4_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2; 3] aps&#39; = 0. 4-party session environment convergence">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_n4_senv_zero.html" class="lemma-name">dsdp_n4_senv_zero</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Theorem dsdp_n4_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2; 3] aps&#39; = 0.</code></td>
+                    <td class="meaning">4-party session environment convergence</td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -276,7 +302,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_program.v</span>
         </div>
-        <span class="file-count">1 main</span>
+        <span class="file-count">2 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -304,6 +330,19 @@
                     <td class="meaning">Main correctness theorem: Alice computes the dot product</td>
                 </tr>
             
+                <tr data-search="dsdp_computes_dot_product_n theorem dsdp_computes_dot_product_n : alice_result_n = \sum_(i &lt; n_relay.+2) u i * v i. n-party correctness: alice computes the dot product">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_computes_dot_product_n.html" class="lemma-name">dsdp_computes_dot_product_n</a>
+                    </td>
+                    <td class="section-name">dsdp_n</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem dsdp_computes_dot_product_n : alice_result_n = \sum_(i &lt; n_relay.+2) u i * v i.</code></td>
+                    <td class="meaning">N-party correctness: Alice computes the dot product</td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -317,7 +356,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">17 main</span>
+        <span class="file-count">20 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -553,6 +592,45 @@
                     <td class="meaning">Charlie cannot learn V2 - complete privacy (concrete entropy value)</td>
                 </tr>
             
+                <tr data-search="enc_ce_contract_ind theorem enc_ce_contract_ind {c : fintype} (z : {rv p -&gt; c}) (target : r) {a : fintype} (view : {rv p -&gt; a}) : enc_contractible z target view -&gt; `h(z | view) = target. contraction theorem: if a view is enc_contractible, its conditional entropy equals the target">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/enc_ce_contract_ind.html" class="lemma-name">enc_ce_contract_ind</a>
+                    </td>
+                    <td class="section-name">enc_contraction_n</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Theorem enc_ce_contract_ind {C : finType} (Z : {RV P -&gt; C}) (target : R) {A : finType} (View : {RV P -&gt; A}) : enc_contractible Z target View -&gt; `H(Z | View) = target.</code></td>
+                    <td class="meaning">Contraction theorem: if a view is enc_contractible, its conditional entropy equals the target</td>
+                </tr>
+            
+                <tr data-search="dsdp_entropic_security_n_eq theorem dsdp_entropic_security_n_eq : `h(varrv | aliceview) = log ((m ^ n_relay)%:r : r). core n-party entropic security: entropy value">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_entropic_security_n_eq.html" class="lemma-name">dsdp_entropic_security_n_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_security_n</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Theorem dsdp_entropic_security_n_eq : `H(VarRV | AliceView) = log ((m ^ n_relay)%:R : R).</code></td>
+                    <td class="meaning">Core N-party entropic security: entropy value</td>
+                </tr>
+            
+                <tr data-search="dsdp_entropic_security_n theorem dsdp_entropic_security_n : (0 &lt; n_relay)%n -&gt; `h(varrv | aliceview) = log ((m ^ n_relay)%:r : r) /\ `h(varrv | aliceview) &gt; 0. core n-party entropic security: entropy is positive when n_relay &gt; 0">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_entropic_security_n.html" class="lemma-name">dsdp_entropic_security_n</a>
+                    </td>
+                    <td class="section-name">dsdp_security_n</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Theorem dsdp_entropic_security_n : (0 &lt; n_relay)%N -&gt; `H(VarRV | AliceView) = log ((m ^ n_relay)%:R : R) /\ `H(VarRV | AliceView) &gt; 0.</code></td>
+                    <td class="meaning">Core N-party entropic security: entropy is positive when n_relay &gt; 0</td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -689,7 +767,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/entropy_fiber/linear_fiber_zpq.v</span>
         </div>
-        <span class="file-count">1 main</span>
+        <span class="file-count">2 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -715,6 +793,19 @@
                     <td class="proof-lines">21</td>
                     <td><code class="signature">Lemma linear_fiber_2d_card (u2 u3 target : msg) : (0 &lt; u3)%N -&gt; (u3 &lt; minn p q)%N -&gt; #|linear_fiber_2d u2 u3 target| = m.</code></td>
                     <td class="meaning">Main result: 2D fiber cardinality = m via CRT</td>
+                </tr>
+            
+                <tr data-search="linear_fiber_nd_card lemma linear_fiber_nd_card (u : &#39;i_n.+1 -&gt; msg) (target : msg) : (0 &lt; val (u ord_max))%n -&gt; (val (u ord_max) &lt; minn p q)%n -&gt; #|linear_fiber_nd u target| = (m ^ n)%n. main result: n-dimensional fiber cardinality = m^n">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/linear_fiber_nd_card.html" class="lemma-name">linear_fiber_nd_card</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma linear_fiber_nd_card (u : &#39;I_n.+1 -&gt; msg) (target : msg) : (0 &lt; val (u ord_max))%N -&gt; (val (u ord_max) &lt; minn p q)%N -&gt; #|linear_fiber_nd u target| = (m ^ n)%N.</code></td>
+                    <td class="meaning">Main result: N-dimensional fiber cardinality = m^n</td>
                 </tr>
             
             </tbody>
@@ -970,7 +1061,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (215 total)
+    Supporting lemmas and utilities (262 total)
 </p>
 
 <div id="helpers-section">
@@ -1043,7 +1134,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy.v</span>
         </div>
-        <span class="file-count">9 helper</span>
+        <span class="file-count">11 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1111,6 +1202,28 @@
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma dsdp_var_entropy : `p_VarRV = fdist_uniform card_msg_pair -&gt; `H `p_VarRV = log (m%:R * m%:R : R).</code></td>
                     <td class="meaning">Unconditional entropy of private inputs (V2, V3) when uniformly distributed. Since V2, V3 are private inputs from Bob and Charlie respectively, assuming uniform distribution gives H(V2,V3) = log(m²) = 2*log(m). Combined with the conditional entropy result H(V2,V3 | view) = log(m), this shows DSDP leaks log(m) bits but preserves log(m) bits of entropy. The security argument (joint_centropy_reduction at end of file) shows that H(V2,V3 | AliceView) = H(V2 | AliceView), i.e., knowing V3 given the constraint adds no information beyond knowing V2.</td>
+                </tr>
+            
+                <tr data-search="dsdp_fiber_card_n lemma dsdp_fiber_card_n (v0 u0 s : msg) (u_rel : {ffun &#39;i_n_relay.+1 -&gt; msg}) : (0 &lt; val (u_rel ord_max))%n -&gt; (val (u_rel ord_max) &lt; minn p q)%n -&gt; #|dsdp_fiber_fn_n (v0, u0, u_rel, s)| = (m ^ n_relay)%n. fiber cardinality for n-party">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_fiber_card_n.html" class="lemma-name">dsdp_fiber_card_n</a>
+                    </td>
+                    <td class="section-name">dsdp_entropy_n</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma dsdp_fiber_card_n (v0 u0 s : msg) (u_rel : {ffun &#39;I_n_relay.+1 -&gt; msg}) : (0 &lt; val (u_rel ord_max))%N -&gt; (val (u_rel ord_max) &lt; minn p q)%N -&gt; #|dsdp_fiber_fn_n (v0, u0, u_rel, s)| = (m ^ n_relay)%N.</code></td>
+                    <td class="meaning">Fiber cardinality for N-party</td>
+                </tr>
+            
+                <tr data-search="dsdp_centropy1_uniform_n lemma dsdp_centropy1_uniform_n (v0 u0 s : msg) (u_rel : {ffun &#39;i_n_relay.+1 -&gt; msg}) : (0 &lt; val (u_rel ord_max))%n -&gt; (val (u_rel ord_max) &lt; minn p q)%n -&gt; `pr[condrv = (v0, u0, u_rel, s)] != 0 -&gt; `h[ varrv | condrv = (v0, u0, u_rel, s) ] = log ((m ^ n_relay)%:r : r). per-conditioning-value entropy">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_centropy1_uniform_n.html" class="lemma-name">dsdp_centropy1_uniform_n</a>
+                    </td>
+                    <td class="section-name">dsdp_entropy_n</td>
+                    <td class="proof-lines">29</td>
+                    <td><code class="signature">Lemma dsdp_centropy1_uniform_n (v0 u0 s : msg) (u_rel : {ffun &#39;I_n_relay.+1 -&gt; msg}) : (0 &lt; val (u_rel ord_max))%N -&gt; (val (u_rel ord_max) &lt; minn p q)%N -&gt; `Pr[CondRV = (v0, u0, u_rel, s)] != 0 -&gt; `H[ VarRV | CondRV = (v0, u0, u_rel, s) ] = log ((m ^ n_relay)%:R : R).</code></td>
+                    <td class="meaning">Per-conditioning-value entropy</td>
                 </tr>
             
                 <tr data-search="u3_nonzero lemma u3_nonzero : forall t, u3 t != 0. if u3 gives zero, the adversary is not semi-honest, there fore this constraint fits the security model assumption.">
@@ -1281,7 +1394,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">10 helper</span>
+        <span class="file-count">37 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1362,6 +1475,61 @@
                     <td class="meaning"></td>
                 </tr>
             
+                <tr data-search="pbob_is_first lemma pbob_is_first dk&#39; v2&#39; rb1&#39; rb2&#39; : pbob dk&#39; v2&#39; rb1&#39; rb2&#39; = dparty_first bob_idx charlie_idx dk&#39; v2&#39; rb1&#39; rb2&#39;. cross-equality: existing 3-party definitions are instances of templates">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pbob_is_first.html" class="lemma-name">pbob_is_first</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pbob_is_first dk&#39; v2&#39; rb1&#39; rb2&#39; : pbob dk&#39; v2&#39; rb1&#39; rb2&#39; = DParty_first bob_idx charlie_idx dk&#39; v2&#39; rb1&#39; rb2&#39;.</code></td>
+                    <td class="meaning">Cross-equality: existing 3-party definitions are instances of templates</td>
+                </tr>
+            
+                <tr data-search="pcharlie_is_last lemma pcharlie_is_last dk&#39; v3&#39; rc1&#39; rc2&#39; : pcharlie dk&#39; v3&#39; rc1&#39; rc2&#39; = dparty_last charlie_idx bob_idx dk&#39; v3&#39; rc1&#39; rc2&#39;. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pcharlie_is_last.html" class="lemma-name">pcharlie_is_last</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pcharlie_is_last dk&#39; v3&#39; rc1&#39; rc2&#39; : pcharlie dk&#39; v3&#39; rc1&#39; rc2&#39; = DParty_last charlie_idx bob_idx dk&#39; v3&#39; rc1&#39; rc2&#39;.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_bob_tmpl_dual lemma alice_bob_tmpl_dual : channels_dual aproc_alice aproc_bob_tmpl. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_bob_tmpl_dual.html" class="lemma-name">alice_bob_tmpl_dual</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_bob_tmpl_dual : channels_dual aproc_alice aproc_bob_tmpl.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_charlie_tmpl_dual lemma alice_charlie_tmpl_dual : channels_dual aproc_alice aproc_charlie_tmpl. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_charlie_tmpl_dual.html" class="lemma-name">alice_charlie_tmpl_dual</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_charlie_tmpl_dual : channels_dual aproc_alice aproc_charlie_tmpl.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="bob_charlie_tmpl_dual lemma bob_charlie_tmpl_dual : channels_dual aproc_bob_tmpl aproc_charlie_tmpl. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/bob_charlie_tmpl_dual.html" class="lemma-name">bob_charlie_tmpl_dual</a>
+                    </td>
+                    <td class="section-name">smc_dsdp_program</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma bob_charlie_tmpl_dual : channels_dual aproc_bob_tmpl aproc_charlie_tmpl.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
                 <tr data-search="dsdp_max_fuel_ok lemma dsdp_max_fuel_ok : [&gt; dsdp_saprocs] = 27. fuel bound computed from program structure: - palice: 15 (7*init + 2*recv_enc + 2*send + recv_dec + ret=2) - pbob: 7 (2*init + send + recv_dec + recv_enc + send + finish=1) - pcharlie: 6 (2*init + send + recv_dec + send + finish=1) total: 15 + 7 + 6 = 28, but actually computed as 27">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -1404,6 +1572,248 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_ideal_no_fail traces : all_nonfail (interp [&gt; dsdp_ideal_saprocs] dsdp_ideal_procs traces).1.</code></td>
                     <td class="meaning">DSDP (Idealized): after interpretation, no process is Fail.</td>
+                </tr>
+            
+                <tr data-search="alice_first_dual_n4 lemma alice_first_dual_n4 : channels_dual ap_alice_n4 ap_first_n4. 4-party duality verification: all 6 pairs">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_first_dual_n4.html" class="lemma-name">alice_first_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_first_dual_n4 : channels_dual ap_alice_n4 ap_first_n4.</code></td>
+                    <td class="meaning">4-party duality verification: all 6 pairs</td>
+                </tr>
+            
+                <tr data-search="alice_inter_dual_n4 lemma alice_inter_dual_n4 : channels_dual ap_alice_n4 ap_inter_n4. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_inter_dual_n4.html" class="lemma-name">alice_inter_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_inter_dual_n4 : channels_dual ap_alice_n4 ap_inter_n4.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_last_dual_n4 lemma alice_last_dual_n4 : channels_dual ap_alice_n4 ap_last_n4. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_last_dual_n4.html" class="lemma-name">alice_last_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_last_dual_n4 : channels_dual ap_alice_n4 ap_last_n4.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="first_inter_dual_n4 lemma first_inter_dual_n4 : channels_dual ap_first_n4 ap_inter_n4. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_inter_dual_n4.html" class="lemma-name">first_inter_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma first_inter_dual_n4 : channels_dual ap_first_n4 ap_inter_n4.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="first_last_dual_n4 lemma first_last_dual_n4 : channels_dual ap_first_n4 ap_last_n4. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_last_dual_n4.html" class="lemma-name">first_last_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma first_last_dual_n4 : channels_dual ap_first_n4 ap_last_n4.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="inter_last_dual_n4 lemma inter_last_dual_n4 : channels_dual ap_inter_n4 ap_last_n4. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inter_last_dual_n4.html" class="lemma-name">inter_last_dual_n4</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma inter_last_dual_n4 : channels_dual ap_inter_n4 ap_last_n4.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_n4_builder_correct lemma dsdp_n4_builder_correct : @dsdp_n_procs ahe ek4 2 [:: @ordinal 3 0 ist; @ordinal 3 1 ist; @ordinal 3 2 ist] dk0 v0 u4 r4_3 rand4_3 dk_relay_4 v_relay_4 r1_relay_4 r2_relay_4 = erase_aprocs [aprocs palice_4; pfirst_4; pinter_4; plast_4]. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n4_builder_correct.html" class="lemma-name">dsdp_n4_builder_correct</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n4_builder_correct : @dsdp_n_procs AHE ek4 2 [:: @Ordinal 3 0 isT; @Ordinal 3 1 isT; @Ordinal 3 2 isT] dk0 v0 u4 r4_3 rand4_3 dk_relay_4 v_relay_4 r1_relay_4 r2_relay_4 = erase_aprocs [aprocs palice_4; pfirst_4; pinter_4; plast_4].</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_n4_max_fuel_ok lemma dsdp_n4_max_fuel_ok : [&gt; dsdp_n4_saprocs] = 31. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n4_max_fuel_ok.html" class="lemma-name">dsdp_n4_max_fuel_ok</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n4_max_fuel_ok : [&gt; dsdp_n4_saprocs] = 31.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_n4_terminates lemma dsdp_n4_terminates traces : all_terminated (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1. 4-party termination: after interpretation, all processes are terminal">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n4_terminates.html" class="lemma-name">dsdp_n4_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n4_terminates traces : all_terminated (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1.</code></td>
+                    <td class="meaning">4-party termination: after interpretation, all processes are terminal</td>
+                </tr>
+            
+                <tr data-search="dsdp_n4_no_fail lemma dsdp_n4_no_fail traces : all_nonfail (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1. 4-party no-fail: after interpretation, no process is fail">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n4_no_fail.html" class="lemma-name">dsdp_n4_no_fail</a>
+                    </td>
+                    <td class="section-name">dsdp_n4_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n4_no_fail traces : all_nonfail (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1.</code></td>
+                    <td class="meaning">4-party no-fail: after interpretation, no process is Fail</td>
+                </tr>
+            
+                <tr data-search="alice_first_dual_n5 lemma alice_first_dual_n5 : channels_dual ap_alice_n5 ap_first_n5. 5-party duality: all 10 pairs">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_first_dual_n5.html" class="lemma-name">alice_first_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_first_dual_n5 : channels_dual ap_alice_n5 ap_first_n5.</code></td>
+                    <td class="meaning">5-party duality: all 10 pairs</td>
+                </tr>
+            
+                <tr data-search="alice_inter2_dual_n5 lemma alice_inter2_dual_n5 : channels_dual ap_alice_n5 ap_inter2_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_inter2_dual_n5.html" class="lemma-name">alice_inter2_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_inter2_dual_n5 : channels_dual ap_alice_n5 ap_inter2_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_inter3_dual_n5 lemma alice_inter3_dual_n5 : channels_dual ap_alice_n5 ap_inter3_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_inter3_dual_n5.html" class="lemma-name">alice_inter3_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_inter3_dual_n5 : channels_dual ap_alice_n5 ap_inter3_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_last_dual_n5 lemma alice_last_dual_n5 : channels_dual ap_alice_n5 ap_last_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_last_dual_n5.html" class="lemma-name">alice_last_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_last_dual_n5 : channels_dual ap_alice_n5 ap_last_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="first_inter2_dual_n5 lemma first_inter2_dual_n5 : channels_dual ap_first_n5 ap_inter2_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_inter2_dual_n5.html" class="lemma-name">first_inter2_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma first_inter2_dual_n5 : channels_dual ap_first_n5 ap_inter2_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="first_inter3_dual_n5 lemma first_inter3_dual_n5 : channels_dual ap_first_n5 ap_inter3_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_inter3_dual_n5.html" class="lemma-name">first_inter3_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma first_inter3_dual_n5 : channels_dual ap_first_n5 ap_inter3_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="first_last_dual_n5 lemma first_last_dual_n5 : channels_dual ap_first_n5 ap_last_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_last_dual_n5.html" class="lemma-name">first_last_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma first_last_dual_n5 : channels_dual ap_first_n5 ap_last_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="inter2_inter3_dual_n5 lemma inter2_inter3_dual_n5 : channels_dual ap_inter2_n5 ap_inter3_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inter2_inter3_dual_n5.html" class="lemma-name">inter2_inter3_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma inter2_inter3_dual_n5 : channels_dual ap_inter2_n5 ap_inter3_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="inter2_last_dual_n5 lemma inter2_last_dual_n5 : channels_dual ap_inter2_n5 ap_last_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inter2_last_dual_n5.html" class="lemma-name">inter2_last_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma inter2_last_dual_n5 : channels_dual ap_inter2_n5 ap_last_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="inter3_last_dual_n5 lemma inter3_last_dual_n5 : channels_dual ap_inter3_n5 ap_last_n5. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/inter3_last_dual_n5.html" class="lemma-name">inter3_last_dual_n5</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma inter3_last_dual_n5 : channels_dual ap_inter3_n5 ap_last_n5.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_n5_terminates lemma dsdp_n5_terminates traces : all_terminated (interp [&gt; dsdp_n5_saprocs] dsdp_n5_procs traces).1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n5_terminates.html" class="lemma-name">dsdp_n5_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n5_terminates traces : all_terminated (interp [&gt; dsdp_n5_saprocs] dsdp_n5_procs traces).1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_n5_no_fail lemma dsdp_n5_no_fail traces : all_nonfail (interp [&gt; dsdp_n5_saprocs] dsdp_n5_procs traces).1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n5_no_fail.html" class="lemma-name">dsdp_n5_no_fail</a>
+                    </td>
+                    <td class="section-name">dsdp_n5_idealized_duality</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n5_no_fail traces : all_nonfail (interp [&gt; dsdp_n5_saprocs] dsdp_n5_procs traces).1.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
             </tbody>
@@ -1480,7 +1890,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">20 helper</span>
+        <span class="file-count">26 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1713,6 +2123,72 @@
                     <td class="proof-lines">4</td>
                     <td><code class="signature">Lemma E_charlie_d3_indep_V1 : P |= E_charlie_d3 _|_ V1.</code></td>
                     <td class="meaning">E_charlie_d3 is independent of V1 because D3 is independent of V1</td>
+                </tr>
+            
+                <tr data-search="relay_otp_indep lemma relay_otp_indep : p |= d_i _|_ y. core one-time-pad lemma: d_i = vu_i + r_i is independent of y">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_otp_indep.html" class="lemma-name">relay_otp_indep</a>
+                    </td>
+                    <td class="section-name">relay_security_n</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma relay_otp_indep : P |= D_i _|_ Y.</code></td>
+                    <td class="meaning">Core one-time-pad lemma: D_i = VU_i + R_i is independent of Y</td>
+                </tr>
+            
+                <tr data-search="relay_enc_otp_indep lemma relay_enc_otp_indep (party : party_id) : p |= (e&#39; party `o d_i) _|_ y. encryption of d_i is independent of y">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_enc_otp_indep.html" class="lemma-name">relay_enc_otp_indep</a>
+                    </td>
+                    <td class="section-name">relay_security_n</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma relay_enc_otp_indep (party : party_id) : P |= (E&#39; party `o D_i) _|_ Y.</code></td>
+                    <td class="meaning">Encryption of D_i is independent of Y</td>
+                </tr>
+            
+                <tr data-search="relay_privacy_from_indep lemma relay_privacy_from_indep {a : fintype} (view : {rv p -&gt; a}) (v_target : {rv p -&gt; msg}) (pv_unif : `p_ v_target = fdist_uniform card_msg) (view_indep : p |= view _|_ v_target) : `h(v_target | view) = `h `p_ v_target. generic relay privacy theorem: if relayview _|_ v_target, then h(v_target | relayview) = h(v_target)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_privacy_from_indep.html" class="lemma-name">relay_privacy_from_indep</a>
+                    </td>
+                    <td class="section-name">relay_security_n</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma relay_privacy_from_indep {A : finType} (View : {RV P -&gt; A}) (V_target : {RV P -&gt; msg}) (pV_unif : `p_ V_target = fdist_uniform card_msg) (View_indep : P |= View _|_ V_target) : `H(V_target | View) = `H `p_ V_target.</code></td>
+                    <td class="meaning">Generic relay privacy theorem: If RelayView _|_ V_target, then H(V_target | RelayView) = H(V_target)</td>
+                </tr>
+            
+                <tr data-search="relay_privacy_logm lemma relay_privacy_logm {a : fintype} (view : {rv p -&gt; a}) (v_target : {rv p -&gt; msg}) (pv_unif : `p_ v_target = fdist_uniform card_msg) (view_indep : p |= view _|_ v_target) : `h(v_target | view) = log (m%:r : r) /\ `h(v_target | view) &gt; 0. concrete privacy: h(v_target | view) = log(m) &gt; 0">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_privacy_logm.html" class="lemma-name">relay_privacy_logm</a>
+                    </td>
+                    <td class="section-name">relay_security_n</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma relay_privacy_logm {A : finType} (View : {RV P -&gt; A}) (V_target : {RV P -&gt; msg}) (pV_unif : `p_ V_target = fdist_uniform card_msg) (View_indep : P |= View _|_ V_target) : `H(V_target | View) = log (m%:R : R) /\ `H(V_target | View) &gt; 0.</code></td>
+                    <td class="meaning">Concrete privacy: H(V_target | View) = log(m) &gt; 0</td>
+                </tr>
+            
+                <tr data-search="dotp_n_e1 lemma dotp_n_e1 (v : {ffun &#39;i_n_relay.+1 -&gt; msg}) : dotp_n constus_n v = v ord0. e_1 . v = v_1: the first basis vector extracts the first component">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dotp_n_e1.html" class="lemma-name">dotp_n_e1</a>
+                    </td>
+                    <td class="section-name">malicious_n</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma dotp_n_e1 (v : {ffun &#39;I_n_relay.+1 -&gt; msg}) : dotp_n ConstUS_n v = v ord0.</code></td>
+                    <td class="meaning">e_1 . v = v_1: the first basis vector extracts the first component</td>
+                </tr>
+            
+                <tr data-search="constus_n_discloses_v1 lemma constus_n_discloses_v1 (us vs : {rv p -&gt; {ffun &#39;i_n_relay.+1 -&gt; msg}}) : us = (fun _ =&gt; constus_n) -&gt; dotp_n_rv us vs = (fun t =&gt; vs t ord0). if alice sets us = e_1, she can extract v_1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ConstUS_n_discloses_V1.html" class="lemma-name">ConstUS_n_discloses_V1</a>
+                    </td>
+                    <td class="section-name">malicious_n</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma ConstUS_n_discloses_V1 (US VS : {RV P -&gt; {ffun &#39;I_n_relay.+1 -&gt; msg}}) : US = (fun _ =&gt; ConstUS_n) -&gt; Dotp_n_rv US VS = (fun t =&gt; VS t ord0).</code></td>
+                    <td class="meaning">If Alice sets US = e_1, she can extract V_1</td>
                 </tr>
             
             </tbody>
@@ -2037,7 +2513,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/entropy_fiber/entropy_fiber_zpq.v</span>
         </div>
-        <span class="file-count">3 helper</span>
+        <span class="file-count">7 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2085,6 +2561,50 @@
                     <td class="meaning">* Marginal probability over fiber. Pr[CondRV = cond] = |fiber(cond)| × (m²)^-1 × Pr[InputRV = proj_input(cond)] This expresses the marginal probability of the conditioning event as a product of: 1. The fiber cardinality (number of solutions) 2. The uniform probability (m²)^-1 for each solution 3. The probability of the input values</td>
                 </tr>
             
+                <tr data-search="gen_joint_factors_by_indee lemma gen_joint_factors_by_indee (input : inputt) (var : vart) : `pr[[%varrv, inputrv] = (var, input)] = `pr[varrv = var] * `pr[inputrv = input]. joint probability factors by independence">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/gen_joint_factors_by_indeE.html" class="lemma-name">gen_joint_factors_by_indeE</a>
+                    </td>
+                    <td class="section-name">fiber_entropy_gen</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma gen_joint_factors_by_indeE (input : InputT) (var : VarT) : `Pr[[%VarRV, InputRV] = (var, input)] = `Pr[VarRV = var] * `Pr[InputRV = input].</code></td>
+                    <td class="meaning">Joint probability factors by independence</td>
+                </tr>
+            
+                <tr data-search="gen_uniform_varrv_probe lemma gen_uniform_varrv_probe (var : vart) : `pr[varrv = var] = k%:r^-1 :&gt; r. uniform varrv gives probability k^-1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/gen_uniform_VarRV_probE.html" class="lemma-name">gen_uniform_VarRV_probE</a>
+                    </td>
+                    <td class="section-name">fiber_entropy_gen</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma gen_uniform_VarRV_probE (var : VarT) : `Pr[VarRV = var] = K%:R^-1 :&gt; R.</code></td>
+                    <td class="meaning">Uniform VarRV gives probability K^-1</td>
+                </tr>
+            
+                <tr data-search="gen_pr_cond_fiber_margine lemma gen_pr_cond_fiber_margine (cond : condt) : `pr[inputrv = proj_input cond] != 0 -&gt; `pr[condrv = cond] = #|fiber cond|%:r * k%:r^-1 * `pr[inputrv = proj_input cond]. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/gen_Pr_cond_fiber_marginE.html" class="lemma-name">gen_Pr_cond_fiber_marginE</a>
+                    </td>
+                    <td class="section-name">gen_marginal_probability</td>
+                    <td class="proof-lines">34</td>
+                    <td><code class="signature">Lemma gen_Pr_cond_fiber_marginE (cond : CondT) : `Pr[InputRV = proj_input cond] != 0 -&gt; `Pr[CondRV = cond] = #|fiber cond|%:R * K%:R^-1 * `Pr[InputRV = proj_input cond].</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="gen_cpr_uniform_fiber lemma gen_cpr_uniform_fiber (cond : condt) (v : vart) : `pr[condrv = cond] != 0 -&gt; v \in fiber cond -&gt; `pr[varrv = v | condrv = cond] = #|fiber cond|%:r^-1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/gen_cPr_uniform_fiber.html" class="lemma-name">gen_cPr_uniform_fiber</a>
+                    </td>
+                    <td class="section-name">gen_conditional_probability</td>
+                    <td class="proof-lines">36</td>
+                    <td><code class="signature">Lemma gen_cPr_uniform_fiber (cond : CondT) (v : VarT) : `Pr[CondRV = cond] != 0 -&gt; v \in fiber cond -&gt; `Pr[VarRV = v | CondRV = cond] = #|fiber cond|%:R^-1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -2098,7 +2618,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/entropy_fiber/linear_fiber_zpq.v</span>
         </div>
-        <span class="file-count">25 helper</span>
+        <span class="file-count">33 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2388,6 +2908,94 @@
                     <td class="meaning"></td>
                 </tr>
             
+                <tr data-search="lt_minpq_coprime lemma lt_minpq_coprime (a : msg) : (0 &lt; val a)%n -&gt; (val a &lt; minn p q)%n -&gt; coprime (val a) m. 0 &lt; u &lt; min(p,q) implies u is coprime to m = p*q">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/lt_minpq_coprime.html" class="lemma-name">lt_minpq_coprime</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma lt_minpq_coprime (a : msg) : (0 &lt; val a)%N -&gt; (val a &lt; minn p q)%N -&gt; coprime (val a) m.</code></td>
+                    <td class="meaning">0 &lt; u &lt; min(p,q) implies u is coprime to m = p*q</td>
+                </tr>
+            
+                <tr data-search="coprime_unitzm lemma coprime_unitzm (a : msg) : coprime (val a) m -&gt; a \is a gring.unit. coprime to m implies unit in z_m">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/coprime_unitZm.html" class="lemma-name">coprime_unitZm</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma coprime_unitZm (a : msg) : coprime (val a) m -&gt; a \is a GRing.unit.</code></td>
+                    <td class="meaning">coprime to m implies unit in Z_m</td>
+                </tr>
+            
+                <tr data-search="widen_lift_ord_max lemma widen_lift_ord_max (i : &#39;i_n) : widen_ord (leqnsn n) i = lift ord_max i :&gt; &#39;i_n.+1. reindex sum: split at ord_max and reindex rest via lift">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/widen_lift_ord_max.html" class="lemma-name">widen_lift_ord_max</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma widen_lift_ord_max (i : &#39;I_n) : widen_ord (leqnSn n) i = lift ord_max i :&gt; &#39;I_n.+1.</code></td>
+                    <td class="meaning">Reindex sum: split at ord_max and reindex rest via lift</td>
+                </tr>
+            
+                <tr data-search="sum_split_last lemma sum_split_last (f : &#39;i_n.+1 -&gt; msg) : \sum_(i &lt; n.+1) f i = f ord_max + \sum_(j &lt; n) f (lift ord_max j). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sum_split_last.html" class="lemma-name">sum_split_last</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma sum_split_last (F : &#39;I_n.+1 -&gt; msg) : \sum_(i &lt; n.+1) F i = F ord_max + \sum_(j &lt; n) F (lift ord_max j).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="extend_in_fiber lemma extend_in_fiber (u : &#39;i_n.+1 -&gt; msg) (target : msg) (w : {ffun &#39;i_n -&gt; msg}) : u ord_max \is a gring.unit -&gt; extend_to_fiber u target w \in linear_fiber_nd u target. extend_to_fiber produces a fiber element">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/extend_in_fiber.html" class="lemma-name">extend_in_fiber</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma extend_in_fiber (u : &#39;I_n.+1 -&gt; msg) (target : msg) (w : {ffun &#39;I_n -&gt; msg}) : u ord_max \is a GRing.unit -&gt; extend_to_fiber u target w \in linear_fiber_nd u target.</code></td>
+                    <td class="meaning">extend_to_fiber produces a fiber element</td>
+                </tr>
+            
+                <tr data-search="project_extend_id lemma project_extend_id (u : &#39;i_n.+1 -&gt; msg) (target : msg) (w : {ffun &#39;i_n -&gt; msg}) : project_fiber (extend_to_fiber u target w) = w. project then extend is identity">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/project_extend_id.html" class="lemma-name">project_extend_id</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma project_extend_id (u : &#39;I_n.+1 -&gt; msg) (target : msg) (w : {ffun &#39;I_n -&gt; msg}) : project_fiber (extend_to_fiber u target w) = w.</code></td>
+                    <td class="meaning">project then extend is identity</td>
+                </tr>
+            
+                <tr data-search="extend_project_id lemma extend_project_id (u : &#39;i_n.+1 -&gt; msg) (target : msg) (v : {ffun &#39;i_n.+1 -&gt; msg}) : u ord_max \is a gring.unit -&gt; v \in linear_fiber_nd u target -&gt; extend_to_fiber u target (project_fiber v) = v. extend then project is identity for fiber elements">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/extend_project_id.html" class="lemma-name">extend_project_id</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">20</td>
+                    <td><code class="signature">Lemma extend_project_id (u : &#39;I_n.+1 -&gt; msg) (target : msg) (v : {ffun &#39;I_n.+1 -&gt; msg}) : u ord_max \is a GRing.unit -&gt; v \in linear_fiber_nd u target -&gt; extend_to_fiber u target (project_fiber v) = v.</code></td>
+                    <td class="meaning">extend then project is identity for fiber elements</td>
+                </tr>
+            
+                <tr data-search="extend_fiber_inj lemma extend_fiber_inj (u : &#39;i_n.+1 -&gt; msg) (target : msg) : injective (extend_to_fiber u target). extend_to_fiber is injective">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/extend_fiber_inj.html" class="lemma-name">extend_fiber_inj</a>
+                    </td>
+                    <td class="section-name">fiber_nd</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma extend_fiber_inj (u : &#39;I_n.+1 -&gt; msg) (target : msg) : injective (extend_to_fiber u target).</code></td>
+                    <td class="meaning">extend_to_fiber is injective</td>
+                </tr>
+            
             </tbody>
         </table>
     </div>
@@ -2554,7 +3162,7 @@
                     <td class="meaning">Zero entropy characterizes point mass distributions: H(Z) = 0 iff there exists z with Pr[Z = z] = 1. This is the deterministic case - no uncertainty means one certain outcome.</td>
                 </tr>
             
-                <tr data-search="zero_entropy_eq_point_mass lemma zero_entropy_eq_point_mass (v: fintype) (z : {rv p -&gt; v}) : `h `p_z = 0 &lt;-&gt; exists! z, `pr[z = z] = 1. todo: should be renamed to entropy_eq0p">
+                <tr data-search="zero_entropy_eq_point_mass lemma zero_entropy_eq_point_mass (v: fintype) (z : {rv p -&gt; v}) : `h `p_z = 0 &lt;-&gt; exists! z, `pr[z = z] = 1. unique point mass characterization: h(z) = 0 iff there exists unique z with pr[z = z] = 1. strengthens zero_entropy_eq_point_mass1 with uniqueness.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/zero_entropy_eq_point_mass.html" class="lemma-name">zero_entropy_eq_point_mass</a>
@@ -2562,7 +3170,7 @@
                     <td class="section-name">zero_entropy_eq_point_mass</td>
                     <td class="proof-lines">20</td>
                     <td><code class="signature">Lemma zero_entropy_eq_point_mass (V: finType) (Z : {RV P -&gt; V}) : `H `p_Z = 0 &lt;-&gt; exists! z, `Pr[Z = z] = 1.</code></td>
-                    <td class="meaning">TODO: Should be renamed to entropy_eq0P</td>
+                    <td class="meaning">Unique point mass characterization: H(Z) = 0 iff there exists UNIQUE z with Pr[Z = z] = 1. Strengthens zero_entropy_eq_point_mass1 with uniqueness.</td>
                 </tr>
             
                 <tr data-search="centropy_term_deterministic lemma centropy_term_deterministic (v w t : fintype) (p : r.-fdist t) (y : {rv p -&gt; v}) (z : {rv p -&gt; w}) (y : v) : `pr[y = y] != 0 -&gt; (exists z, `pr[z = z | y = y] = 1) -&gt; `p_y y * centropy1 `p_[% z, y] y = 0. helper: if the conditional distribution pr[z | y = y] is deterministic (i.e., there exists z with pr[z = z | y = y] = 1), then the corresponding term in the conditional entropy sum is zero.">
@@ -3962,7 +4570,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-02-27 | 254 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f0e8568d23f9f7d2e4a6eb1a326f2f414668213c" target="_blank" rel="noopener" style="color: var(--accent);">f0e8568</a></p>
+        <p>Generated: 2026-03-03 | 308 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/744bea39286692c61ac266f65062e2f9da9bdaec" target="_blank" rel="noopener" style="color: var(--accent);">744bea3</a></p>
     </footer>
     
     <script>
