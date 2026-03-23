@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">308</div>
+        <div class="value">313</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">262</div>
+        <div class="value">267</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">10,196</div>
+        <div class="value">10,375</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/35c11849da8c582096d1fed43388782f79252669" target="_blank" rel="noopener">35c1184</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/4daf2da5951c9aee48b6d0fc58533e0db6bed67f" target="_blank" rel="noopener">4daf2da</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -1061,7 +1061,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (262 total)
+    Supporting lemmas and utilities (267 total)
 </p>
 
 <div id="helpers-section">
@@ -1394,7 +1394,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">37 helper</span>
+        <span class="file-count">42 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1814,6 +1814,61 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma dsdp_n5_no_fail traces : all_nonfail (interp [&gt; dsdp_n5_saprocs] dsdp_n5_procs traces).1.</code></td>
                     <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="size_dsdp_n_procs lemma size_dsdp_n_procs relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay : size (@dsdp_n_procs ahe ek n_relay relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay) = (size relays).+1. * ** size of dsdp_n_procs">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/size_dsdp_n_procs.html" class="lemma-name">size_dsdp_n_procs</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma size_dsdp_n_procs relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay : size (@dsdp_n_procs AHE ek n_relay relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay) = (size relays).+1.</code></td>
+                    <td class="meaning">* ** Size of dsdp_n_procs</td>
+                </tr>
+            
+                <tr data-search="palice_n_erase lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n ahe ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pinit (priv_key dk&#39;, d v0&#39;) (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays)))). alice&#39;s erased program decomposes via erase_sproc_iter">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/palice_n_erase.html" class="lemma-name">palice_n_erase</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">19</td>
+                    <td><code class="signature">Lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n AHE ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pInit (priv_key dk&#39;, d v0&#39;) (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays)))).</code></td>
+                    <td class="meaning">Alice&#39;s erased program decomposes via erase_sproc_iter</td>
+                </tr>
+            
+                <tr data-search="dparty_first_erase lemma dparty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_first ahe ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precv alice_idx (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; match dec dk&#39; enc0 with | some m0 =&gt; precv alice_idx (fun d1 : data =&gt; match std_from_enc (ahe:=ahe) d1 with | some enc1 =&gt; psend downstream (e (emul enc1 (enc (ek downstream) m0 r2&#39;))) finish | none =&gt; fail end) | none =&gt; fail end | none =&gt; fail first relay: init dk; init v; send e(v) to alice; recv dec from alice; recv enc from alice; send product to downstream">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/DParty_first_erase.html" class="lemma-name">DParty_first_erase</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma DParty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_first AHE ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecv alice_idx (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; match dec dk&#39; enc0 with | Some m0 =&gt; pRecv alice_idx (fun d1 : data =&gt; match std_from_enc (AHE:=AHE) d1 with | Some enc1 =&gt; pSend downstream (e (Emul enc1 (enc (ek downstream) m0 r2&#39;))) Finish | None =&gt; Fail end) | None =&gt; Fail end | None =&gt; Fail</code></td>
+                    <td class="meaning">First relay: Init dk; Init v; Send E(v) to Alice; Recv dec from Alice; Recv enc from Alice; Send product to downstream</td>
+                </tr>
+            
+                <tr data-search="dparty_last_erase lemma dparty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_last ahe ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precv upstream (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; match dec dk&#39; enc0 with | some m0 =&gt; psend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) finish | none =&gt; fail end | none =&gt; fail end)))). last relay: init dk; init v; send e(v) to alice; recv dec from upstream; send re-encrypted to alice">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/DParty_last_erase.html" class="lemma-name">DParty_last_erase</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma DParty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_last AHE ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecv upstream (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; match dec dk&#39; enc0 with | Some m0 =&gt; pSend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) Finish | None =&gt; Fail end | None =&gt; Fail end)))).</code></td>
+                    <td class="meaning">Last relay: Init dk; Init v; Send E(v) to Alice; Recv dec from upstream; Send re-encrypted to Alice</td>
+                </tr>
+            
+                <tr data-search="dparty_intermediate_erase lemma dparty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_intermediate ahe ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_src (e (enc (ek self) v&#39; r1&#39;)) (precv alice_src (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; precv upstream (fun d1 : data =&gt; match std_from_enc (ahe:=ahe) d1 with | some enc1 =&gt; match dec dk&#39; enc1 with | some m0 =&gt; psend downstream (e (emul enc0 (enc (ek downstream) m0 r2&#39;))) finish | none =&gt; fail end | none =&gt; fail end) | none =&gt; fail intermediate relay: init dk; init v; send e(v) to alice; recv enc from alice; recv dec from upstream; send product to downstream">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/DParty_intermediate_erase.html" class="lemma-name">DParty_intermediate_erase</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma DParty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_intermediate AHE ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_src (e (enc (ek self) v&#39; r1&#39;)) (pRecv alice_src (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; pRecv upstream (fun d1 : data =&gt; match std_from_enc (AHE:=AHE) d1 with | Some enc1 =&gt; match dec dk&#39; enc1 with | Some m0 =&gt; pSend downstream (e (Emul enc0 (enc (ek downstream) m0 r2&#39;))) Finish | None =&gt; Fail end | None =&gt; Fail end) | None =&gt; Fail</code></td>
+                    <td class="meaning">Intermediate relay: Init dk; Init v; Send E(v) to Alice; Recv enc from Alice; Recv dec from upstream; Send product to downstream</td>
                 </tr>
             
             </tbody>
@@ -4570,7 +4625,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-03-23 | 308 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/35c11849da8c582096d1fed43388782f79252669" target="_blank" rel="noopener" style="color: var(--accent);">35c1184</a></p>
+        <p>Generated: 2026-03-23 | 313 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/4daf2da5951c9aee48b6d0fc58533e0db6bed67f" target="_blank" rel="noopener" style="color: var(--accent);">4daf2da</a></p>
     </footer>
     
     <script>
