@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">316</div>
+        <div class="value">322</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">269</div>
+        <div class="value">275</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">10,504</div>
+        <div class="value">10,609</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/9d3158aaf4ed1eb71029d1da50517fbdc5239fac" target="_blank" rel="noopener">9d3158a</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bec7c869416f13ba1117c00452dbe63fc695cd74" target="_blank" rel="noopener">bec7c86</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -297,7 +297,7 @@
                         <a href="lemmas/dsdp_3party_rsteps.html" class="lemma-name">dsdp_3party_rsteps</a>
                     </td>
                     <td class="section-name">dsdp_3party_rsteps</td>
-                    <td class="proof-lines">2</td>
+                    <td class="proof-lines">6</td>
                     <td><code class="signature">Theorem dsdp_3party_rsteps : exists final traces, rsteps procs3 final traces /\ all_terminated (tval final) /\ all_nonfail (tval final).</code></td>
                     <td class="meaning">Main theorem: the 3-party protocol admits an rsteps reduction</td>
                 </tr>
@@ -1074,7 +1074,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (269 total)
+    Supporting lemmas and utilities (275 total)
 </p>
 
 <div id="helpers-section">
@@ -1407,7 +1407,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">44 helper</span>
+        <span class="file-count">50 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1882,6 +1882,72 @@
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Lemma DParty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_intermediate AHE ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_src (e (enc (ek self) v&#39; r1&#39;)) (pRecv alice_src (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; pRecv upstream (fun d1 : data =&gt; match std_from_enc (AHE:=AHE) d1 with | Some enc1 =&gt; match dec dk&#39; enc1 with | Some m0 =&gt; pSend downstream (e (Emul enc0 (enc (ek downstream) m0 r2&#39;))) Finish | None =&gt; Fail end | None =&gt; Fail end) | None =&gt; Fail</code></td>
                     <td class="meaning">Intermediate relay: Init dk; Init v; Send E(v) to Alice; Recv enc from Alice; Recv dec from upstream; Send product to downstream</td>
+                </tr>
+            
+                <tr data-search="size_interp1 lemma size_interp1 ps h : size (interp1 ps h) = size ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/size_interp1.html" class="lemma-name">size_interp1</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma size_interp1 ps h : size (interp1 ps h) = size ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="step_proc_trace_indep lemma step_proc_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).1.1 = (smc_interpreter.step ps tr2 i).1.1. the process component of step is independent of the trace argument.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_proc_trace_indep.html" class="lemma-name">step_proc_trace_indep</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma step_proc_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).1.1 = (smc_interpreter.step ps tr2 i).1.1.</code></td>
+                    <td class="meaning">The process component of step is independent of the trace argument.</td>
+                </tr>
+            
+                <tr data-search="step_progress_trace_indep lemma step_progress_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).2 = (smc_interpreter.step ps tr2 i).2. the progress flag of step is independent of the trace argument.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_progress_trace_indep.html" class="lemma-name">step_progress_trace_indep</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma step_progress_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).2 = (smc_interpreter.step ps tr2 i).2.</code></td>
+                    <td class="meaning">The progress flag of step is independent of the trace argument.</td>
+                </tr>
+            
+                <tr data-search="interp1e lemma interp1e h ps traces : size traces = size ps -&gt; interp1 ps h = (interp h ps traces).1. interp1 computes the same processes as interp">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp1E.html" class="lemma-name">interp1E</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma interp1E h ps traces : size traces = size ps -&gt; interp1 ps h = (interp h ps traces).1.</code></td>
+                    <td class="meaning">interp1 computes the same processes as interp</td>
+                </tr>
+            
+                <tr data-search="step_iota_enum lemma step_iota_enum n (ps : seq (proc data)) : [seq smc_interpreter.step ps nil i | i &lt;- iota 0 n] = [seq smc_interpreter.step ps nil (val i) | i &lt;- enum &#39;i_n]. step_sound gives rsteps using tuples; we need to connect that to the seq-level interp1 which uses iota. these two lemmas bridge the iota/enum gap.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_iota_enum.html" class="lemma-name">step_iota_enum</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma step_iota_enum n (ps : seq (proc data)) : [seq smc_interpreter.step ps nil i | i &lt;- iota 0 n] = [seq smc_interpreter.step ps nil (val i) | i &lt;- enum &#39;I_n].</code></td>
+                    <td class="meaning">step_sound gives rsteps using tuples; we need to connect that to the seq-level interp1 which uses iota. These two lemmas bridge the iota/enum gap.</td>
+                </tr>
+            
+                <tr data-search="interp_sound lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp1 (tval ps) h. interpreter soundness: h rounds of interp produce an rsteps proof">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_sound.html" class="lemma-name">interp_sound</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp1 (tval ps) h.</code></td>
+                    <td class="meaning">Interpreter soundness: h rounds of interp produce an rsteps proof</td>
                 </tr>
             
                 <tr data-search="dsdp_3party_terminates lemma dsdp_3party_terminates traces : all_terminated (interp 27 procs traces).1. the protocol terminates: we can check this via the interpreter">
@@ -4660,7 +4726,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-03-23 | 316 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/9d3158aaf4ed1eb71029d1da50517fbdc5239fac" target="_blank" rel="noopener" style="color: var(--accent);">9d3158a</a></p>
+        <p>Generated: 2026-03-27 | 322 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bec7c869416f13ba1117c00452dbe63fc695cd74" target="_blank" rel="noopener" style="color: var(--accent);">bec7c86</a></p>
     </footer>
     
     <script>
