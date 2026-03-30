@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">322</div>
+        <div class="value">397</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">47</div>
+        <div class="value">49</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">275</div>
+        <div class="value">348</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">22</div>
+        <div class="value">24</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">10,609</div>
+        <div class="value">13,022</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/bec7c869416f13ba1117c00452dbe63fc695cd74" target="_blank" rel="noopener">bec7c86</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/767f161988d9e392fd8b41d3634922a31ec27e07" target="_blank" rel="noopener">767f161</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (47 total)
+    Theorems and key lemmas (49 total)
 </p>
 
 
@@ -354,6 +354,88 @@
                     <td class="proof-lines">4</td>
                     <td><code class="signature">Theorem dsdp_computes_dot_product_n : alice_result_n = \sum_(i &lt; n_relay.+2) u i * v i.</code></td>
                     <td class="meaning">N-party correctness: Alice computes the dot product</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_progress.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_progress.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_interp_terminates theorem dsdp_interp_terminates h : (h &gt;= [&gt; saprocs])%n -&gt; all_terminated (interp_comp data procs h). ">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_interp_terminates.html" class="lemma-name">dsdp_interp_terminates</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Theorem dsdp_interp_terminates h : (h &gt;= [&gt; saprocs])%N -&gt; all_terminated (interp_comp data procs h).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_rsteps.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_rsteps.v</span>
+        </div>
+        <span class="file-count">1 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="dsdp_n_rsteps theorem dsdp_n_rsteps : exists (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ all_terminated (tval final) /\ all_nonfail (tval final). n-party rsteps with real traces: the protocol admits a valid multi-step reduction sequence where each party&#39;s trace contains the actual communicated data (init values, ciphertexts, return values). proof strategy: interp_sound provides rsteps + traces for any fuel h, with process states matching interp_comp. no-fail and termination are derived from the proved theorems above.">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_n_rsteps.html" class="lemma-name">dsdp_n_rsteps</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps_general</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Theorem dsdp_n_rsteps : exists (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ all_terminated (tval final) /\ all_nonfail (tval final).</code></td>
+                    <td class="meaning">N-party rsteps with real traces: the protocol admits a valid multi-step reduction sequence where each party&#39;s trace contains the actual communicated data (init values, ciphertexts, return values). Proof strategy: interp_sound provides rsteps + traces for any fuel h, with process states matching interp_comp. No-fail and termination are derived from the proved theorems above.</td>
                 </tr>
             
             </tbody>
@@ -1074,7 +1156,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (275 total)
+    Supporting lemmas and utilities (348 total)
 </p>
 
 <div id="helpers-section">
@@ -2037,6 +2119,839 @@
         </table>
     </div>
 </div>
+
+
+
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_progress.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_progress.v</span>
+        </div>
+        <span class="file-count">73 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="quiescent_progress_terminated lemma quiescent_progress_terminated (ps : seq (proc data)) : ~~ has_progress data ps -&gt; (~~ all_terminated ps -&gt; has_progress data ps) -&gt; all_terminated ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/quiescent_progress_terminated.html" class="lemma-name">quiescent_progress_terminated</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma quiescent_progress_terminated (ps : seq (proc data)) : ~~ has_progress data ps -&gt; (~~ all_terminated ps -&gt; has_progress data ps) -&gt; all_terminated ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="size_interp_comp_gen lemma size_interp_comp_gen (ps : seq (proc data)) h : size (interp_comp data ps h) = size ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/size_interp_comp_gen.html" class="lemma-name">size_interp_comp_gen</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma size_interp_comp_gen (ps : seq (proc data)) h : size (interp_comp data ps h) = size ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="interp_comp_quiescent lemma interp_comp_quiescent (dtype : eqtype) h (aps : seq (aproc dtype data)) : (h &gt;= [&gt; aps])%n -&gt; ~~ has_progress data (interp_comp data (erase_aprocs aps) h). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_quiescent.html" class="lemma-name">interp_comp_quiescent</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma interp_comp_quiescent (dtype : eqType) h (aps : seq (aproc dtype data)) : (h &gt;= [&gt; aps])%N -&gt; ~~ has_progress data (interp_comp data (erase_aprocs aps) h).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="step_i_has_progress lemma step_i_has_progress (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%n -&gt; (smc_interpreter.step ps [::] i).2 = true -&gt; has_progress data ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_i_has_progress.html" class="lemma-name">step_i_has_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma step_i_has_progress (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%N -&gt; (smc_interpreter.step ps [::] i).2 = true -&gt; has_progress data ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="has_init_progress lemma has_init_progress (ps : seq (proc data)) (i : nat) d k : (i &lt; size ps)%n -&gt; nth (default_proc data) ps i = init d k -&gt; has_progress data ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_init_progress.html" class="lemma-name">has_init_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma has_init_progress (ps : seq (proc data)) (i : nat) d k : (i &lt; size ps)%N -&gt; nth (default_proc data) ps i = Init d k -&gt; has_progress data ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="has_ret_progress lemma has_ret_progress (ps : seq (proc data)) (i : nat) d : (i &lt; size ps)%n -&gt; nth (default_proc data) ps i = ret d -&gt; has_progress data ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_ret_progress.html" class="lemma-name">has_ret_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma has_ret_progress (ps : seq (proc data)) (i : nat) d : (i &lt; size ps)%N -&gt; nth (default_proc data) ps i = Ret d -&gt; has_progress data ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="has_comm_progress lemma has_comm_progress (ps : seq (proc data)) (i j : nat) (v : data) (k : proc data) (f : data -&gt; proc data) : (i &lt; size ps)%n -&gt; nth (default_proc data) ps i = send j v k -&gt; nth (default_proc data) ps j = recv i f -&gt; has_progress data ps. if send(j,...) at i and recv(i,...) at j, has_progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_comm_progress.html" class="lemma-name">has_comm_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma has_comm_progress (ps : seq (proc data)) (i j : nat) (v : data) (k : proc data) (f : data -&gt; proc data) : (i &lt; size ps)%N -&gt; nth (default_proc data) ps i = Send j v k -&gt; nth (default_proc data) ps j = Recv i f -&gt; has_progress data ps.</code></td>
+                    <td class="meaning">If Send(j,...) at i and Recv(i,...) at j, has_progress</td>
+                </tr>
+            
+                <tr data-search="interp_comp_fixed_point lemma interp_comp_fixed_point (ps : seq (proc data)) k : ~~ has_progress data ps -&gt; interp_comp data ps k = ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_fixed_point.html" class="lemma-name">interp_comp_fixed_point</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma interp_comp_fixed_point (ps : seq (proc data)) k : ~~ has_progress data ps -&gt; interp_comp data ps k = ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="interp_comp_add lemma interp_comp_add (ps : seq (proc data)) h k : interp_comp data ps (h + k) = interp_comp data (interp_comp data ps h) k. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_add.html" class="lemma-name">interp_comp_add</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma interp_comp_add (ps : seq (proc data)) h k : interp_comp data ps (h + k) = interp_comp data (interp_comp data ps h) k.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="size_one_step lemma size_one_step (ps : seq (proc data)) : size (one_step_procs ps) = size ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/size_one_step.html" class="lemma-name">size_one_step</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma size_one_step (ps : seq (proc data)) : size (one_step_procs ps) = size ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="nth_one_step lemma nth_one_step (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%n -&gt; nth (default_proc data) (one_step_procs ps) i = (smc_interpreter.step ps [::] i).1.1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/nth_one_step.html" class="lemma-name">nth_one_step</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma nth_one_step (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%N -&gt; nth (default_proc data) (one_step_procs ps) i = (smc_interpreter.step ps [::] i).1.1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="step_init lemma step_init (ps : seq (proc data)) (i : nat) d k : nth (default_proc data) ps i = init d k -&gt; (smc_interpreter.step ps [::] i).1.1 = k /\ (smc_interpreter.step ps [::] i).2 = true. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_init.html" class="lemma-name">step_init</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma step_init (ps : seq (proc data)) (i : nat) d k : nth (default_proc data) ps i = Init d k -&gt; (smc_interpreter.step ps [::] i).1.1 = k /\ (smc_interpreter.step ps [::] i).2 = true.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="nested_init_progress lemma nested_init_progress (ps : seq (proc data)) (i : nat) d d&#39; k : (i &lt; size ps)%n -&gt; nth (default_proc data) ps i = init d (init d&#39; k) -&gt; has_progress data (one_step_procs ps). if process i has init(d, init(d&#39;, k)), then after stepping, process i is init(d&#39;, k) → still init → has_progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/nested_init_progress.html" class="lemma-name">nested_init_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma nested_init_progress (ps : seq (proc data)) (i : nat) d d&#39; k : (i &lt; size ps)%N -&gt; nth (default_proc data) ps i = Init d (Init d&#39; k) -&gt; has_progress data (one_step_procs ps).</code></td>
+                    <td class="meaning">If process i has Init(d, Init(d&#39;, k)), then after stepping, process i is Init(d&#39;, k) → still Init → has_progress</td>
+                </tr>
+            
+                <tr data-search="interp_comp_unfold_eq lemma interp_comp_unfold_eq ps h : interp_comp data ps h.+1 = if has_progress data ps then interp_comp data (one_step_procs ps) h else ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_unfold_eq.html" class="lemma-name">interp_comp_unfold_eq</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma interp_comp_unfold_eq ps h : interp_comp data ps h.+1 = if has_progress data ps then interp_comp data (one_step_procs ps) h else ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="interp_comp_inv_progress lemma interp_comp_inv_progress ps h (inv : seq (proc data) -&gt; prop) : inv ps -&gt; (all_terminated ps \/ has_progress data ps) -&gt; (forall qs, inv qs -&gt; has_progress data qs -&gt; inv (one_step_procs qs) /\ (all_terminated (one_step_procs qs) \/ has_progress data (one_step_procs qs))) -&gt; all_terminated (interp_comp data ps h) \/ has_progress data (interp_comp data ps h). general induction with an invariant: if the initial state satisfies inv and has progress or is terminated, and stepping preserves both inv and progress-or-terminated, then interp_comp ps h satisfies it.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_inv_progress.html" class="lemma-name">interp_comp_inv_progress</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma interp_comp_inv_progress ps h (Inv : seq (proc data) -&gt; Prop) : Inv ps -&gt; (all_terminated ps \/ has_progress data ps) -&gt; (forall qs, Inv qs -&gt; has_progress data qs -&gt; Inv (one_step_procs qs) /\ (all_terminated (one_step_procs qs) \/ has_progress data (one_step_procs qs))) -&gt; all_terminated (interp_comp data ps h) \/ has_progress data (interp_comp data ps h).</code></td>
+                    <td class="meaning">General induction with an invariant: if the initial state satisfies Inv and has progress or is terminated, and stepping preserves both Inv and progress-or-terminated, then interp_comp ps h satisfies it.</td>
+                </tr>
+            
+                <tr data-search="has_progress_has_witness lemma has_progress_has_witness (ps : seq (proc data)) : has_progress data ps -&gt; (exists i d k&#39;, (i &lt; size ps)%n /\ nth (default_proc data) ps i = init d k&#39;) \/ (exists i d, (i &lt; size ps)%n /\ nth (default_proc data) ps i = ret d) \/ (exists i j v k&#39; f, (i &lt; size ps)%n /\ (j &lt; size ps)%n /\ nth (default_proc data) ps i = send j v k&#39; /\ nth (default_proc data) ps j = recv i f). extract a concrete witness from has_progress: if some process can step, it&#39;s init, ret, or has a matched send/recv partner.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_progress_has_witness.html" class="lemma-name">has_progress_has_witness</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">28</td>
+                    <td><code class="signature">Lemma has_progress_has_witness (ps : seq (proc data)) : has_progress data ps -&gt; (exists i d k&#39;, (i &lt; size ps)%N /\ nth (default_proc data) ps i = Init d k&#39;) \/ (exists i d, (i &lt; size ps)%N /\ nth (default_proc data) ps i = Ret d) \/ (exists i j v k&#39; f, (i &lt; size ps)%N /\ (j &lt; size ps)%N /\ nth (default_proc data) ps i = Send j v k&#39; /\ nth (default_proc data) ps j = Recv i f).</code></td>
+                    <td class="meaning">Extract a concrete witness from has_progress: if some process can step, it&#39;s Init, Ret, or has a matched Send/Recv partner.</td>
+                </tr>
+            
+                <tr data-search="step_finish_nop lemma step_finish_nop (ps : seq (proc data)) (i : nat) : nth (default_proc data) ps i = finish -&gt; (smc_interpreter.step ps [::] i).1.1 = finish. l4: finish stays">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_finish_nop.html" class="lemma-name">step_finish_nop</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma step_finish_nop (ps : seq (proc data)) (i : nat) : nth (default_proc data) ps i = Finish -&gt; (smc_interpreter.step ps [::] i).1.1 = Finish.</code></td>
+                    <td class="meaning">L4: Finish stays</td>
+                </tr>
+            
+                <tr data-search="step_send_recv_match lemma step_send_recv_match (ps : seq (proc data)) (i j : nat) v k f : nth (default_proc data) ps i = send j v k -&gt; nth (default_proc data) ps j = recv i f -&gt; (smc_interpreter.step ps [::] i).1.1 = k /\ (smc_interpreter.step ps [::] j).1.1 = f v. l3: matched send/recv both advance">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_send_recv_match.html" class="lemma-name">step_send_recv_match</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma step_send_recv_match (ps : seq (proc data)) (i j : nat) v k f : nth (default_proc data) ps i = Send j v k -&gt; nth (default_proc data) ps j = Recv i f -&gt; (smc_interpreter.step ps [::] i).1.1 = k /\ (smc_interpreter.step ps [::] j).1.1 = f v.</code></td>
+                    <td class="meaning">L3: Matched Send/Recv both advance</td>
+                </tr>
+            
+                <tr data-search="step_send_nop lemma step_send_nop (ps : seq (proc data)) (i : nat) j v k : nth (default_proc data) ps i = send j v k -&gt; (forall f, nth (default_proc data) ps j &lt;&gt; recv i f) -&gt; (smc_interpreter.step ps [::] i).1.1 = send j v k /\ (smc_interpreter.step ps [::] i).2 = false. l1: unmatched send stays">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_send_nop.html" class="lemma-name">step_send_nop</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma step_send_nop (ps : seq (proc data)) (i : nat) j v k : nth (default_proc data) ps i = Send j v k -&gt; (forall f, nth (default_proc data) ps j &lt;&gt; Recv i f) -&gt; (smc_interpreter.step ps [::] i).1.1 = Send j v k /\ (smc_interpreter.step ps [::] i).2 = false.</code></td>
+                    <td class="meaning">L1: Unmatched Send stays</td>
+                </tr>
+            
+                <tr data-search="step_recv_nop lemma step_recv_nop (ps : seq (proc data)) (i : nat) frm f : nth (default_proc data) ps i = recv frm f -&gt; (forall v k, nth (default_proc data) ps frm &lt;&gt; send i v k) -&gt; (smc_interpreter.step ps [::] i).1.1 = recv frm f /\ (smc_interpreter.step ps [::] i).2 = false. l2: unmatched recv stays">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_recv_nop.html" class="lemma-name">step_recv_nop</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma step_recv_nop (ps : seq (proc data)) (i : nat) frm f : nth (default_proc data) ps i = Recv frm f -&gt; (forall v k, nth (default_proc data) ps frm &lt;&gt; Send i v k) -&gt; (smc_interpreter.step ps [::] i).1.1 = Recv frm f /\ (smc_interpreter.step ps [::] i).2 = false.</code></td>
+                    <td class="meaning">L2: Unmatched Recv stays</td>
+                </tr>
+            
+                <tr data-search="step_all_terminated lemma step_all_terminated (ps : seq (proc data)) : all_terminated ps -&gt; all_terminated (one_step_procs ps). helper: stepping preserves all_terminated">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_all_terminated.html" class="lemma-name">step_all_terminated</a>
+                    </td>
+                    <td class="section-name">general_progress</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma step_all_terminated (ps : seq (proc data)) : all_terminated ps -&gt; all_terminated (one_step_procs ps).</code></td>
+                    <td class="meaning">Helper: stepping preserves all_terminated</td>
+                </tr>
+            
+                <tr data-search="size_procs lemma size_procs : size procs = n_relay.+2. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/size_procs.html" class="lemma-name">size_procs</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma size_procs : size procs = n_relay.+2.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="interp_comp_all_proc_wf lemma interp_comp_all_proc_wf (ps : seq (proc data)) h : @all_proc_wf ahe ps -&gt; @all_proc_wf ahe (interp_comp data ps h). direct approach: show terminated_or_progress by induction on h, using proc_wf to handle the fail-free case.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/interp_comp_all_proc_wf.html" class="lemma-name">interp_comp_all_proc_wf</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">15</td>
+                    <td><code class="signature">Lemma interp_comp_all_proc_wf (ps : seq (proc data)) h : @all_proc_wf AHE ps -&gt; @all_proc_wf AHE (interp_comp data ps h).</code></td>
+                    <td class="meaning">Direct approach: show terminated_or_progress by induction on h, using proc_wf to handle the Fail-free case.</td>
+                </tr>
+            
+                <tr data-search="one_step_preserves_proc_wf lemma one_step_preserves_proc_wf ps : @all_proc_wf ahe ps -&gt; @all_proc_wf ahe (one_step_procs data ps). proc_wf is preserved through one_step_procs">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/one_step_preserves_proc_wf.html" class="lemma-name">one_step_preserves_proc_wf</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma one_step_preserves_proc_wf ps : @all_proc_wf AHE ps -&gt; @all_proc_wf AHE (one_step_procs data ps).</code></td>
+                    <td class="meaning">proc_wf is preserved through one_step_procs</td>
+                </tr>
+            
+                <tr data-search="dsdp_reachable_proc_wf lemma dsdp_reachable_proc_wf ps k : dsdp_reachable ps k -&gt; @all_proc_wf ahe ps. all_proc_wf for dsdp-reachable states">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_reachable_proc_wf.html" class="lemma-name">dsdp_reachable_proc_wf</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dsdp_reachable_proc_wf ps k : dsdp_reachable ps k -&gt; @all_proc_wf AHE ps.</code></td>
+                    <td class="meaning">all_proc_wf for DSDP-reachable states</td>
+                </tr>
+            
+                <tr data-search="dsdp_initial_progress lemma dsdp_initial_progress : has_progress data procs. dsdp initial state has progress (all init)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_initial_progress.html" class="lemma-name">dsdp_initial_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma dsdp_initial_progress : has_progress data procs.</code></td>
+                    <td class="meaning">DSDP initial state has progress (all Init)</td>
+                </tr>
+            
+                <tr data-search="step_procs_has_progress lemma step_procs_has_progress : has_progress data (one_step_procs data procs). helper: stepping procs (k=0) gives all inner init → progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_procs_has_progress.html" class="lemma-name">step_procs_has_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma step_procs_has_progress : has_progress data (one_step_procs data procs).</code></td>
+                    <td class="meaning">Helper: stepping procs (k=0) gives all inner Init → progress</td>
+                </tr>
+            
+                <tr data-search="procs_all_double_init lemma procs_all_double_init : forall i, (i &lt; size procs)%n -&gt; exists d d&#39; k0, nth (default_proc data) procs i = init d (init d&#39; k0). all initial processes are double init">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/procs_all_double_init.html" class="lemma-name">procs_all_double_init</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma procs_all_double_init : forall i, (i &lt; size procs)%N -&gt; exists d d&#39; k0, nth (default_proc data) procs i = Init d (Init d&#39; k0).</code></td>
+                    <td class="meaning">All initial processes are double Init</td>
+                </tr>
+            
+                <tr data-search="oops_pos1_send0 lemma oops_pos1_send0 : exists sv sk, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) 1 = send 0 sv sk. after two one_step rounds, position 1 (relay 0) is send(0,...)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/oops_pos1_send0.html" class="lemma-name">oops_pos1_send0</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Lemma oops_pos1_send0 : exists sv sk, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) 1 = Send 0 sv sk.</code></td>
+                    <td class="meaning">After two one_step rounds, position 1 (relay 0) is Send(0,...)</td>
+                </tr>
+            
+                <tr data-search="oops_pos0_recv1 lemma oops_pos0_recv1 : exists f, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) 0 = recv 1 f. after two one_step rounds, position 0 (alice) is recv(1,...)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/oops_pos0_recv1.html" class="lemma-name">oops_pos0_recv1</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">26</td>
+                    <td><code class="signature">Lemma oops_pos0_recv1 : exists f, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) 0 = Recv 1 f.</code></td>
+                    <td class="meaning">After two one_step rounds, position 0 (Alice) is Recv(1,...)</td>
+                </tr>
+            
+                <tr data-search="oops_allrelays_send0 lemma oops_allrelays_send0 (j : &#39;i_n_relay.+1) : exists sv sk, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) j.+1 = send 0 sv sk. all relays are send(0,...) after 2 steps">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/oops_allrelays_send0.html" class="lemma-name">oops_allrelays_send0</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma oops_allrelays_send0 (j : &#39;I_n_relay.+1) : exists sv sk, nth (default_proc data) (one_step_procs data (one_step_procs data procs)) j.+1 = Send 0 sv sk.</code></td>
+                    <td class="meaning">All relays are Send(0,...) after 2 steps</td>
+                </tr>
+            
+                <tr data-search="has_progress_at_step_2 lemma has_progress_at_step_2 : has_progress data (one_step_procs data (one_step_procs data procs)). at step 2, alice recv(1,...) matches relay 0 send(0,...) → has_progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_progress_at_step_2.html" class="lemma-name">has_progress_at_step_2</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma has_progress_at_step_2 : has_progress data (one_step_procs data (one_step_procs data procs)).</code></td>
+                    <td class="meaning">At step 2, Alice Recv(1,...) matches relay 0 Send(0,...) → has_progress</td>
+                </tr>
+            
+                <tr data-search="precvenc_cont lemma precvenc_cont (f : cipher ahe -&gt; proc data) (c : cipher ahe) : (oapp f fail \o @std_from_enc ahe) (e_local c) = f c. h1: precvenc continuation">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pRecvEnc_cont.html" class="lemma-name">pRecvEnc_cont</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma pRecvEnc_cont (f : cipher AHE -&gt; proc data) (c : cipher AHE) : (oapp f Fail \o @std_from_enc AHE) (e_local c) = f c.</code></td>
+                    <td class="meaning">H1: pRecvEnc continuation</td>
+                </tr>
+            
+                <tr data-search="precvdec_cont lemma precvdec_cont (dk&#39; : he_types.priv_key ahe) (f : plain ahe -&gt; proc data) (c : cipher ahe) : @dec ahe dk&#39; c != none -&gt; exists m, @dec ahe dk&#39; c = some m /\ (oapp f fail \o (obind (@dec ahe dk&#39;) \o @std_from_enc ahe)) (e_local c) = f m. h2: precvdec continuation">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/pRecvDec_cont.html" class="lemma-name">pRecvDec_cont</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma pRecvDec_cont (dk&#39; : he_types.priv_key AHE) (f : plain AHE -&gt; proc data) (c : cipher AHE) : @dec AHE dk&#39; c != None -&gt; exists m, @dec AHE dk&#39; c = Some m /\ (oapp f Fail \o (obind (@dec AHE dk&#39;) \o @std_from_enc AHE)) (e_local c) = f m.</code></td>
+                    <td class="meaning">H2: pRecvDec continuation</td>
+                </tr>
+            
+                <tr data-search="nth_one_step_nop lemma nth_one_step_nop (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%n -&gt; (smc_interpreter.step ps [::] i).2 = false -&gt; nth (default_proc data) (one_step_procs data ps) i = nth (default_proc data) ps i. h3: non-participant position is unchanged after one_step">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/nth_one_step_nop.html" class="lemma-name">nth_one_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma nth_one_step_nop (ps : seq (proc data)) (i : nat) : (i &lt; size ps)%N -&gt; (smc_interpreter.step ps [::] i).2 = false -&gt; nth (default_proc data) (one_step_procs data ps) i = nth (default_proc data) ps i.</code></td>
+                    <td class="meaning">H3: Non-participant position is unchanged after one_step</td>
+                </tr>
+            
+                <tr data-search="relay_body_eq lemma relay_body_eq (j : &#39;i_n_relay.+1) : exists d1 d2, nth (default_proc data) procs j.+1 = init d1 (init d2 (relay_body j)). h4: initial processes match relay_body">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_body_eq.html" class="lemma-name">relay_body_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">20</td>
+                    <td><code class="signature">Lemma relay_body_eq (j : &#39;I_n_relay.+1) : exists d1 d2, nth (default_proc data) procs j.+1 = Init d1 (Init d2 (relay_body j)).</code></td>
+                    <td class="meaning">H4: Initial processes match relay_body</td>
+                </tr>
+            
+                <tr data-search="relay_body_is_send0 lemma relay_body_is_send0 (j : &#39;i_n_relay.+1) : exists sv sk, relay_body j = send 0 sv sk. h5: relay_body always starts with send 0">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_body_is_send0.html" class="lemma-name">relay_body_is_send0</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma relay_body_is_send0 (j : &#39;I_n_relay.+1) : exists sv sk, relay_body j = Send 0 sv sk.</code></td>
+                    <td class="meaning">H5: relay_body always starts with Send 0</td>
+                </tr>
+            
+                <tr data-search="relay0_body_structure lemma relay0_body_structure : exists sv f_dec, relay_body ord0 = send 0 sv (recv 0 f_dec). r1: relay_body(0) = send(0, sv, recv(0, f_dec))">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay0_body_structure.html" class="lemma-name">relay0_body_structure</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma relay0_body_structure : exists sv f_dec, relay_body ord0 = Send 0 sv (Recv 0 f_dec).</code></td>
+                    <td class="meaning">R1: relay_body(0) = Send(0, sv, Recv(0, f_dec))</td>
+                </tr>
+            
+                <tr data-search="relay0_first_recv_to_second lemma relay0_first_recv_to_second (sv : data) (f_dec : data -&gt; proc data) (v : data) : relay_body ord0 = send 0 sv (recv 0 f_dec) -&gt; @std_from_enc ahe v != none -&gt; exists f_enc, f_dec v = recv 0 f_enc. r2: r0&#39;s first recv fires → second recv(0,...)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay0_first_recv_to_second.html" class="lemma-name">relay0_first_recv_to_second</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma relay0_first_recv_to_second (sv : data) (f_dec : data -&gt; proc data) (v : data) : relay_body ord0 = Send 0 sv (Recv 0 f_dec) -&gt; @std_from_enc AHE v != None -&gt; exists f_enc, f_dec v = Recv 0 f_enc.</code></td>
+                    <td class="meaning">R2: R0&#39;s first Recv fires → second Recv(0,...)</td>
+                </tr>
+            
+                <tr data-search="relay_inter_body_structure lemma relay_inter_body_structure (j : &#39;i_n_relay.+1) : (0 &lt; j)%n -&gt; (j &lt; n_relay)%n -&gt; exists sv f_enc, relay_body j = send 0 sv (recv 0 f_enc). r3: intermediate relay body structure">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_inter_body_structure.html" class="lemma-name">relay_inter_body_structure</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma relay_inter_body_structure (j : &#39;I_n_relay.+1) : (0 &lt; j)%N -&gt; (j &lt; n_relay)%N -&gt; exists sv f_enc, relay_body j = Send 0 sv (Recv 0 f_enc).</code></td>
+                    <td class="meaning">R3: Intermediate relay body structure</td>
+                </tr>
+            
+                <tr data-search="relay_last_body_structure lemma relay_last_body_structure : exists sv f_dec, relay_body (@ord_max n_relay) = send 0 sv (recv n_relay f_dec). r4: last relay body structure">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_last_body_structure.html" class="lemma-name">relay_last_body_structure</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma relay_last_body_structure : exists sv f_dec, relay_body (@ord_max n_relay) = Send 0 sv (Recv n_relay f_dec).</code></td>
+                    <td class="meaning">R4: Last relay body structure</td>
+                </tr>
+            
+                <tr data-search="alice_body_at_recv lemma alice_body_at_recv (j : nat) (hj : (j &lt; n_relay.+1)%n) : exists f, foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f. h6: alice&#39;s foldr at iteration j starts with recv(j+1,...)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_body_at_recv.html" class="lemma-name">alice_body_at_recv</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma alice_body_at_recv (j : nat) (Hj : (j &lt; n_relay.+1)%N) : exists f, foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = Recv (Ordinal Hj).+1 f.</code></td>
+                    <td class="meaning">H6: Alice&#39;s foldr at iteration j starts with Recv(j+1,...)</td>
+                </tr>
+            
+                <tr data-search="alice_recv_to_send lemma alice_recv_to_send (j : nat) (hj : (j &lt; n_relay.+1)%n) (f : data -&gt; proc data) (v : data) : @std_from_enc ahe v != none -&gt; foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f -&gt; exists sv rest, f v = send (alice_send_dest (ordinal hj)) sv rest. h7: after alice&#39;s recv fires, alice becomes send(dest(j),...,rest)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_recv_to_send.html" class="lemma-name">alice_recv_to_send</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma alice_recv_to_send (j : nat) (Hj : (j &lt; n_relay.+1)%N) (f : data -&gt; proc data) (v : data) : @std_from_enc AHE v != None -&gt; foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = Recv (Ordinal Hj).+1 f -&gt; exists sv rest, f v = Send (alice_send_dest (Ordinal Hj)) sv rest.</code></td>
+                    <td class="meaning">H7: After Alice&#39;s Recv fires, Alice becomes Send(dest(j),...,rest)</td>
+                </tr>
+            
+                <tr data-search="alice_recv_to_send_foldr lemma alice_recv_to_send_foldr (j : nat) (hj : (j &lt; n_relay.+1)%n) (f : data -&gt; proc data) (v : data) : @std_from_enc ahe v != none -&gt; foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f -&gt; exists sv, f v = send (alice_send_dest (ordinal hj)) sv (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))). h7&#39;: strengthened h7 — rest is the next foldr iteration">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_recv_to_send_foldr.html" class="lemma-name">alice_recv_to_send_foldr</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma alice_recv_to_send_foldr (j : nat) (Hj : (j &lt; n_relay.+1)%N) (f : data -&gt; proc data) (v : data) : @std_from_enc AHE v != None -&gt; foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = Recv (Ordinal Hj).+1 f -&gt; exists sv, f v = Send (alice_send_dest (Ordinal Hj)) sv (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))).</code></td>
+                    <td class="meaning">H7&#39;: Strengthened H7 — rest IS the next foldr iteration</td>
+                </tr>
+            
+                <tr data-search="alice_foldr_at_0 lemma alice_foldr_at_0 : alice_foldr_at 0 = foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (zip relays (iota 0 (size relays))). new-l1: alice_foldr_at 0 = full foldr">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_foldr_at_0.html" class="lemma-name">alice_foldr_at_0</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_foldr_at_0 : alice_foldr_at 0 = foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (zip relays (iota 0 (size relays))).</code></td>
+                    <td class="meaning">NEW-L1: alice_foldr_at 0 = full foldr</td>
+                </tr>
+            
+                <tr data-search="alice_foldr_at_tail lemma alice_foldr_at_tail : alice_foldr_at n_relay.+1 = @alice_erase_tail ahe n_relay dk v0 u r. new-l2: alice_foldr_at n_relay.+1 = alice_erase_tail">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_foldr_at_tail.html" class="lemma-name">alice_foldr_at_tail</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_foldr_at_tail : alice_foldr_at n_relay.+1 = @alice_erase_tail AHE n_relay dk v0 u r.</code></td>
+                    <td class="meaning">NEW-L2: alice_foldr_at n_relay.+1 = alice_erase_tail</td>
+                </tr>
+            
+                <tr data-search="alice_tail_is_recv lemma alice_tail_is_recv : exists f, @alice_erase_tail ahe n_relay dk v0 u r = recv n_relay.+1 f. new-l3: alice_erase_tail starts with recv(n_relay.+1, ...)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_tail_is_recv.html" class="lemma-name">alice_tail_is_recv</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_tail_is_recv : exists f, @alice_erase_tail AHE n_relay dk v0 u r = Recv n_relay.+1 f.</code></td>
+                    <td class="meaning">NEW-L3: alice_erase_tail starts with Recv(n_relay.+1, ...)</td>
+                </tr>
+            
+                <tr data-search="alice_tail_recv_ret lemma alice_tail_recv_ret (f : data -&gt; proc data) (v : data) : @alice_erase_tail ahe n_relay dk v0 u r = recv n_relay.+1 f -&gt; @std_from_enc ahe v != none -&gt; exists d, f v = ret d. new-l4: alice_erase_tail&#39;s recv fires → ret">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_tail_recv_ret.html" class="lemma-name">alice_tail_recv_ret</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma alice_tail_recv_ret (f : data -&gt; proc data) (v : data) : @alice_erase_tail AHE n_relay dk v0 u r = Recv n_relay.+1 f -&gt; @std_from_enc AHE v != None -&gt; exists d, f v = Ret d.</code></td>
+                    <td class="meaning">NEW-L4: alice_erase_tail&#39;s Recv fires → Ret</td>
+                </tr>
+            
+                <tr data-search="relay_inter_recv_from_body_fires lemma relay_inter_recv_from_body_fires (j : &#39;i_n_relay.+1) (v : data) (sv0 : data) (f0 : data -&gt; proc data) : (0 &lt; j)%n -&gt; (j &lt; n_relay)%n -&gt; relay_body j = send 0 sv0 (recv 0 f0) -&gt; @std_from_enc ahe v != none -&gt; exists f_dec, f0 v = recv j f_dec /\ (forall w, @std_from_enc ahe w != none -&gt; exists sw, f_dec w = send j.+2 sw finish). t2: intermediate relay recv_from_body fires → recvupstream linked">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_inter_recv_from_body_fires.html" class="lemma-name">relay_inter_recv_from_body_fires</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">17</td>
+                    <td><code class="signature">Lemma relay_inter_recv_from_body_fires (j : &#39;I_n_relay.+1) (v : data) (sv0 : data) (f0 : data -&gt; proc data) : (0 &lt; j)%N -&gt; (j &lt; n_relay)%N -&gt; relay_body j = Send 0 sv0 (Recv 0 f0) -&gt; @std_from_enc AHE v != None -&gt; exists f_dec, f0 v = Recv j f_dec /\ (forall w, @std_from_enc AHE w != None -&gt; exists sw, f_dec w = Send j.+2 sw Finish).</code></td>
+                    <td class="meaning">T2: Intermediate relay recv_from_body fires → RecvUpstream linked</td>
+                </tr>
+            
+                <tr data-search="relay_recv_upstream_linked_fires lemma relay_recv_upstream_linked_fires (f : data -&gt; proc data) (j : nat) (v : data) : (forall w, @std_from_enc ahe w != none -&gt; exists sw, f w = send j.+2 sw finish) -&gt; @std_from_enc ahe v != none -&gt; exists sv, f v = send j.+2 sv finish. this is trivial from the linked continuation behavior">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_recv_upstream_linked_fires.html" class="lemma-name">relay_recv_upstream_linked_fires</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma relay_recv_upstream_linked_fires (f : data -&gt; proc data) (j : nat) (v : data) : (forall w, @std_from_enc AHE w != None -&gt; exists sw, f w = Send j.+2 sw Finish) -&gt; @std_from_enc AHE v != None -&gt; exists sv, f v = Send j.+2 sv Finish.</code></td>
+                    <td class="meaning">This is trivial from the linked continuation behavior</td>
+                </tr>
+            
+                <tr data-search="relay_last_recv_fires lemma relay_last_recv_fires (f : data -&gt; proc data) (v : data) : (forall w, @std_from_enc ahe w != none -&gt; exists sw, f w = send 0 sw finish) -&gt; @std_from_enc ahe v != none -&gt; exists sv, f v = send 0 sv finish. t4: last relay recv fires → send(0, v, finish)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_last_recv_fires.html" class="lemma-name">relay_last_recv_fires</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma relay_last_recv_fires (f : data -&gt; proc data) (v : data) : (forall w, @std_from_enc AHE w != None -&gt; exists sw, f w = Send 0 sw Finish) -&gt; @std_from_enc AHE v != None -&gt; exists sv, f v = Send 0 sv Finish.</code></td>
+                    <td class="meaning">T4: Last relay recv fires → Send(0, v, Finish)</td>
+                </tr>
+            
+                <tr data-search="relay_body_step_nop lemma relay_body_step_nop ps (j : &#39;i_n_relay.+1) : relay_at_body j ps -&gt; (forall f, nth (default_proc data) ps 0 &lt;&gt; recv j.+1 f) -&gt; (smc_interpreter.step ps [::] j.+1).2 = false. np1-np6: non-participant step lemmas">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_body_step_nop.html" class="lemma-name">relay_body_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma relay_body_step_nop ps (j : &#39;I_n_relay.+1) : relay_at_body j ps -&gt; (forall f, nth (default_proc data) ps 0 &lt;&gt; Recv j.+1 f) -&gt; (smc_interpreter.step ps [::] j.+1).2 = false.</code></td>
+                    <td class="meaning">NP1-NP6: Non-participant step lemmas</td>
+                </tr>
+            
+                <tr data-search="recv0_step_nop lemma recv0_step_nop ps (m : nat) (f : data -&gt; proc data) : nth (default_proc data) ps m = recv 0 f -&gt; (forall v k, nth (default_proc data) ps 0 &lt;&gt; send m v k) -&gt; (smc_interpreter.step ps [::] m).2 = false. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/recv0_step_nop.html" class="lemma-name">recv0_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma recv0_step_nop ps (m : nat) (f : data -&gt; proc data) : nth (default_proc data) ps m = Recv 0 f -&gt; (forall v k, nth (default_proc data) ps 0 &lt;&gt; Send m v k) -&gt; (smc_interpreter.step ps [::] m).2 = false.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="finish_step_nop lemma finish_step_nop ps (m : nat) : nth (default_proc data) ps m = finish -&gt; (smc_interpreter.step ps [::] m).2 = false. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/finish_step_nop.html" class="lemma-name">finish_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma finish_step_nop ps (m : nat) : nth (default_proc data) ps m = Finish -&gt; (smc_interpreter.step ps [::] m).2 = false.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="recv_upstream_step_nop lemma recv_upstream_step_nop ps (i : nat) (f : data -&gt; proc data) : nth (default_proc data) ps i.+1 = recv i f -&gt; (forall v k, nth (default_proc data) ps i &lt;&gt; send i.+1 v k) -&gt; (smc_interpreter.step ps [::] i.+1).2 = false. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/recv_upstream_step_nop.html" class="lemma-name">recv_upstream_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma recv_upstream_step_nop ps (i : nat) (f : data -&gt; proc data) : nth (default_proc data) ps i.+1 = Recv i f -&gt; (forall v k, nth (default_proc data) ps i &lt;&gt; Send i.+1 v k) -&gt; (smc_interpreter.step ps [::] i.+1).2 = false.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="forwarding_step_nop lemma forwarding_step_nop ps (i : nat) (v : data) : nth (default_proc data) ps i.+1 = send i.+2 v finish -&gt; (forall f, nth (default_proc data) ps i.+2 &lt;&gt; recv i.+1 f) -&gt; (smc_interpreter.step ps [::] i.+1).2 = false. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/forwarding_step_nop.html" class="lemma-name">forwarding_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma forwarding_step_nop ps (i : nat) (v : data) : nth (default_proc data) ps i.+1 = Send i.+2 v Finish -&gt; (forall f, nth (default_proc data) ps i.+2 &lt;&gt; Recv i.+1 f) -&gt; (smc_interpreter.step ps [::] i.+1).2 = false.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="alice_recv_step_nop lemma alice_recv_step_nop ps (j : nat) (f : data -&gt; proc data) : nth (default_proc data) ps 0 = recv j.+1 f -&gt; (forall v k, nth (default_proc data) ps j.+1 &lt;&gt; send 0 v k) -&gt; (smc_interpreter.step ps [::] 0).2 = false. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_recv_step_nop.html" class="lemma-name">alice_recv_step_nop</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma alice_recv_step_nop ps (j : nat) (f : data -&gt; proc data) : nth (default_proc data) ps 0 = Recv j.+1 f -&gt; (forall v k, nth (default_proc data) ps j.+1 &lt;&gt; Send 0 v k) -&gt; (smc_interpreter.step ps [::] 0).2 = false.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_has_progress lemma dsdp_inv_has_progress ps : dsdp_inv ps -&gt; has_progress data ps. c1: every dsdp_inv state has progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_has_progress.html" class="lemma-name">dsdp_inv_has_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">36</td>
+                    <td><code class="signature">Lemma dsdp_inv_has_progress ps : dsdp_inv ps -&gt; has_progress data ps.</code></td>
+                    <td class="meaning">C1: Every dsdp_inv state has progress</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_ar lemma dsdp_inv_step_ar (j : &#39;i_n_relay.+1) ps : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j == 1%n :&gt; nat) -&gt; exists f_enc : cipher ahe -&gt; proc data, nth (default_proc data) ps 1 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, exists sv, f_enc c = send 2 sv finish) -&gt; ((2 &lt;= j)%n -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; ((j == 2%n :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = send 2 sv_fw finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt; j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ (exists sv_fw, nth (default_proc data) ps j.-2 = send j.-1 sv_fw finish) /\ (exists f_recv, nth (default_proc data) ps j.-1 = recv j.-2 f_recv /\ (forall v, @std_from_enc ahe v != none -&gt; c2a: ar(j) → as variant">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_AR.html" class="lemma-name">dsdp_inv_step_AR</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">247</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AR (j : &#39;I_n_relay.+1) ps : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j == 1%N :&gt; nat) -&gt; exists f_enc : cipher AHE -&gt; proc data, nth (default_proc data) ps 1 = Recv 0 (oapp f_enc Fail \o @std_from_enc AHE) /\ forall c, exists sv, f_enc c = Send 2 sv Finish) -&gt; ((2 &lt;= j)%N -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; ((j == 2%N :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = Send 2 sv_fw Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt; j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ (exists sv_fw, nth (default_proc data) ps j.-2 = Send j.-1 sv_fw Finish) /\ (exists f_recv, nth (default_proc data) ps j.-1 = Recv j.-2 f_recv /\ (forall v, @std_from_enc AHE v != None -&gt;</code></td>
+                    <td class="meaning">C2a: AR(j) → AS variant</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_as0 lemma dsdp_inv_step_as0 ps (f_inner : plain ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send 1 vd (alice_foldr_at 1)) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o (obind (@dec ahe (dk_relay ord0)) \o @std_from_enc ahe)) -&gt; (forall i : &#39;i_n_relay.+1, (0 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher ahe -&gt; proc data, f_inner m = recv 0 (oapp g fail \o @std_from_enc ahe) /\ forall c, exists sv, g c = send 2 sv finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2b: as0 → ar(1)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_AS0.html" class="lemma-name">dsdp_inv_step_AS0</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">44</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AS0 ps (f_inner : plain AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send 1 vd (alice_foldr_at 1)) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o (obind (@dec AHE (dk_relay ord0)) \o @std_from_enc AHE)) -&gt; (forall i : &#39;I_n_relay.+1, (0 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher AHE -&gt; proc data, f_inner m = Recv 0 (oapp g Fail \o @std_from_enc AHE) /\ forall c, exists sv, g c = Send 2 sv Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning">C2b: AS0 → AR(1)</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_as1 lemma dsdp_inv_step_as1 ps (f_inner : cipher ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send 1 vd (alice_foldr_at 2)) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o @std_from_enc ahe) -&gt; (forall i : &#39;i_n_relay.+1, (1 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall c, exists sv, f_inner c = send 2 sv finish) -&gt; ((1 &lt; n_relay)%n -&gt; exists sv f, relay_body (ordinal (n:=n_relay.+1) (m:=1) hn_relay) = send 0 sv (recv 0 f) /\ nth (default_proc data) ps 2 = recv 0 f) -&gt; (n_relay = 1%n -&gt; exists f, nth (default_proc data) ps 2 = recv 1 f /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send 0 sv finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2c: as1 → ar(2) or drain">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_AS1.html" class="lemma-name">dsdp_inv_step_AS1</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">73</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AS1 ps (f_inner : cipher AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send 1 vd (alice_foldr_at 2)) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o @std_from_enc AHE) -&gt; (forall i : &#39;I_n_relay.+1, (1 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall c, exists sv, f_inner c = Send 2 sv Finish) -&gt; ((1 &lt; n_relay)%N -&gt; exists sv f, relay_body (Ordinal (n:=n_relay.+1) (m:=1) Hn_relay) = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps 2 = Recv 0 f) -&gt; (n_relay = 1%N -&gt; exists f, nth (default_proc data) ps 2 = Recv 1 f /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send 0 sv Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning">C2c: AS1 → AR(2) or drain</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_asj lemma dsdp_inv_step_asj (j : &#39;i_n_relay.+1) ps : (2 &lt;= j)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send j vd (alice_foldr_at j.+1)) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%n -&gt; exists sv f, relay_body j = send 0 sv (recv 0 f) /\ nth (default_proc data) ps j.+1 = recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = recv n_relay f_dec /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f_dec v = send 0 sv finish) -&gt; ((j == 2%n :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = send 2 sv_fw finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ (exists sv_fw, nth (default_proc data) ps j.-1 = send j sv_fw finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2d: asj → ar(j+1) or drain">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_ASj.html" class="lemma-name">dsdp_inv_step_ASj</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">250</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_ASj (j : &#39;I_n_relay.+1) ps : (2 &lt;= j)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send j vd (alice_foldr_at j.+1)) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%N -&gt; exists sv f, relay_body j = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps j.+1 = Recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = Recv n_relay f_dec /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f_dec v = Send 0 sv Finish) -&gt; ((j == 2%N :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = Send 2 sv_fw Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ (exists sv_fw, nth (default_proc data) ps j.-1 = Send j sv_fw Finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning">C2d: ASj → AR(j+1) or drain</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_drain lemma dsdp_inv_step_drain (j : &#39;i_n_relay.+1) ps : (j.+1 &lt; n_relay.+1)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (exists v, nth (default_proc data) ps j.+1 = send j.+2 v finish) -&gt; (exists f, nth (default_proc data) ps j.+2 = recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%n -&gt; nth (default_proc data) ps i.+1 = finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = recv n_relay f /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send 0 sv finish) -&gt; (forall i : nat, (j &lt; i)%n -&gt; (i &lt; n_relay)%n -&gt; exists f, nth (default_proc data) ps i.+1 = recv i f /\ (forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send i.+2 sv finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2e: drain(d) → drain(d+1) or tail">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_drain.html" class="lemma-name">dsdp_inv_step_drain</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">128</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_drain (j : &#39;I_n_relay.+1) ps : (j.+1 &lt; n_relay.+1)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (exists v, nth (default_proc data) ps j.+1 = Send j.+2 v Finish) -&gt; (exists f, nth (default_proc data) ps j.+2 = Recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%N -&gt; nth (default_proc data) ps i.+1 = Finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = Recv n_relay f /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send 0 sv Finish) -&gt; (forall i : nat, (j &lt; i)%N -&gt; (i &lt; n_relay)%N -&gt; exists f, nth (default_proc data) ps i.+1 = Recv i f /\ (forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send i.+2 sv Finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning">C2e: drain(d) → drain(d+1) or tail</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_tail lemma dsdp_inv_step_tail ps : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = send 0 v finish) -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;i_n_relay.+1, (j &lt; n_relay)%n -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_TAIL.html" class="lemma-name">dsdp_inv_step_TAIL</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">31</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_TAIL ps : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = Send 0 v Finish) -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;I_n_relay.+1, (j &lt; n_relay)%N -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step_ret lemma dsdp_inv_step_ret ps d0 : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = ret d0 -&gt; (forall j : &#39;i_n_relay.+1, relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step_RET.html" class="lemma-name">dsdp_inv_step_RET</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_RET ps d0 : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = Ret d0 -&gt; (forall j : &#39;I_n_relay.+1, relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_step lemma dsdp_inv_step ps : dsdp_inv ps -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2: invariant preserved by one_step">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_step.html" class="lemma-name">dsdp_inv_step</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma dsdp_inv_step ps : dsdp_inv ps -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="meaning">C2: Invariant preserved by one_step</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_init lemma dsdp_inv_init : dsdp_inv (one_step_procs data (one_step_procs data procs)). c3: step 2 satisfies invariant">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_init.html" class="lemma-name">dsdp_inv_init</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">46</td>
+                    <td><code class="signature">Lemma dsdp_inv_init : dsdp_inv (one_step_procs data (one_step_procs data procs)).</code></td>
+                    <td class="meaning">C3: Step 2 satisfies invariant</td>
+                </tr>
+            
+                <tr data-search="dsdp_reachable_inv lemma dsdp_reachable_inv ps k : dsdp_reachable ps k -&gt; (2 &lt;= k)%n -&gt; all_terminated ps \/ dsdp_inv ps. c4: connect dsdp_reachable to dsdp_inv">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_reachable_inv.html" class="lemma-name">dsdp_reachable_inv</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma dsdp_reachable_inv ps k : dsdp_reachable ps k -&gt; (2 &lt;= k)%N -&gt; all_terminated ps \/ dsdp_inv ps.</code></td>
+                    <td class="meaning">C4: Connect dsdp_reachable to dsdp_inv</td>
+                </tr>
+            
+                <tr data-search="step01_progress lemma step01_progress ps0 k0 : dsdp_reachable ps0 k0 -&gt; (k0 &lt;= 1)%n -&gt; has_progress data ps0 -&gt; has_progress data (one_step_procs data ps0). helper: steps 0 and 1 always produce progress in one_step">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step01_progress.html" class="lemma-name">step01_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma step01_progress ps0 k0 : dsdp_reachable ps0 k0 -&gt; (k0 &lt;= 1)%N -&gt; has_progress data ps0 -&gt; has_progress data (one_step_procs data ps0).</code></td>
+                    <td class="meaning">Helper: steps 0 and 1 always produce progress in one_step</td>
+                </tr>
+            
+                <tr data-search="dsdp_step_terminated_or_progress lemma dsdp_step_terminated_or_progress ps k : dsdp_reachable ps k -&gt; @all_proc_wf ahe ps -&gt; has_progress data ps -&gt; all_terminated (one_step_procs data ps) \/ has_progress data (one_step_procs data ps). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_step_terminated_or_progress.html" class="lemma-name">dsdp_step_terminated_or_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma dsdp_step_terminated_or_progress ps k : dsdp_reachable ps k -&gt; @all_proc_wf AHE ps -&gt; has_progress data ps -&gt; all_terminated (one_step_procs data ps) \/ has_progress data (one_step_procs data ps).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_reachable_progress lemma dsdp_reachable_progress ps k : dsdp_reachable ps k -&gt; all_terminated ps \/ has_progress data ps. core dsdp progress lemma">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_reachable_progress.html" class="lemma-name">dsdp_reachable_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma dsdp_reachable_progress ps k : dsdp_reachable ps k -&gt; all_terminated ps \/ has_progress data ps.</code></td>
+                    <td class="meaning">Core DSDP progress lemma</td>
+                </tr>
+            
+                <tr data-search="dsdp_step_inv lemma dsdp_step_inv qs : (exists k, dsdp_reachable qs k) -&gt; has_progress data qs -&gt; (exists k, dsdp_reachable (one_step_procs data qs) k) /\ (all_terminated (one_step_procs data qs) \/ has_progress data (one_step_procs data qs)). wrapper for interp_comp_inv_progress">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_step_inv.html" class="lemma-name">dsdp_step_inv</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma dsdp_step_inv qs : (exists k, dsdp_reachable qs k) -&gt; has_progress data qs -&gt; (exists k, dsdp_reachable (one_step_procs data qs) k) /\ (all_terminated (one_step_procs data qs) \/ has_progress data (one_step_procs data qs)).</code></td>
+                    <td class="meaning">Wrapper for interp_comp_inv_progress</td>
+                </tr>
+            
+                <tr data-search="dsdp_terminated_or_progress lemma dsdp_terminated_or_progress h : all_terminated (interp_comp data procs h) \/ has_progress data (interp_comp data procs h). derived from dsdp_interp_terminates via fixed-point trick: if ~~ has_progress at h, then interp_comp procs h is a fixed point. so interp_comp procs (h + [&gt; saprocs]) = interp_comp procs h. since h + [&gt; saprocs] &gt;= [&gt; saprocs], dsdp_interp_terminates applies.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_terminated_or_progress.html" class="lemma-name">dsdp_terminated_or_progress</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma dsdp_terminated_or_progress h : all_terminated (interp_comp data procs h) \/ has_progress data (interp_comp data procs h).</code></td>
+                    <td class="meaning">Derived from dsdp_interp_terminates via fixed-point trick: If ~~ has_progress at h, then interp_comp procs h is a fixed point. So interp_comp procs (h + [&gt; saprocs]) = interp_comp procs h. Since h + [&gt; saprocs] &gt;= [&gt; saprocs], dsdp_interp_terminates applies.</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 
 
 
@@ -4726,7 +5641,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-03-27 | 322 lemmas in 22 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/bec7c869416f13ba1117c00452dbe63fc695cd74" target="_blank" rel="noopener" style="color: var(--accent);">bec7c86</a></p>
+        <p>Generated: 2026-03-30 | 397 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/767f161988d9e392fd8b41d3634922a31ec27e07" target="_blank" rel="noopener" style="color: var(--accent);">767f161</a></p>
     </footer>
     
     <script>
