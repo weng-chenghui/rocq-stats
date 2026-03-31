@@ -30,15 +30,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">397</div>
+        <div class="value">417</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">49</div>
+        <div class="value">54</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">348</div>
+        <div class="value">363</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">13,022</div>
+        <div class="value">14,548</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/767f161988d9e392fd8b41d3634922a31ec27e07" target="_blank" rel="noopener">767f161</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/05f6364370c2f46e1a48e1f49b9217151c182961" target="_blank" rel="noopener">05f6364</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (49 total)
+    Theorems and key lemmas (54 total)
 </p>
 
 
@@ -248,7 +248,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">3 main</span>
+        <span class="file-count">5 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -287,6 +287,32 @@
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Theorem dsdp_n4_senv_zero traces : exists aps&#39; : seq (aproc dsdp_dtype data), erase_aprocs aps&#39; = (interp [&gt; dsdp_n4_saprocs] dsdp_n4_procs traces).1 /\ aprocs_senv_depth [:: 0; 1; 2; 3] aps&#39; = 0.</code></td>
                     <td class="meaning">4-party session environment convergence</td>
+                </tr>
+            
+                <tr data-search="palice_n_erase lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n ahe ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pinit (priv_key dk&#39;) (pinit (d v0&#39;) (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays))))). alice&#39;s erased program decomposes into a foldr of alice_erase_body followed by alice_erase_tail. this is the key structural lemma: it shows that after erasure, alice&#39;s n-relay forlist loop becomes a concrete chain of recv/send pairs, one per relay.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/palice_n_erase.html" class="lemma-name">palice_n_erase</a>
+                    </td>
+                    <td class="section-name">dsdp_n_rsteps</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n AHE ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pInit (priv_key dk&#39;) (pInit (d v0&#39;) (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays))))).</code></td>
+                    <td class="meaning">Alice&#39;s erased program decomposes into a foldr of alice_erase_body followed by alice_erase_tail. This is the key structural lemma: it shows that after erasure, Alice&#39;s n-relay ForList loop becomes a concrete chain of Recv/Send pairs, one per relay.</td>
+                </tr>
+            
+                <tr data-search="interp_sound lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp_comp (tval ps) h. main soundness theorem: h rounds of interpretation produce an rsteps proof with real traces. the traces are constructed from step_sound (which embeds actual init values, communicated data, and ret values into the rsteps constructors), chained via rtrans across rounds. the process states match interp_comp, enabling computational verification of termination/no-fail via native_compute.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/interp_sound.html" class="lemma-name">interp_sound</a>
+                    </td>
+                    <td class="section-name">interp_sound_section</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp_comp (tval ps) h.</code></td>
+                    <td class="meaning">Main soundness theorem: h rounds of interpretation produce an rsteps proof with REAL traces. The traces are constructed from step_sound (which embeds actual Init values, communicated data, and Ret values into the rsteps constructors), chained via rtrans across rounds. The process states match interp_comp, enabling computational verification of termination/no-fail via native_compute.</td>
                 </tr>
             
                 <tr data-search="dsdp_3party_rsteps theorem dsdp_3party_rsteps : exists final traces, rsteps procs3 final traces /\ all_terminated (tval final) /\ all_nonfail (tval final). main theorem: the 3-party protocol admits an rsteps reduction">
@@ -451,7 +477,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">20 main</span>
+        <span class="file-count">23 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -724,6 +750,45 @@
                     <td class="proof-lines">9</td>
                     <td><code class="signature">Theorem dsdp_entropic_security_n : (0 &lt; n_relay)%N -&gt; `H(VarRV | AliceView) = log ((m ^ n_relay)%:R : R) /\ `H(VarRV | AliceView) &gt; 0.</code></td>
                     <td class="meaning">Core N-party entropic security: entropy is positive when n_relay &gt; 0</td>
+                </tr>
+            
+                <tr data-search="alice_view_contract_n lemma alice_view_contract_n : `h(varrv | aliceview_n) = `h(varrv | condrv). the contraction lemma: alice&#39;s full view has the same conditional entropy as the condition rv. this is the key step plugging into dsdp_security_n. proof in two steps: step 1: h(varrv | aliceview_n) = h(varrv | decview_n) aliceview_n = [%decview_n, e_relay_rv] and e_relay_rv is conditionally independent of varrv given decview_n. step 2: h(varrv | decview_n) = h(varrv | condrv) decview_n = [%dk_a, s, v0, u0, u_relay_rv, r_relay_rv] and [%dk_a, r_relay_rv] is conditionally independent of varrv given condrv (= [%v0, u0, u_relay_rv, s]). uses cinde_v_relay (n5).">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/alice_view_contract_n.html" class="lemma-name">alice_view_contract_n</a>
+                    </td>
+                    <td class="section-name">dsdp_concrete_n</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma alice_view_contract_n : `H(VarRV | AliceView_n) = `H(VarRV | CondRV).</code></td>
+                    <td class="meaning">The contraction lemma: Alice&#39;s full view has the same conditional entropy as the condition RV. This is the key step plugging into dsdp_security_n. Proof in two steps: Step 1: H(VarRV | AliceView_n) = H(VarRV | DecView_n) AliceView_n = [%DecView_n, E_relay_RV] and E_relay_RV is conditionally independent of VarRV given DecView_n. Step 2: H(VarRV | DecView_n) = H(VarRV | CondRV) DecView_n = [%Dk_a, S, V0, U0, U_relay_RV, R_relay_RV] and [%Dk_a, R_relay_RV] is conditionally independent of VarRV given CondRV (= [%V0, U0, U_relay_RV, S]). Uses cinde_V_relay (N5).</td>
+                </tr>
+            
+                <tr data-search="dsdp_entropic_security_n_concrete theorem dsdp_entropic_security_n_concrete : `h(varrv | aliceview_n) = log ((m ^ n_relay)%:r : r) /\ `h(varrv | aliceview_n) &gt; 0. ==========================================================================">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_entropic_security_n_concrete.html" class="lemma-name">dsdp_entropic_security_n_concrete</a>
+                    </td>
+                    <td class="section-name">dsdp_concrete_n</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Theorem dsdp_entropic_security_n_concrete : `H(VarRV | AliceView_n) = log ((m ^ n_relay)%:R : R) /\ `H(VarRV | AliceView_n) &gt; 0.</code></td>
+                    <td class="meaning">==========================================================================</td>
+                </tr>
+            
+                <tr data-search="relay_privacy_n theorem relay_privacy_n (i j : &#39;i_n_relay.+1) : i != j -&gt; `h(v_relay j | relayview_n i) = log (m%:r : r) /\ `h(v_relay j | relayview_n i) &gt; 0. ==========================================================================">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/relay_privacy_n.html" class="lemma-name">relay_privacy_n</a>
+                    </td>
+                    <td class="section-name">relay_privacy_concrete_n</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Theorem relay_privacy_n (i j : &#39;I_n_relay.+1) : i != j -&gt; `H(V_relay j | RelayView_n i) = log (m%:R : R) /\ `H(V_relay j | RelayView_n i) &gt; 0.</code></td>
+                    <td class="meaning">==========================================================================</td>
                 </tr>
             
             </tbody>
@@ -1156,7 +1221,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (348 total)
+    Supporting lemmas and utilities (363 total)
 </p>
 
 <div id="helpers-section">
@@ -1489,7 +1554,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_pismc.v</span>
         </div>
-        <span class="file-count">50 helper</span>
+        <span class="file-count">48 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1911,7 +1976,7 @@
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="size_dsdp_n_procs lemma size_dsdp_n_procs relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay : size (@dsdp_n_procs ahe ek n_relay relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay) = (size relays).+1. * ** size of dsdp_n_procs">
+                <tr data-search="size_dsdp_n_procs lemma size_dsdp_n_procs relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay : size (@dsdp_n_procs ahe ek n_relay relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay) = (size relays).+1. needed to cast dsdp_n_procs (a seq) into an n-tuple for interp_sound, which requires n.-tuple (proc data).">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/size_dsdp_n_procs.html" class="lemma-name">size_dsdp_n_procs</a>
@@ -1919,65 +1984,54 @@
                     <td class="section-name">dsdp_n_rsteps</td>
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma size_dsdp_n_procs relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay : size (@dsdp_n_procs AHE ek n_relay relays dk0 v0 u0 r0 rand_a dk_relay v_relay r1_relay r2_relay) = (size relays).+1.</code></td>
-                    <td class="meaning">* ** Size of dsdp_n_procs</td>
+                    <td class="meaning">Needed to cast dsdp_n_procs (a seq) into an n-tuple for interp_sound, which requires n.-tuple (proc data).</td>
                 </tr>
             
-                <tr data-search="palice_n_erase lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n ahe ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pinit (priv_key dk&#39;) (pinit (d v0&#39;) (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays))))). alice&#39;s erased program decomposes via erase_sproc_iter">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/palice_n_erase.html" class="lemma-name">palice_n_erase</a>
-                    </td>
-                    <td class="section-name">dsdp_n_rsteps</td>
-                    <td class="proof-lines">16</td>
-                    <td><code class="signature">Lemma palice_n_erase relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39; : erase (@palice_n AHE ek n_relay relays dk&#39; v0&#39; u&#39; r&#39; rand_a&#39;) = pInit (priv_key dk&#39;) (pInit (d v0&#39;) (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; alice_erase_body u&#39; r&#39; rand_a&#39; fi.1 fi.2 cont) (alice_erase_tail dk&#39; v0&#39; u&#39; r&#39;) (zip relays (iota 0 (size relays))))).</code></td>
-                    <td class="meaning">Alice&#39;s erased program decomposes via erase_sproc_iter</td>
-                </tr>
-            
-                <tr data-search="dparty_first_erase lemma dparty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_first ahe ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precv alice_idx (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; match dec dk&#39; enc0 with | some m0 =&gt; precv alice_idx (fun d1 : data =&gt; match std_from_enc (ahe:=ahe) d1 with | some enc1 =&gt; psend downstream (e (emul enc1 (enc (ek downstream) m0 r2&#39;))) finish | none =&gt; fail end) | none =&gt; fail end | none =&gt; fail first relay: init dk; init v; send e(v) to alice; recv dec from alice; recv enc from alice; send product to downstream">
+                <tr data-search="dparty_first_erase lemma dparty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_first ahe ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precvdec alice_idx dk&#39; (fun m0 =&gt; precvenc alice_idx (fun enc1 =&gt; psend downstream (e (emul enc1 (enc (ek downstream) m0 r2&#39;))) finish))))). first relay receives two messages from alice (decrypt + encrypt), because alice_send_dest maps both j=0 and j=1 to party 1.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/DParty_first_erase.html" class="lemma-name">DParty_first_erase</a>
                     </td>
                     <td class="section-name">dsdp_n_rsteps</td>
-                    <td class="proof-lines">10</td>
-                    <td><code class="signature">Lemma DParty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_first AHE ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecv alice_idx (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; match dec dk&#39; enc0 with | Some m0 =&gt; pRecv alice_idx (fun d1 : data =&gt; match std_from_enc (AHE:=AHE) d1 with | Some enc1 =&gt; pSend downstream (e (Emul enc1 (enc (ek downstream) m0 r2&#39;))) Finish | None =&gt; Fail end) | None =&gt; Fail end | None =&gt; Fail</code></td>
-                    <td class="meaning">First relay: Init dk; Init v; Send E(v) to Alice; Recv dec from Alice; Recv enc from Alice; Send product to downstream</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma DParty_first_erase self downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_first AHE ek self downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecvDec alice_idx dk&#39; (fun m0 =&gt; pRecvEnc alice_idx (fun enc1 =&gt; pSend downstream (e (Emul enc1 (enc (ek downstream) m0 r2&#39;))) Finish))))).</code></td>
+                    <td class="meaning">First relay receives TWO messages from Alice (decrypt + encrypt), because alice_send_dest maps both j=0 and j=1 to party 1.</td>
                 </tr>
             
-                <tr data-search="dparty_last_erase lemma dparty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_last ahe ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precv upstream (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; match dec dk&#39; enc0 with | some m0 =&gt; psend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) finish | none =&gt; fail end | none =&gt; fail end)))). last relay: init dk; init v; send e(v) to alice; recv dec from upstream; send re-encrypted to alice">
+                <tr data-search="dparty_last_erase lemma dparty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_last ahe ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (precvdec upstream dk&#39; (fun m0 =&gt; psend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) finish)))). last relay sends its result back to alice (not downstream), closing the relay chain.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/DParty_last_erase.html" class="lemma-name">DParty_last_erase</a>
                     </td>
                     <td class="section-name">dsdp_n_rsteps</td>
-                    <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma DParty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_last AHE ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecv upstream (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; match dec dk&#39; enc0 with | Some m0 =&gt; pSend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) Finish | None =&gt; Fail end | None =&gt; Fail end)))).</code></td>
-                    <td class="meaning">Last relay: Init dk; Init v; Send E(v) to Alice; Recv dec from upstream; Send re-encrypted to Alice</td>
+                    <td class="proof-lines">9</td>
+                    <td><code class="signature">Lemma DParty_last_erase self upstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_last AHE ek self upstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_idx (e (enc (ek self) v&#39; r1&#39;)) (pRecvDec upstream dk&#39; (fun m0 =&gt; pSend alice_idx (e (enc (ek alice_idx) m0 r2&#39;)) Finish)))).</code></td>
+                    <td class="meaning">Last relay sends its result back to Alice (not downstream), closing the relay chain.</td>
                 </tr>
             
-                <tr data-search="dparty_intermediate_erase lemma dparty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_intermediate ahe ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_src (e (enc (ek self) v&#39; r1&#39;)) (precv alice_src (fun d0 : data =&gt; match std_from_enc (ahe:=ahe) d0 with | some enc0 =&gt; precv upstream (fun d1 : data =&gt; match std_from_enc (ahe:=ahe) d1 with | some enc1 =&gt; match dec dk&#39; enc1 with | some m0 =&gt; psend downstream (e (emul enc0 (enc (ek downstream) m0 r2&#39;))) finish | none =&gt; fail end | none =&gt; fail end) | none =&gt; fail intermediate relay: init dk; init v; send e(v) to alice; recv enc from alice; recv dec from upstream; send product to downstream">
+                <tr data-search="dparty_intermediate_erase lemma dparty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@dparty_intermediate ahe ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pinit (priv_key dk&#39;) (pinit (d v&#39;) (psend alice_src (e (enc (ek self) v&#39; r1&#39;)) (precvenc alice_src (fun enc0 =&gt; precvdec upstream dk&#39; (fun m0 =&gt; psend downstream (e (emul enc0 (enc (ek downstream) m0 r2&#39;))) finish))))). intermediate relays receive from both alice (ciphertext) and upstream relay (decrypted value), then forward downstream.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/DParty_intermediate_erase.html" class="lemma-name">DParty_intermediate_erase</a>
                     </td>
                     <td class="section-name">dsdp_n_rsteps</td>
-                    <td class="proof-lines">10</td>
-                    <td><code class="signature">Lemma DParty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_intermediate AHE ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_src (e (enc (ek self) v&#39; r1&#39;)) (pRecv alice_src (fun d0 : data =&gt; match std_from_enc (AHE:=AHE) d0 with | Some enc0 =&gt; pRecv upstream (fun d1 : data =&gt; match std_from_enc (AHE:=AHE) d1 with | Some enc1 =&gt; match dec dk&#39; enc1 with | Some m0 =&gt; pSend downstream (e (Emul enc0 (enc (ek downstream) m0 r2&#39;))) Finish | None =&gt; Fail end | None =&gt; Fail end) | None =&gt; Fail</code></td>
-                    <td class="meaning">Intermediate relay: Init dk; Init v; Send E(v) to Alice; Recv enc from Alice; Recv dec from upstream; Send product to downstream</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma DParty_intermediate_erase self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39; : erase (@DParty_intermediate AHE ek self alice_src upstream downstream dk&#39; v&#39; r1&#39; r2&#39;) = pInit (priv_key dk&#39;) (pInit (d v&#39;) (pSend alice_src (e (enc (ek self) v&#39; r1&#39;)) (pRecvEnc alice_src (fun enc0 =&gt; pRecvDec upstream dk&#39; (fun m0 =&gt; pSend downstream (e (Emul enc0 (enc (ek downstream) m0 r2&#39;))) Finish))))).</code></td>
+                    <td class="meaning">Intermediate relays receive from both Alice (ciphertext) and upstream relay (decrypted value), then forward downstream.</td>
                 </tr>
             
-                <tr data-search="size_interp1 lemma size_interp1 ps h : size (interp1 ps h) = size ps. ">
+                <tr data-search="size_interp_comp lemma size_interp_comp ps h : size (interp_comp ps h) = size ps. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/size_interp1.html" class="lemma-name">size_interp1</a>
+                        <a href="lemmas/size_interp_comp.html" class="lemma-name">size_interp_comp</a>
                     </td>
                     <td class="section-name">interp_sound_section</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Lemma size_interp1 ps h : size (interp1 ps h) = size ps.</code></td>
+                    <td><code class="signature">Lemma size_interp_comp ps h : size (interp_comp ps h) = size ps.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="step_proc_trace_indep lemma step_proc_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).1.1 = (smc_interpreter.step ps tr2 i).1.1. the process component of step is independent of the trace argument.">
+                <tr data-search="step_proc_trace_indep lemma step_proc_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).1.1 = (smc_interpreter.step ps tr2 i).1.1. why trace-independence: step returns (new_proc, trace_data, progress). the trace argument is an accumulator that step appends to, but it does not influence which process transition is taken or whether progress is made. these two lemmas justify using interp_comp (which passes nil) as a faithful proxy for interp (which threads real traces).">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_proc_trace_indep.html" class="lemma-name">step_proc_trace_indep</a>
@@ -1985,10 +2039,10 @@
                     <td class="section-name">interp_sound_section</td>
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma step_proc_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).1.1 = (smc_interpreter.step ps tr2 i).1.1.</code></td>
-                    <td class="meaning">The process component of step is independent of the trace argument.</td>
+                    <td class="meaning">Why trace-independence: step returns (new_proc, trace_data, progress). The trace argument is an accumulator that step appends to, but it does not influence which process transition is taken or whether progress is made. These two lemmas justify using interp_comp (which passes nil) as a faithful proxy for interp (which threads real traces).</td>
                 </tr>
             
-                <tr data-search="step_progress_trace_indep lemma step_progress_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).2 = (smc_interpreter.step ps tr2 i).2. the progress flag of step is independent of the trace argument.">
+                <tr data-search="step_progress_trace_indep lemma step_progress_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).2 = (smc_interpreter.step ps tr2 i).2. ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_progress_trace_indep.html" class="lemma-name">step_progress_trace_indep</a>
@@ -1996,21 +2050,21 @@
                     <td class="section-name">interp_sound_section</td>
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma step_progress_trace_indep (ps : seq (proc data)) tr1 tr2 i : (smc_interpreter.step ps tr1 i).2 = (smc_interpreter.step ps tr2 i).2.</code></td>
-                    <td class="meaning">The progress flag of step is independent of the trace argument.</td>
+                    <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="interp1e lemma interp1e h ps traces : size traces = size ps -&gt; interp1 ps h = (interp h ps traces).1. interp1 computes the same processes as interp">
+                <tr data-search="interp_compe lemma interp_compe h ps traces : size traces = size ps -&gt; interp_comp ps h = (interp h ps traces).1. bridge: interp_comp produces the same process states as the trace-aware interp. this lets us use interp_comp for computational verification (native_compute) while interp_sound provides the trace-attached rsteps proof via the full interp.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/interp1E.html" class="lemma-name">interp1E</a>
+                        <a href="lemmas/interp_compE.html" class="lemma-name">interp_compE</a>
                     </td>
                     <td class="section-name">interp_sound_section</td>
                     <td class="proof-lines">14</td>
-                    <td><code class="signature">Lemma interp1E h ps traces : size traces = size ps -&gt; interp1 ps h = (interp h ps traces).1.</code></td>
-                    <td class="meaning">interp1 computes the same processes as interp</td>
+                    <td><code class="signature">Lemma interp_compE h ps traces : size traces = size ps -&gt; interp_comp ps h = (interp h ps traces).1.</code></td>
+                    <td class="meaning">Bridge: interp_comp produces the same process states as the trace-aware interp. This lets us use interp_comp for computational verification (native_compute) while interp_sound provides the trace-attached rsteps proof via the full interp.</td>
                 </tr>
             
-                <tr data-search="step_iota_enum lemma step_iota_enum n (ps : seq (proc data)) : [seq smc_interpreter.step ps nil i | i &lt;- iota 0 n] = [seq smc_interpreter.step ps nil (val i) | i &lt;- enum &#39;i_n]. step_sound gives rsteps using tuples; we need to connect that to the seq-level interp1 which uses iota. these two lemmas bridge the iota/enum gap.">
+                <tr data-search="step_iota_enum lemma step_iota_enum n (ps : seq (proc data)) : [seq smc_interpreter.step ps nil i | i &lt;- iota 0 n] = [seq smc_interpreter.step ps nil (val i) | i &lt;- enum &#39;i_n]. step_sound gives rsteps using tuples; we need to connect that to the seq-level interp_comp which uses iota. these two lemmas bridge the iota/enum gap.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_iota_enum.html" class="lemma-name">step_iota_enum</a>
@@ -2018,18 +2072,7 @@
                     <td class="section-name">interp_sound_section</td>
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Lemma step_iota_enum n (ps : seq (proc data)) : [seq smc_interpreter.step ps nil i | i &lt;- iota 0 n] = [seq smc_interpreter.step ps nil (val i) | i &lt;- enum &#39;I_n].</code></td>
-                    <td class="meaning">step_sound gives rsteps using tuples; we need to connect that to the seq-level interp1 which uses iota. These two lemmas bridge the iota/enum gap.</td>
-                </tr>
-            
-                <tr data-search="interp_sound lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp1 (tval ps) h. interpreter soundness: h rounds of interp produce an rsteps proof">
-                    <td>
-                        <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/interp_sound.html" class="lemma-name">interp_sound</a>
-                    </td>
-                    <td class="section-name">interp_sound_section</td>
-                    <td class="proof-lines">16</td>
-                    <td><code class="signature">Lemma interp_sound n h (ps : n.-tuple (proc data)) : exists (final : n.-tuple (proc data)) tr, rsteps ps final tr /\ tval final = interp1 (tval ps) h.</code></td>
-                    <td class="meaning">Interpreter soundness: h rounds of interp produce an rsteps proof</td>
+                    <td class="meaning">step_sound gives rsteps using tuples; we need to connect that to the seq-level interp_comp which uses iota. These two lemmas bridge the iota/enum gap.</td>
                 </tr>
             
                 <tr data-search="dsdp_3party_terminates lemma dsdp_3party_terminates traces : all_terminated (interp 27 procs traces).1. the protocol terminates: we can check this via the interpreter">
@@ -2128,7 +2171,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_progress.v</span>
         </div>
-        <span class="file-count">73 helper</span>
+        <span class="file-count">84 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2372,6 +2415,28 @@
                     <td class="proof-lines">10</td>
                     <td><code class="signature">Lemma step_all_terminated (ps : seq (proc data)) : all_terminated ps -&gt; all_terminated (one_step_procs ps).</code></td>
                     <td class="meaning">Helper: stepping preserves all_terminated</td>
+                </tr>
+            
+                <tr data-search="path_all_rank_lt lemma path_all_rank_lt (t : fintype) (rel : t -&gt; t -&gt; bool) (rank : t -&gt; nat) (x : t) (s : seq t) : (forall i j : t, rel i j -&gt; (rank j &lt; rank i)%n) -&gt; path rel x s -&gt; forall z, z \in s -&gt; (rank z &lt; rank x)%n. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/path_all_rank_lt.html" class="lemma-name">path_all_rank_lt</a>
+                    </td>
+                    <td class="section-name">ranking_acyclic</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma path_all_rank_lt (T : finType) (rel : T -&gt; T -&gt; bool) (rank : T -&gt; nat) (x : T) (s : seq T) : (forall i j : T, rel i j -&gt; (rank j &lt; rank i)%N) -&gt; path rel x s -&gt; forall z, z \in s -&gt; (rank z &lt; rank x)%N.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="wait_for_ranking_acyclic lemma wait_for_ranking_acyclic n (tps : n.-tuple (proc data)) (rank : &#39;i_n -&gt; nat) : (forall i j : &#39;i_n, wait_for tps i j -&gt; (rank j &lt; rank i)%n) -&gt; wait_for_acyclic tps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/wait_for_ranking_acyclic.html" class="lemma-name">wait_for_ranking_acyclic</a>
+                    </td>
+                    <td class="section-name">ranking_acyclic</td>
+                    <td class="proof-lines">14</td>
+                    <td><code class="signature">Lemma wait_for_ranking_acyclic n (tps : n.-tuple (proc data)) (rank : &#39;I_n -&gt; nat) : (forall i j : &#39;I_n, wait_for tps i j -&gt; (rank j &lt; rank i)%N) -&gt; wait_for_acyclic tps.</code></td>
+                    <td class="meaning"></td>
                 </tr>
             
                 <tr data-search="size_procs lemma size_procs : size procs = n_relay.+2. ">
@@ -2781,6 +2846,105 @@
                     <td class="meaning">C1: Every dsdp_inv state has progress</td>
                 </tr>
             
+                <tr data-search="relay_body_target_valid lemma relay_body_target_valid (j : &#39;i_n_relay.+1) : proc_target_valid n_relay.+2 (relay_body j). l1: relay body always targets 0">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_body_target_valid.html" class="lemma-name">relay_body_target_valid</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma relay_body_target_valid (j : &#39;I_n_relay.+1) : proc_target_valid n_relay.+2 (relay_body j).</code></td>
+                    <td class="meaning">L1: relay body always targets 0</td>
+                </tr>
+            
+                <tr data-search="alice_foldr_target_valid lemma alice_foldr_target_valid (j : nat) (hj : (j &lt; n_relay.+1)%n) : proc_target_valid n_relay.+2 (alice_foldr_at j). l2: alice_foldr_at j targets j+1, valid when j &lt; n_relay+1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_foldr_target_valid.html" class="lemma-name">alice_foldr_target_valid</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma alice_foldr_target_valid (j : nat) (Hj : (j &lt; n_relay.+1)%N) : proc_target_valid n_relay.+2 (alice_foldr_at j).</code></td>
+                    <td class="meaning">L2: alice_foldr_at j targets j+1, valid when j &lt; n_relay+1</td>
+                </tr>
+            
+                <tr data-search="alice_tail_target_valid lemma alice_tail_target_valid : proc_target_valid n_relay.+2 (alice_foldr_at n_relay.+1). l3: alice_foldr_at (n_relay+1) targets n_relay+1">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_tail_target_valid.html" class="lemma-name">alice_tail_target_valid</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_tail_target_valid : proc_target_valid n_relay.+2 (alice_foldr_at n_relay.+1).</code></td>
+                    <td class="meaning">L3: alice_foldr_at (n_relay+1) targets n_relay+1</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_all_targets_valid lemma dsdp_inv_all_targets_valid ps : dsdp_inv ps -&gt; forall k, (k &lt; size ps)%n -&gt; proc_target_valid (size ps) (nth (default_proc data) ps k). l4: all targets valid in seq/nat world">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_all_targets_valid.html" class="lemma-name">dsdp_inv_all_targets_valid</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">151</td>
+                    <td><code class="signature">Lemma dsdp_inv_all_targets_valid ps : dsdp_inv ps -&gt; forall k, (k &lt; size ps)%N -&gt; proc_target_valid (size ps) (nth (default_proc data) ps k).</code></td>
+                    <td class="meaning">L4: all targets valid in seq/nat world</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_wf_targets lemma dsdp_inv_wf_targets ps (hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; wf_targets (@mk_tup ps hsz). l5: thin wrapper">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_wf_targets.html" class="lemma-name">dsdp_inv_wf_targets</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dsdp_inv_wf_targets ps (Hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; wf_targets (@mk_tup ps Hsz).</code></td>
+                    <td class="meaning">L5: thin wrapper</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_acyclic lemma dsdp_inv_acyclic ps (hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; wait_for_acyclic (@mk_tup ps hsz). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_acyclic.html" class="lemma-name">dsdp_inv_acyclic</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">371</td>
+                    <td><code class="signature">Lemma dsdp_inv_acyclic ps (Hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; wait_for_acyclic (@mk_tup ps Hsz).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_no_orphan lemma dsdp_inv_no_orphan ps (hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; forall i : &#39;i_n_relay.+2, is_stuck (@mk_tup ps hsz) i -&gt; forall j : &#39;i_n_relay.+2, wait_for (@mk_tup ps hsz) i j -&gt; ~~ is_final (tnth (@mk_tup ps hsz) j). ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_no_orphan.html" class="lemma-name">dsdp_inv_no_orphan</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">268</td>
+                    <td><code class="signature">Lemma dsdp_inv_no_orphan ps (Hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; forall i : &#39;I_n_relay.+2, is_stuck (@mk_tup ps Hsz) i -&gt; forall j : &#39;I_n_relay.+2, wait_for (@mk_tup ps Hsz) i j -&gt; ~~ is_final (tnth (@mk_tup ps Hsz) j).</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="has_progress_tuple_to_seq lemma has_progress_tuple_to_seq ps (hsz : size ps = n_relay.+2) : smc_deadlock.has_progress (@mk_tup ps hsz) -&gt; has_progress data ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/has_progress_tuple_to_seq.html" class="lemma-name">has_progress_tuple_to_seq</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma has_progress_tuple_to_seq ps (Hsz : size ps = n_relay.+2) : smc_deadlock.has_progress (@mk_tup ps Hsz) -&gt; has_progress data ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_has_progress_via_deadlock lemma dsdp_inv_has_progress_via_deadlock ps : dsdp_inv ps -&gt; has_progress data ps. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_has_progress_via_deadlock.html" class="lemma-name">dsdp_inv_has_progress_via_deadlock</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma dsdp_inv_has_progress_via_deadlock ps : dsdp_inv ps -&gt; has_progress data ps.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
                 <tr data-search="dsdp_inv_step_ar lemma dsdp_inv_step_ar (j : &#39;i_n_relay.+1) ps : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j == 1%n :&gt; nat) -&gt; exists f_enc : cipher ahe -&gt; proc data, nth (default_proc data) ps 1 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, exists sv, f_enc c = send 2 sv finish) -&gt; ((2 &lt;= j)%n -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; ((j == 2%n :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = send 2 sv_fw finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt; j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ (exists sv_fw, nth (default_proc data) ps j.-2 = send j.-1 sv_fw finish) /\ (exists f_recv, nth (default_proc data) ps j.-1 = recv j.-2 f_recv /\ (forall v, @std_from_enc ahe v != none -&gt; c2a: ar(j) → as variant">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -2961,7 +3125,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">26 helper</span>
+        <span class="file-count">32 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -3260,6 +3424,72 @@
                     <td class="proof-lines">6</td>
                     <td><code class="signature">Lemma ConstUS_n_discloses_V1 (US VS : {RV P -&gt; {ffun &#39;I_n_relay.+1 -&gt; msg}}) : US = (fun _ =&gt; ConstUS_n) -&gt; Dotp_n_rv US VS = (fun t =&gt; VS t ord0).</code></td>
                     <td class="meaning">If Alice sets US = e_1, she can extract V_1</td>
+                </tr>
+            
+                <tr data-search="cinde_v_relay lemma cinde_v_relay : p |= [% dk_a, r_relay_rv] _|_ varrv | condrv. n5: derived conditional independence of (dk_a, r_relay) from varrv given condrv. uses graphoid mixing_rule: dk_a _|_ [%varrv, r_relay_rv] | condrv (from dk_a_indep_all) varrv _|_ r_relay_rv | condrv (from r_relay_rv_indep_all) =&gt; [%dk_a, r_relay_rv] _|_ varrv | condrv">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/cinde_V_relay.html" class="lemma-name">cinde_V_relay</a>
+                    </td>
+                    <td class="section-name">dsdp_concrete_n</td>
+                    <td class="proof-lines">16</td>
+                    <td><code class="signature">Lemma cinde_V_relay : P |= [% Dk_a, R_relay_RV] _|_ VarRV | CondRV.</code></td>
+                    <td class="meaning">N5: DERIVED conditional independence of (Dk_a, R_relay) from VarRV given CondRV. Uses graphoid mixing_rule: Dk_a _|_ [%VarRV, R_relay_RV] | CondRV (from Dk_a_indep_all) VarRV _|_ R_relay_RV | CondRV (from R_relay_RV_indep_all) =&gt; [%Dk_a, R_relay_RV] _|_ VarRV | CondRV</td>
+                </tr>
+            
+                <tr data-search="e_relay_cinde_varrv lemma e_relay_cinde_varrv : p |= e_relay_rv _|_ varrv | decview_n. derived: conditional independence follows from unconditional via cinde_rv_unit + weak_union + cpr_prd_unit_rv">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/E_relay_cinde_VarRV.html" class="lemma-name">E_relay_cinde_VarRV</a>
+                    </td>
+                    <td class="section-name">dsdp_concrete_n</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma E_relay_cinde_VarRV : P |= E_relay_RV _|_ VarRV | DecView_n.</code></td>
+                    <td class="meaning">DERIVED: conditional independence follows from unconditional via cinde_RV_unit + weak_union + cpr_prd_unit_RV</td>
+                </tr>
+            
+                <tr data-search="r_relay_indep_vuv lemma r_relay_indep_vuv : forall i j, p |= r_relay i _|_ [%v_relay i \* u_relay i, v_relay j]. derived: r_i is independent of the otp payload paired with any target v_j. immediate from r_relay_indep_all.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/R_relay_indep_VUV.html" class="lemma-name">R_relay_indep_VUV</a>
+                    </td>
+                    <td class="section-name">relay_privacy_concrete_n</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma R_relay_indep_VUV : forall i j, P |= R_relay i _|_ [%V_relay i \* U_relay i, V_relay j].</code></td>
+                    <td class="meaning">DERIVED: R_i is independent of the OTP payload paired with any target V_j. Immediate from R_relay_indep_all.</td>
+                </tr>
+            
+                <tr data-search="relay_view_indep_v lemma relay_view_indep_v : forall i j, i != j -&gt; p |= [%v_relay i, u_relay i, r_relay i] _|_ v_relay j. derived: relay i&#39;s full view is independent of relay j&#39;s private value. proof by two applications of graphoid mixing_rule: step 1: [%v_i, u_i] _|_ v_j (from v_relay_indep + u_relay_indep_all) step 2: [%v_i, u_i, r_i] _|_ v_j (from step 1 + r_relay_indep_all)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_view_indep_V.html" class="lemma-name">relay_view_indep_V</a>
+                    </td>
+                    <td class="section-name">relay_privacy_concrete_n</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma relay_view_indep_V : forall i j, i != j -&gt; P |= [%V_relay i, U_relay i, R_relay i] _|_ V_relay j.</code></td>
+                    <td class="meaning">DERIVED: relay i&#39;s full view is independent of relay j&#39;s private value. Proof by two applications of graphoid mixing_rule: Step 1: [%V_i, U_i] _|_ V_j (from V_relay_indep + U_relay_indep_all) Step 2: [%V_i, U_i, R_i] _|_ V_j (from step 1 + R_relay_indep_all)</td>
+                </tr>
+            
+                <tr data-search="relay_otp_mask_indep lemma relay_otp_mask_indep (i j : &#39;i_n_relay.+1) : p |= (v_relay i \* u_relay i \+ r_relay i) _|_ v_relay j. ==========================================================================">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_otp_mask_indep.html" class="lemma-name">relay_otp_mask_indep</a>
+                    </td>
+                    <td class="section-name">relay_privacy_concrete_n</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma relay_otp_mask_indep (i j : &#39;I_n_relay.+1) : P |= (V_relay i \* U_relay i \+ R_relay i) _|_ V_relay j.</code></td>
+                    <td class="meaning">==========================================================================</td>
+                </tr>
+            
+                <tr data-search="relay_indep_v_target_n lemma relay_indep_v_target_n (i j : &#39;i_n_relay.+1) : i != j -&gt; p |= relayview_n i _|_ v_relay j. ==========================================================================">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_indep_V_target_n.html" class="lemma-name">relay_indep_V_target_n</a>
+                    </td>
+                    <td class="section-name">relay_privacy_concrete_n</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma relay_indep_V_target_n (i j : &#39;I_n_relay.+1) : i != j -&gt; P |= RelayView_n i _|_ V_relay j.</code></td>
+                    <td class="meaning">==========================================================================</td>
                 </tr>
             
             </tbody>
@@ -5641,7 +5871,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-03-30 | 397 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/767f161988d9e392fd8b41d3634922a31ec27e07" target="_blank" rel="noopener" style="color: var(--accent);">767f161</a></p>
+        <p>Generated: 2026-03-31 | 417 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/05f6364370c2f46e1a48e1f49b9217151c182961" target="_blank" rel="noopener" style="color: var(--accent);">05f6364</a></p>
     </footer>
     
     <script>
