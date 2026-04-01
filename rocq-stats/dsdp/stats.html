@@ -30,7 +30,7 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">442</div>
+        <div class="value">446</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
@@ -38,7 +38,7 @@
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">386</div>
+        <div class="value">390</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">15,282</div>
+        <div class="value">15,593</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f8980d5d6d576a7e8b1fd05f9bf6eb67e8ce8aa6" target="_blank" rel="noopener">f8980d5</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/fa480794a8f250cdbccae4adb19d9c244db73c3d" target="_blank" rel="noopener">fa48079</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -1247,7 +1247,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (386 total)
+    Supporting lemmas and utilities (390 total)
 </p>
 
 <div id="helpers-section">
@@ -1721,7 +1721,7 @@
                         <a href="lemmas/dsdp_inv_round.html" class="lemma-name">dsdp_inv_round</a>
                     </td>
                     <td class="section-name">alice_trace_at_inv</td>
-                    <td class="proof-lines">8</td>
+                    <td class="proof-lines">6</td>
                     <td><code class="signature">Lemma dsdp_inv_round (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; let ps&#39; := res_procs [tuple smc_interpreter.step ps [::] i | i &lt; n_parties] in rsteps ps ps&#39; (res_traces [tuple smc_interpreter.step ps [::] i | i &lt; n_parties]) /\ (all_terminated (tval ps&#39;) \/ inv (tval ps&#39;)).</code></td>
                     <td class="meaning">One round under dsdp_inv: step_sound gives rsteps, dsdp_inv_step preserves the invariant (or terminates).</td>
                 </tr>
@@ -1743,7 +1743,7 @@
                         <a href="lemmas/dsdp_inv_rsteps_trace_frags.html" class="lemma-name">dsdp_inv_rsteps_trace_frags</a>
                     </td>
                     <td class="section-name">alice_trace_at_inv</td>
-                    <td class="proof-lines">35</td>
+                    <td class="proof-lines">33</td>
                     <td><code class="signature">Lemma dsdp_inv_rsteps_trace_frags (h : nat) (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; exists (final : n_parties.-tuple (proc data)) (tr : n_parties.-tuple (seq data)) (frags : seq (seq data)), rsteps ps final tr /\ (all_terminated (tval final) \/ inv (tval final)) /\ tnth tr ord0 = flatten (rev frags) /\ (forall k, (k &lt; size frags)%N -&gt; (exists v, nth [::] frags k = [:: v]) \/ nth [::] frags k = [::]).</code></td>
                     <td class="meaning">R2b: Multi-round rsteps with explicit per-round Alice trace fragments. frags is in REVERSE chronological order (newest first) so that rtrans concatenation (tr2 ++ tr1) matches flatten (rev frags). Each fragment is either [:: v] (from Inv_AR/Inv_tail/Inv_ret) or [::] (from Inv_AS*/Inv_drain).</td>
                 </tr>
@@ -2450,7 +2450,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_progress.v</span>
         </div>
-        <span class="file-count">84 helper</span>
+        <span class="file-count">88 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -2850,6 +2850,17 @@
                     <td class="meaning">H1: pRecvEnc continuation</td>
                 </tr>
             
+                <tr data-search="std_from_enc_e_local lemma std_from_enc_e_local (c : cipher ahe) : @std_from_enc ahe (e_local c) = some c. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/std_from_enc_e_local.html" class="lemma-name">std_from_enc_e_local</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma std_from_enc_e_local (c : cipher AHE) : @std_from_enc AHE (e_local c) = Some c.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
                 <tr data-search="precvdec_cont lemma precvdec_cont (dk&#39; : he_types.priv_key ahe) (f : plain ahe -&gt; proc data) (c : cipher ahe) : @dec ahe dk&#39; c != none -&gt; exists m, @dec ahe dk&#39; c = some m /\ (oapp f fail \o (obind (@dec ahe dk&#39;) \o @std_from_enc ahe)) (e_local c) = f m. h2: precvdec continuation">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -2883,14 +2894,14 @@
                     <td class="meaning">H4: Initial processes match relay_body</td>
                 </tr>
             
-                <tr data-search="relay_body_is_send0 lemma relay_body_is_send0 (j : &#39;i_n_relay.+1) : exists sv sk, relay_body j = send 0 sv sk. h5: relay_body always starts with send 0">
+                <tr data-search="relay_body_is_send0 lemma relay_body_is_send0 (j : &#39;i_n_relay.+1) : exists sk, relay_body j = send 0 (e_local (enc_local (ek (nat_to_party_id j.+1)) (v_relay j) (r1_relay j))) sk. h5: relay_body always starts with send 0">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/relay_body_is_send0.html" class="lemma-name">relay_body_is_send0</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
                     <td class="proof-lines">3</td>
-                    <td><code class="signature">Lemma relay_body_is_send0 (j : &#39;I_n_relay.+1) : exists sv sk, relay_body j = Send 0 sv sk.</code></td>
+                    <td><code class="signature">Lemma relay_body_is_send0 (j : &#39;I_n_relay.+1) : exists sk, relay_body j = Send 0 (e_local (enc_local (ek (nat_to_party_id j.+1)) (v_relay j) (r1_relay j))) sk.</code></td>
                     <td class="meaning">H5: relay_body always starts with Send 0</td>
                 </tr>
             
@@ -2938,6 +2949,17 @@
                     <td class="meaning">R4: Last relay body structure</td>
                 </tr>
             
+                <tr data-search="relay_last_recv_concrete lemma relay_last_recv_concrete : exists sv f_dec, relay_body (@ord_max n_relay) = send 0 sv (recv n_relay f_dec) /\ forall m rr, f_dec (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) finish. last relay concrete continuation: decrypt + re-encrypt for alice">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_last_recv_concrete.html" class="lemma-name">relay_last_recv_concrete</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma relay_last_recv_concrete : exists sv f_dec, relay_body (@ord_max n_relay) = Send 0 sv (Recv n_relay f_dec) /\ forall m rr, f_dec (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = Send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) Finish.</code></td>
+                    <td class="meaning">Last relay concrete continuation: decrypt + re-encrypt for Alice</td>
+                </tr>
+            
                 <tr data-search="alice_body_at_recv lemma alice_body_at_recv (j : nat) (hj : (j &lt; n_relay.+1)%n) : exists f, foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f. h6: alice&#39;s foldr at iteration j starts with recv(j+1,...)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -2960,14 +2982,14 @@
                     <td class="meaning">H7: After Alice&#39;s Recv fires, Alice becomes Send(dest(j),...,rest)</td>
                 </tr>
             
-                <tr data-search="alice_recv_to_send_foldr lemma alice_recv_to_send_foldr (j : nat) (hj : (j &lt; n_relay.+1)%n) (f : data -&gt; proc data) (v : data) : @std_from_enc ahe v != none -&gt; foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f -&gt; exists sv, f v = send (alice_send_dest (ordinal hj)) sv (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))). h7&#39;: strengthened h7 — rest is the next foldr iteration">
+                <tr data-search="alice_recv_to_send_foldr lemma alice_recv_to_send_foldr (j : nat) (hj : (j &lt; n_relay.+1)%n) (f : data -&gt; proc data) (v : data) (c : cipher ahe) : @std_from_enc ahe v = some c -&gt; foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = recv (ordinal hj).+1 f -&gt; let sv := e_local (@emul ahe (@epow ahe c (u (lift ord0 (ordinal hj)))) (enc (ek (nat_to_party_id (ordinal hj).+1)) (r (ordinal hj)) (rand_a (ordinal hj)))) in f v = send (alice_send_dest (ordinal hj)) sv (foldr (fun (fi : &#39;i_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body ahe ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail ahe n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))). h7&#39;: strengthened h7 — rest is the next foldr iteration">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/alice_recv_to_send_foldr.html" class="lemma-name">alice_recv_to_send_foldr</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">14</td>
-                    <td><code class="signature">Lemma alice_recv_to_send_foldr (j : nat) (Hj : (j &lt; n_relay.+1)%N) (f : data -&gt; proc data) (v : data) : @std_from_enc AHE v != None -&gt; foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = Recv (Ordinal Hj).+1 f -&gt; exists sv, f v = Send (alice_send_dest (Ordinal Hj)) sv (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))).</code></td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma alice_recv_to_send_foldr (j : nat) (Hj : (j &lt; n_relay.+1)%N) (f : data -&gt; proc data) (v : data) (c : cipher AHE) : @std_from_enc AHE v = Some c -&gt; foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j (zip relays (iota 0 (size relays)))) = Recv (Ordinal Hj).+1 f -&gt; let sv := e_local (@Emul AHE (@Epow AHE c (u (lift ord0 (Ordinal Hj)))) (enc (ek (nat_to_party_id (Ordinal Hj).+1)) (r (Ordinal Hj)) (rand_a (Ordinal Hj)))) in f v = Send (alice_send_dest (Ordinal Hj)) sv (foldr (fun (fi : &#39;I_n_relay.+1 * nat) (cont : proc data) =&gt; @alice_erase_body AHE ek n_relay u r rand_a fi.1 fi.2 cont) (@alice_erase_tail AHE n_relay dk v0 u r) (drop j.+1 (zip relays (iota 0 (size relays))))).</code></td>
                     <td class="meaning">H7&#39;: Strengthened H7 — rest IS the next foldr iteration</td>
                 </tr>
             
@@ -3024,6 +3046,17 @@
                     <td class="proof-lines">17</td>
                     <td><code class="signature">Lemma relay_inter_recv_from_body_fires (j : &#39;I_n_relay.+1) (v : data) (sv0 : data) (f0 : data -&gt; proc data) : (0 &lt; j)%N -&gt; (j &lt; n_relay)%N -&gt; relay_body j = Send 0 sv0 (Recv 0 f0) -&gt; @std_from_enc AHE v != None -&gt; exists f_dec, f0 v = Recv j f_dec /\ (forall w, @std_from_enc AHE w != None -&gt; exists sw, f_dec w = Send j.+2 sw Finish).</code></td>
                     <td class="meaning">T2: Intermediate relay recv_from_body fires → RecvUpstream linked</td>
+                </tr>
+            
+                <tr data-search="relay_inter_recv_concrete lemma relay_inter_recv_concrete (j : &#39;i_n_relay.+1) (alice_c : cipher ahe) (sv0 : data) (f0 : data -&gt; proc data) : (0 &lt; j)%n -&gt; (j &lt; n_relay)%n -&gt; relay_body j = send 0 sv0 (recv 0 f0) -&gt; exists f_dec, f0 (e_local alice_c) = recv j f_dec /\ forall m rr, f_dec (e_local (enc (pub_of_priv (dk_relay j)) m rr)) = send j.+2 (e_local (emul_local alice_c (enc (ek (nat_to_party_id j.+2)) m (r2_relay j)))) finish. t2b: like t2 but with concrete continuation for the emul_local form">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/relay_inter_recv_concrete.html" class="lemma-name">relay_inter_recv_concrete</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma relay_inter_recv_concrete (j : &#39;I_n_relay.+1) (alice_c : cipher AHE) (sv0 : data) (f0 : data -&gt; proc data) : (0 &lt; j)%N -&gt; (j &lt; n_relay)%N -&gt; relay_body j = Send 0 sv0 (Recv 0 f0) -&gt; exists f_dec, f0 (e_local alice_c) = Recv j f_dec /\ forall m rr, f_dec (e_local (enc (pub_of_priv (dk_relay j)) m rr)) = Send j.+2 (e_local (Emul_local alice_c (enc (ek (nat_to_party_id j.+2)) m (r2_relay j)))) Finish.</code></td>
+                    <td class="meaning">T2b: Like T2 but with concrete continuation for the Emul_local form</td>
                 </tr>
             
                 <tr data-search="relay_recv_upstream_linked_fires lemma relay_recv_upstream_linked_fires (f : data -&gt; proc data) (j : nat) (v : data) : (forall w, @std_from_enc ahe w != none -&gt; exists sw, f w = send j.+2 sw finish) -&gt; @std_from_enc ahe v != none -&gt; exists sv, f v = send j.+2 sv finish. this is trivial from the linked continuation behavior">
@@ -3114,6 +3147,17 @@
                     <td class="meaning"></td>
                 </tr>
             
+                <tr data-search="alice_enc_value lemma alice_enc_value (j : &#39;i_n_relay.+1) : exists rr, alice_enc j = enc (ek (nat_to_party_id j.+1)) (term j) rr. l1: alice_enc j encrypts term j — by epow_scalarm + emul_addm">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_enc_value.html" class="lemma-name">alice_enc_value</a>
+                    </td>
+                    <td class="section-name">dsdp_progress</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma alice_enc_value (j : &#39;I_n_relay.+1) : exists rr, alice_enc j = enc (ek (nat_to_party_id j.+1)) (term j) rr.</code></td>
+                    <td class="meaning">L1: alice_enc j encrypts term j — by Epow_scalarM + Emul_addM</td>
+                </tr>
+            
                 <tr data-search="dsdp_inv_has_progress lemma dsdp_inv_has_progress ps : dsdp_inv ps -&gt; has_progress data ps. c1: every dsdp_inv state has progress">
                     <td>
                         <span class="badge badge-helper">Helper</span>
@@ -3186,7 +3230,7 @@
                         <a href="lemmas/dsdp_inv_acyclic.html" class="lemma-name">dsdp_inv_acyclic</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">371</td>
+                    <td class="proof-lines">368</td>
                     <td><code class="signature">Lemma dsdp_inv_acyclic ps (Hsz : size ps = n_relay.+2) : dsdp_inv ps -&gt; wait_for_acyclic (@mk_tup ps Hsz).</code></td>
                     <td class="meaning"></td>
                 </tr>
@@ -3224,69 +3268,69 @@
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_ar lemma dsdp_inv_step_ar (j : &#39;i_n_relay.+1) ps : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j == 1%n :&gt; nat) -&gt; exists f_enc : cipher ahe -&gt; proc data, nth (default_proc data) ps 1 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, exists sv, f_enc c = send 2 sv finish) -&gt; ((2 &lt;= j)%n -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; ((j == 2%n :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = send 2 sv_fw finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt; j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ (exists sv_fw, nth (default_proc data) ps j.-2 = send j.-1 sv_fw finish) /\ (exists f_recv, nth (default_proc data) ps j.-1 = recv j.-2 f_recv /\ (forall v, @std_from_enc ahe v != none -&gt; c2a: ar(j) → as variant">
+                <tr data-search="dsdp_inv_step_ar lemma dsdp_inv_step_ar (j : &#39;i_n_relay.+1) ps (rr_fw : rand ahe) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j == 1%n :&gt; nat) -&gt; exists f_enc : cipher ahe -&gt; proc data, nth (default_proc data) ps 1 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, f_enc c = send 2 (e_local (emul_local c (enc (ek (nat_to_party_id 2)) (term ord0) (r2_relay ord0)))) finish) -&gt; ((2 &lt;= j)%n -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; ((j == 2%n :&gt; nat) -&gt; nth (default_proc data) ps 1 = send 2 (e_local (enc (ek (nat_to_party_id 2)) (chain_acc 0) rr_fw)) finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt; j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ nth (default_proc data) ps j.-2 = c2a: ar(j) → as variant">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_AR.html" class="lemma-name">dsdp_inv_step_AR</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">247</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_AR (j : &#39;I_n_relay.+1) ps : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j == 1%N :&gt; nat) -&gt; exists f_enc : cipher AHE -&gt; proc data, nth (default_proc data) ps 1 = Recv 0 (oapp f_enc Fail \o @std_from_enc AHE) /\ forall c, exists sv, f_enc c = Send 2 sv Finish) -&gt; ((2 &lt;= j)%N -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; ((j == 2%N :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = Send 2 sv_fw Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt; j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ (exists sv_fw, nth (default_proc data) ps j.-2 = Send j.-1 sv_fw Finish) /\ (exists f_recv, nth (default_proc data) ps j.-1 = Recv j.-2 f_recv /\ (forall v, @std_from_enc AHE v != None -&gt;</code></td>
+                    <td class="proof-lines">307</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AR (j : &#39;I_n_relay.+1) ps (rr_fw : rand AHE) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at j -&gt; relay_at_body j ps -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j == 1%N :&gt; nat) -&gt; exists f_enc : cipher AHE -&gt; proc data, nth (default_proc data) ps 1 = Recv 0 (oapp f_enc Fail \o @std_from_enc AHE) /\ forall c, f_enc c = Send 2 (e_local (Emul_local c (enc (ek (nat_to_party_id 2)) (term ord0) (r2_relay ord0)))) Finish) -&gt; ((2 &lt;= j)%N -&gt; exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; ((j == 2%N :&gt; nat) -&gt; nth (default_proc data) ps 1 = Send 2 (e_local (enc (ek (nat_to_party_id 2)) (chain_acc 0) rr_fw)) Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt; j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ nth (default_proc data) ps j.-2 =</code></td>
                     <td class="meaning">C2a: AR(j) → AS variant</td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_as0 lemma dsdp_inv_step_as0 ps (f_inner : plain ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send 1 vd (alice_foldr_at 1)) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o (obind (@dec ahe (dk_relay ord0)) \o @std_from_enc ahe)) -&gt; (forall i : &#39;i_n_relay.+1, (0 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher ahe -&gt; proc data, f_inner m = recv 0 (oapp g fail \o @std_from_enc ahe) /\ forall c, exists sv, g c = send 2 sv finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2b: as0 → ar(1)">
+                <tr data-search="dsdp_inv_step_as0 lemma dsdp_inv_step_as0 ps (f_inner : plain ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = send 1 (e_local (alice_enc ord0)) (alice_foldr_at 1) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o (obind (@dec ahe (dk_relay ord0)) \o @std_from_enc ahe)) -&gt; (forall i : &#39;i_n_relay.+1, (0 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher ahe -&gt; proc data, f_inner m = recv 0 (oapp g fail \o @std_from_enc ahe) /\ forall c, g c = send 2 (e_local (emul_local c (enc (ek (nat_to_party_id 2)) m (r2_relay ord0)))) finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2b: as0 → ar(1)">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_AS0.html" class="lemma-name">dsdp_inv_step_AS0</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">44</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_AS0 ps (f_inner : plain AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send 1 vd (alice_foldr_at 1)) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o (obind (@dec AHE (dk_relay ord0)) \o @std_from_enc AHE)) -&gt; (forall i : &#39;I_n_relay.+1, (0 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher AHE -&gt; proc data, f_inner m = Recv 0 (oapp g Fail \o @std_from_enc AHE) /\ forall c, exists sv, g c = Send 2 sv Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="proof-lines">48</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AS0 ps (f_inner : plain AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = Send 1 (e_local (alice_enc ord0)) (alice_foldr_at 1) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o (obind (@dec AHE (dk_relay ord0)) \o @std_from_enc AHE)) -&gt; (forall i : &#39;I_n_relay.+1, (0 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall m, exists g : cipher AHE -&gt; proc data, f_inner m = Recv 0 (oapp g Fail \o @std_from_enc AHE) /\ forall c, g c = Send 2 (e_local (Emul_local c (enc (ek (nat_to_party_id 2)) m (r2_relay ord0)))) Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
                     <td class="meaning">C2b: AS0 → AR(1)</td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_as1 lemma dsdp_inv_step_as1 ps (f_inner : cipher ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send 1 vd (alice_foldr_at 2)) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o @std_from_enc ahe) -&gt; (forall i : &#39;i_n_relay.+1, (1 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall c, exists sv, f_inner c = send 2 sv finish) -&gt; ((1 &lt; n_relay)%n -&gt; exists sv f, relay_body (ordinal (n:=n_relay.+1) (m:=1) hn_relay) = send 0 sv (recv 0 f) /\ nth (default_proc data) ps 2 = recv 0 f) -&gt; (n_relay = 1%n -&gt; exists f, nth (default_proc data) ps 2 = recv 1 f /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send 0 sv finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2c: as1 → ar(2) or drain">
+                <tr data-search="dsdp_inv_step_as1 lemma dsdp_inv_step_as1 ps (f_inner : cipher ahe -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = send 1 (e_local (alice_enc (inord 1))) (alice_foldr_at 2) -&gt; nth (default_proc data) ps 1 = recv 0 (oapp f_inner fail \o @std_from_enc ahe) -&gt; (forall i : &#39;i_n_relay.+1, (1 &lt; i)%n -&gt; relay_at_body i ps) -&gt; (forall c, f_inner c = send 2 (e_local (emul_local c (enc (ek (nat_to_party_id 2)) (term ord0) (r2_relay ord0)))) finish) -&gt; ((1 &lt; n_relay)%n -&gt; exists sv f, relay_body (ordinal (n:=n_relay.+1) (m:=1) hn_relay) = send 0 sv (recv 0 f) /\ nth (default_proc data) ps 2 = recv 0 f) -&gt; (n_relay = 1%n -&gt; exists f, nth (default_proc data) ps 2 = recv 1 f /\ forall m rr, f (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2c: as1 → ar(2) or drain">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_AS1.html" class="lemma-name">dsdp_inv_step_AS1</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">73</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_AS1 ps (f_inner : cipher AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send 1 vd (alice_foldr_at 2)) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o @std_from_enc AHE) -&gt; (forall i : &#39;I_n_relay.+1, (1 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall c, exists sv, f_inner c = Send 2 sv Finish) -&gt; ((1 &lt; n_relay)%N -&gt; exists sv f, relay_body (Ordinal (n:=n_relay.+1) (m:=1) Hn_relay) = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps 2 = Recv 0 f) -&gt; (n_relay = 1%N -&gt; exists f, nth (default_proc data) ps 2 = Recv 1 f /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send 0 sv Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="proof-lines">96</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_AS1 ps (f_inner : cipher AHE -&gt; proc data) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = Send 1 (e_local (alice_enc (inord 1))) (alice_foldr_at 2) -&gt; nth (default_proc data) ps 1 = Recv 0 (oapp f_inner Fail \o @std_from_enc AHE) -&gt; (forall i : &#39;I_n_relay.+1, (1 &lt; i)%N -&gt; relay_at_body i ps) -&gt; (forall c, f_inner c = Send 2 (e_local (Emul_local c (enc (ek (nat_to_party_id 2)) (term ord0) (r2_relay ord0)))) Finish) -&gt; ((1 &lt; n_relay)%N -&gt; exists sv f, relay_body (Ordinal (n:=n_relay.+1) (m:=1) Hn_relay) = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps 2 = Recv 0 f) -&gt; (n_relay = 1%N -&gt; exists f, nth (default_proc data) ps 2 = Recv 1 f /\ forall m rr, f (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = Send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) Finish) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
                     <td class="meaning">C2c: AS1 → AR(2) or drain</td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_asj lemma dsdp_inv_step_asj (j : &#39;i_n_relay.+1) ps : (2 &lt;= j)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists vd, nth (default_proc data) ps 0 = send j vd (alice_foldr_at j.+1)) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%n -&gt; exists sv f, relay_body j = send 0 sv (recv 0 f) /\ nth (default_proc data) ps j.+1 = recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = recv n_relay f_dec /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f_dec v = send 0 sv finish) -&gt; ((j == 2%n :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = send 2 sv_fw finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ (exists sv_fw, nth (default_proc data) ps j.-1 = send j sv_fw finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2d: asj → ar(j+1) or drain">
+                <tr data-search="dsdp_inv_step_asj lemma dsdp_inv_step_asj (j : &#39;i_n_relay.+1) ps (rr_fw : rand ahe) : (2 &lt;= j)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = send j (e_local (alice_enc j)) (alice_foldr_at j.+1) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = send 0 sv0 (recv 0 f0) /\ nth (default_proc data) ps j = recv 0 f0) -&gt; (forall i : &#39;i_n_relay.+1, (j &lt; i)%n -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%n -&gt; exists sv f, relay_body j = send 0 sv (recv 0 f) /\ nth (default_proc data) ps j.+1 = recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = recv n_relay f_dec /\ forall m rr, f_dec (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) finish) -&gt; ((j == 2%n :&gt; nat) -&gt; nth (default_proc data) ps 1 = send 2 (e_local (enc (ek (nat_to_party_id 2)) (chain_acc 0) rr_fw)) finish) -&gt; ((3 &lt;= j)%n -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%n -&gt; nth (default_proc data) ps i.+1 = finish) /\ nth (default_proc data) ps j.-1 = c2d: asj → ar(j+1) or drain">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_ASj.html" class="lemma-name">dsdp_inv_step_ASj</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">250</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_ASj (j : &#39;I_n_relay.+1) ps : (2 &lt;= j)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists vd, nth (default_proc data) ps 0 = Send j vd (alice_foldr_at j.+1)) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%N -&gt; exists sv f, relay_body j = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps j.+1 = Recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = Recv n_relay f_dec /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f_dec v = Send 0 sv Finish) -&gt; ((j == 2%N :&gt; nat) -&gt; exists sv_fw, nth (default_proc data) ps 1 = Send 2 sv_fw Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ (exists sv_fw, nth (default_proc data) ps j.-1 = Send j sv_fw Finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="proof-lines">324</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_ASj (j : &#39;I_n_relay.+1) ps (rr_fw : rand AHE) : (2 &lt;= j)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = Send j (e_local (alice_enc j)) (alice_foldr_at j.+1) -&gt; (exists sv0 f0, relay_body (@inord n_relay j.-1) = Send 0 sv0 (Recv 0 f0) /\ nth (default_proc data) ps j = Recv 0 f0) -&gt; (forall i : &#39;I_n_relay.+1, (j &lt; i)%N -&gt; relay_at_body i ps) -&gt; ((j &lt; n_relay)%N -&gt; exists sv f, relay_body j = Send 0 sv (Recv 0 f) /\ nth (default_proc data) ps j.+1 = Recv 0 f) -&gt; ((j : nat) = n_relay -&gt; exists f_dec, nth (default_proc data) ps n_relay.+1 = Recv n_relay f_dec /\ forall m rr, f_dec (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = Send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) Finish) -&gt; ((j == 2%N :&gt; nat) -&gt; nth (default_proc data) ps 1 = Send 2 (e_local (enc (ek (nat_to_party_id 2)) (chain_acc 0) rr_fw)) Finish) -&gt; ((3 &lt;= j)%N -&gt; (forall i : nat, (i.+1 &lt;= j.-2)%N -&gt; nth (default_proc data) ps i.+1 = Finish) /\ nth (default_proc data) ps j.-1 =</code></td>
                     <td class="meaning">C2d: ASj → AR(j+1) or drain</td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_drain lemma dsdp_inv_step_drain (j : &#39;i_n_relay.+1) ps : (j.+1 &lt; n_relay.+1)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (exists v, nth (default_proc data) ps j.+1 = send j.+2 v finish) -&gt; (exists f, nth (default_proc data) ps j.+2 = recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%n -&gt; nth (default_proc data) ps i.+1 = finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = recv n_relay f /\ forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send 0 sv finish) -&gt; (forall i : nat, (j &lt; i)%n -&gt; (i &lt; n_relay)%n -&gt; exists f, nth (default_proc data) ps i.+1 = recv i f /\ (forall v, @std_from_enc ahe v != none -&gt; exists sv, f v = send i.+2 sv finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2e: drain(d) → drain(d+1) or tail">
+                <tr data-search="dsdp_inv_step_drain lemma dsdp_inv_step_drain (j : &#39;i_n_relay.+1) ps (rr_drain : rand ahe) : (j.+1 &lt; n_relay.+1)%n -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; nth (default_proc data) ps j.+1 = send j.+2 (e_local (enc (ek (nat_to_party_id j.+2)) (chain_acc j) rr_drain)) finish -&gt; (exists f, nth (default_proc data) ps j.+2 = recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%n -&gt; nth (default_proc data) ps i.+1 = finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = recv n_relay f /\ forall m rr, f (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) finish) -&gt; (forall i : nat, (j &lt; i)%n -&gt; (i &lt; n_relay)%n -&gt; exists f, nth (default_proc data) ps i.+1 = recv i f /\ (forall m rr, f (e_local (enc (ek (nat_to_party_id i.+1)) m rr)) = send i.+2 (e_local (emul_local (alice_enc (inord i.+1)) (enc (ek (nat_to_party_id i.+2)) m (r2_relay (inord i))))) finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). c2e: drain(d) → drain(d+1) or tail">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_drain.html" class="lemma-name">dsdp_inv_step_drain</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">128</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_drain (j : &#39;I_n_relay.+1) ps : (j.+1 &lt; n_relay.+1)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (exists v, nth (default_proc data) ps j.+1 = Send j.+2 v Finish) -&gt; (exists f, nth (default_proc data) ps j.+2 = Recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%N -&gt; nth (default_proc data) ps i.+1 = Finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = Recv n_relay f /\ forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send 0 sv Finish) -&gt; (forall i : nat, (j &lt; i)%N -&gt; (i &lt; n_relay)%N -&gt; exists f, nth (default_proc data) ps i.+1 = Recv i f /\ (forall v, @std_from_enc AHE v != None -&gt; exists sv, f v = Send i.+2 sv Finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="proof-lines">151</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_drain (j : &#39;I_n_relay.+1) ps (rr_drain : rand AHE) : (j.+1 &lt; n_relay.+1)%N -&gt; size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; nth (default_proc data) ps j.+1 = Send j.+2 (e_local (enc (ek (nat_to_party_id j.+2)) (chain_acc j) rr_drain)) Finish -&gt; (exists f, nth (default_proc data) ps j.+2 = Recv j.+1 f) -&gt; (forall i : nat, (i &lt; j)%N -&gt; nth (default_proc data) ps i.+1 = Finish) -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = Recv n_relay f /\ forall m rr, f (e_local (enc (ek (nat_to_party_id n_relay.+1)) m rr)) = Send 0 (e_local (enc (ek alice_idx) m (r2_relay (inord n_relay)))) Finish) -&gt; (forall i : nat, (j &lt; i)%N -&gt; (i &lt; n_relay)%N -&gt; exists f, nth (default_proc data) ps i.+1 = Recv i f /\ (forall m rr, f (e_local (enc (ek (nat_to_party_id i.+1)) m rr)) = Send i.+2 (e_local (Emul_local (alice_enc (inord i.+1)) (enc (ek (nat_to_party_id i.+2)) m (r2_relay (inord i))))) Finish)) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
                     <td class="meaning">C2e: drain(d) → drain(d+1) or tail</td>
                 </tr>
             
-                <tr data-search="dsdp_inv_step_tail lemma dsdp_inv_step_tail ps : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = send 0 v finish) -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;i_n_relay.+1, (j &lt; n_relay)%n -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). ">
+                <tr data-search="dsdp_inv_step_tail lemma dsdp_inv_step_tail ps (rr_tail : rand ahe) : size ps = n_relay.+2 -&gt; @all_proc_wf ahe ps -&gt; nth (default_proc data) ps n_relay.+1 = send 0 (e_local (enc (ek alice_idx) (chain_acc n_relay.-1) rr_tail)) finish -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;i_n_relay.+1, (j &lt; n_relay)%n -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps). ">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/dsdp_inv_step_TAIL.html" class="lemma-name">dsdp_inv_step_TAIL</a>
                     </td>
                     <td class="section-name">dsdp_progress</td>
-                    <td class="proof-lines">31</td>
-                    <td><code class="signature">Lemma dsdp_inv_step_TAIL ps : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = Send 0 v Finish) -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;I_n_relay.+1, (j &lt; n_relay)%N -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
+                    <td class="proof-lines">29</td>
+                    <td><code class="signature">Lemma dsdp_inv_step_TAIL ps (rr_tail : rand AHE) : size ps = n_relay.+2 -&gt; @all_proc_wf AHE ps -&gt; nth (default_proc data) ps n_relay.+1 = Send 0 (e_local (enc (ek alice_idx) (chain_acc n_relay.-1) rr_tail)) Finish -&gt; nth (default_proc data) ps 0 = alice_foldr_at n_relay.+1 -&gt; (forall j : &#39;I_n_relay.+1, (j &lt; n_relay)%N -&gt; relay_at_finish_pred j ps) -&gt; all_terminated (one_step_procs data ps) \/ dsdp_inv (one_step_procs data ps).</code></td>
                     <td class="meaning"></td>
                 </tr>
             
@@ -6150,7 +6194,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-04-01 | 442 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f8980d5d6d576a7e8b1fd05f9bf6eb67e8ce8aa6" target="_blank" rel="noopener" style="color: var(--accent);">f8980d5</a></p>
+        <p>Generated: 2026-04-01 | 446 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/fa480794a8f250cdbccae4adb19d9c244db73c3d" target="_blank" rel="noopener" style="color: var(--accent);">fa48079</a></p>
     </footer>
     
     <script>
