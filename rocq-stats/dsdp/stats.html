@@ -30,15 +30,15 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">417</div>
+        <div class="value">442</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">54</div>
+        <div class="value">56</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">363</div>
+        <div class="value">386</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">14,548</div>
+        <div class="value">15,282</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/05f6364370c2f46e1a48e1f49b9217151c182961" target="_blank" rel="noopener">05f6364</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/f8980d5d6d576a7e8b1fd05f9bf6eb67e8ce8aa6" target="_blank" rel="noopener">f8980d5</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (54 total)
+    Theorems and key lemmas (56 total)
 </p>
 
 
@@ -205,7 +205,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy_trace.v</span>
         </div>
-        <span class="file-count">1 main</span>
+        <span class="file-count">2 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -231,6 +231,19 @@
                     <td class="proof-lines">1</td>
                     <td><code class="signature">Theorem dsdp_result_correct : v3 * u3 + r3 + (v2 * u2 + r2) - r2 - r3 + u1 * v1 = u1 * v1 + u2 * v2 + u3 * v3.</code></td>
                     <td class="meaning">Protocol correctness is now proved algebraically using ring arithmetic. The final result S = v3*u3 + r3 + (v2*u2 + r2) - r2 - r3 + u1*v1 simplifies to u1*v1 + u2*v2 + u3*v3 by ring.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_init lemma alice_trace_init (relays : seq &#39;i_n_relay.+1) (dk : priv_keyt) (v0 : msgt) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (rand_a : &#39;i_n_relay.+1 -&gt; randt) (other_procs : seq (proc data)) (tr0 : seq data) : let alice_proc := erase (@palice_n ahe ek n_relay relays dk v0 u r rand_a) in let ps := alice_proc :: other_procs in let &#39;(p1, tr1, _) := @step data ps tr0 0 in let &#39;(p2, tr2, _) := @step data (p1 :: other_procs) tr1 0 in tr2 = d v0 :: priv_key dk :: tr0. alice&#39;s erased process after palice_n starts with two inits. we characterize the trace after these two init steps: - round 1: init (priv_key dk) body --&gt; trace gets [priv_key dk] - round 2: init (d v0) body&#39; --&gt; trace gets [d v0; priv_key dk]">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/alice_trace_init.html" class="lemma-name">alice_trace_init</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma alice_trace_init (relays : seq &#39;I_n_relay.+1) (dk : priv_keyT) (v0 : msgT) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (rand_a : &#39;I_n_relay.+1 -&gt; randT) (other_procs : seq (proc data)) (tr0 : seq data) : let alice_proc := erase (@palice_n AHE ek n_relay relays dk v0 u r rand_a) in let ps := alice_proc :: other_procs in let &#39;(p1, tr1, _) := @step data ps tr0 0 in let &#39;(p2, tr2, _) := @step data (p1 :: other_procs) tr1 0 in tr2 = d v0 :: priv_key dk :: tr0.</code></td>
+                    <td class="meaning">Alice&#39;s erased process after palice_n starts with two Inits. We characterize the trace after these two Init steps: - Round 1: Init (priv_key dk) body --&gt; trace gets [priv_key dk] - Round 2: Init (d v0) body&#39; --&gt; trace gets [d v0; priv_key dk]</td>
                 </tr>
             
             </tbody>
@@ -477,7 +490,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_security.v</span>
         </div>
-        <span class="file-count">23 main</span>
+        <span class="file-count">24 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -775,6 +788,19 @@
                     <td class="section-name">dsdp_concrete_n</td>
                     <td class="proof-lines">8</td>
                     <td><code class="signature">Theorem dsdp_entropic_security_n_concrete : `H(VarRV | AliceView_n) = log ((m ^ n_relay)%:R : R) /\ `H(VarRV | AliceView_n) &gt; 0.</code></td>
+                    <td class="meaning">==========================================================================</td>
+                </tr>
+            
+                <tr data-search="eavesdropper_security_n theorem eavesdropper_security_n (b : fintype) (f : _ -&gt; b) : `h(varrv | f `o aliceview_n) &gt;= log ((m ^ n_relay)%:r : r) /\ `h(varrv | f `o aliceview_n) &gt; 0. ==========================================================================">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/eavesdropper_security_n.html" class="lemma-name">eavesdropper_security_n</a>
+                    </td>
+                    <td class="section-name">dsdp_concrete_n</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Theorem eavesdropper_security_n (B : finType) (f : _ -&gt; B) : `H(VarRV | f `o AliceView_n) &gt;= log ((m ^ n_relay)%:R : R) /\ `H(VarRV | f `o AliceView_n) &gt; 0.</code></td>
                     <td class="meaning">==========================================================================</td>
                 </tr>
             
@@ -1221,7 +1247,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (363 total)
+    Supporting lemmas and utilities (386 total)
 </p>
 
 <div id="helpers-section">
@@ -1443,7 +1469,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_entropy_trace.v</span>
         </div>
-        <span class="file-count">1 helper</span>
+        <span class="file-count">24 helper</span>
     </div>
     <div class="file-content">
         <table>
@@ -1467,6 +1493,259 @@
                     <td class="proof-lines">5</td>
                     <td><code class="signature">Lemma dsdp_algebraic_correctness : forall t, S t = (U1 \* V1 \+ U2 \* V2 \+ U3 \* V3) t.</code></td>
                     <td class="meaning">The protocol correctness theorem: the sum S equals the dot product. This is proved algebraically without depending on trace structure.</td>
+                </tr>
+            
+                <tr data-search="step_init lemma step_init (ps : seq (proc data)) (tr : seq data) (i : nat) (dat : data) (next : proc data) : nth (default_proc data) ps i = init dat next -&gt; @step data ps tr i = (next, dat :: tr, true). generic lemma: step on init prepends data to trace">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_Init.html" class="lemma-name">step_Init</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma step_Init (ps : seq (proc data)) (tr : seq data) (i : nat) (dat : data) (next : proc data) : nth (default_proc data) ps i = Init dat next -&gt; @step data ps tr i = (next, dat :: tr, true).</code></td>
+                    <td class="meaning">Generic lemma: step on Init prepends data to trace</td>
+                </tr>
+            
+                <tr data-search="step_recv_send lemma step_recv_send (ps : seq (proc data)) (tr : seq data) (i frm : nat) (f : data -&gt; proc data) (dst : nat) (v : data) (k : proc data) : nth (default_proc data) ps i = recv frm f -&gt; nth (default_proc data) ps frm = send dst v k -&gt; dst == i -&gt; @step data ps tr i = (f v, v :: tr, true). when ps[i] = recv frm f and ps[frm] = send dst v k with dst = i, step returns (f v, v :: tr, true)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_Recv_Send.html" class="lemma-name">step_Recv_Send</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma step_Recv_Send (ps : seq (proc data)) (tr : seq data) (i frm : nat) (f : data -&gt; proc data) (dst : nat) (v : data) (k : proc data) : nth (default_proc data) ps i = Recv frm f -&gt; nth (default_proc data) ps frm = Send dst v k -&gt; dst == i -&gt; @step data ps tr i = (f v, v :: tr, true).</code></td>
+                    <td class="meaning">When ps[i] = Recv frm f and ps[frm] = Send dst v k with dst = i, step returns (f v, v :: tr, true)</td>
+                </tr>
+            
+                <tr data-search="step_send_recv lemma step_send_recv (ps : seq (proc data)) (tr : seq data) (i dst : nat) (v : data) (k : proc data) (frm : nat) (f : data -&gt; proc data) : nth (default_proc data) ps i = send dst v k -&gt; nth (default_proc data) ps dst = recv frm f -&gt; frm == i -&gt; @step data ps tr i = (k, tr, true). when ps[i] = send dst v k and ps[dst] = recv frm f with frm = i, step returns (k, tr, true) — trace unchanged">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_Send_Recv.html" class="lemma-name">step_Send_Recv</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma step_Send_Recv (ps : seq (proc data)) (tr : seq data) (i dst : nat) (v : data) (k : proc data) (frm : nat) (f : data -&gt; proc data) : nth (default_proc data) ps i = Send dst v k -&gt; nth (default_proc data) ps dst = Recv frm f -&gt; frm == i -&gt; @step data ps tr i = (k, tr, true).</code></td>
+                    <td class="meaning">When ps[i] = Send dst v k and ps[dst] = Recv frm f with frm = i, step returns (k, tr, true) — trace unchanged</td>
+                </tr>
+            
+                <tr data-search="alice_trace_relay_recv lemma alice_trace_relay_recv (ps : seq (proc data)) (tr : seq data) (j : nat) (f : data -&gt; proc data) (v : data) (relay_next : proc data) : nth (default_proc data) ps 0 = recv j.+1 f -&gt; nth (default_proc data) ps j.+1 = send 0 v relay_next -&gt; @step data ps tr 0 = (f v, v :: tr, true). l5b: one relay iteration of palice_n adds exactly one received value to alice&#39;s trace. alice&#39;s process for relay j is: recv j.+1 (oapp f fail \o std_from_enc) which, after the recv fires with value v from relay j+1 (who has send 0 v ...), prepends v to the trace. the subsequent send by alice does not modify alice&#39;s trace. this lemma captures the recv half: if alice = recv j.+1 f and relay j+1 = send 0 v k, then step prepends v to alice&#39;s trace.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_relay_recv.html" class="lemma-name">alice_trace_relay_recv</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_trace_relay_recv (ps : seq (proc data)) (tr : seq data) (j : nat) (f : data -&gt; proc data) (v : data) (relay_next : proc data) : nth (default_proc data) ps 0 = Recv j.+1 f -&gt; nth (default_proc data) ps j.+1 = Send 0 v relay_next -&gt; @step data ps tr 0 = (f v, v :: tr, true).</code></td>
+                    <td class="meaning">L5b: One relay iteration of palice_n adds exactly one received value to Alice&#39;s trace. Alice&#39;s process for relay j is: Recv j.+1 (oapp f Fail \o std_from_enc) which, after the Recv fires with value v from relay j+1 (who has Send 0 v ...), prepends v to the trace. The subsequent Send by Alice does NOT modify Alice&#39;s trace. This lemma captures the Recv half: if Alice = Recv j.+1 f and relay j+1 = Send 0 v k, then step prepends v to Alice&#39;s trace.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_relay_send lemma alice_trace_relay_send (ps : seq (proc data)) (tr : seq data) (dst : nat) (w : data) (body_rest : proc data) (frm : nat) (g : data -&gt; proc data) : nth (default_proc data) ps 0 = send dst w body_rest -&gt; nth (default_proc data) ps dst = recv frm g -&gt; frm == 0 -&gt; @step data ps tr 0 = (body_rest, tr, true). l5b&#39;: after alice&#39;s recv fires and alice becomes send dst w body_rest, stepping alice again does not change her trace (sender trace is inert).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_relay_send.html" class="lemma-name">alice_trace_relay_send</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_trace_relay_send (ps : seq (proc data)) (tr : seq data) (dst : nat) (w : data) (body_rest : proc data) (frm : nat) (g : data -&gt; proc data) : nth (default_proc data) ps 0 = Send dst w body_rest -&gt; nth (default_proc data) ps dst = Recv frm g -&gt; frm == 0 -&gt; @step data ps tr 0 = (body_rest, tr, true).</code></td>
+                    <td class="meaning">L5b&#39;: After Alice&#39;s Recv fires and Alice becomes Send dst w body_rest, stepping Alice again does not change her trace (sender trace is inert).</td>
+                </tr>
+            
+                <tr data-search="step_ret lemma step_ret (ps : seq (proc data)) (tr : seq data) (i : nat) (dat : data) : nth (default_proc data) ps i = ret dat -&gt; @step data ps tr i = (@finish data, dat :: tr, true). generic lemma: step on ret prepends data to trace and becomes finish">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/step_Ret.html" class="lemma-name">step_Ret</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma step_Ret (ps : seq (proc data)) (tr : seq data) (i : nat) (dat : data) : nth (default_proc data) ps i = Ret dat -&gt; @step data ps tr i = (@Finish data, dat :: tr, true).</code></td>
+                    <td class="meaning">Generic lemma: step on Ret prepends data to trace and becomes Finish</td>
+                </tr>
+            
+                <tr data-search="alice_erase_body_recv_step lemma alice_erase_body_recv_step (ps : seq (proc data)) (tr : seq data) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (rand_a : &#39;i_n_relay.+1 -&gt; randt) (j : &#39;i_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_body ahe ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = send 0 v_relay relay_next -&gt; (@step data ps tr 0).1.2 = v_relay :: tr. l5c helper: the recv step on alice_erase_body adds the relay&#39;s value to the trace and produces a send (or fail if data is not a valid cipher). this is a direct consequence of alice_trace_relay_recv + the structural lemma above.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_erase_body_recv_step.html" class="lemma-name">alice_erase_body_recv_step</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_erase_body_recv_step (ps : seq (proc data)) (tr : seq data) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (rand_a : &#39;I_n_relay.+1 -&gt; randT) (j : &#39;I_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_body AHE ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = Send 0 v_relay relay_next -&gt; (@step data ps tr 0).1.2 = v_relay :: tr.</code></td>
+                    <td class="meaning">L5c helper: The Recv step on alice_erase_body adds the relay&#39;s value to the trace and produces a Send (or Fail if data is not a valid cipher). This is a direct consequence of alice_trace_relay_recv + the structural lemma above.</td>
+                </tr>
+            
+                <tr data-search="alice_erase_body_send_step lemma alice_erase_body_send_step (ps : seq (proc data)) (tr : seq data) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (rand_a : &#39;i_n_relay.+1 -&gt; randt) (j : &#39;i_n_relay.+1) (idx : nat) (k : proc data) (w : data) (recv_partner : nat) (recv_f : data -&gt; proc data) : nth (default_proc data) ps 0 = send (alice_send_dest j) w k -&gt; nth (default_proc data) ps (alice_send_dest j) = recv recv_partner recv_f -&gt; recv_partner == 0 -&gt; (@step data ps tr 0) = (k, tr, true). l5c helper: after alice_erase_body&#39;s recv fires with a valid cipher, alice becomes a send. the subsequent send step leaves the trace unchanged and advances alice to the continuation k.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_erase_body_send_step.html" class="lemma-name">alice_erase_body_send_step</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_erase_body_send_step (ps : seq (proc data)) (tr : seq data) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (rand_a : &#39;I_n_relay.+1 -&gt; randT) (j : &#39;I_n_relay.+1) (idx : nat) (k : proc data) (w : data) (recv_partner : nat) (recv_f : data -&gt; proc data) : nth (default_proc data) ps 0 = Send (alice_send_dest j) w k -&gt; nth (default_proc data) ps (alice_send_dest j) = Recv recv_partner recv_f -&gt; recv_partner == 0 -&gt; (@step data ps tr 0) = (k, tr, true).</code></td>
+                    <td class="meaning">L5c helper: After alice_erase_body&#39;s Recv fires with a valid cipher, Alice becomes a Send. The subsequent Send step leaves the trace unchanged and advances Alice to the continuation k.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_relay_step lemma alice_trace_relay_step (ps : seq (proc data)) (tr : seq data) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (rand_a : &#39;i_n_relay.+1 -&gt; randt) (j : &#39;i_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) (recv_partner : nat) (recv_f : data -&gt; proc data) : nth (default_proc data) ps 0 = alice_erase_body ahe ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = send 0 v_relay relay_next -&gt; nth (default_proc data) ps (alice_send_dest j) = recv recv_partner recv_f -&gt; recv_partner == 0 -&gt; (@step data ps tr 0).1.2 = v_relay :: tr /\ let ps_after_recv := set_nth (default_proc data) l5c: relay loop trace characterization. at each relay iteration j: - alice_erase_body_recv_step: alice recv from relay j+1 adds c_j to trace - alice_erase_body_send_step: alice send leaves trace unchanged per-step lemma: given alice at alice_erase_body and relay j+1 at send, two calls to step (recv then send) advance alice to the next body with c_j prepended to her trace.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_relay_step.html" class="lemma-name">alice_trace_relay_step</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">24</td>
+                    <td><code class="signature">Lemma alice_trace_relay_step (ps : seq (proc data)) (tr : seq data) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (rand_a : &#39;I_n_relay.+1 -&gt; randT) (j : &#39;I_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) (recv_partner : nat) (recv_f : data -&gt; proc data) : nth (default_proc data) ps 0 = alice_erase_body AHE ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = Send 0 v_relay relay_next -&gt; nth (default_proc data) ps (alice_send_dest j) = Recv recv_partner recv_f -&gt; recv_partner == 0 -&gt; (@step data ps tr 0).1.2 = v_relay :: tr /\ let ps_after_recv := set_nth (default_proc data)</code></td>
+                    <td class="meaning">L5c: Relay loop trace characterization. At each relay iteration j: - alice_erase_body_recv_step: Alice Recv from relay j+1 adds c_j to trace - alice_erase_body_send_step: Alice Send leaves trace unchanged Per-step lemma: given Alice at alice_erase_body and relay j+1 at Send, two calls to step (Recv then Send) advance Alice to the next body with c_j prepended to her trace.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_relay_recv_send lemma alice_trace_relay_recv_send (ps : seq (proc data)) (tr : seq data) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (rand_a : &#39;i_n_relay.+1 -&gt; randt) (j : &#39;i_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_body ahe ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = send 0 v_relay relay_next -&gt; (@step data ps tr 0).1.2 = v_relay :: tr. simpler approach: state the combined effect">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_relay_recv_send.html" class="lemma-name">alice_trace_relay_recv_send</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma alice_trace_relay_recv_send (ps : seq (proc data)) (tr : seq data) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (rand_a : &#39;I_n_relay.+1 -&gt; randT) (j : &#39;I_n_relay.+1) (idx : nat) (k : proc data) (v_relay : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_body AHE ek n_relay u r rand_a j idx k -&gt; nth (default_proc data) ps j.+1 = Send 0 v_relay relay_next -&gt; (@step data ps tr 0).1.2 = v_relay :: tr.</code></td>
+                    <td class="meaning">Simpler approach: state the combined effect</td>
+                </tr>
+            
+                <tr data-search="alice_trace_final_recv lemma alice_trace_final_recv (ps : seq (proc data)) (tr : seq data) (dk : priv_keyt) (v0 : msgt) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (g : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_tail ahe n_relay dk v0 u r -&gt; nth (default_proc data) ps n_relay.+1 = send 0 g relay_next -&gt; (@step data ps tr 0).1.2 = g :: tr. l5d: the recv step of alice_erase_tail adds the received value to trace">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_final_recv.html" class="lemma-name">alice_trace_final_recv</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_trace_final_recv (ps : seq (proc data)) (tr : seq data) (dk : priv_keyT) (v0 : msgT) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (g : data) (relay_next : proc data) : nth (default_proc data) ps 0 = alice_erase_tail AHE n_relay dk v0 u r -&gt; nth (default_proc data) ps n_relay.+1 = Send 0 g relay_next -&gt; (@step data ps tr 0).1.2 = g :: tr.</code></td>
+                    <td class="meaning">L5d: The Recv step of alice_erase_tail adds the received value to trace</td>
+                </tr>
+            
+                <tr data-search="alice_trace_final_ret lemma alice_trace_final_ret (ps : seq (proc data)) (tr : seq data) (result : msgt) : nth (default_proc data) ps 0 = ret (d result) -&gt; (@step data ps tr 0) = (@finish data, d result :: tr, true). l5d&#39;: after the recv, if the received data is e(ct) and dec dk ct = some m0, alice becomes ret (d (m0 - sum(r) + u0*v0)). the subsequent ret step adds d(result) to the trace.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_final_ret.html" class="lemma-name">alice_trace_final_ret</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">3</td>
+                    <td><code class="signature">Lemma alice_trace_final_ret (ps : seq (proc data)) (tr : seq data) (result : msgT) : nth (default_proc data) ps 0 = Ret (d result) -&gt; (@step data ps tr 0) = (@Finish data, d result :: tr, true).</code></td>
+                    <td class="meaning">L5d&#39;: After the Recv, if the received data is e(ct) and dec dk ct = Some m0, Alice becomes Ret (d (m0 - sum(r) + u0*v0)). The subsequent Ret step adds d(result) to the trace.</td>
+                </tr>
+            
+                <tr data-search="alice_erase_tail_recv_result lemma alice_erase_tail_recv_result (dk : priv_keyt) (v0 : msgt) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (ct : cipher ahe) (m0 : plain ahe) : dec dk ct = some m0 -&gt; let f := (oapp (fun m : plain ahe =&gt; ret (d (m - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0))) fail \o (obind (dec dk) \o @std_from_enc ahe)) in f (di_e di ct) = ret (d (m0 - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0)). l5d&#39;&#39;: characterize what alice becomes after the recv in alice_erase_tail when receiving valid encrypted data.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_erase_tail_recv_result.html" class="lemma-name">alice_erase_tail_recv_result</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_erase_tail_recv_result (dk : priv_keyT) (v0 : msgT) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (ct : cipher AHE) (m0 : plain AHE) : dec dk ct = Some m0 -&gt; let f := (oapp (fun m : plain AHE =&gt; Ret (d (m - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0))) Fail \o (obind (dec dk) \o @std_from_enc AHE)) in f (di_e DI ct) = Ret (d (m0 - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0)).</code></td>
+                    <td class="meaning">L5d&#39;&#39;: Characterize what Alice becomes after the Recv in alice_erase_tail when receiving valid encrypted data.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_content_n lemma alice_trace_content_n (ps : seq (proc data)) (tr0 : seq data) (dk : priv_keyt) (v0 : msgt) (u : &#39;i_n_relay.+2 -&gt; msgt) (r : &#39;i_n_relay.+1 -&gt; msgt) (ct : cipher ahe) (m0 : plain ahe) (relay_next : proc data) (other_procs_tail : seq (proc data)) : let g := di_e di ct in nth (default_proc data) ps 0 = alice_erase_tail ahe n_relay dk v0 u r -&gt; nth (default_proc data) ps n_relay.+1 = send 0 g relay_next -&gt; dec dk ct = some m0 -&gt; let result := m0 - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0 in (@step data ps tr0 0).1.2 = g :: tr0 /\ let alice_after_recv := (oapp (fun m : plain ahe =&gt; l5e partial: characterize the last two steps (recv + ret) of alice&#39;s execution, assuming alice is at alice_erase_tail and the last relay sends her a valid encrypted ciphertext. this shows: if alice&#39;s trace before the final phase is tr0, then after recv from last relay (data g) and ret (computing result), alice&#39;s trace becomes [d(result); g] ++ tr0.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_content_n.html" class="lemma-name">alice_trace_content_n</a>
+                    </td>
+                    <td class="section-name">alice_trace_init</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma alice_trace_content_n (ps : seq (proc data)) (tr0 : seq data) (dk : priv_keyT) (v0 : msgT) (u : &#39;I_n_relay.+2 -&gt; msgT) (r : &#39;I_n_relay.+1 -&gt; msgT) (ct : cipher AHE) (m0 : plain AHE) (relay_next : proc data) (other_procs_tail : seq (proc data)) : let g := di_e DI ct in nth (default_proc data) ps 0 = alice_erase_tail AHE n_relay dk v0 u r -&gt; nth (default_proc data) ps n_relay.+1 = Send 0 g relay_next -&gt; dec dk ct = Some m0 -&gt; let result := m0 - \sum_(j &lt; n_relay.+1) r j + u ord0 * v0 in (@step data ps tr0 0).1.2 = g :: tr0 /\ let alice_after_recv := (oapp (fun m : plain AHE =&gt;</code></td>
+                    <td class="meaning">L5e partial: characterize the last two steps (Recv + Ret) of Alice&#39;s execution, assuming Alice is at alice_erase_tail and the last relay sends her a valid encrypted ciphertext. This shows: if Alice&#39;s trace before the final phase is tr0, then after Recv from last relay (data g) and Ret (computing result), Alice&#39;s trace becomes [d(result); g] ++ tr0.</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_ar lemma alice_trace_at_ar ps (j : &#39;i_n_relay.+1) : nth (default_proc data) ps 0 = @alice_foldr_at ahe ek n_relay dk relays v0 u r rand_a j -&gt; @relay_at_body ahe ek n_relay dk_relay v_relay r1_relay r2_relay j ps -&gt; exists v, (smc_interpreter.step ps [::] 0).1.2 = [:: v]. inv_ar j: alice at recv from relay j+1. relay j+1 at send 0 v. step fires recv → alice trace fragment = [:: v].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_AR.html" class="lemma-name">alice_trace_at_AR</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma alice_trace_at_AR ps (j : &#39;I_n_relay.+1) : nth (default_proc data) ps 0 = @alice_foldr_at AHE ek n_relay dk relays v0 u r rand_a j -&gt; @relay_at_body AHE ek n_relay dk_relay v_relay r1_relay r2_relay j ps -&gt; exists v, (smc_interpreter.step ps [::] 0).1.2 = [:: v].</code></td>
+                    <td class="meaning">Inv_AR j: Alice at Recv from relay j+1. Relay j+1 at Send 0 v. step fires Recv → Alice trace fragment = [:: v].</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_ret lemma alice_trace_at_ret ps (d : data) : nth (default_proc data) ps 0 = ret d -&gt; (smc_interpreter.step ps [::] 0).1.2 = [:: d]. inv_ret: alice at ret d. trace fragment = [:: d].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_ret.html" class="lemma-name">alice_trace_at_ret</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma alice_trace_at_ret ps (d : data) : nth (default_proc data) ps 0 = Ret d -&gt; (smc_interpreter.step ps [::] 0).1.2 = [:: d].</code></td>
+                    <td class="meaning">Inv_ret: Alice at Ret d. trace fragment = [:: d].</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_tail lemma alice_trace_at_tail ps : nth (default_proc data) ps 0 = @alice_foldr_at ahe ek n_relay dk relays v0 u r rand_a n_relay.+1 -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = send 0 v finish) -&gt; exists v, (smc_interpreter.step ps [::] 0).1.2 = [:: v]. inv_tail: alice at erase_tail (recv n_relay.+1), last relay at send 0 v. trace fragment = [:: v].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_tail.html" class="lemma-name">alice_trace_at_tail</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma alice_trace_at_tail ps : nth (default_proc data) ps 0 = @alice_foldr_at AHE ek n_relay dk relays v0 u r rand_a n_relay.+1 -&gt; (exists v, nth (default_proc data) ps n_relay.+1 = Send 0 v Finish) -&gt; exists v, (smc_interpreter.step ps [::] 0).1.2 = [:: v].</code></td>
+                    <td class="meaning">Inv_tail: Alice at erase_tail (Recv n_relay.+1), last relay at Send 0 v. trace fragment = [:: v].</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_send lemma alice_trace_at_send ps dst (vd : data) (k0 : proc data) : nth (default_proc data) ps 0 = send dst vd k0 -&gt; (exists f, nth (default_proc data) ps dst = recv 0 f) -&gt; (smc_interpreter.step ps [::] 0).1.2 = [::]. inv_as*: alice at send dst vd k0, destination at recv 0. trace fragment = nil (send doesn&#39;t add to sender&#39;s trace).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_send.html" class="lemma-name">alice_trace_at_send</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_trace_at_send ps dst (vd : data) (k0 : proc data) : nth (default_proc data) ps 0 = Send dst vd k0 -&gt; (exists f, nth (default_proc data) ps dst = Recv 0 f) -&gt; (smc_interpreter.step ps [::] 0).1.2 = [::].</code></td>
+                    <td class="meaning">Inv_AS*: Alice at Send dst vd k0, destination at Recv 0. trace fragment = nil (Send doesn&#39;t add to sender&#39;s trace).</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_drain lemma alice_trace_at_drain ps : nth (default_proc data) ps 0 = @alice_foldr_at ahe ek n_relay dk relays v0 u r rand_a n_relay.+1 -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = recv n_relay f) -&gt; (smc_interpreter.step ps [::] 0).1.2 = [::]. inv_drain j: alice at erase_tail (recv n_relay.+1), but last relay is at recv (not send). recv doesn&#39;t fire → trace nil.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_drain.html" class="lemma-name">alice_trace_at_drain</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma alice_trace_at_drain ps : nth (default_proc data) ps 0 = @alice_foldr_at AHE ek n_relay dk relays v0 u r rand_a n_relay.+1 -&gt; (exists f, nth (default_proc data) ps n_relay.+1 = Recv n_relay f) -&gt; (smc_interpreter.step ps [::] 0).1.2 = [::].</code></td>
+                    <td class="meaning">Inv_drain j: Alice at erase_tail (Recv n_relay.+1), but last relay is at Recv (not Send). Recv doesn&#39;t fire → trace nil.</td>
+                </tr>
+            
+                <tr data-search="one_step_eq_res_procs lemma one_step_eq_res_procs (ps : n_parties.-tuple (proc data)) : one_step_procs data (tval ps) = tval (res_procs [tuple smc_interpreter.step ps [::] i | i &lt; n_parties]). bridge: one_step_procs (seq-level) = tval of res_procs (tuple-level)">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/one_step_eq_res_procs.html" class="lemma-name">one_step_eq_res_procs</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma one_step_eq_res_procs (ps : n_parties.-tuple (proc data)) : one_step_procs data (tval ps) = tval (res_procs [tuple smc_interpreter.step ps [::] i | i &lt; n_parties]).</code></td>
+                    <td class="meaning">Bridge: one_step_procs (seq-level) = tval of res_procs (tuple-level)</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_round lemma dsdp_inv_round (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; let ps&#39; := res_procs [tuple smc_interpreter.step ps [::] i | i &lt; n_parties] in rsteps ps ps&#39; (res_traces [tuple smc_interpreter.step ps [::] i | i &lt; n_parties]) /\ (all_terminated (tval ps&#39;) \/ inv (tval ps&#39;)). one round under dsdp_inv: step_sound gives rsteps, dsdp_inv_step preserves the invariant (or terminates).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_round.html" class="lemma-name">dsdp_inv_round</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma dsdp_inv_round (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; let ps&#39; := res_procs [tuple smc_interpreter.step ps [::] i | i &lt; n_parties] in rsteps ps ps&#39; (res_traces [tuple smc_interpreter.step ps [::] i | i &lt; n_parties]) /\ (all_terminated (tval ps&#39;) \/ inv (tval ps&#39;)).</code></td>
+                    <td class="meaning">One round under dsdp_inv: step_sound gives rsteps, dsdp_inv_step preserves the invariant (or terminates).</td>
+                </tr>
+            
+                <tr data-search="alice_trace_at_inv lemma alice_trace_at_inv (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; (exists v, (smc_interpreter.step (tval ps) [::] 0).1.2 = [:: v]) \/ (smc_interpreter.step (tval ps) [::] 0).1.2 = [::]. r1: unified trace fragment dispatch for all dsdp_inv constructors. at each round, alice&#39;s trace fragment is either [:: v] or [::].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_trace_at_inv.html" class="lemma-name">alice_trace_at_inv</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">29</td>
+                    <td><code class="signature">Lemma alice_trace_at_inv (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; (exists v, (smc_interpreter.step (tval ps) [::] 0).1.2 = [:: v]) \/ (smc_interpreter.step (tval ps) [::] 0).1.2 = [::].</code></td>
+                    <td class="meaning">R1: Unified trace fragment dispatch for all dsdp_inv constructors. At each round, Alice&#39;s trace fragment is either [:: v] or [::].</td>
+                </tr>
+            
+                <tr data-search="dsdp_inv_rsteps_trace_frags lemma dsdp_inv_rsteps_trace_frags (h : nat) (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; exists (final : n_parties.-tuple (proc data)) (tr : n_parties.-tuple (seq data)) (frags : seq (seq data)), rsteps ps final tr /\ (all_terminated (tval final) \/ inv (tval final)) /\ tnth tr ord0 = flatten (rev frags) /\ (forall k, (k &lt; size frags)%n -&gt; (exists v, nth [::] frags k = [:: v]) \/ nth [::] frags k = [::]). r2b: multi-round rsteps with explicit per-round alice trace fragments. frags is in reverse chronological order (newest first) so that rtrans concatenation (tr2 ++ tr1) matches flatten (rev frags). each fragment is either [:: v] (from inv_ar/inv_tail/inv_ret) or [::] (from inv_as*/inv_drain).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_inv_rsteps_trace_frags.html" class="lemma-name">dsdp_inv_rsteps_trace_frags</a>
+                    </td>
+                    <td class="section-name">alice_trace_at_inv</td>
+                    <td class="proof-lines">35</td>
+                    <td><code class="signature">Lemma dsdp_inv_rsteps_trace_frags (h : nat) (ps : n_parties.-tuple (proc data)) : inv (tval ps) -&gt; exists (final : n_parties.-tuple (proc data)) (tr : n_parties.-tuple (seq data)) (frags : seq (seq data)), rsteps ps final tr /\ (all_terminated (tval final) \/ inv (tval final)) /\ tnth tr ord0 = flatten (rev frags) /\ (forall k, (k &lt; size frags)%N -&gt; (exists v, nth [::] frags k = [:: v]) \/ nth [::] frags k = [::]).</code></td>
+                    <td class="meaning">R2b: Multi-round rsteps with explicit per-round Alice trace fragments. frags is in REVERSE chronological order (newest first) so that rtrans concatenation (tr2 ++ tr1) matches flatten (rev frags). Each fragment is either [:: v] (from Inv_AR/Inv_tail/Inv_ret) or [::] (from Inv_AS*/Inv_drain).</td>
                 </tr>
             
             </tbody>
@@ -5871,7 +6150,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-03-31 | 417 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/05f6364370c2f46e1a48e1f49b9217151c182961" target="_blank" rel="noopener" style="color: var(--accent);">05f6364</a></p>
+        <p>Generated: 2026-04-01 | 442 lemmas in 24 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/f8980d5d6d576a7e8b1fd05f9bf6eb67e8ce8aa6" target="_blank" rel="noopener" style="color: var(--accent);">f8980d5</a></p>
     </footer>
     
     <script>
