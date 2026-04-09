@@ -46,12 +46,12 @@
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">26,207</div>
+        <div class="value">26,209</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/b23662bac45a480a2ab8611b4a755bbb55acd1bf" target="_blank" rel="noopener">b23662b</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/03595ec48baa6ba736a5d6b3e2e90bdab58d4843" target="_blank" rel="noopener">03595ec</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -1334,7 +1334,7 @@
                     <td class="meaning">Main (L7): end-of-phase-3 state. Exposes the four post-conditions that [dsdp_n_phase4_state] (L8) consumes: the fold of phase0++phase1 ++phase2++phase3 succeeds, [sw_gamma] is in alice&#39;s cipher set, [ps_priv alice = Some dk_alice] is still held, and [ps_ret alice = None] so the terminal ARet fires. N-generic: holds for any [1 &lt;= n_relay].</td>
                 </tr>
             
-                <tr data-search="dsdp_n_phase4_state lemma dsdp_n_phase4_state (h1 : (1 &lt;= n_relay)%n) : exists gf, dsdp_n_final = some gf /\ ps_ret (gf alice) = some sw_s. main (l8): after phase0..phase4, alice&#39;s [ps_ret] is [some sw_s]. composes [dsdp_n_beta_chain_eq] (which puts [sw_gamma] in alice&#39;s cipher set) with the four phase4 actions: adec [sw_gamma] to extract [sw_delta ord_max], two aadds to form [sw_s = sw_delta ord_max + u_1 * v_1 - \sum r], and aret. n-generic: holds for any [1 &lt;= n_relay].">
+                <tr data-search="dsdp_n_phase4_state lemma dsdp_n_phase4_state (h1 : (1 &lt;= n_relay)%n) : exists gf, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_program = some gf /\ ps_ret (gf alice) = some sw_s. main (l8): after phase0..phase4, alice&#39;s [ps_ret] is [some sw_s]. composes [dsdp_n_beta_chain_eq] (which puts [sw_gamma] in alice&#39;s cipher set) with the four phase4 actions: adec [sw_gamma] to extract [sw_delta ord_max], two aadds to form [sw_s = sw_delta ord_max + u_1 * v_1 - \sum r], and aret. n-generic: holds for any [1 &lt;= n_relay].">
                     <td>
                         
                         <span class="badge badge-main">Main</span>
@@ -1343,7 +1343,7 @@
                     </td>
                     <td class="section-name">dsdp_stepwise</td>
                     <td class="proof-lines">12</td>
-                    <td><code class="signature">Lemma dsdp_n_phase4_state (H1 : (1 &lt;= n_relay)%N) : exists gf, dsdp_n_final = Some gf /\ ps_ret (gf alice) = Some sw_S.</code></td>
+                    <td><code class="signature">Lemma dsdp_n_phase4_state (H1 : (1 &lt;= n_relay)%N) : exists gf, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_program = Some gf /\ ps_ret (gf alice) = Some sw_S.</code></td>
                     <td class="meaning">Main (L8): after phase0..phase4, alice&#39;s [ps_ret] is [Some sw_S]. Composes [dsdp_n_beta_chain_eq] (which puts [sw_gamma] in alice&#39;s cipher set) with the four phase4 actions: ADec [sw_gamma] to extract [sw_Delta ord_max], two AAdds to form [sw_S = sw_Delta ord_max + u_1 * v_1 - \sum r], and ARet. N-generic: holds for any [1 &lt;= n_relay].</td>
                 </tr>
             
@@ -1360,7 +1360,7 @@
                     <td class="meaning">Main (L9): the algebraic identity at the heart of DSDP correctness. [sw_S] is defined as [sw_Delta ord_max - \sum r + u ord0 * v_alice]; [sw_Delta ord_max = \sum_k (u_{k+1} * v_k + r_k)]; so [sw_S] telescopes to [\sum_(i &lt; n_relay.+2) u i * v_all i], which is the dot product. Pure ring algebra; independent of [sw_step] and of [n_relay = 1].</td>
                 </tr>
             
-                <tr data-search="dsdp_n_correct theorem dsdp_n_correct (h1 : (1 &lt;= n_relay)%n) : exists gf, dsdp_n_final = some gf /\ ret_of gf alice = some (\sum_(i &lt; n_relay.+2) u i * v_all i). main (th1, headline theorem): running the whole [dsdp_n_program] from [sw_init_state] via [foldm sw_step] succeeds, and the return value alice emits is exactly the dot product [\sum_i u_i * v_i]. one-line corollary composing [dsdp_n_phase4_state] (final state has [ps_ret alice = some sw_s]) with [sw_s_eq_dot_product]. n-generic: holds for any [1 &lt;= n_relay], i.e., any n ≥ 3 parties (alice + at least one first relay + at least one last relay).">
+                <tr data-search="dsdp_n_correct theorem dsdp_n_correct (h1 : (1 &lt;= n_relay)%n) : exists g_final, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_program = some g_final /\ ret_of g_final alice = some (\sum_(i &lt; n_relay.+2) u i * v_all i). main (th1, headline theorem): executing the program [dsdp_n_program] from the initial state [sw_init_state] via [foldm sw_step] succeeds, producing a final state [g_final] whose return value at alice ([ret_of g_final alice]) is exactly the dot product [\sum_(i &lt; n_relay.+2) u i * v_all i]. n-generic: holds for any [1 &lt;= n_relay], i.e., any n &gt;= 3 parties.">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -1369,8 +1369,8 @@
                     </td>
                     <td class="section-name">dsdp_stepwise</td>
                     <td class="proof-lines">5</td>
-                    <td><code class="signature">Theorem dsdp_n_correct (H1 : (1 &lt;= n_relay)%N) : exists gf, dsdp_n_final = Some gf /\ ret_of gf alice = Some (\sum_(i &lt; n_relay.+2) u i * v_all i).</code></td>
-                    <td class="meaning">Main (TH1, headline theorem): running the whole [dsdp_n_program] from [sw_init_state] via [foldM sw_step] succeeds, and the return value alice emits is exactly the dot product [\sum_i u_i * v_i]. One-line corollary composing [dsdp_n_phase4_state] (final state has [ps_ret alice = Some sw_S]) with [sw_S_eq_dot_product]. N-generic: holds for any [1 &lt;= n_relay], i.e., any N ≥ 3 parties (Alice + at least one first relay + at least one last relay).</td>
+                    <td><code class="signature">Theorem dsdp_n_correct (H1 : (1 &lt;= n_relay)%N) : exists g_final, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_program = Some g_final /\ ret_of g_final alice = Some (\sum_(i &lt; n_relay.+2) u i * v_all i).</code></td>
+                    <td class="meaning">Main (TH1, headline theorem): executing the program [dsdp_n_program] from the initial state [sw_init_state] via [foldM sw_step] succeeds, producing a final state [g_final] whose return value at alice ([ret_of g_final alice]) is exactly the dot product [\sum_(i &lt; n_relay.+2) u i * v_all i]. N-generic: holds for any [1 &lt;= n_relay], i.e., any N &gt;= 3 parties.</td>
                 </tr>
             
             </tbody>
@@ -9439,7 +9439,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-04-09 | 699 lemmas in 32 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/b23662bac45a480a2ab8611b4a755bbb55acd1bf" target="_blank" rel="noopener" style="color: var(--accent);">b23662b</a></p>
+        <p>Generated: 2026-04-09 | 699 lemmas in 32 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/03595ec48baa6ba736a5d6b3e2e90bdab58d4843" target="_blank" rel="noopener" style="color: var(--accent);">03595ec</a></p>
     </footer>
     
     <script>
