@@ -30,28 +30,28 @@
 
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="value">642</div>
+        <div class="value">699</div>
         <div class="label">Total Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">72</div>
+        <div class="value">89</div>
         <div class="label">Main Results</div>
     </div>
     <div class="stat-card">
-        <div class="value">570</div>
+        <div class="value">610</div>
         <div class="label">Helper Lemmas</div>
     </div>
     <div class="stat-card">
-        <div class="value">30</div>
+        <div class="value">32</div>
         <div class="label">Files</div>
     </div>
     <div class="stat-card">
-        <div class="value">23,632</div>
+        <div class="value">26,207</div>
         <div class="label">Lines</div>
     </div>
     
     <div class="stat-card">
-        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/3ab2e108e525b45f3dab490d564546aa637b2cc4" target="_blank" rel="noopener">3ab2e10</a></div>
+        <div class="value value-small"><a href="https://github.com/weng-chenghui/infotheo/commit/b23662bac45a480a2ab8611b4a755bbb55acd1bf" target="_blank" rel="noopener">b23662b</a></div>
         <div class="label">Source Commit</div>
     </div>
     
@@ -73,7 +73,7 @@
 <!-- Main Results Section -->
 <h2>Main Results</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Theorems and key lemmas (72 total)
+    Theorems and key lemmas (89 total)
 </p>
 
 
@@ -378,7 +378,7 @@
             <span class="toggle">▶</span>
             <span class="file-name">dumas2017dual/dsdp/dsdp_fsm_progress.v</span>
         </div>
-        <span class="file-count">5 main</span>
+        <span class="file-count">6 main</span>
     </div>
     <div class="file-content expanded">
         <table>
@@ -393,17 +393,17 @@
             </thead>
             <tbody>
             
-                <tr data-search="bg_safe_form_step_any lemma bg_safe_form_step_any (ps : seq (proc (std_data ahe))) (i : nat) (p : proc (std_data ahe)) : nth (@default_proc (std_data ahe)) ps i.+1 = p -&gt; bg_safe_form i p -&gt; bg_safe_form i (smc_interpreter.step ps [::] i.+1).1.1. bg_safe_form processes always step to bg_safe_form processes, regardless of what&#39;s in the process list. key insight: all bg_safe_form constructors either produce terminal forms (finish, fail) or communicate on specific channels. if a pair fires, the callback output also satisfies bg_safe_form by the inductive closure in bsf_recv0/bsf_recv_i.">
+                <tr data-search="relay_bg_safe_form_step_any lemma relay_bg_safe_form_step_any (ps : seq (proc (std_data ahe))) (i : nat) (p : proc (std_data ahe)) : nth (@default_proc (std_data ahe)) ps i.+1 = p -&gt; relay_bg_safe_form i p -&gt; relay_bg_safe_form i (smc_interpreter.step ps [::] i.+1).1.1. relay_bg_safe_form processes always step to relay_bg_safe_form processes, regardless of what&#39;s in the process list. key insight: all relay_bg_safe_form constructors either produce terminal forms (finish, fail) or communicate on specific channels. if a pair fires, the callback output also satisfies relay_bg_safe_form by the inductive closure in bsf_recv0/bsf_recv_i.">
                     <td>
                         
                         <span class="badge badge-main">Main</span>
                         
-                        <a href="lemmas/bg_safe_form_step_any.html" class="lemma-name">bg_safe_form_step_any</a>
+                        <a href="lemmas/relay_bg_safe_form_step_any.html" class="lemma-name">relay_bg_safe_form_step_any</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">16</td>
-                    <td><code class="signature">Lemma bg_safe_form_step_any (ps : seq (proc (std_data AHE))) (i : nat) (p : proc (std_data AHE)) : nth (@default_proc (std_data AHE)) ps i.+1 = p -&gt; bg_safe_form i p -&gt; bg_safe_form i (smc_interpreter.step ps [::] i.+1).1.1.</code></td>
-                    <td class="meaning">bg_safe_form processes always step to bg_safe_form processes, regardless of what&#39;s in the process list. Key insight: all bg_safe_form constructors either produce terminal forms (Finish, Fail) or communicate on specific channels. If a pair fires, the callback output also satisfies bg_safe_form by the inductive closure in BSF_recv0/BSF_recv_i.</td>
+                    <td><code class="signature">Lemma relay_bg_safe_form_step_any (ps : seq (proc (std_data AHE))) (i : nat) (p : proc (std_data AHE)) : nth (@default_proc (std_data AHE)) ps i.+1 = p -&gt; relay_bg_safe_form i p -&gt; relay_bg_safe_form i (smc_interpreter.step ps [::] i.+1).1.1.</code></td>
+                    <td class="meaning">relay_bg_safe_form processes always step to relay_bg_safe_form processes, regardless of what&#39;s in the process list. Key insight: all relay_bg_safe_form constructors either produce terminal forms (Finish, Fail) or communicate on specific channels. If a pair fires, the callback output also satisfies relay_bg_safe_form by the inductive closure in BSF_recv0/BSF_recv_i.</td>
                 </tr>
             
                 <tr data-search="tail_phase_from_recv_when_nrelay_eq_1 lemma tail_phase_from_recv_when_nrelay_eq_1 (rp : recv_phase) : n_relay = 1 -&gt; (rp_j rp : nat) = 1 -&gt; known_ret_state (recv_st (rp_j rp) (rp_relay_bg rp)). l8: known_ret_state directly for the n_relay=1 special case. at n_relay=1, j=1, the chain from recv_st(1) has 4 op steps: recv_st(1) bg --[step_ok_recv_sende]--&gt; send_st(1) bg_s where bg_s(0) = recv 0 f_enc, bg_s(1) = relay_after_send0 1 --[manual eq_from_nth, algebraic shift]--&gt; drain_st(0) bg_s2 where bg_s2(0) = send 2 (enc(ek 2)(chain_acc 0)(rand_mul rr_a r2 0)) bg_s2(1) = relay_after_send0 1 --[l5/step_ok_drain_tail]--&gt; tail_st rr_t --[knownretstep + known_ret_tail]--&gt; known_ret_state partial progress: setup + hstep_rs + hbg_s_0 (nop for bg(0)) + hbg_s_1 (post-active-fire shape) + hbg_s2_0 (the shifted sender at bg_s2(0), which contains the key algebraic identity emul_addm + chain_acc commutativity) are all built. the remaining work is: 1. hbg_s2_1: bg_s2(1) = bg_s(1) (nop for second position, ~30 lines) 2. build drain_phase record at dp_j=0 with dp_relay_bg := bg_s2 (~50 lines for dp_bg_not_final_send and dp_last_relay_recv witnesses) 3. prove the send→drain step equation via eq_from_nth at 3 positions (~80 lines) 4. chain via 2 knownretstep calls + known_ret_of_drain_phase (~20 lines) the algebraic core (hbg_s2_0) is the hardest part and is proven below; the remainder is mechanical position-by-position case work analogous to l3 (send_phase_to_drain_when_nrelay_eq_2) but at j=1 instead of j=2.">
@@ -440,12 +440,25 @@
                         <a href="lemmas/fsm_return_value.html" class="lemma-name">fsm_return_value</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
-                    <td class="proof-lines">1</td>
+                    <td class="proof-lines">15</td>
                     <td><code class="signature">Theorem fsm_return_value (h : nat) (Hfuel : @all_terminated data (@interp_comp data procs h)) : (1 &lt;= n_relay)%N -&gt; exists (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = Ret concrete_val.</code></td>
                     <td class="meaning">Return value correctness</td>
                 </tr>
             
-                <tr data-search="fsm_full_trace theorem fsm_full_trace (h : nat) (hfuel : @all_terminated data (@interp_comp data procs h)) : (1 &lt;= n_relay)%n -&gt; exists rr_tail (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = ret concrete_val /\ tnth tr ord0 = expected_trace rr_tail. ">
+                <tr data-search="fsm_ret_trace_induction lemma fsm_ret_trace_induction h (ps : n_parties.-tuple (proc data)) (st : phase_state ahe) (tr_acc : seq data) : known_ret_state st -&gt; tval ps = ps_procs st -&gt; ~~ @all_terminated data (tval ps) -&gt; @all_terminated data (@interp_comp data (tval ps) h) -&gt; (exists tr0, rsteps procs_tup ps tr0 /\ tnth tr0 ord0 = tr_acc) -&gt; exists (final : n_parties.-tuple (proc data)) tr_final, rsteps procs_tup final tr_final /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = ret concrete_val /\ exists suffix, tnth tr_final ord0 = suffix ++ tr_acc. combined induction: known_ret_state + trace threading. clones fsm_ret_induction and additionally maintains tnth tr ord0 = tr_acc.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/fsm_ret_trace_induction.html" class="lemma-name">fsm_ret_trace_induction</a>
+                    </td>
+                    <td class="section-name">dsdp_fsm_progress</td>
+                    <td class="proof-lines">52</td>
+                    <td><code class="signature">Lemma fsm_ret_trace_induction h (ps : n_parties.-tuple (proc data)) (st : phase_state AHE) (tr_acc : seq data) : known_ret_state st -&gt; tval ps = ps_procs st -&gt; ~~ @all_terminated data (tval ps) -&gt; @all_terminated data (@interp_comp data (tval ps) h) -&gt; (exists tr0, rsteps procs_tup ps tr0 /\ tnth tr0 ord0 = tr_acc) -&gt; exists (final : n_parties.-tuple (proc data)) tr_final, rsteps procs_tup final tr_final /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = Ret concrete_val /\ exists suffix, tnth tr_final ord0 = suffix ++ tr_acc.</code></td>
+                    <td class="meaning">Combined induction: known_ret_state + trace threading. Clones fsm_ret_induction and additionally maintains tnth tr ord0 = tr_acc.</td>
+                </tr>
+            
+                <tr data-search="fsm_full_trace theorem fsm_full_trace (h : nat) (hfuel : @all_terminated data (@interp_comp data procs h)) : (1 &lt;= n_relay)%n -&gt; exists (prefix : seq data) (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = ret concrete_val /\ tnth tr ord0 = expected_trace prefix. ">
                     <td>
                         
                         <span class="badge badge-theorem">Theorem</span>
@@ -453,8 +466,8 @@
                         <a href="lemmas/fsm_full_trace.html" class="lemma-name">fsm_full_trace</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
-                    <td class="proof-lines">1</td>
-                    <td><code class="signature">Theorem fsm_full_trace (h : nat) (Hfuel : @all_terminated data (@interp_comp data procs h)) : (1 &lt;= n_relay)%N -&gt; exists rr_tail (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = Ret concrete_val /\ tnth tr ord0 = expected_trace rr_tail.</code></td>
+                    <td class="proof-lines">20</td>
+                    <td><code class="signature">Theorem fsm_full_trace (h : nat) (Hfuel : @all_terminated data (@interp_comp data procs h)) : (1 &lt;= n_relay)%N -&gt; exists (prefix : seq data) (final : n_parties.-tuple (proc data)) tr, rsteps procs_tup final tr /\ @all_terminated data (tval final) /\ nth (@default_proc data) (tval final) 0 = Ret concrete_val /\ tnth tr ord0 = expected_trace prefix.</code></td>
                     <td class="meaning"></td>
                 </tr>
             
@@ -1131,6 +1144,244 @@
 
 
 
+<div class="file-section main-section" data-file="dumas2017dual/dsdp/dsdp_stepwise.v">
+    <div class="file-header expanded" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_stepwise.v</span>
+        </div>
+        <span class="file-count">16 main</span>
+    </div>
+    <div class="file-content expanded">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="sw_step_adec_eq lemma sw_step_adec_eq p c dki g m k : c \in ps_cipher (g p) -&gt; ps_priv (g p) = some k -&gt; dec dki c = some m -&gt; sw_step p (adec c dki) g = some (sw_upd g p (sw_add_plain (g p) m)). helper (l1): adec fires when the cipher is held, a priv key is installed, and [dec dki c = some m]; adds [m] to ps_plain.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/sw_step_ADec_eq.html" class="lemma-name">sw_step_ADec_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_ADec_eq p c dki g m k : c \in ps_cipher (g p) -&gt; ps_priv (g p) = Some k -&gt; dec dki c = Some m -&gt; sw_step p (ADec c dki) g = Some (sw_upd g p (sw_add_plain (g p) m)).</code></td>
+                    <td class="meaning">Helper (L1): ADec fires when the cipher is held, a priv key is installed, and [dec dki c = Some m]; adds [m] to ps_plain.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase0_state lemma dsdp_n_phase0_state : exists g0, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_phase0 = some g0. main (l2): phase0 always succeeds -- foldm of sw_step over the setup block (alice&#39;s ainit + every relay&#39;s ainit) returns [some g0]. phase0 is straight-line ainit actions with no preconditions, so the only content is that the fold unfolds cleanly; downstream lemmas consume this as the entry point to phase1.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase0_state.html" class="lemma-name">dsdp_n_phase0_state</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma dsdp_n_phase0_state : exists g0, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state dsdp_n_phase0 = Some g0.</code></td>
+                    <td class="meaning">Main (L2): phase0 always succeeds -- foldM of sw_step over the setup block (alice&#39;s AInit + every relay&#39;s AInit) returns [Some g0]. Phase0 is straight-line AInit actions with no preconditions, so the only content is that the fold unfolds cleanly; downstream lemmas consume this as the entry point to phase1.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase1_state lemma dsdp_n_phase1_state : exists g1, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = some g1. main (l3): phase0++phase1 succeeds. plain-existence corollary of the strengthened [dsdp_n_phase01_state].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase1_state.html" class="lemma-name">dsdp_n_phase1_state</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma dsdp_n_phase1_state : exists g1, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = Some g1.</code></td>
+                    <td class="meaning">Main (L3): phase0++phase1 succeeds. Plain-existence corollary of the strengthened [dsdp_n_phase01_state].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase2_state lemma dsdp_n_phase2_state : exists g2, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2) = some g2. main (l4): phase0++phase1++phase2 succeeds. shows that alice&#39;s interleaved phase-2 loop (aenc / apow / amul / asend at each relay index) never short-circuits to none. the fine-grained version with alpha-at-destination witnesses is [dsdp_n_phase2_state_strong] below; this plain form is enough for external &#34;does phase2 run?&#34; queries.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase2_state.html" class="lemma-name">dsdp_n_phase2_state</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">50</td>
+                    <td><code class="signature">Lemma dsdp_n_phase2_state : exists g2, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2) = Some g2.</code></td>
+                    <td class="meaning">Main (L4): phase0++phase1++phase2 succeeds. Shows that alice&#39;s interleaved Phase-2 loop (AEnc / APow / AMul / ASend at each relay index) never short-circuits to None. The fine-grained version with alpha-at-destination witnesses is [dsdp_n_phase2_state_strong] below; this plain form is enough for external &#34;does phase2 run?&#34; queries.</td>
+                </tr>
+            
+                <tr data-search="dec_sw_alpha lemma dec_sw_alpha (j : &#39;i_n_relay.+1) : dec (dk j) (sw_alpha j) = some (u (lift ord0 j) * v j + r j). helper: decryption of [sw_alpha j] under [dk j] yields [u_{j+1} * v j + r j]. composes [sw_alpha_eq_fresh_enc] and [dec_correct]. this is the key firing that lets the first relay (l5) extract [sw_delta ord0] from [sw_alpha ord0] -- note [sw_delta ord0 = u (lift ord0 ord0) * v ord0 + r ord0] by the single-term unfolding of the big sum.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dec_sw_alpha.html" class="lemma-name">dec_sw_alpha</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dec_sw_alpha (j : &#39;I_n_relay.+1) : dec (dk j) (sw_alpha j) = Some (u (lift ord0 j) * v j + r j).</code></td>
+                    <td class="meaning">Helper: decryption of [sw_alpha j] under [dk j] yields [u_{j+1} * v j + r j]. Composes [sw_alpha_eq_fresh_enc] and [dec_correct]. This is the key firing that lets the first relay (L5) extract [sw_Delta ord0] from [sw_alpha ord0] -- note [sw_Delta ord0 = u (lift ord0 ord0) * v ord0 + r ord0] by the single-term unfolding of the big sum.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase1_loop lemma dsdp_n_phase1_loop (l : seq &#39;i_n_relay.+1) (g : sw_global_state) : ps_priv (g alice) = some dk_alice -&gt; ps_priv (g 1) = some (dk ord0) -&gt; exists g&#39;, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) g (flatten [seq [:: (r (val j), aenc (sw_pk_of (lift ord0 j)) (v j) (rb1 j)); (r (val j), asend alice (sw_c j))] | j &lt;- l]) = some g&#39; /\ (forall j : &#39;i_n_relay.+1, j \in l -&gt; sw_c j \in ps_cipher (g&#39; alice)) /\ ps_priv (g&#39; alice) = some dk_alice /\ ps_priv (g&#39; 1) = some (dk ord0) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)). helper: phase1&#39;s inner induction. runs the flatten of [aenc; asend] pairs over a sub-list [l] of relay indices, starting from a state where alice&#39;s and 1&#39;s priv keys are already set. produces: (a) the fold succeeds; (b) alice&#39;s cipher set contains [sw_c j] for every [j \in l]; (c) the priv invariants and [ps_ret] are preserved globally. consumed by [dsdp_n_phase01_state_strong] below.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase1_loop.html" class="lemma-name">dsdp_n_phase1_loop</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">71</td>
+                    <td><code class="signature">Lemma dsdp_n_phase1_loop (l : seq &#39;I_n_relay.+1) (g : sw_global_state) : ps_priv (g alice) = Some dk_alice -&gt; ps_priv (g 1) = Some (dk ord0) -&gt; exists g&#39;, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) g (flatten [seq [:: (R (val j), AEnc (sw_pk_of (lift ord0 j)) (v j) (rb1 j)); (R (val j), ASend alice (sw_c j))] | j &lt;- l]) = Some g&#39; /\ (forall j : &#39;I_n_relay.+1, j \in l -&gt; sw_c j \in ps_cipher (g&#39; alice)) /\ ps_priv (g&#39; alice) = Some dk_alice /\ ps_priv (g&#39; 1) = Some (dk ord0) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)).</code></td>
+                    <td class="meaning">Helper: phase1&#39;s inner induction. Runs the flatten of [AEnc; ASend] pairs over a sub-list [l] of relay indices, starting from a state where alice&#39;s and 1&#39;s priv keys are already set. Produces: (a) the fold succeeds; (b) alice&#39;s cipher set contains [sw_c j] for every [j \in l]; (c) the priv invariants and [ps_ret] are preserved globally. Consumed by [dsdp_n_phase01_state_strong] below.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase2_loop lemma dsdp_n_phase2_loop (l : seq &#39;i_n_relay.+1) (g : sw_global_state) : (forall j : &#39;i_n_relay.+1, j \in l -&gt; sw_c j \in ps_cipher (g alice)) -&gt; ps_priv (g alice) = some dk_alice -&gt; ps_priv (g 1) = some (dk ord0) -&gt; exists g&#39;, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) g (flatten [seq let dest : nat := alice_send_dest (val j) in [:: (alice, aenc (sw_pk_of (lift ord0 j)) (r j) (ra j)); (alice, apow (sw_c j) (u (lift ord0 j))); (alice, amul (sw_c j ^h u (lift ord0 j)) (enc (sw_pk_of (lift ord0 j)) (r j) (ra j))); (alice, asend dest (sw_alpha j))] | j &lt;- l]) = some g&#39; /\ (forall j : &#39;i_n_relay.+1, j \in l -&gt; sw_alpha j \in ps_cipher (g&#39; ((alice_send_dest (val j))))) /\ ps_priv (g&#39; alice) = some dk_alice /\ ps_priv (g&#39; 1) = some (dk ord0) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)). helper: phase2&#39;s inner induction. for each relay index [j0] in the sub-list, alice executes 4 actions (aenc the fresh randomness, apow [sw_c j0] by [u_{j0+1}], amul to form [sw_alpha j0], asend to the destination). the invariant carried through the loop is that alice&#39;s [sw_c] witnesses remain available for the remaining indices, plus the priv/ret preservation facts. this is the engine of [dsdp_n_phase2_state_strong].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase2_loop.html" class="lemma-name">dsdp_n_phase2_loop</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">75</td>
+                    <td><code class="signature">Lemma dsdp_n_phase2_loop (l : seq &#39;I_n_relay.+1) (g : sw_global_state) : (forall j : &#39;I_n_relay.+1, j \in l -&gt; sw_c j \in ps_cipher (g alice)) -&gt; ps_priv (g alice) = Some dk_alice -&gt; ps_priv (g 1) = Some (dk ord0) -&gt; exists g&#39;, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) g (flatten [seq let dest : nat := alice_send_dest (val j) in [:: (alice, AEnc (sw_pk_of (lift ord0 j)) (r j) (ra j)); (alice, APow (sw_c j) (u (lift ord0 j))); (alice, AMul (sw_c j ^h u (lift ord0 j)) (enc (sw_pk_of (lift ord0 j)) (r j) (ra j))); (alice, ASend dest (sw_alpha j))] | j &lt;- l]) = Some g&#39; /\ (forall j : &#39;I_n_relay.+1, j \in l -&gt; sw_alpha j \in ps_cipher (g&#39; ((alice_send_dest (val j))))) /\ ps_priv (g&#39; alice) = Some dk_alice /\ ps_priv (g&#39; 1) = Some (dk ord0) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)).</code></td>
+                    <td class="meaning">Helper: phase2&#39;s inner induction. For each relay index [j0] in the sub-list, alice executes 4 actions (AEnc the fresh randomness, APow [sw_c j0] by [u_{j0+1}], AMul to form [sw_alpha j0], ASend to the destination). The invariant carried through the loop is that alice&#39;s [sw_c] witnesses remain available for the remaining indices, plus the priv/ret preservation facts. This is the engine of [dsdp_n_phase2_state_strong].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase2_state_strong lemma dsdp_n_phase2_state_strong : exists g2, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2) = some g2 /\ (forall j : &#39;i_n_relay.+1, sw_alpha j \in ps_cipher (g2 ((alice_send_dest (val j))))) /\ (forall k : &#39;i_n_relay.+1, ps_priv (g2 (r (val k))) = some (dk k)) /\ ps_priv (g2 alice) = some dk_alice /\ ps_ret (g2 alice) = none. main (l4-strong): the post-state of phase0++phase1++phase2 carries the witnesses the β-chain needs: - for every [j : &#39;i_n_relay.+1], [sw_alpha j] is in the cipher set of the destination party [(alice_send_dest j)]. - alice still holds [dk_alice] with [ps_ret alice = none]. - for every [k : &#39;i_n_relay.+1], relay slot [r (val k)] holds [dk k] (n-generic forall-k priv invariant; subsumes the old narrow bob/charlie clauses and feeds l7&#39;s β-chain at arbitrary [n_relay &gt;= 1]). consumed by l5 and l7.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase2_state_strong.html" class="lemma-name">dsdp_n_phase2_state_strong</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">21</td>
+                    <td><code class="signature">Lemma dsdp_n_phase2_state_strong : exists g2, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2) = Some g2 /\ (forall j : &#39;I_n_relay.+1, sw_alpha j \in ps_cipher (g2 ((alice_send_dest (val j))))) /\ (forall k : &#39;I_n_relay.+1, ps_priv (g2 (R (val k))) = Some (dk k)) /\ ps_priv (g2 alice) = Some dk_alice /\ ps_ret (g2 alice) = None.</code></td>
+                    <td class="meaning">Main (L4-strong): the post-state of phase0++phase1++phase2 carries the witnesses the β-chain needs: - For every [j : &#39;I_n_relay.+1], [sw_alpha j] is in the cipher set of the destination party [(alice_send_dest j)]. - Alice still holds [dk_alice] with [ps_ret alice = None]. - For every [k : &#39;I_n_relay.+1], relay slot [R (val k)] holds [dk k] (N-generic forall-k priv invariant; subsumes the old narrow Bob/Charlie clauses and feeds L7&#39;s β-chain at arbitrary [n_relay &gt;= 1]). Consumed by L5 and L7.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_first_relay_eq lemma dsdp_n_first_relay_eq (h1 : (1 &lt;= n_relay)%n) : let a1 : &#39;i_n_relay.+1 := ordinal (h1 : (1 &lt; n_relay.+1)%n) in exists gf, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2 ++ dsdp_n_first_relay) = some gf /\ sw_beta ord0 a1 \in ps_cipher (gf (r (val a1))) /\ (forall k : &#39;i_n_relay.+1, ps_priv (gf (r (val k))) = some (dk k)) /\ (forall k&#39; : &#39;i_n_relay.+1, (1 &lt; val k&#39;)%n -&gt; sw_alpha k&#39; \in ps_cipher (gf (val k&#39;))) /\ ps_priv (gf alice) = some dk_alice /\ ps_ret (gf alice) = none. main (l5, n-generic): phase0..phase2 ++ first_relay block succeeds, and when [n_relay &gt;= 1] the post-state carries: - [sw_beta ord0 a1] is in relay slot [r (val a1) = 2]&#39;s cipher set, where [a1] is the unique ordinal of value 1 in [ &#39;i_n_relay.+1 ]; - the forall-k priv invariant survives globally (first_relay block is adec/aenc/amul/asend, no ainit, so every relay slot&#39;s priv is preserved); - alice still holds [dk_alice] and [ps_ret alice = none]. the forall-k clause is what l7 consumes at every intermediate relay.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_first_relay_eq.html" class="lemma-name">dsdp_n_first_relay_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">101</td>
+                    <td><code class="signature">Lemma dsdp_n_first_relay_eq (H1 : (1 &lt;= n_relay)%N) : let a1 : &#39;I_n_relay.+1 := Ordinal (H1 : (1 &lt; n_relay.+1)%N) in exists gf, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2 ++ dsdp_n_first_relay) = Some gf /\ sw_beta ord0 a1 \in ps_cipher (gf (R (val a1))) /\ (forall k : &#39;I_n_relay.+1, ps_priv (gf (R (val k))) = Some (dk k)) /\ (forall k&#39; : &#39;I_n_relay.+1, (1 &lt; val k&#39;)%N -&gt; sw_alpha k&#39; \in ps_cipher (gf (val k&#39;))) /\ ps_priv (gf alice) = Some dk_alice /\ ps_ret (gf alice) = None.</code></td>
+                    <td class="meaning">Main (L5, N-generic): phase0..phase2 ++ first_relay block succeeds, and when [n_relay &gt;= 1] the post-state carries: - [sw_beta ord0 a1] is in relay slot [R (val a1) = 2]&#39;s cipher set, where [a1] is the unique ordinal of value 1 in [ &#39;I_n_relay.+1 ]; - the forall-k priv invariant survives globally (first_relay block is ADec/AEnc/AMul/ASend, no AInit, so every relay slot&#39;s priv is preserved); - alice still holds [dk_alice] and [ps_ret alice = None]. The forall-k clause is what L7 consumes at every intermediate relay.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_intermediate_telescope lemma dsdp_n_intermediate_telescope (j : &#39;i_n_relay.+1) (jnext : &#39;i_n_relay.+1) (g : sw_global_state) : (0 &lt; val j &lt; n_relay)%n -&gt; val jnext = (val j).+1 -&gt; let pj : nat := (val j).+1 in let pnext : nat := (val j).+2 in sw_beta (ord_preds j) j \in ps_cipher (g pj) -&gt; sw_alpha jnext \in ps_cipher (g pj) -&gt; ps_priv (g pj) = some (dk j) -&gt; exists g&#39;, foldm (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g (dsdp_n_intermediate j) = some g&#39; /\ sw_beta j jnext \in ps_cipher (g&#39; pnext) /\ (forall q : nat, q != pj -&gt; q != pnext -&gt; g&#39; q = g q) /\ g&#39; pnext = sw_add_cipher (g pnext) (sw_beta j jnext) /\ (forall q : nat, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q : nat, ps_ret (g&#39; q) = ps_ret (g q)). main (l6): straight-line telescoping step for one intermediate relay. given a state [g] where party [pj := r j] already holds the incoming [sw_beta (ord_preds j) j] and the pre-fetched [sw_alpha (lift ord0 j)] in its cipher set and holds [dk j] as its priv, the four actions in [dsdp_n_intermediate j] drive [g] to some [g&#39;] where the next party [pnext := r (j+1)] holds [sw_beta j (lift ord0 j)]. this is the inductive step of the β-chain: the old [sw_delta (j-1)] carried by the incoming beta telescopes to [sw_delta j] at the outgoing beta.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_intermediate_telescope.html" class="lemma-name">dsdp_n_intermediate_telescope</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">53</td>
+                    <td><code class="signature">Lemma dsdp_n_intermediate_telescope (j : &#39;I_n_relay.+1) (jnext : &#39;I_n_relay.+1) (g : sw_global_state) : (0 &lt; val j &lt; n_relay)%N -&gt; val jnext = (val j).+1 -&gt; let pj : nat := (val j).+1 in let pnext : nat := (val j).+2 in sw_beta (ord_predS j) j \in ps_cipher (g pj) -&gt; sw_alpha jnext \in ps_cipher (g pj) -&gt; ps_priv (g pj) = Some (dk j) -&gt; exists g&#39;, foldM (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g (dsdp_n_intermediate j) = Some g&#39; /\ sw_beta j jnext \in ps_cipher (g&#39; pnext) /\ (forall q : nat, q != pj -&gt; q != pnext -&gt; g&#39; q = g q) /\ g&#39; pnext = sw_add_cipher (g pnext) (sw_beta j jnext) /\ (forall q : nat, ps_priv (g&#39; q) = ps_priv (g q)) /\ (forall q : nat, ps_ret (g&#39; q) = ps_ret (g q)).</code></td>
+                    <td class="meaning">Main (L6): straight-line telescoping step for one intermediate relay. Given a state [g] where party [pj := R j] already holds the incoming [sw_beta (ord_predS j) j] and the pre-fetched [sw_alpha (lift ord0 j)] in its cipher set and holds [dk j] as its priv, the four actions in [dsdp_n_intermediate j] drive [g] to some [g&#39;] where the next party [pnext := R (j+1)] holds [sw_beta j (lift ord0 j)]. This is the inductive step of the β-chain: the old [sw_Delta (j-1)] carried by the incoming beta telescopes to [sw_Delta j] at the outgoing beta.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_last_relay_eq lemma dsdp_n_last_relay_eq (g : sw_global_state) : let pn : nat := r n_relay in sw_beta (ord_preds ord_max) (@ord_max n_relay) \in ps_cipher (g pn) -&gt; ps_priv (g pn) = some (dk (@ord_max n_relay)) -&gt; exists g&#39;, foldm (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g dsdp_n_last_relay = some g&#39; /\ sw_gamma \in ps_cipher (g&#39; alice) /\ (forall q : nat, q != pn -&gt; q != alice -&gt; g&#39; q = g q) /\ ps_priv (g&#39; alice) = ps_priv (g alice) /\ ps_ret (g&#39; alice) = ps_ret (g alice). main (l6b): straight-line terminator step for the last relay. given a state holding [sw_beta (ord_preds ord_max) ord_max] on party [r n_relay] with the matching private key [dk ord_max], running the three-action [dsdp_n_last_relay] block yields [sw_gamma] (= a fresh encryption under alice&#39;s key of [sw_delta ord_max]) in alice&#39;s cipher set. this is the last step of the β-chain: the terminal relay decrypts, re-encrypts under alice&#39;s key, and forwards [sw_gamma].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_last_relay_eq.html" class="lemma-name">dsdp_n_last_relay_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">27</td>
+                    <td><code class="signature">Lemma dsdp_n_last_relay_eq (g : sw_global_state) : let pn : nat := R n_relay in sw_beta (ord_predS ord_max) (@ord_max n_relay) \in ps_cipher (g pn) -&gt; ps_priv (g pn) = Some (dk (@ord_max n_relay)) -&gt; exists g&#39;, foldM (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g dsdp_n_last_relay = Some g&#39; /\ sw_gamma \in ps_cipher (g&#39; alice) /\ (forall q : nat, q != pn -&gt; q != alice -&gt; g&#39; q = g q) /\ ps_priv (g&#39; alice) = ps_priv (g alice) /\ ps_ret (g&#39; alice) = ps_ret (g alice).</code></td>
+                    <td class="meaning">Main (L6b): straight-line terminator step for the last relay. Given a state holding [sw_beta (ord_predS ord_max) ord_max] on party [R n_relay] with the matching private key [dk ord_max], running the three-action [dsdp_n_last_relay] block yields [sw_gamma] (= a fresh encryption under alice&#39;s key of [sw_Delta ord_max]) in alice&#39;s cipher set. This is the last step of the β-chain: the terminal relay decrypts, re-encrypts under alice&#39;s key, and forwards [sw_gamma].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_beta_chain_aux lemma dsdp_n_beta_chain_aux (d : nat) : forall (k : nat) (g : sw_global_state), (n_relay = k + d)%n -&gt; (1 &lt;= k)%n -&gt; (exists j_k : &#39;i_n_relay.+1, val j_k = k /\ sw_beta (ord_preds j_k) j_k \in ps_cipher (g k.+1)) -&gt; (forall j : &#39;i_n_relay.+1, (k &lt; val j &lt;= n_relay)%n -&gt; sw_alpha j \in ps_cipher (g (val j))) -&gt; (forall j : &#39;i_n_relay.+1, (k &lt;= val j)%n -&gt; ps_priv (g (val j).+1) = some (dk j)) -&gt; ps_priv (g alice) = some dk_alice -&gt; ps_ret (g alice) = none -&gt; exists g&#39;, foldm (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g (flatten [seq dsdp_n_intermediate j | j &lt;- intermediate_tail k] ++ dsdp_n_last_relay) = some g&#39; /\ sw_gamma \in ps_cipher (g&#39; alice) /\ ps_priv (g&#39; alice) = some dk_alice /\ ps_ret (g&#39; alice) = none. helper (prefix lemma): n-generic induction over the remaining intermediate relays. inducted on d = n_relay - k.">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_beta_chain_aux.html" class="lemma-name">dsdp_n_beta_chain_aux</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">97</td>
+                    <td><code class="signature">Lemma dsdp_n_beta_chain_aux (d : nat) : forall (k : nat) (g : sw_global_state), (n_relay = k + d)%N -&gt; (1 &lt;= k)%N -&gt; (exists j_k : &#39;I_n_relay.+1, val j_k = k /\ sw_beta (ord_predS j_k) j_k \in ps_cipher (g k.+1)) -&gt; (forall j : &#39;I_n_relay.+1, (k &lt; val j &lt;= n_relay)%N -&gt; sw_alpha j \in ps_cipher (g (val j))) -&gt; (forall j : &#39;I_n_relay.+1, (k &lt;= val j)%N -&gt; ps_priv (g (val j).+1) = Some (dk j)) -&gt; ps_priv (g alice) = Some dk_alice -&gt; ps_ret (g alice) = None -&gt; exists g&#39;, foldM (fun gg pa =&gt; sw_step pa.1 pa.2 gg) g (flatten [seq dsdp_n_intermediate j | j &lt;- intermediate_tail k] ++ dsdp_n_last_relay) = Some g&#39; /\ sw_gamma \in ps_cipher (g&#39; alice) /\ ps_priv (g&#39; alice) = Some dk_alice /\ ps_ret (g&#39; alice) = None.</code></td>
+                    <td class="meaning">Helper (prefix lemma): N-generic induction over the remaining intermediate relays. Inducted on d = n_relay - k.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_beta_chain_eq lemma dsdp_n_beta_chain_eq (h1 : (1 &lt;= n_relay)%n) : exists g3, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2 ++ dsdp_n_phase3) = some g3 /\ sw_gamma \in ps_cipher (g3 alice) /\ ps_priv (g3 alice) = some dk_alice /\ ps_ret (g3 alice) = none. main (l7): end-of-phase-3 state. exposes the four post-conditions that [dsdp_n_phase4_state] (l8) consumes: the fold of phase0++phase1 ++phase2++phase3 succeeds, [sw_gamma] is in alice&#39;s cipher set, [ps_priv alice = some dk_alice] is still held, and [ps_ret alice = none] so the terminal aret fires. n-generic: holds for any [1 &lt;= n_relay].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_beta_chain_eq.html" class="lemma-name">dsdp_n_beta_chain_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">26</td>
+                    <td><code class="signature">Lemma dsdp_n_beta_chain_eq (H1 : (1 &lt;= n_relay)%N) : exists g3, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1 ++ dsdp_n_phase2 ++ dsdp_n_phase3) = Some g3 /\ sw_gamma \in ps_cipher (g3 alice) /\ ps_priv (g3 alice) = Some dk_alice /\ ps_ret (g3 alice) = None.</code></td>
+                    <td class="meaning">Main (L7): end-of-phase-3 state. Exposes the four post-conditions that [dsdp_n_phase4_state] (L8) consumes: the fold of phase0++phase1 ++phase2++phase3 succeeds, [sw_gamma] is in alice&#39;s cipher set, [ps_priv alice = Some dk_alice] is still held, and [ps_ret alice = None] so the terminal ARet fires. N-generic: holds for any [1 &lt;= n_relay].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase4_state lemma dsdp_n_phase4_state (h1 : (1 &lt;= n_relay)%n) : exists gf, dsdp_n_final = some gf /\ ps_ret (gf alice) = some sw_s. main (l8): after phase0..phase4, alice&#39;s [ps_ret] is [some sw_s]. composes [dsdp_n_beta_chain_eq] (which puts [sw_gamma] in alice&#39;s cipher set) with the four phase4 actions: adec [sw_gamma] to extract [sw_delta ord_max], two aadds to form [sw_s = sw_delta ord_max + u_1 * v_1 - \sum r], and aret. n-generic: holds for any [1 &lt;= n_relay].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/dsdp_n_phase4_state.html" class="lemma-name">dsdp_n_phase4_state</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma dsdp_n_phase4_state (H1 : (1 &lt;= n_relay)%N) : exists gf, dsdp_n_final = Some gf /\ ps_ret (gf alice) = Some sw_S.</code></td>
+                    <td class="meaning">Main (L8): after phase0..phase4, alice&#39;s [ps_ret] is [Some sw_S]. Composes [dsdp_n_beta_chain_eq] (which puts [sw_gamma] in alice&#39;s cipher set) with the four phase4 actions: ADec [sw_gamma] to extract [sw_Delta ord_max], two AAdds to form [sw_S = sw_Delta ord_max + u_1 * v_1 - \sum r], and ARet. N-generic: holds for any [1 &lt;= n_relay].</td>
+                </tr>
+            
+                <tr data-search="sw_s_eq_dot_product lemma sw_s_eq_dot_product : sw_s = \sum_(i &lt; n_relay.+2) u i * v_all i. main (l9): the algebraic identity at the heart of dsdp correctness. [sw_s] is defined as [sw_delta ord_max - \sum r + u ord0 * v_alice]; [sw_delta ord_max = \sum_k (u_{k+1} * v_k + r_k)]; so [sw_s] telescopes to [\sum_(i &lt; n_relay.+2) u i * v_all i], which is the dot product. pure ring algebra; independent of [sw_step] and of [n_relay = 1].">
+                    <td>
+                        
+                        <span class="badge badge-main">Main</span>
+                        
+                        <a href="lemmas/sw_S_eq_dot_product.html" class="lemma-name">sw_S_eq_dot_product</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">18</td>
+                    <td><code class="signature">Lemma sw_S_eq_dot_product : sw_S = \sum_(i &lt; n_relay.+2) u i * v_all i.</code></td>
+                    <td class="meaning">Main (L9): the algebraic identity at the heart of DSDP correctness. [sw_S] is defined as [sw_Delta ord_max - \sum r + u ord0 * v_alice]; [sw_Delta ord_max = \sum_k (u_{k+1} * v_k + r_k)]; so [sw_S] telescopes to [\sum_(i &lt; n_relay.+2) u i * v_all i], which is the dot product. Pure ring algebra; independent of [sw_step] and of [n_relay = 1].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_correct theorem dsdp_n_correct (h1 : (1 &lt;= n_relay)%n) : exists gf, dsdp_n_final = some gf /\ ret_of gf alice = some (\sum_(i &lt; n_relay.+2) u i * v_all i). main (th1, headline theorem): running the whole [dsdp_n_program] from [sw_init_state] via [foldm sw_step] succeeds, and the return value alice emits is exactly the dot product [\sum_i u_i * v_i]. one-line corollary composing [dsdp_n_phase4_state] (final state has [ps_ret alice = some sw_s]) with [sw_s_eq_dot_product]. n-generic: holds for any [1 &lt;= n_relay], i.e., any n ≥ 3 parties (alice + at least one first relay + at least one last relay).">
+                    <td>
+                        
+                        <span class="badge badge-theorem">Theorem</span>
+                        
+                        <a href="lemmas/dsdp_n_correct.html" class="lemma-name">dsdp_n_correct</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Theorem dsdp_n_correct (H1 : (1 &lt;= n_relay)%N) : exists gf, dsdp_n_final = Some gf /\ ret_of gf alice = Some (\sum_(i &lt; n_relay.+2) u i * v_all i).</code></td>
+                    <td class="meaning">Main (TH1, headline theorem): running the whole [dsdp_n_program] from [sw_init_state] via [foldM sw_step] succeeds, and the return value alice emits is exactly the dot product [\sum_i u_i * v_i]. One-line corollary composing [dsdp_n_phase4_state] (final state has [ps_ret alice = Some sw_S]) with [sw_S_eq_dot_product]. N-generic: holds for any [1 &lt;= n_relay], i.e., any N ≥ 3 parties (Alice + at least one first relay + at least one last relay).</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
 
 
 
@@ -1597,7 +1848,7 @@
 <!-- Helper Lemmas Section -->
 <h2 id="helpers-heading">Helper Lemmas</h2>
 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-    Supporting lemmas and utilities (570 total)
+    Supporting lemmas and utilities (610 total)
 </p>
 
 <div id="helpers-section">
@@ -2445,18 +2696,18 @@
                     <td class="meaning">Alice&#39;s drain fragment is [::] because Alice is Recv(n_relay.+1) and the relay at position n_relay.+1 is NOT sending to Alice (dst != 0). This requires that the relay at position n_relay.+1 is not Send 0. In the actual protocol, the last relay is always in Recv state during drain.</td>
                 </tr>
             
-                <tr data-search="step_ok_recv_send_nop lemma step_ok_recv_send_nop (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) : bg_nop_recv j bg -&gt; one_step_procs (ps_procs (st_recv_gen j bg)) = ps_procs (st_send j bg). parametric step_ok: recv(j) → send(j) under nop condition on bg. the active pair (alice at 0, relay j at j+1) fires. all other positions are nops (by bg_nop_recv).">
+                <tr data-search="step_ok_recv_send_nop lemma step_ok_recv_send_nop (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) : relay_bg_nop_recv j bg -&gt; one_step_procs (ps_procs (st_recv_gen j bg)) = ps_procs (st_send j bg). parametric step_ok: recv(j) → send(j) under nop condition on bg. the active pair (alice at 0, relay j at j+1) fires. all other positions are nops (by relay_bg_nop_recv).">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_recv_send_nop.html" class="lemma-name">step_ok_recv_send_nop</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">70</td>
-                    <td><code class="signature">Lemma step_ok_recv_send_nop (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) : bg_nop_recv j bg -&gt; one_step_procs (ps_procs (st_recv_gen j bg)) = ps_procs (st_send j bg).</code></td>
-                    <td class="meaning">Parametric step_ok: recv(j) → send(j) under NOP condition on bg. The active pair (Alice at 0, relay j at j+1) fires. All other positions are NOPs (by bg_nop_recv).</td>
+                    <td><code class="signature">Lemma step_ok_recv_send_nop (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) : relay_bg_nop_recv j bg -&gt; one_step_procs (ps_procs (st_recv_gen j bg)) = ps_procs (st_send j bg).</code></td>
+                    <td class="meaning">Parametric step_ok: recv(j) → send(j) under NOP condition on bg. The active pair (Alice at 0, relay j at j+1) fires. All other positions are NOPs (by relay_bg_nop_recv).</td>
                 </tr>
             
-                <tr data-search="step_ok_recv_send_at_j0 lemma step_ok_recv_send_at_j0 : one_step_procs (ps_procs (st_recv ord0)) = ps_procs st_send_at_j0. special case: recv(0) → send_0 is the parametric lemma with bg_init">
+                <tr data-search="step_ok_recv_send_at_j0 lemma step_ok_recv_send_at_j0 : one_step_procs (ps_procs (st_recv ord0)) = ps_procs st_send_at_j0. special case: recv(0) → send_0 is the parametric lemma with relay_bg_init">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_recv_send_at_j0.html" class="lemma-name">step_ok_recv_send_at_j0</a>
@@ -2464,17 +2715,17 @@
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">16</td>
                     <td><code class="signature">Lemma step_ok_recv_send_at_j0 : one_step_procs (ps_procs (st_recv ord0)) = ps_procs st_send_at_j0.</code></td>
-                    <td class="meaning">Special case: recv(0) → send_0 is the parametric lemma with bg_init</td>
+                    <td class="meaning">Special case: recv(0) → send_0 is the parametric lemma with relay_bg_init</td>
                 </tr>
             
-                <tr data-search="step_ok_send_gen lemma step_ok_send_gen (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (target_relay : proc data) (htarget : nth (@finish data) (send_procs j bg) (alice_send_dest j) = target_relay) (htarget_recv : exists frm f, target_relay = recv frm f /\ frm == 0) : bg_nop_send j bg -&gt; (smc_interpreter.step (send_procs j bg) [::] 0).2 = true. parametric step_ok: send(j) → next state under nop condition. the active pair is alice (send to alice_send_dest j) and the relay at that position.">
+                <tr data-search="step_ok_send_gen lemma step_ok_send_gen (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (target_relay : proc data) (htarget : nth (@finish data) (send_procs j bg) (alice_send_dest j) = target_relay) (htarget_recv : exists frm f, target_relay = recv frm f /\ frm == 0) : relay_bg_nop_send j bg -&gt; (smc_interpreter.step (send_procs j bg) [::] 0).2 = true. parametric step_ok: send(j) → next state under nop condition. the active pair is alice (send to alice_send_dest j) and the relay at that position.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_send_gen.html" class="lemma-name">step_ok_send_gen</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">20</td>
-                    <td><code class="signature">Lemma step_ok_send_gen (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (target_relay : proc data) (Htarget : nth (@Finish data) (send_procs j bg) (alice_send_dest j) = target_relay) (Htarget_recv : exists frm f, target_relay = Recv frm f /\ frm == 0) : bg_nop_send j bg -&gt; (smc_interpreter.step (send_procs j bg) [::] 0).2 = true.</code></td>
+                    <td><code class="signature">Lemma step_ok_send_gen (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (target_relay : proc data) (Htarget : nth (@Finish data) (send_procs j bg) (alice_send_dest j) = target_relay) (Htarget_recv : exists frm f, target_relay = Recv frm f /\ frm == 0) : relay_bg_nop_send j bg -&gt; (smc_interpreter.step (send_procs j bg) [::] 0).2 = true.</code></td>
                     <td class="meaning">Parametric step_ok: send(j) → next state under NOP condition. The active pair is Alice (Send to alice_send_dest j) and the relay at that position.</td>
                 </tr>
             
@@ -2511,18 +2762,18 @@
                     <td class="meaning"></td>
                 </tr>
             
-                <tr data-search="step_ok_send_recv_nop lemma step_ok_send_recv_nop (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) : (j &lt; n_relay)%n -&gt; bg_nop_send j bg -&gt; (exists f, nth (@finish data) (send_procs j bg) (alice_send_dest j) = recv 0 f) -&gt; bg j.+1 = relay_body (inord j.+1) -&gt; exists bg&#39;, one_step_procs (ps_procs (st_send j bg)) = ps_procs (st_recv_gen (inord j.+1) bg&#39;). send(j) → recv(j+1): general send→recv transition. requires: j &lt; n_relay (not the last), nop condition on bg, the target position has a recv from alice, and the next relay is still in its initial state.">
+                <tr data-search="step_ok_send_recv_nop lemma step_ok_send_recv_nop (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) : (j &lt; n_relay)%n -&gt; relay_bg_nop_send j bg -&gt; (exists f, nth (@finish data) (send_procs j bg) (alice_send_dest j) = recv 0 f) -&gt; bg j.+1 = relay_body (inord j.+1) -&gt; exists bg&#39;, one_step_procs (ps_procs (st_send j bg)) = ps_procs (st_recv_gen (inord j.+1) bg&#39;). send(j) → recv(j+1): general send→recv transition. requires: j &lt; n_relay (not the last), nop condition on bg, the target position has a recv from alice, and the next relay is still in its initial state.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_send_recv_nop.html" class="lemma-name">step_ok_send_recv_nop</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">37</td>
-                    <td><code class="signature">Lemma step_ok_send_recv_nop (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) : (j &lt; n_relay)%N -&gt; bg_nop_send j bg -&gt; (exists f, nth (@Finish data) (send_procs j bg) (alice_send_dest j) = Recv 0 f) -&gt; bg j.+1 = relay_body (inord j.+1) -&gt; exists bg&#39;, one_step_procs (ps_procs (st_send j bg)) = ps_procs (st_recv_gen (inord j.+1) bg&#39;).</code></td>
+                    <td><code class="signature">Lemma step_ok_send_recv_nop (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) : (j &lt; n_relay)%N -&gt; relay_bg_nop_send j bg -&gt; (exists f, nth (@Finish data) (send_procs j bg) (alice_send_dest j) = Recv 0 f) -&gt; bg j.+1 = relay_body (inord j.+1) -&gt; exists bg&#39;, one_step_procs (ps_procs (st_send j bg)) = ps_procs (st_recv_gen (inord j.+1) bg&#39;).</code></td>
                     <td class="meaning">send(j) → recv(j+1): general send→recv transition. Requires: j &lt; n_relay (not the last), NOP condition on bg, the target position has a Recv from Alice, and the next relay is still in its initial state.</td>
                 </tr>
             
-                <tr data-search="step_ok_send_j0_to_recv_j1 lemma step_ok_send_j0_to_recv_j1 : (0 &lt; n_relay)%n -&gt; exists bg&#39;, one_step_procs (ps_procs st_send_at_j0) = ps_procs (st_recv_gen (inord 1) bg&#39;). send_0 → recv(1): special case with bg_init">
+                <tr data-search="step_ok_send_j0_to_recv_j1 lemma step_ok_send_j0_to_recv_j1 : (0 &lt; n_relay)%n -&gt; exists bg&#39;, one_step_procs (ps_procs st_send_at_j0) = ps_procs (st_recv_gen (inord 1) bg&#39;). send_0 → recv(1): special case with relay_bg_init">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_send_j0_to_recv_j1.html" class="lemma-name">step_ok_send_j0_to_recv_j1</a>
@@ -2530,7 +2781,7 @@
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">15</td>
                     <td><code class="signature">Lemma step_ok_send_j0_to_recv_j1 : (0 &lt; n_relay)%N -&gt; exists bg&#39;, one_step_procs (ps_procs st_send_at_j0) = ps_procs (st_recv_gen (inord 1) bg&#39;).</code></td>
-                    <td class="meaning">send_0 → recv(1): special case with bg_init</td>
+                    <td class="meaning">send_0 → recv(1): special case with relay_bg_init</td>
                 </tr>
             
                 <tr data-search="nth_cons_pos lemma nth_cons_pos (t : type) (x0 : t) (a : t) (s : seq t) (n : nat) : (0 &lt; n)%n -&gt; nth x0 (a :: s) n = nth x0 s n.-1. helper: nth on cons with positive index">
@@ -2544,14 +2795,14 @@
                     <td class="meaning">Helper: nth on cons with positive index</td>
                 </tr>
             
-                <tr data-search="step_ok_send_last_drain lemma step_ok_send_last_drain (bg : nat -&gt; proc data) : bg_nop_send ord_max bg -&gt; (exists f, nth (@finish data) (send_procs (@ord_max n_relay) bg) (alice_send_dest (@ord_max n_relay)) = recv 0 f) -&gt; (exists rr0, bg 0 = send 2 (e_local (enc_local (ek (nat_to_party_id 2)) (chain_acc 0) rr0)) finish) -&gt; (exists f1, bg 1 = recv 1 f1) -&gt; (forall v k, bg n_relay.-1 &lt;&gt; send 0 v k) -&gt; exists (rr&#39; : rand ahe) (bg&#39; : nat -&gt; proc data) (hsafe : forall v k, bg&#39; n_relay &lt;&gt; send 0 v k), one_step_procs (ps_procs (@st_send (@ord_max n_relay) bg)) = ps_procs (@st_drain ord0 rr&#39; bg&#39; hsafe). send(last) → drain(0): last send triggers drain phase. requires: nop condition, the target has matching recv, and bg(0) already has the right send form for drain.">
+                <tr data-search="step_ok_send_last_drain lemma step_ok_send_last_drain (bg : nat -&gt; proc data) : relay_bg_nop_send ord_max bg -&gt; (exists f, nth (@finish data) (send_procs (@ord_max n_relay) bg) (alice_send_dest (@ord_max n_relay)) = recv 0 f) -&gt; (exists rr0, bg 0 = send 2 (e_local (enc_local (ek (nat_to_party_id 2)) (chain_acc 0) rr0)) finish) -&gt; (exists f1, bg 1 = recv 1 f1) -&gt; (forall v k, bg n_relay.-1 &lt;&gt; send 0 v k) -&gt; exists (rr&#39; : rand ahe) (bg&#39; : nat -&gt; proc data) (hsafe : forall v k, bg&#39; n_relay &lt;&gt; send 0 v k), one_step_procs (ps_procs (@st_send (@ord_max n_relay) bg)) = ps_procs (@st_drain ord0 rr&#39; bg&#39; hsafe). send(last) → drain(0): last send triggers drain phase. requires: nop condition, the target has matching recv, and bg(0) already has the right send form for drain.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/step_ok_send_last_drain.html" class="lemma-name">step_ok_send_last_drain</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">113</td>
-                    <td><code class="signature">Lemma step_ok_send_last_drain (bg : nat -&gt; proc data) : bg_nop_send ord_max bg -&gt; (exists f, nth (@Finish data) (send_procs (@ord_max n_relay) bg) (alice_send_dest (@ord_max n_relay)) = Recv 0 f) -&gt; (exists rr0, bg 0 = Send 2 (e_local (enc_local (ek (nat_to_party_id 2)) (chain_acc 0) rr0)) Finish) -&gt; (exists f1, bg 1 = Recv 1 f1) -&gt; (forall v k, bg n_relay.-1 &lt;&gt; Send 0 v k) -&gt; exists (rr&#39; : rand AHE) (bg&#39; : nat -&gt; proc data) (Hsafe : forall v k, bg&#39; n_relay &lt;&gt; Send 0 v k), one_step_procs (ps_procs (@st_send (@ord_max n_relay) bg)) = ps_procs (@st_drain ord0 rr&#39; bg&#39; Hsafe).</code></td>
+                    <td><code class="signature">Lemma step_ok_send_last_drain (bg : nat -&gt; proc data) : relay_bg_nop_send ord_max bg -&gt; (exists f, nth (@Finish data) (send_procs (@ord_max n_relay) bg) (alice_send_dest (@ord_max n_relay)) = Recv 0 f) -&gt; (exists rr0, bg 0 = Send 2 (e_local (enc_local (ek (nat_to_party_id 2)) (chain_acc 0) rr0)) Finish) -&gt; (exists f1, bg 1 = Recv 1 f1) -&gt; (forall v k, bg n_relay.-1 &lt;&gt; Send 0 v k) -&gt; exists (rr&#39; : rand AHE) (bg&#39; : nat -&gt; proc data) (Hsafe : forall v k, bg&#39; n_relay &lt;&gt; Send 0 v k), one_step_procs (ps_procs (@st_send (@ord_max n_relay) bg)) = ps_procs (@st_drain ord0 rr&#39; bg&#39; Hsafe).</code></td>
                     <td class="meaning">send(last) → drain(0): last send triggers drain phase. Requires: NOP condition, the target has matching Recv, and bg(0) already has the right Send form for drain.</td>
                 </tr>
             
@@ -2896,102 +3147,102 @@
                     <td class="meaning">Same as uncond but with explicit bg&#39; in conclusion</td>
                 </tr>
             
-                <tr data-search="bg_relay_ahead_recv lemma bg_relay_ahead_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; bg i = relay_body (inord i) -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = relay_body (inord i). relay ahead of active position j is nop in recv: preserved">
+                <tr data-search="relay_bg_ahead_recv lemma relay_bg_ahead_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; bg i = relay_body (inord i) -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = relay_body (inord i). relay ahead of active position j is nop in recv: preserved">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_relay_ahead_recv.html" class="lemma-name">bg_relay_ahead_recv</a>
+                        <a href="lemmas/relay_bg_ahead_recv.html" class="lemma-name">relay_bg_ahead_recv</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">17</td>
-                    <td><code class="signature">Lemma bg_relay_ahead_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; bg i = relay_body (inord i) -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = relay_body (inord i).</code></td>
+                    <td><code class="signature">Lemma relay_bg_ahead_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; bg i = relay_body (inord i) -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = relay_body (inord i).</code></td>
                     <td class="meaning">Relay ahead of active position j is NOP in recv: preserved</td>
                 </tr>
             
-                <tr data-search="bg_relay_ahead_send lemma bg_relay_ahead_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; bg i = relay_body (inord i) -&gt; (step (send_procs j bg) [::] i.+1).1.1 = bg i. relay ahead of active position j is nop in send: preserved">
+                <tr data-search="relay_bg_ahead_send lemma relay_bg_ahead_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; bg i = relay_body (inord i) -&gt; (step (send_procs j bg) [::] i.+1).1.1 = bg i. relay ahead of active position j is nop in send: preserved">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_relay_ahead_send.html" class="lemma-name">bg_relay_ahead_send</a>
+                        <a href="lemmas/relay_bg_ahead_send.html" class="lemma-name">relay_bg_ahead_send</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">11</td>
-                    <td><code class="signature">Lemma bg_relay_ahead_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; bg i = relay_body (inord i) -&gt; (step (send_procs j bg) [::] i.+1).1.1 = bg i.</code></td>
+                    <td><code class="signature">Lemma relay_bg_ahead_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (j &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; bg i = relay_body (inord i) -&gt; (step (send_procs j bg) [::] i.+1).1.1 = bg i.</code></td>
                     <td class="meaning">Relay ahead of active position j is NOP in send: preserved</td>
                 </tr>
             
-                <tr data-search="bg_finish_nop_recv lemma bg_finish_nop_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = finish -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = finish. r1: finish is nop in recv step">
+                <tr data-search="relay_bg_finish_nop_recv lemma relay_bg_finish_nop_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = finish -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = finish. r1: finish is nop in recv step">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_finish_nop_recv.html" class="lemma-name">bg_finish_nop_recv</a>
+                        <a href="lemmas/relay_bg_finish_nop_recv.html" class="lemma-name">relay_bg_finish_nop_recv</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma bg_finish_nop_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Finish -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = Finish.</code></td>
+                    <td><code class="signature">Lemma relay_bg_finish_nop_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Finish -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = Finish.</code></td>
                     <td class="meaning">R1: Finish is NOP in recv step</td>
                 </tr>
             
-                <tr data-search="bg_recv0_nop_recv lemma bg_recv0_nop_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = recv 0 f. r2: recv 0 f is nop in recv step — alice at pos 0 is recv, not send">
+                <tr data-search="relay_bg_recv_from0_nop_recv lemma relay_bg_recv_from0_nop_recv (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = recv 0 f. r2: recv 0 f is nop in recv step — alice at pos 0 is recv, not send">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_recv0_nop_recv.html" class="lemma-name">bg_recv0_nop_recv</a>
+                        <a href="lemmas/relay_bg_recv_from0_nop_recv.html" class="lemma-name">relay_bg_recv_from0_nop_recv</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">9</td>
-                    <td><code class="signature">Lemma bg_recv0_nop_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = Recv 0 f.</code></td>
+                    <td><code class="signature">Lemma relay_bg_recv_from0_nop_recv (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; (step (recv_procs_gen j bg) [::] i.+1).1.1 = Recv 0 f.</code></td>
                     <td class="meaning">R2: Recv 0 f is NOP in recv step — Alice at pos 0 is Recv, not Send</td>
                 </tr>
             
-                <tr data-search="bg_frontier_sender_fires lemma bg_frontier_sender_fires (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%n -&gt; bg ((j : nat) - 3)%n = send j.-1 v_s finish -&gt; bg ((j : nat) - 2)%n = recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 3).+1).1.1 = finish. r4: frontier sender fires with receiver in recv step → finish">
+                <tr data-search="relay_bg_frontier_sender_fires lemma relay_bg_frontier_sender_fires (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%n -&gt; bg ((j : nat) - 3)%n = send j.-1 v_s finish -&gt; bg ((j : nat) - 2)%n = recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 3).+1).1.1 = finish. r4: frontier sender fires with receiver in recv step → finish">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_frontier_sender_fires.html" class="lemma-name">bg_frontier_sender_fires</a>
+                        <a href="lemmas/relay_bg_frontier_sender_fires.html" class="lemma-name">relay_bg_frontier_sender_fires</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">26</td>
-                    <td><code class="signature">Lemma bg_frontier_sender_fires (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%N -&gt; bg ((j : nat) - 3)%N = Send j.-1 v_s Finish -&gt; bg ((j : nat) - 2)%N = Recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 3).+1).1.1 = Finish.</code></td>
+                    <td><code class="signature">Lemma relay_bg_frontier_sender_fires (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%N -&gt; bg ((j : nat) - 3)%N = Send j.-1 v_s Finish -&gt; bg ((j : nat) - 2)%N = Recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 3).+1).1.1 = Finish.</code></td>
                     <td class="meaning">R4: Frontier sender fires with receiver in recv step → Finish</td>
                 </tr>
             
-                <tr data-search="bg_frontier_receiver_fires lemma bg_frontier_receiver_fires (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%n -&gt; bg ((j : nat) - 3)%n = send j.-1 v_s finish -&gt; bg ((j : nat) - 2)%n = recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 2).+1).1.1 = f_r v_s. r5: frontier receiver fires (in recv step) — at position (j-2)+1 the receiver fires and produces f_r applied to the sender&#39;s value.">
+                <tr data-search="relay_bg_frontier_receiver_fires lemma relay_bg_frontier_receiver_fires (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%n -&gt; bg ((j : nat) - 3)%n = send j.-1 v_s finish -&gt; bg ((j : nat) - 2)%n = recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 2).+1).1.1 = f_r v_s. r5: frontier receiver fires (in recv step) — at position (j-2)+1 the receiver fires and produces f_r applied to the sender&#39;s value.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_frontier_receiver_fires.html" class="lemma-name">bg_frontier_receiver_fires</a>
+                        <a href="lemmas/relay_bg_frontier_receiver_fires.html" class="lemma-name">relay_bg_frontier_receiver_fires</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">34</td>
-                    <td><code class="signature">Lemma bg_frontier_receiver_fires (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%N -&gt; bg ((j : nat) - 3)%N = Send j.-1 v_s Finish -&gt; bg ((j : nat) - 2)%N = Recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 2).+1).1.1 = f_r v_s.</code></td>
+                    <td><code class="signature">Lemma relay_bg_frontier_receiver_fires (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (v_s : data) (f_r : data -&gt; proc data) : (3 &lt;= j)%N -&gt; bg ((j : nat) - 3)%N = Send j.-1 v_s Finish -&gt; bg ((j : nat) - 2)%N = Recv j.-2 f_r -&gt; (step (recv_procs_gen j bg) [::] ((j : nat) - 2).+1).1.1 = f_r v_s.</code></td>
                     <td class="meaning">R5: Frontier receiver fires (in recv step) — at position (j-2)+1 the receiver fires and produces f_r applied to the sender&#39;s value.</td>
                 </tr>
             
-                <tr data-search="bg_finish_nop_send lemma bg_finish_nop_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = finish -&gt; (step (send_procs j bg) [::] i.+1).1.1 = finish. s1: finish is nop in send step">
+                <tr data-search="relay_bg_finish_nop_send lemma relay_bg_finish_nop_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = finish -&gt; (step (send_procs j bg) [::] i.+1).1.1 = finish. s1: finish is nop in send step">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_finish_nop_send.html" class="lemma-name">bg_finish_nop_send</a>
+                        <a href="lemmas/relay_bg_finish_nop_send.html" class="lemma-name">relay_bg_finish_nop_send</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma bg_finish_nop_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Finish -&gt; (step (send_procs j bg) [::] i.+1).1.1 = Finish.</code></td>
+                    <td><code class="signature">Lemma relay_bg_finish_nop_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Finish -&gt; (step (send_procs j bg) [::] i.+1).1.1 = Finish.</code></td>
                     <td class="meaning">S1: Finish is NOP in send step</td>
                 </tr>
             
-                <tr data-search="bg_recv0_fire_send lemma bg_recv0_fire_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; alice_send_dest j = i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = f (e_local (alice_enc j)). s3: recv 0 fires with alice in send step">
+                <tr data-search="relay_bg_recv_from0_fire_send lemma relay_bg_recv_from0_fire_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; alice_send_dest j = i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = f (e_local (alice_enc j)). s3: recv 0 fires with alice in send step">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_recv0_fire_send.html" class="lemma-name">bg_recv0_fire_send</a>
+                        <a href="lemmas/relay_bg_recv_from0_fire_send.html" class="lemma-name">relay_bg_recv_from0_fire_send</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma bg_recv0_fire_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; alice_send_dest j = i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = f (e_local (alice_enc j)).</code></td>
+                    <td><code class="signature">Lemma relay_bg_recv_from0_fire_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; alice_send_dest j = i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = f (e_local (alice_enc j)).</code></td>
                     <td class="meaning">S3: Recv 0 fires with Alice in send step</td>
                 </tr>
             
-                <tr data-search="bg_recv0_nop_send lemma bg_recv0_nop_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; alice_send_dest j != i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = recv 0 f. s4: recv 0 is nop in send step when alice doesn&#39;t target this position">
+                <tr data-search="relay_bg_recv_from0_nop_send lemma relay_bg_recv_from0_nop_send (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; bg i = recv 0 f -&gt; alice_send_dest j != i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = recv 0 f. s4: recv 0 is nop in send step when alice doesn&#39;t target this position">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_recv0_nop_send.html" class="lemma-name">bg_recv0_nop_send</a>
+                        <a href="lemmas/relay_bg_recv_from0_nop_send.html" class="lemma-name">relay_bg_recv_from0_nop_send</a>
                     </td>
                     <td class="section-name">dsdp_fsm</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma bg_recv0_nop_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; alice_send_dest j != i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = Recv 0 f.</code></td>
+                    <td><code class="signature">Lemma relay_bg_recv_from0_nop_send (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc data) (i : nat) (f : data -&gt; proc data) : (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; bg i = Recv 0 f -&gt; alice_send_dest j != i.+1 -&gt; (step (send_procs j bg) [::] i.+1).1.1 = Recv 0 f.</code></td>
                     <td class="meaning">S4: Recv 0 is NOP in send step when Alice doesn&#39;t target this position</td>
                 </tr>
             
@@ -3111,26 +3362,26 @@
                     <td class="meaning">send states are not all-terminated (Alice at position 0 is Send, not terminal)</td>
                 </tr>
             
-                <tr data-search="bg_nop_recv_safe lemma bg_nop_recv_safe (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc (std_data ahe)) : (forall i, (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; match bg i with | send 0 _ _ =&gt; true | recv 0 _ =&gt; true | finish =&gt; true | _ =&gt; false end) -&gt; bg_nop_recv j bg. nop condition for recv: if for all i != j, bg(i) is either send 0 _ _ or recv 0 _ or finish, then bg_nop_recv j bg holds. this is because position 0 is recv j.+1, so: - send 0 at i+1: destination 0 has recv j.+1, frm=j.+1 != i.+1 (since i!=j). nop. - recv 0 at i+1: source 0 has recv (not send). nop. - finish at i+1: always nop.">
+                <tr data-search="relay_bg_nop_recv_safe lemma relay_bg_nop_recv_safe (j : &#39;i_n_relay.+1) (bg : nat -&gt; proc (std_data ahe)) : (forall i, (i &lt; n_relay.+1)%n -&gt; i != (j : nat) -&gt; match bg i with | send 0 _ _ =&gt; true | recv 0 _ =&gt; true | finish =&gt; true | _ =&gt; false end) -&gt; relay_bg_nop_recv j bg. nop condition for recv: if for all i != j, bg(i) is either send 0 _ _ or recv 0 _ or finish, then relay_bg_nop_recv j bg holds. this is because position 0 is recv j.+1, so: - send 0 at i+1: destination 0 has recv j.+1, frm=j.+1 != i.+1 (since i!=j). nop. - recv 0 at i+1: source 0 has recv (not send). nop. - finish at i+1: always nop.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_nop_recv_safe.html" class="lemma-name">bg_nop_recv_safe</a>
+                        <a href="lemmas/relay_bg_nop_recv_safe.html" class="lemma-name">relay_bg_nop_recv_safe</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">24</td>
-                    <td><code class="signature">Lemma bg_nop_recv_safe (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc (std_data AHE)) : (forall i, (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; match bg i with | Send 0 _ _ =&gt; True | Recv 0 _ =&gt; True | Finish =&gt; True | _ =&gt; False end) -&gt; bg_nop_recv j bg.</code></td>
-                    <td class="meaning">NOP condition for recv: if for all i != j, bg(i) is either Send 0 _ _ or Recv 0 _ or Finish, then bg_nop_recv j bg holds. This is because position 0 is Recv j.+1, so: - Send 0 at i+1: destination 0 has Recv j.+1, frm=j.+1 != i.+1 (since i!=j). NOP. - Recv 0 at i+1: source 0 has Recv (not Send). NOP. - Finish at i+1: always NOP.</td>
+                    <td><code class="signature">Lemma relay_bg_nop_recv_safe (j : &#39;I_n_relay.+1) (bg : nat -&gt; proc (std_data AHE)) : (forall i, (i &lt; n_relay.+1)%N -&gt; i != (j : nat) -&gt; match bg i with | Send 0 _ _ =&gt; True | Recv 0 _ =&gt; True | Finish =&gt; True | _ =&gt; False end) -&gt; relay_bg_nop_recv j bg.</code></td>
+                    <td class="meaning">NOP condition for recv: if for all i != j, bg(i) is either Send 0 _ _ or Recv 0 _ or Finish, then relay_bg_nop_recv j bg holds. This is because position 0 is Recv j.+1, so: - Send 0 at i+1: destination 0 has Recv j.+1, frm=j.+1 != i.+1 (since i!=j). NOP. - Recv 0 at i+1: source 0 has Recv (not Send). NOP. - Finish at i+1: always NOP.</td>
                 </tr>
             
-                <tr data-search="bg_nop_recv_init lemma bg_nop_recv_init (j : &#39;i_n_relay.+1) : bg_nop_recv j (@bg_init ahe ek n_relay dk_relay v_relay r1_relay r2_relay). bg_init satisfies the nop condition for any j">
+                <tr data-search="relay_bg_nop_recv_init lemma relay_bg_nop_recv_init (j : &#39;i_n_relay.+1) : relay_bg_nop_recv j (@relay_bg_init ahe ek n_relay dk_relay v_relay r1_relay r2_relay). relay_bg_init satisfies the nop condition for any j">
                     <td>
                         <span class="badge badge-helper">Helper</span>
-                        <a href="lemmas/bg_nop_recv_init.html" class="lemma-name">bg_nop_recv_init</a>
+                        <a href="lemmas/relay_bg_nop_recv_init.html" class="lemma-name">relay_bg_nop_recv_init</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">7</td>
-                    <td><code class="signature">Lemma bg_nop_recv_init (j : &#39;I_n_relay.+1) : bg_nop_recv j (@bg_init AHE ek n_relay dk_relay v_relay r1_relay r2_relay).</code></td>
-                    <td class="meaning">bg_init satisfies the NOP condition for any j</td>
+                    <td><code class="signature">Lemma relay_bg_nop_recv_init (j : &#39;I_n_relay.+1) : relay_bg_nop_recv j (@relay_bg_init AHE ek n_relay dk_relay v_relay r1_relay r2_relay).</code></td>
+                    <td class="meaning">relay_bg_init satisfies the NOP condition for any j</td>
                 </tr>
             
                 <tr data-search="relay_body_send0 lemma relay_body_send0 (j : &#39;i_n_relay.+1) : exists v k, @relay_body ahe ek n_relay dk_relay v_relay r1_relay r2_relay j = send 0 v k. relay_body is always send 0 ...">
@@ -3155,14 +3406,14 @@
                     <td class="meaning">interp_chain_known_ret: if interp_comp reaches st_ret in fuel+1 steps with progress and non-termination at every intermediate step, then the starting state is known_ret_state.</td>
                 </tr>
             
-                <tr data-search="relay_after_send0_safe lemma relay_after_send0_safe (j : &#39;i_n_relay.+1) : (j &lt; n_relay)%n -&gt; bg_safe_form j (@relay_after_send0 ahe ek n_relay dk_relay v_relay r1_relay r2_relay j). relay_after_send0 j produces a safe form at position j. for j &lt; n_relay, it&#39;s recv 0 with safe callback. for j = n_relay, it&#39;s recv n_relay with callback → send 0 ... finish.">
+                <tr data-search="relay_after_send0_safe lemma relay_after_send0_safe (j : &#39;i_n_relay.+1) : (j &lt; n_relay)%n -&gt; relay_bg_safe_form j (@relay_after_send0 ahe ek n_relay dk_relay v_relay r1_relay r2_relay j). relay_after_send0 j produces a safe form at position j. for j &lt; n_relay, it&#39;s recv 0 with safe callback. for j = n_relay, it&#39;s recv n_relay with callback → send 0 ... finish.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/relay_after_send0_safe.html" class="lemma-name">relay_after_send0_safe</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">41</td>
-                    <td><code class="signature">Lemma relay_after_send0_safe (j : &#39;I_n_relay.+1) : (j &lt; n_relay)%N -&gt; bg_safe_form j (@relay_after_send0 AHE ek n_relay dk_relay v_relay r1_relay r2_relay j).</code></td>
+                    <td><code class="signature">Lemma relay_after_send0_safe (j : &#39;I_n_relay.+1) : (j &lt; n_relay)%N -&gt; relay_bg_safe_form j (@relay_after_send0 AHE ek n_relay dk_relay v_relay r1_relay r2_relay j).</code></td>
                     <td class="meaning">relay_after_send0 j produces a safe form at position j. For j &lt; n_relay, it&#39;s Recv 0 with safe callback. For j = n_relay, it&#39;s Recv n_relay with callback → Send 0 ... Finish.</td>
                 </tr>
             
@@ -3210,91 +3461,91 @@
                     <td class="meaning">known_ret_recv_gen: if recv/send chain evidence exists, recv is in known_ret_state</td>
                 </tr>
             
-                <tr data-search="mk_next_ahead lemma mk_next_ahead (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j := rp_j rp in forall i, (j.+1 &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; bg&#39;_of rp i = relay_body_local (inord i). h1: rp_ahead — relays beyond j+1 are untouched">
+                <tr data-search="mk_next_ahead lemma mk_next_ahead (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j := rp_j rp in forall i, (j.+1 &lt; i)%n -&gt; (i &lt; n_relay.+1)%n -&gt; relay_bg_after_recv_send rp i = relay_body_local (inord i). h1: rp_ahead — relays beyond j+1 are untouched">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_ahead.html" class="lemma-name">mk_next_ahead</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">12</td>
-                    <td><code class="signature">Lemma mk_next_ahead (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j := rp_j rp in forall i, (j.+1 &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; bg&#39;_of rp i = relay_body_local (inord i).</code></td>
+                    <td><code class="signature">Lemma mk_next_ahead (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j := rp_j rp in forall i, (j.+1 &lt; i)%N -&gt; (i &lt; n_relay.+1)%N -&gt; relay_bg_after_recv_send rp i = relay_body_local (inord i).</code></td>
                     <td class="meaning">H1: rp_ahead — relays beyond j+1 are untouched</td>
                 </tr>
             
-                <tr data-search="mk_next_behind lemma mk_next_behind (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (2 &lt;= next_j hjn)%n -&gt; exists sv0 f0, relay_body_local (inord (next_j hjn).-1) = send 0 sv0 (recv 0 f0) /\ bg&#39;_of rp (next_j hjn).-1 = recv 0 f0. h2: rp_behind — strengthened to match a7 of inv_ar. returns the specific callback f0 from relay_body&#39;s second continuation.">
+                <tr data-search="mk_next_behind lemma mk_next_behind (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (2 &lt;= next_j hjn)%n -&gt; exists sv0 f0, relay_body_local (inord (next_j hjn).-1) = send 0 sv0 (recv 0 f0) /\ relay_bg_after_recv_send rp (next_j hjn).-1 = recv 0 f0. h2: rp_behind — strengthened to match a7 of inv_ar. returns the specific callback f0 from relay_body&#39;s second continuation.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_behind.html" class="lemma-name">mk_next_behind</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">30</td>
-                    <td><code class="signature">Lemma mk_next_behind (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (2 &lt;= next_j Hjn)%N -&gt; exists sv0 f0, relay_body_local (inord (next_j Hjn).-1) = Send 0 sv0 (Recv 0 f0) /\ bg&#39;_of rp (next_j Hjn).-1 = Recv 0 f0.</code></td>
+                    <td><code class="signature">Lemma mk_next_behind (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (2 &lt;= next_j Hjn)%N -&gt; exists sv0 f0, relay_body_local (inord (next_j Hjn).-1) = Send 0 sv0 (Recv 0 f0) /\ relay_bg_after_recv_send rp (next_j Hjn).-1 = Recv 0 f0.</code></td>
                     <td class="meaning">H2: rp_behind — strengthened to match A7 of Inv_AR. Returns the SPECIFIC callback f0 from relay_body&#39;s second continuation.</td>
                 </tr>
             
-                <tr data-search="mk_next_finish lemma mk_next_finish (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : forall i, (i.+1 &lt; (next_j hjn).-2)%n -&gt; bg&#39;_of rp i = finish. h3: rp_finish_zone — finish zone preserved">
+                <tr data-search="mk_next_finish lemma mk_next_finish (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : forall i, (i.+1 &lt; (next_j hjn).-2)%n -&gt; relay_bg_after_recv_send rp i = finish. h3: rp_finish_zone — finish zone preserved">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_finish.html" class="lemma-name">mk_next_finish</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">50</td>
-                    <td><code class="signature">Lemma mk_next_finish (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : forall i, (i.+1 &lt; (next_j Hjn).-2)%N -&gt; bg&#39;_of rp i = Finish.</code></td>
+                    <td><code class="signature">Lemma mk_next_finish (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : forall i, (i.+1 &lt; (next_j Hjn).-2)%N -&gt; relay_bg_after_recv_send rp i = Finish.</code></td>
                     <td class="meaning">H3: rp_finish_zone — finish zone preserved</td>
                 </tr>
             
-                <tr data-search="mk_next_sender lemma mk_next_sender (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j&#39; := next_j hjn in (3 &lt;= j&#39;)%n -&gt; { rr_fw&#39; : rand ahe | bg&#39;_of rp ((j&#39; : nat) - 3)%n = send j&#39;.-1 (e_loc (@enc ahe (ek (nat_to_party_id j&#39;.-1)) (chain_acc_local ((j&#39; : nat) - 3)%n) rr_fw&#39;)) finish }. h4: rp_frontier_sender — frontier sender at (j+1)-3. the randomness rr_fw&#39; is fresh per phase (type-level sig so it can be destructed during record construction): it equals rand_mul (alice_rr (j-1)) (r2_relay (j-2)) for the new phase j&#39; = j+1.">
+                <tr data-search="mk_next_sender lemma mk_next_sender (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j&#39; := next_j hjn in (3 &lt;= j&#39;)%n -&gt; { rr_fw&#39; : rand ahe | relay_bg_after_recv_send rp ((j&#39; : nat) - 3)%n = send j&#39;.-1 (e_loc (@enc ahe (ek (nat_to_party_id j&#39;.-1)) (chain_acc_local ((j&#39; : nat) - 3)%n) rr_fw&#39;)) finish }. h4: rp_frontier_sender — frontier sender at (j+1)-3. the randomness rr_fw&#39; is fresh per phase (type-level sig so it can be destructed during record construction): it equals rand_mul (alice_rr (j-1)) (r2_relay (j-2)) for the new phase j&#39; = j+1.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_sender.html" class="lemma-name">mk_next_sender</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">131</td>
-                    <td><code class="signature">Lemma mk_next_sender (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j&#39; := next_j Hjn in (3 &lt;= j&#39;)%N -&gt; { rr_fw&#39; : rand AHE | bg&#39;_of rp ((j&#39; : nat) - 3)%N = Send j&#39;.-1 (e_loc (@enc AHE (ek (nat_to_party_id j&#39;.-1)) (chain_acc_local ((j&#39; : nat) - 3)%N) rr_fw&#39;)) Finish }.</code></td>
+                    <td><code class="signature">Lemma mk_next_sender (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j&#39; := next_j Hjn in (3 &lt;= j&#39;)%N -&gt; { rr_fw&#39; : rand AHE | relay_bg_after_recv_send rp ((j&#39; : nat) - 3)%N = Send j&#39;.-1 (e_loc (@enc AHE (ek (nat_to_party_id j&#39;.-1)) (chain_acc_local ((j&#39; : nat) - 3)%N) rr_fw&#39;)) Finish }.</code></td>
                     <td class="meaning">H4: rp_frontier_sender — frontier sender at (j+1)-3. The randomness rr_fw&#39; is fresh per phase (Type-level sig so it can be destructed during Record construction): it equals rand_mul (alice_rr (j-1)) (r2_relay (j-2)) for the new phase j&#39; = j+1.</td>
                 </tr>
             
-                <tr data-search="mk_next_sender_at_j2 lemma mk_next_sender_at_j2 (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (next_j hjn == 2%n :&gt; nat) -&gt; { rr_fw&#39; : rand ahe | bg&#39;_of rp 0 = send 2 (e_loc (@enc ahe (ek (nat_to_party_id 2)) (chain_acc_local 0) rr_fw&#39;)) finish }. h5: rp_sender_at_j2 — j+1=2 special case. new randomness from alice/r2 mix.">
+                <tr data-search="mk_next_sender_at_j2 lemma mk_next_sender_at_j2 (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (next_j hjn == 2%n :&gt; nat) -&gt; { rr_fw&#39; : rand ahe | relay_bg_after_recv_send rp 0 = send 2 (e_loc (@enc ahe (ek (nat_to_party_id 2)) (chain_acc_local 0) rr_fw&#39;)) finish }. h5: rp_sender_at_j2 — j+1=2 special case. new randomness from alice/r2 mix.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_sender_at_j2.html" class="lemma-name">mk_next_sender_at_j2</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">33</td>
-                    <td><code class="signature">Lemma mk_next_sender_at_j2 (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (next_j Hjn == 2%N :&gt; nat) -&gt; { rr_fw&#39; : rand AHE | bg&#39;_of rp 0 = Send 2 (e_loc (@enc AHE (ek (nat_to_party_id 2)) (chain_acc_local 0) rr_fw&#39;)) Finish }.</code></td>
+                    <td><code class="signature">Lemma mk_next_sender_at_j2 (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (next_j Hjn == 2%N :&gt; nat) -&gt; { rr_fw&#39; : rand AHE | relay_bg_after_recv_send rp 0 = Send 2 (e_loc (@enc AHE (ek (nat_to_party_id 2)) (chain_acc_local 0) rr_fw&#39;)) Finish }.</code></td>
                     <td class="meaning">H5: rp_sender_at_j2 — j+1=2 special case. New randomness from alice/r2 mix.</td>
                 </tr>
             
-                <tr data-search="mk_next_receiver lemma mk_next_receiver (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j&#39; := next_j hjn in (3 &lt;= j&#39;)%n -&gt; exists f_recv, bg&#39;_of rp ((j&#39; : nat) - 2)%n = recv j&#39;.-2 f_recv /\ forall m rr, f_recv (e_loc (@enc ahe (ek (nat_to_party_id j&#39;.-1)) m rr)) = send j&#39; (e_loc (@emul ahe (alice_enc_local (inord j&#39;.-1)) (@enc ahe (ek (nat_to_party_id j&#39;)) m (r2_relay (inord ((j&#39; : nat) - 2)%n))))) finish. h6: rp_frontier_receiver — frontier receiver at (j+1)-2">
+                <tr data-search="mk_next_receiver lemma mk_next_receiver (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : let j&#39; := next_j hjn in (3 &lt;= j&#39;)%n -&gt; exists f_recv, relay_bg_after_recv_send rp ((j&#39; : nat) - 2)%n = recv j&#39;.-2 f_recv /\ forall m rr, f_recv (e_loc (@enc ahe (ek (nat_to_party_id j&#39;.-1)) m rr)) = send j&#39; (e_loc (@emul ahe (alice_enc_local (inord j&#39;.-1)) (@enc ahe (ek (nat_to_party_id j&#39;)) m (r2_relay (inord ((j&#39; : nat) - 2)%n))))) finish. h6: rp_frontier_receiver — frontier receiver at (j+1)-2">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_receiver.html" class="lemma-name">mk_next_receiver</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">65</td>
-                    <td><code class="signature">Lemma mk_next_receiver (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j&#39; := next_j Hjn in (3 &lt;= j&#39;)%N -&gt; exists f_recv, bg&#39;_of rp ((j&#39; : nat) - 2)%N = Recv j&#39;.-2 f_recv /\ forall m rr, f_recv (e_loc (@enc AHE (ek (nat_to_party_id j&#39;.-1)) m rr)) = Send j&#39; (e_loc (@Emul AHE (alice_enc_local (inord j&#39;.-1)) (@enc AHE (ek (nat_to_party_id j&#39;)) m (r2_relay (inord ((j&#39; : nat) - 2)%N))))) Finish.</code></td>
+                    <td><code class="signature">Lemma mk_next_receiver (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : let j&#39; := next_j Hjn in (3 &lt;= j&#39;)%N -&gt; exists f_recv, relay_bg_after_recv_send rp ((j&#39; : nat) - 2)%N = Recv j&#39;.-2 f_recv /\ forall m rr, f_recv (e_loc (@enc AHE (ek (nat_to_party_id j&#39;.-1)) m rr)) = Send j&#39; (e_loc (@Emul AHE (alice_enc_local (inord j&#39;.-1)) (@enc AHE (ek (nat_to_party_id j&#39;)) m (r2_relay (inord ((j&#39; : nat) - 2)%N))))) Finish.</code></td>
                     <td class="meaning">H6: rp_frontier_receiver — frontier receiver at (j+1)-2</td>
                 </tr>
             
-                <tr data-search="mk_next_recv_at_j1 lemma mk_next_recv_at_j1 (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (next_j hjn == 1%n :&gt; nat) -&gt; exists f_enc, bg&#39;_of rp 0 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, f_enc c = send 2 (e_loc (@emul ahe c (@enc ahe (ek (nat_to_party_id 2)) (term_local ord0) (r2_relay ord0)))) finish. h7: rp_recv_at_j1 — j+1=1 special case">
+                <tr data-search="mk_next_recv_at_j1 lemma mk_next_recv_at_j1 (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : (next_j hjn == 1%n :&gt; nat) -&gt; exists f_enc, relay_bg_after_recv_send rp 0 = recv 0 (oapp f_enc fail \o @std_from_enc ahe) /\ forall c, f_enc c = send 2 (e_loc (@emul ahe c (@enc ahe (ek (nat_to_party_id 2)) (term_local ord0) (r2_relay ord0)))) finish. h7: rp_recv_at_j1 — j+1=1 special case">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_next_recv_at_j1.html" class="lemma-name">mk_next_recv_at_j1</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">28</td>
-                    <td><code class="signature">Lemma mk_next_recv_at_j1 (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (next_j Hjn == 1%N :&gt; nat) -&gt; exists f_enc, bg&#39;_of rp 0 = Recv 0 (oapp f_enc Fail \o @std_from_enc AHE) /\ forall c, f_enc c = Send 2 (e_loc (@Emul AHE c (@enc AHE (ek (nat_to_party_id 2)) (term_local ord0) (r2_relay ord0)))) Finish.</code></td>
+                    <td><code class="signature">Lemma mk_next_recv_at_j1 (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : (next_j Hjn == 1%N :&gt; nat) -&gt; exists f_enc, relay_bg_after_recv_send rp 0 = Recv 0 (oapp f_enc Fail \o @std_from_enc AHE) /\ forall c, f_enc c = Send 2 (e_loc (@Emul AHE c (@enc AHE (ek (nat_to_party_id 2)) (term_local ord0) (r2_relay ord0)))) Finish.</code></td>
                     <td class="meaning">H7: rp_recv_at_j1 — j+1=1 special case</td>
                 </tr>
             
-                <tr data-search="mk_recv_next_exists lemma mk_recv_next_exists (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : exists rp&#39; : recv_phase, rp_j rp&#39; = next_j hjn /\ rp_relay_bg rp&#39; = bg&#39;_of rp. mk_recv_next_exists: construct recv_phase at j+1 from recv_phase at j. requires j &lt; n_relay so there is a next relay to step into. the new rp_rand_fwd is freshly chosen from the active mk_next_sender/sender2 existential (only one applies at a time, based on next_j&#39;s value).">
+                <tr data-search="mk_recv_next_exists lemma mk_recv_next_exists (rp : recv_phase) (hjn : (rp_j rp &lt; n_relay)%n) : exists rp&#39; : recv_phase, rp_j rp&#39; = next_j hjn /\ rp_relay_bg rp&#39; = relay_bg_after_recv_send rp. mk_recv_next_exists: construct recv_phase at j+1 from recv_phase at j. requires j &lt; n_relay so there is a next relay to step into. the new rp_rand_fwd is freshly chosen from the active mk_next_sender/sender2 existential (only one applies at a time, based on next_j&#39;s value).">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/mk_recv_next_exists.html" class="lemma-name">mk_recv_next_exists</a>
                     </td>
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">39</td>
-                    <td><code class="signature">Lemma mk_recv_next_exists (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : exists rp&#39; : recv_phase, rp_j rp&#39; = next_j Hjn /\ rp_relay_bg rp&#39; = bg&#39;_of rp.</code></td>
+                    <td><code class="signature">Lemma mk_recv_next_exists (rp : recv_phase) (Hjn : (rp_j rp &lt; n_relay)%N) : exists rp&#39; : recv_phase, rp_j rp&#39; = next_j Hjn /\ rp_relay_bg rp&#39; = relay_bg_after_recv_send rp.</code></td>
                     <td class="meaning">mk_recv_next_exists: construct recv_phase at j+1 from recv_phase at j. Requires j &lt; n_relay so there is a next relay to step into. The new rp_rand_fwd is freshly chosen from the active mk_next_sender/sender2 existential (only one applies at a time, based on next_j&#39;s value).</td>
                 </tr>
             
@@ -3309,7 +3560,7 @@
                     <td class="meaning">L4: drain_phase_step — wraps step_ok_drain_drain and rebuilds Record fields. PROOF SKETCH (~150 lines): 1. Extract dp.(dp_active_forwarder), dp.(dp_finish_zone), dp.(dp_last_relay_recv), dp.(dp_intermediate_recv). 2. Get the active receiver f_act from dp_intermediate_recv at i=(dp_j dp).+1. 3. Get the next receiver from dp_intermediate_recv at i=(dp_j dp).+2 (or dp_last_relay_recv if = n_relay). 4. Discharge the NOP hypothesis: positions in [0..n_relay] except dp_j and (dp_j).+1 are NOPs in the drain_procs step. Sub-cases: - i &lt; dp_j: dp_relay_bg i = Finish (from dp_finish_zone) → trivially NOP. - i = dp_j or i = (dp_j).+1: excluded by hypothesis. - (dp_j).+1 &lt; i &lt; n_relay: dp_relay_bg i = Recv i f (from dp_intermediate_recv) — Recv at frm=i checks position i which is also a Recv (or Finish), not a Send → NOP. - i = n_relay: dp_relay_bg n_relay = Recv n_relay f_last (from dp_last_relay_recv) — same NOP reasoning. 5. Apply step_ok_drain_drain with the discharged hypotheses to get rr&#39;, bg&#39;, Hsafe&#39; and Hstep_eq : one_step_procs ... = ps_procs (drain_st (inord (dp_j dp).+1) ...). 6. Build the new drain_phase&#39; fields: - dp_j&#39; = inord (dp_j dp).+1 - dp_rand&#39; = rr&#39; - dp_relay_bg&#39; = bg&#39; - dp_bg_not_final_send&#39; = Hsafe&#39; - dp_j_lt_nrelay&#39;: follows from Hjlt - dp_active_forwarder&#39;: bg&#39; (dp_j&#39; = (dp_j dp).+1) is computed from f_act fired with cipher_j; by Emul_addM + chain_acc_shift, equals Send (dp_j&#39; .+2) (chain_acc(dp_j&#39;)) rr&#39; - dp_finish_zone&#39;: for i &lt; (dp_j).+1, either i &lt; dp_j (was Finish, NOP keeps Finish) or i = dp_j (sender fired to Finish per step_ok_drain_drain&#39;s Hstepj proof) - dp_intermediate_recv&#39;: for (dp_j).+1 &lt; i &lt; n_relay, NOP keeps the Recv shape from old dp_intermediate_recv - dp_last_relay_recv&#39;: position n_relay was NOP, so unchanged from old dp_last_relay_recv 7. Return the sig with Hstep_eq. OBSTACLES discovered during attempts: - Section-closed implicit args: every section-defined function (drain_procs, step_ok_drain_drain, etc.) takes 11+ section vars after closure. Must use @-form everywhere. - Record projections under `Set Implicit Arguments`: dp_bg_not_final_send has implicit `d`, so `dp_bg_not_final_send dp` parses as `dp_bg_not_final_send (d:=?) dp` putting dp in the wrong slot. Use `dp_bg_not_final_send dp` or the (d:=dp) named form. - The `is_nop` discharge for the new lemma&#39;s NOP hypothesis requires unfolding the drain_procs at non-active positions and showing each Recv has frm pointing to a non-Send. This is ~30-50 lines of manual case analysis. - Reconstructing dp_active_forwarder&#39; for the new phase requires knowing that bg&#39; (dp_j).+1 = f_act cipher_j, then applying Hf_act + Emul_addM + chain_acc_shift. But step_ok_drain_drain returns bg&#39; as an OPAQUE (fun i =&gt; step ... i.+1).1.1, not exposing the per-position values. Need additional reasoning to extract them.</td>
                 </tr>
             
-                <tr data-search="recv_phase_to_send_phase lemma recv_phase_to_send_phase (rp : recv_phase) : (2 &lt;= rp_j rp)%n -&gt; { sp : send_phase | (sp_j sp : nat) = (rp_j rp : nat) /\ one_step_procs (ps_procs (recv_st (rp_j rp) (rp_relay_bg rp))) = ps_procs (send_st (rp_j rp) (sp_relay_bg sp)) }. l1: recv_phase_to_send_phase — one recv→send step produces a send_phase record at the same j, using bg_s_of rp as the new bg.">
+                <tr data-search="recv_phase_to_send_phase lemma recv_phase_to_send_phase (rp : recv_phase) : (2 &lt;= rp_j rp)%n -&gt; { sp : send_phase | (sp_j sp : nat) = (rp_j rp : nat) /\ one_step_procs (ps_procs (recv_st (rp_j rp) (rp_relay_bg rp))) = ps_procs (send_st (rp_j rp) (sp_relay_bg sp)) }. l1: recv_phase_to_send_phase — one recv→send step produces a send_phase record at the same j, using relay_bg_after_recv_step rp as the new bg.">
                     <td>
                         <span class="badge badge-helper">Helper</span>
                         <a href="lemmas/recv_phase_to_send_phase.html" class="lemma-name">recv_phase_to_send_phase</a>
@@ -3317,7 +3568,7 @@
                     <td class="section-name">dsdp_fsm_progress</td>
                     <td class="proof-lines">238</td>
                     <td><code class="signature">Lemma recv_phase_to_send_phase (rp : recv_phase) : (2 &lt;= rp_j rp)%N -&gt; { sp : send_phase | (sp_j sp : nat) = (rp_j rp : nat) /\ one_step_procs (ps_procs (recv_st (rp_j rp) (rp_relay_bg rp))) = ps_procs (send_st (rp_j rp) (sp_relay_bg sp)) }.</code></td>
-                    <td class="meaning">L1: recv_phase_to_send_phase — one recv→send step produces a send_phase Record at the same j, using bg_s_of rp as the new bg.</td>
+                    <td class="meaning">L1: recv_phase_to_send_phase — one recv→send step produces a send_phase Record at the same j, using relay_bg_after_recv_step rp as the new bg.</td>
                 </tr>
             
                 <tr data-search="send_phase_to_drain_when_j_eq_nrelay lemma send_phase_to_drain_when_j_eq_nrelay (sp : send_phase) : (sp_j sp : nat) = n_relay -&gt; (3 &lt;= n_relay)%n -&gt; { dp : drain_phase | (dp_j dp : nat) = (n_relay - 2)%n /\ one_step_procs (ps_procs (send_st (sp_j sp) (sp_relay_bg sp))) = ps_procs (drain_st (dp_j dp) (dp_rand dp) (bg := dp_relay_bg dp) (dp_bg_not_final_send dp)) }. l2: send_phase_to_drain_when_j_eq_nrelay at j = n_relay (with n_relay &gt;= 3), the send_phase advances to a drain_phase at index n_relay - 2. the active firing pair is alice (send n_relay) and bg(n_relay - 1) (recv 0 f0). all other positions are nops: - bg(i) = finish for i &lt; n_relay - 2 (from sp_frontier_sender finish zone). - bg(n_relay - 2) = send n_relay ... finish (frontier sender, nop because its target n_relay = bg(n_relay - 1) is a recv 0, frm 0 != n_relay - 1). - bg(n_relay) is replaced by relay_after_send0(inord n_relay) inside send_procs; it is a recv n_relay ..., nop. resulting bg&#39;: - bg&#39;(n_relay - 1) = f0 (e_loc (alice_enc n_relay)) which is the decryption recv (n_relay - 1) producing send (n_relay + 1) (emul ...) finish. - all other bg&#39; positions match either bg or relay_after_send0(inord n_relay).">
@@ -5991,6 +6242,502 @@
                     <td class="proof-lines">20</td>
                     <td><code class="signature">Lemma dsdp_E_relay_RV_indep : P_dsdp |= (fun t =&gt; [ffun i =&gt; dsdp_E_relay i t]) _|_ [%dsdp_VarRV, [%dsdp_Dk_a, (fun t =&gt; [ffun i =&gt; dsdp_R_relay i t]), dsdp_CondRV]].</code></td>
                     <td class="meaning">E_relay bundled is independent of [%VarRV, DecView] — E_relay depends on t.2 while all others depend on t.1</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_stepwise.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_stepwise.v</span>
+        </div>
+        <span class="file-count">25 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="ord_preds_lift lemma ord_preds_lift n (j : &#39;i_n) : val (ord_preds (lift ord0 j)) = val j. helper: predecessor commutes with lift-from-zero on the underlying nat. needed so that [beta_ (ord_preds (lift ord0 j)) (lift ord0 j)] reduces to [beta_ j (lift ord0 j)] when stepping through the intermediate telescope.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/ord_predS_lift.html" class="lemma-name">ord_predS_lift</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma ord_predS_lift n (j : &#39;I_n) : val (ord_predS (lift ord0 j)) = val j.</code></td>
+                    <td class="meaning">Helper: predecessor commutes with lift-from-zero on the underlying nat. Needed so that [beta_ (ord_predS (lift ord0 j)) (lift ord0 j)] reduces to [beta_ j (lift ord0 j)] when stepping through the intermediate telescope.</td>
+                </tr>
+            
+                <tr data-search="sw_step_ainit_eq lemma sw_step_ainit_eq p vi dki g : sw_step p (ainit vi dki) g = some (sw_upd g p (sw_set_priv (sw_add_plain (g p) vi) dki)). helper (l1): ainit is unconditional -- seeds the initial plain and priv.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_AInit_eq.html" class="lemma-name">sw_step_AInit_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_AInit_eq p vi dki g : sw_step p (AInit vi dki) g = Some (sw_upd g p (sw_set_priv (sw_add_plain (g p) vi) dki)).</code></td>
+                    <td class="meaning">Helper (L1): AInit is unconditional -- seeds the initial plain and priv.</td>
+                </tr>
+            
+                <tr data-search="sw_step_aenc_eq lemma sw_step_aenc_eq p pk m rd g : sw_step p (aenc pk m rd) g = some (sw_upd g p (sw_add_cipher (g p) (enc pk m rd))). helper (l1): aenc is unconditional under d21 -- adds a fresh cipher.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_AEnc_eq.html" class="lemma-name">sw_step_AEnc_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_AEnc_eq p pk m rd g : sw_step p (AEnc pk m rd) g = Some (sw_upd g p (sw_add_cipher (g p) (enc pk m rd))).</code></td>
+                    <td class="meaning">Helper (L1): AEnc is unconditional under D21 -- adds a fresh cipher.</td>
+                </tr>
+            
+                <tr data-search="sw_step_amul_eq lemma sw_step_amul_eq p c1 c2 g : c1 \in ps_cipher (g p) -&gt; c2 \in ps_cipher (g p) -&gt; sw_step p (amul c1 c2) g = some (sw_upd g p (sw_add_cipher (g p) (c1 *h c2))). helper (l1): amul combines two held ciphers via the ahe product [*h].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_AMul_eq.html" class="lemma-name">sw_step_AMul_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_AMul_eq p c1 c2 g : c1 \in ps_cipher (g p) -&gt; c2 \in ps_cipher (g p) -&gt; sw_step p (AMul c1 c2) g = Some (sw_upd g p (sw_add_cipher (g p) (c1 *h c2))).</code></td>
+                    <td class="meaning">Helper (L1): AMul combines two held ciphers via the AHE product [*h].</td>
+                </tr>
+            
+                <tr data-search="sw_step_apow_eq lemma sw_step_apow_eq p c x g : c \in ps_cipher (g p) -&gt; sw_step p (apow c x) g = some (sw_upd g p (sw_add_cipher (g p) (c ^h x))). helper (l1): apow exponentiates a held cipher by an in-scope plain.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_APow_eq.html" class="lemma-name">sw_step_APow_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_APow_eq p c x g : c \in ps_cipher (g p) -&gt; sw_step p (APow c x) g = Some (sw_upd g p (sw_add_cipher (g p) (c ^h x))).</code></td>
+                    <td class="meaning">Helper (L1): APow exponentiates a held cipher by an in-scope plain.</td>
+                </tr>
+            
+                <tr data-search="sw_step_aadd_eq lemma sw_step_aadd_eq p a1 b1 g : sw_step p (aadd a1 b1) g = some (sw_upd g p (sw_add_plain (g p) (a1 + b1))). helper (l1): aadd is unconditional under d21 -- adds a fresh plain.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_AAdd_eq.html" class="lemma-name">sw_step_AAdd_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_AAdd_eq p a1 b1 g : sw_step p (AAdd a1 b1) g = Some (sw_upd g p (sw_add_plain (g p) (a1 + b1))).</code></td>
+                    <td class="meaning">Helper (L1): AAdd is unconditional under D21 -- adds a fresh plain.</td>
+                </tr>
+            
+                <tr data-search="sw_step_asend_eq lemma sw_step_asend_eq p dst c g : c \in ps_cipher (g p) -&gt; sw_step p (asend dst c) g = some (sw_upd g dst (sw_add_cipher (g dst) c)). helper (l1): asend fires when the cipher is held at [p]; installs the cipher into the destination party&#39;s cipher set.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_ASend_eq.html" class="lemma-name">sw_step_ASend_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_ASend_eq p dst c g : c \in ps_cipher (g p) -&gt; sw_step p (ASend dst c) g = Some (sw_upd g dst (sw_add_cipher (g dst) c)).</code></td>
+                    <td class="meaning">Helper (L1): ASend fires when the cipher is held at [p]; installs the cipher into the destination party&#39;s cipher set.</td>
+                </tr>
+            
+                <tr data-search="sw_step_aret_eq lemma sw_step_aret_eq p x g : ps_ret (g p) = none -&gt; sw_step p (aret x) g = some (sw_upd g p (sw_set_ret (g p) x)). helper (l1): aret fires at most once per party -- sets ps_ret to some x.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_ARet_eq.html" class="lemma-name">sw_step_ARet_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_step_ARet_eq p x g : ps_ret (g p) = None -&gt; sw_step p (ARet x) g = Some (sw_upd g p (sw_set_ret (g p) x)).</code></td>
+                    <td class="meaning">Helper (L1): ARet fires at most once per party -- sets ps_ret to Some x.</td>
+                </tr>
+            
+                <tr data-search="foldm_inv lemma foldm_inv {a b : type} (f : b -&gt; a -&gt; option b) (p : b -&gt; prop) (l : seq a) (b : b) : p b -&gt; (forall a b, p b -&gt; exists b&#39;, f b a = some b&#39; /\ p b&#39;) -&gt; exists b&#39;, foldm f b l = some b&#39; /\ p b&#39;. helper: generic foldm-with-invariant induction. if p holds initially and is preserved by every single successful step, then foldm on the whole list succeeds and p holds on the final state. used throughout phase lemmas to lift per-action facts (cipher monotonicity, ps_ret preservation) to whole phase blocks without re-inducting each time.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/foldM_inv.html" class="lemma-name">foldM_inv</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma foldM_inv {A B : Type} (f : B -&gt; A -&gt; option B) (P : B -&gt; Prop) (l : seq A) (b : B) : P b -&gt; (forall a b, P b -&gt; exists b&#39;, f b a = Some b&#39; /\ P b&#39;) -&gt; exists b&#39;, foldM f b l = Some b&#39; /\ P b&#39;.</code></td>
+                    <td class="meaning">Helper: generic foldM-with-invariant induction. If P holds initially and is preserved by every single successful step, then foldM on the whole list succeeds and P holds on the final state. Used throughout phase lemmas to lift per-action facts (cipher monotonicity, ps_ret preservation) to whole phase blocks without re-inducting each time.</td>
+                </tr>
+            
+                <tr data-search="foldm_cat lemma foldm_cat {a b : type} (f : b -&gt; a -&gt; option b) (l1 l2 : seq a) (b : b) : foldm f b (l1 ++ l2) = match foldm f b l1 with some b&#39; =&gt; foldm f b&#39; l2 | none =&gt; none end. helper: foldm distributes over list concatenation -- the standard associativity law used to split [phase0 ++ phase1 ++ ...] into per-phase fold computations and pipe the intermediate state between them.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/foldM_cat.html" class="lemma-name">foldM_cat</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma foldM_cat {A B : Type} (f : B -&gt; A -&gt; option B) (l1 l2 : seq A) (b : B) : foldM f b (l1 ++ l2) = match foldM f b l1 with Some b&#39; =&gt; foldM f b&#39; l2 | None =&gt; None end.</code></td>
+                    <td class="meaning">Helper: foldM distributes over list concatenation -- the standard associativity law used to split [phase0 ++ phase1 ++ ...] into per-phase fold computations and pipe the intermediate state between them.</td>
+                </tr>
+            
+                <tr data-search="sw_upd_cipher_mono lemma sw_upd_cipher_mono g p s q c : {subset ps_cipher (g p) &lt;= ps_cipher s} -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (sw_upd g p s q). helper: cipher-preservation through a single functional [sw_upd] under the assumption that the new local state [s] extends [g p]&#39;s cipher set. the base brick for monotonicity of ciphers across [sw_step] and foldm.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_upd_cipher_mono.html" class="lemma-name">sw_upd_cipher_mono</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma sw_upd_cipher_mono g p s q c : {subset ps_cipher (g p) &lt;= ps_cipher s} -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (sw_upd g p s q).</code></td>
+                    <td class="meaning">Helper: cipher-preservation through a single functional [sw_upd] under the assumption that the new local state [s] extends [g p]&#39;s cipher set. The base brick for monotonicity of ciphers across [sw_step] and foldM.</td>
+                </tr>
+            
+                <tr data-search="sw_step_cipher_mono lemma sw_step_cipher_mono p a g g&#39; q c : sw_step p a g = some g&#39; -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (g&#39; q). helper: monotonicity of cipher sets across a single [sw_step]. proves that no action ever removes a cipher from any party&#39;s cipher set, regardless of which party is acting and what the action is. used to thread earlier-deposited ciphers (e.g. [sw_c j] at alice from phase1) through subsequent phases where later actions operate on them.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_cipher_mono.html" class="lemma-name">sw_step_cipher_mono</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">25</td>
+                    <td><code class="signature">Lemma sw_step_cipher_mono p a g g&#39; q c : sw_step p a g = Some g&#39; -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (g&#39; q).</code></td>
+                    <td class="meaning">Helper: monotonicity of cipher sets across a single [sw_step]. Proves that no action ever removes a cipher from any party&#39;s cipher set, regardless of which party is acting and what the action is. Used to thread earlier-deposited ciphers (e.g. [sw_c j] at alice from phase1) through subsequent phases where later actions operate on them.</td>
+                </tr>
+            
+                <tr data-search="foldm_cipher_mono lemma foldm_cipher_mono (l : seq (nat * dsdp_action)) g g&#39; q c : foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) g l = some g&#39; -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (g&#39; q). helper: cipher monotonicity lifted from a single [sw_step] to foldm on a whole action sequence. corollary of [sw_step_cipher_mono] by induction on the list.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/foldM_cipher_mono.html" class="lemma-name">foldM_cipher_mono</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma foldM_cipher_mono (l : seq (nat * dsdp_action)) g g&#39; q c : foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) g l = Some g&#39; -&gt; c \in ps_cipher (g q) -&gt; c \in ps_cipher (g&#39; q).</code></td>
+                    <td class="meaning">Helper: cipher monotonicity lifted from a single [sw_step] to foldM on a whole action sequence. Corollary of [sw_step_cipher_mono] by induction on the list.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase01_state lemma dsdp_n_phase01_state : exists g1, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = some g1 /\ (forall j : &#39;i_n_relay.+1, sw_c j \in ps_cipher (g1 alice)). helper (l3 strong): stronger phase0++phase1 postcondition carrying the witness that alice&#39;s cipher set contains every [sw_c j]. this is exactly the precondition phase2&#39;s apow+amul blocks need to fire; the plain existence version [dsdp_n_phase1_state] below is a weakening.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n_phase01_state.html" class="lemma-name">dsdp_n_phase01_state</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">44</td>
+                    <td><code class="signature">Lemma dsdp_n_phase01_state : exists g1, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = Some g1 /\ (forall j : &#39;I_n_relay.+1, sw_c j \in ps_cipher (g1 alice)).</code></td>
+                    <td class="meaning">Helper (L3 strong): stronger phase0++phase1 postcondition carrying the witness that alice&#39;s cipher set contains every [sw_c j]. This is exactly the precondition phase2&#39;s APow+AMul blocks need to fire; the plain existence version [dsdp_n_phase1_state] below is a weakening.</td>
+                </tr>
+            
+                <tr data-search="sw_alpha_eq_fresh_enc lemma sw_alpha_eq_fresh_enc (j : &#39;i_n_relay.+1) : exists rr, sw_alpha j = enc (sw_pk_of (lift ord0 j)) (v j * u (lift ord0 j) + r j) rr. helper (d25): [sw_alpha j] collapses into a single fresh encryption under [dk j] of plaintext [u_{j+1} * v j + r j]. proved by the ahe morphism laws [epow_scalarm] and [emul_addm] -- [sw_c j] is an enc of [v j] under [dk j], raising it to [u_{j+1}] yields an enc of [u_{j+1} * v j], and multiplying with [enc (r j)] yields the sum. this mirrors the [alice_a2_value] pattern at [dsdp_program.v:213]. needed by [dec_sw_alpha] (and transitively by l5) so that [dec_correct] can fire on [sw_alpha j].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_alpha_eq_fresh_enc.html" class="lemma-name">sw_alpha_eq_fresh_enc</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">7</td>
+                    <td><code class="signature">Lemma sw_alpha_eq_fresh_enc (j : &#39;I_n_relay.+1) : exists rr, sw_alpha j = enc (sw_pk_of (lift ord0 j)) (v j * u (lift ord0 j) + r j) rr.</code></td>
+                    <td class="meaning">Helper (D25): [sw_alpha j] collapses into a single fresh encryption under [dk j] of plaintext [u_{j+1} * v j + r j]. Proved by the AHE morphism laws [Epow_scalarM] and [Emul_addM] -- [sw_c j] is an enc of [v j] under [dk j], raising it to [u_{j+1}] yields an enc of [u_{j+1} * v j], and multiplying with [enc (r j)] yields the sum. This mirrors the [alice_a2_value] pattern at [dsdp_program.v:213]. Needed by [dec_sw_alpha] (and transitively by L5) so that [dec_correct] can fire on [sw_alpha j].</td>
+                </tr>
+            
+                <tr data-search="sw_beta_eq_fresh_enc lemma sw_beta_eq_fresh_enc (j jnext : &#39;i_n_relay.+1) : exists rr, sw_beta j jnext = enc (sw_pk_of (lift ord0 jnext)) (v jnext * u (lift ord0 jnext) + r jnext + sw_delta j) rr. helper (d25): [sw_beta j jnext] collapses into a single fresh encryption under [dk jnext] of plaintext [u_{jnext+1} * v jnext + r jnext + sw_delta j]. proved by unfolding [sw_beta] to [sw_alpha jnext *h enc_fresh], substituting [sw_alpha_eq_fresh_enc jnext], and applying [emul_addm]. needed by [dec_sw_beta] so the intermediate and last relays can extract [sw_delta j] from their incoming beta.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_beta_eq_fresh_enc.html" class="lemma-name">sw_beta_eq_fresh_enc</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma sw_beta_eq_fresh_enc (j jnext : &#39;I_n_relay.+1) : exists rr, sw_beta j jnext = enc (sw_pk_of (lift ord0 jnext)) (v jnext * u (lift ord0 jnext) + r jnext + sw_Delta j) rr.</code></td>
+                    <td class="meaning">Helper (D25): [sw_beta j jnext] collapses into a single fresh encryption under [dk jnext] of plaintext [u_{jnext+1} * v jnext + r jnext + sw_Delta j]. Proved by unfolding [sw_beta] to [sw_alpha jnext *h enc_fresh], substituting [sw_alpha_eq_fresh_enc jnext], and applying [Emul_addM]. Needed by [dec_sw_beta] so the intermediate and last relays can extract [sw_Delta j] from their incoming beta.</td>
+                </tr>
+            
+                <tr data-search="sw_pk_of_lift lemma sw_pk_of_lift (j : &#39;i_n_relay.+1) : sw_pk_of (lift ord0 j) = pub_of_priv (dk j). helper: [sw_pk_of] on a lift-from-zero index reduces to [pub_of_priv] of the corresponding [dk j]. pure definitional bookkeeping, but stated as a named lemma so [rewrite sw_pk_of_lift] can advance the [dec_correct] application in [dec_sw_alpha] / [dec_sw_beta].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_pk_of_lift.html" class="lemma-name">sw_pk_of_lift</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma sw_pk_of_lift (j : &#39;I_n_relay.+1) : sw_pk_of (lift ord0 j) = pub_of_priv (dk j).</code></td>
+                    <td class="meaning">Helper: [sw_pk_of] on a lift-from-zero index reduces to [pub_of_priv] of the corresponding [dk j]. Pure definitional bookkeeping, but stated as a named lemma so [rewrite sw_pk_of_lift] can advance the [dec_correct] application in [dec_sw_alpha] / [dec_sw_beta].</td>
+                </tr>
+            
+                <tr data-search="dec_sw_beta lemma dec_sw_beta (j jnext : &#39;i_n_relay.+1) : dec (dk jnext) (sw_beta j jnext) = some (u (lift ord0 jnext) * v jnext + r jnext + sw_delta j). helper: decryption of [sw_beta j jnext] under [dk jnext] yields the running sum [u_{jnext+1} * v jnext + r jnext + sw_delta j]. composes [sw_beta_eq_fresh_enc] and [dec_correct]. consumed by the adec step of every intermediate relay (l6) and the last relay (l6b). combined with [big_ord_recr] on [sw_delta], the output telescopes to [sw_delta jnext].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dec_sw_beta.html" class="lemma-name">dec_sw_beta</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma dec_sw_beta (j jnext : &#39;I_n_relay.+1) : dec (dk jnext) (sw_beta j jnext) = Some (u (lift ord0 jnext) * v jnext + r jnext + sw_Delta j).</code></td>
+                    <td class="meaning">Helper: decryption of [sw_beta j jnext] under [dk jnext] yields the running sum [u_{jnext+1} * v jnext + r jnext + sw_Delta j]. Composes [sw_beta_eq_fresh_enc] and [dec_correct]. Consumed by the ADec step of every intermediate relay (L6) and the last relay (L6b). Combined with [big_ord_recr] on [sw_Delta], the output telescopes to [sw_Delta jnext].</td>
+                </tr>
+            
+                <tr data-search="sw_step_priv_preserve lemma sw_step_priv_preserve p a g g&#39; q : sw_step p a g = some g&#39; -&gt; (p &lt;&gt; q \/ forall vi dki, a &lt;&gt; ainit vi dki) -&gt; ps_priv (g&#39; q) = ps_priv (g q). helper: [sw_step] preserves [ps_priv] at any party [q], except when the action is an [ainit] fired at [q] itself (the only action that touches ps_priv). used to thread alice&#39;s [dk_alice] and the first relay&#39;s [dk ord0] through all of phase0/phase1/phase2 without re-proving the fact at every individual step.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/sw_step_priv_preserve.html" class="lemma-name">sw_step_priv_preserve</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">23</td>
+                    <td><code class="signature">Lemma sw_step_priv_preserve p a g g&#39; q : sw_step p a g = Some g&#39; -&gt; (p &lt;&gt; q \/ forall vi dki, a &lt;&gt; AInit vi dki) -&gt; ps_priv (g&#39; q) = ps_priv (g q).</code></td>
+                    <td class="meaning">Helper: [sw_step] preserves [ps_priv] at any party [q], except when the action is an [AInit] fired at [q] itself (the only action that touches ps_priv). Used to thread alice&#39;s [dk_alice] and the first relay&#39;s [dk ord0] through all of phase0/phase1/phase2 without re-proving the fact at every individual step.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase0_tail_loop lemma dsdp_n_phase0_tail_loop (l : seq &#39;i_n_relay.+1) (g : sw_global_state) : uniq l -&gt; ps_priv (g alice) = some dk_alice -&gt; exists g&#39;, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) g [seq (r (val j), ainit (v j) (dk j)) | j &lt;- l] = some g&#39; /\ ps_priv (g&#39; alice) = some dk_alice /\ (forall k : &#39;i_n_relay.+1, k \in l -&gt; ps_priv (g&#39; (r (val k))) = some (dk k)) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)). helper: phase0&#39;s inner induction. runs a list [l] of relay-ainit actions against any starting state where alice&#39;s priv is already set. produces: (a) the fold succeeds; (b) alice&#39;s priv is untouched; (c) for every [k \in l], relay slot [r (val k)] now holds [dk k]; (d) cipher sets only grow; (e) [ps_ret] is untouched. the forall-k clause (c) relies on [uniq l] so that later ainits never overwrite an earlier slot: if [k ∈ l, j ∈ l, k ≠ j] then [val k ≠ val j] (val_inj) hence [r (val k) ≠ r (val j)].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n_phase0_tail_loop.html" class="lemma-name">dsdp_n_phase0_tail_loop</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">62</td>
+                    <td><code class="signature">Lemma dsdp_n_phase0_tail_loop (l : seq &#39;I_n_relay.+1) (g : sw_global_state) : uniq l -&gt; ps_priv (g alice) = Some dk_alice -&gt; exists g&#39;, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) g [seq (R (val j), AInit (v j) (dk j)) | j &lt;- l] = Some g&#39; /\ ps_priv (g&#39; alice) = Some dk_alice /\ (forall k : &#39;I_n_relay.+1, k \in l -&gt; ps_priv (g&#39; (R (val k))) = Some (dk k)) /\ (forall p c, c \in ps_cipher (g p) -&gt; c \in ps_cipher (g&#39; p)) /\ (forall q, ps_ret (g&#39; q) = ps_ret (g q)).</code></td>
+                    <td class="meaning">Helper: phase0&#39;s inner induction. Runs a list [l] of relay-AInit actions against any starting state where alice&#39;s priv is already set. Produces: (a) the fold succeeds; (b) alice&#39;s priv is untouched; (c) for every [k \in l], relay slot [R (val k)] now holds [dk k]; (d) cipher sets only grow; (e) [ps_ret] is untouched. The forall-k clause (c) relies on [uniq l] so that later AInits never overwrite an earlier slot: if [k ∈ l, j ∈ l, k ≠ j] then [val k ≠ val j] (val_inj) hence [R (val k) ≠ R (val j)].</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_phase01_state_strong lemma dsdp_n_phase01_state_strong : exists g1, foldm (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = some g1 /\ (forall j : &#39;i_n_relay.+1, sw_c j \in ps_cipher (g1 alice)) /\ ps_priv (g1 alice) = some dk_alice /\ (forall k : &#39;i_n_relay.+1, ps_priv (g1 (r (val k))) = some (dk k)) /\ ps_ret (g1 alice) = none. helper: combined phase0++phase1 strong postcondition, bundling the facts downstream lemmas need at the entry point of phase2: fold succeeds, alice holds every [sw_c j], alice&#39;s priv is set, for every [k : &#39;i_n_relay.+1] the relay slot [r (val k)] holds [dk k] (n-generic forall-k invariant), and alice&#39;s [ps_ret] is still none. feeds [dsdp_n_phase2_state_strong].">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n_phase01_state_strong.html" class="lemma-name">dsdp_n_phase01_state_strong</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">25</td>
+                    <td><code class="signature">Lemma dsdp_n_phase01_state_strong : exists g1, foldM (fun g pa =&gt; sw_step pa.1 pa.2 g) sw_init_state (dsdp_n_phase0 ++ dsdp_n_phase1) = Some g1 /\ (forall j : &#39;I_n_relay.+1, sw_c j \in ps_cipher (g1 alice)) /\ ps_priv (g1 alice) = Some dk_alice /\ (forall k : &#39;I_n_relay.+1, ps_priv (g1 (R (val k))) = Some (dk k)) /\ ps_ret (g1 alice) = None.</code></td>
+                    <td class="meaning">Helper: combined phase0++phase1 strong postcondition, bundling the facts downstream lemmas need at the entry point of phase2: fold succeeds, alice holds every [sw_c j], alice&#39;s priv is set, for every [k : &#39;I_n_relay.+1] the relay slot [R (val k)] holds [dk k] (N-generic forall-k invariant), and alice&#39;s [ps_ret] is still None. Feeds [dsdp_n_phase2_state_strong].</td>
+                </tr>
+            
+                <tr data-search="intermediate_tail_cons lemma intermediate_tail_cons (k : nat) (hk : (k &lt; n_relay)%n) : let j_k : &#39;i_n_relay.+1 := ordinal (leq_trans hk (leqnsn n_relay)) in intermediate_tail k = j_k :: intermediate_tail k.+1. helper (cons): when k &lt; n_relay, the tail starting at k has head = ordinal with val = k and rest = tail starting at k.+1.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/intermediate_tail_cons.html" class="lemma-name">intermediate_tail_cons</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">10</td>
+                    <td><code class="signature">Lemma intermediate_tail_cons (k : nat) (Hk : (k &lt; n_relay)%N) : let j_k : &#39;I_n_relay.+1 := Ordinal (leq_trans Hk (leqnSn n_relay)) in intermediate_tail k = j_k :: intermediate_tail k.+1.</code></td>
+                    <td class="meaning">Helper (cons): when k &lt; n_relay, the tail starting at k has head = ordinal with val = k and rest = tail starting at k.+1.</td>
+                </tr>
+            
+                <tr data-search="iota_filter_0m lemma iota_filter_0m (m : nat) : [seq v &lt;- iota 0 m.+1 | (0 &lt; v &lt; m)%n] = iota 1 (m - 1). helper (iota lemma): filter of iota 0 m.+1 by (0 &lt; v &lt; m) equals iota 1 (m - 1). proved via irr_sorted_eq (both sides sorted by ltn with matching membership).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/iota_filter_0m.html" class="lemma-name">iota_filter_0m</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">21</td>
+                    <td><code class="signature">Lemma iota_filter_0m (m : nat) : [seq v &lt;- iota 0 m.+1 | (0 &lt; v &lt; m)%N] = iota 1 (m - 1).</code></td>
+                    <td class="meaning">Helper (iota lemma): filter of iota 0 m.+1 by (0 &lt; v &lt; m) equals iota 1 (m - 1). Proved via irr_sorted_eq (both sides sorted by ltn with matching membership).</td>
+                </tr>
+            
+                <tr data-search="val_intermediate_tail lemma val_intermediate_tail : [seq val j | j &lt;- intermediate_tail 1] = iota 1 (n_relay - 1). helper (iota ≤ lemma): pmap insub is identity (under val) when all elements are in range [0, n_relay.+1). for iota 1 (n_relay - 1), all elements are ≤ n_relay - 1 &lt; n_relay &lt; n_relay.+1.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/val_intermediate_tail.html" class="lemma-name">val_intermediate_tail</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">13</td>
+                    <td><code class="signature">Lemma val_intermediate_tail : [seq val j | j &lt;- intermediate_tail 1] = iota 1 (n_relay - 1).</code></td>
+                    <td class="meaning">Helper (iota ≤ lemma): pmap insub is identity (under val) when all elements are in range [0, n_relay.+1). For iota 1 (n_relay - 1), all elements are ≤ n_relay - 1 &lt; n_relay &lt; n_relay.+1.</td>
+                </tr>
+            
+                <tr data-search="dsdp_n_intermediate_indices_eq lemma dsdp_n_intermediate_indices_eq : dsdp_n_intermediate_indices = intermediate_tail 1. helper: dsdp_n_intermediate_indices = intermediate_tail 1. bridges the filter form (used by phase3&#39;s definition) to the pmap+iota form (used by the prefix lemma&#39;s induction).">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_n_intermediate_indices_eq.html" class="lemma-name">dsdp_n_intermediate_indices_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma dsdp_n_intermediate_indices_eq : dsdp_n_intermediate_indices = intermediate_tail 1.</code></td>
+                    <td class="meaning">Helper: dsdp_n_intermediate_indices = intermediate_tail 1. Bridges the filter form (used by phase3&#39;s definition) to the pmap+iota form (used by the prefix lemma&#39;s induction).</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="file-section helper-section" data-file="dumas2017dual/dsdp/dsdp_stepwise_bridge.v">
+    <div class="file-header" onclick="toggleSection(this)">
+        <div>
+            <span class="toggle">▶</span>
+            <span class="file-name">dumas2017dual/dsdp/dsdp_stepwise_bridge.v</span>
+        </div>
+        <span class="file-count">15 helper</span>
+    </div>
+    <div class="file-content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Name</th>
+                    <th style="width: 12%">Section</th>
+                    <th style="width: 5%">Lines</th>
+                    <th style="width: 30%">Signature</th>
+                    <th style="width: 33%">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr data-search="init_slice_alice_eq lemma init_slice_alice_eq : init_slice alice v_alice dk_alice (palice_raw (enum &#39;i_n_relay.+1)) = [:: (alice, ainit v_alice dk_alice)]. r-l1. phase0 alice slice.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/init_slice_alice_eq.html" class="lemma-name">init_slice_alice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">1</td>
+                    <td><code class="signature">Lemma init_slice_alice_eq : init_slice alice v_alice dk_alice (palice_raw (enum &#39;I_n_relay.+1)) = [:: (alice, AInit v_alice dk_alice)].</code></td>
+                    <td class="meaning">R-L1. Phase0 alice slice.</td>
+                </tr>
+            
+                <tr data-search="init_slice_relay_eq lemma init_slice_relay_eq (j : &#39;i_n_relay.+1) : init_slice (r (val j)) (v j) (dk j) (relay_raw j) = [:: (r (val j), ainit (v j) (dk j))]. r-l2. phase0 relay slice — uniform across first/intermediate/last.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/init_slice_relay_eq.html" class="lemma-name">init_slice_relay_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma init_slice_relay_eq (j : &#39;I_n_relay.+1) : init_slice (R (val j)) (v j) (dk j) (relay_raw j) = [:: (R (val j), AInit (v j) (dk j))].</code></td>
+                    <td class="meaning">R-L2. Phase0 relay slice — uniform across first/intermediate/last.</td>
+                </tr>
+            
+                <tr data-search="first_send_slice_relay_eq lemma first_send_slice_relay_eq (j : &#39;i_n_relay.+1) : first_send_slice (r (val j)) (sw_pk_of dk_alice dk (lift ord0 j)) (v j) (rb1 j) (sw_c dk_alice dk v rb1 j) (relay_raw j) = [:: (r (val j), aenc (sw_pk_of dk_alice dk (lift ord0 j)) (v j) (rb1 j)) ; (r (val j), asend alice (sw_c dk_alice dk v rb1 j))]. r-l3. phase1 relay slice — uniform across the three relay shapes.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_send_slice_relay_eq.html" class="lemma-name">first_send_slice_relay_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma first_send_slice_relay_eq (j : &#39;I_n_relay.+1) : first_send_slice (R (val j)) (sw_pk_of dk_alice dk (lift ord0 j)) (v j) (rb1 j) (sw_c dk_alice dk v rb1 j) (relay_raw j) = [:: (R (val j), AEnc (sw_pk_of dk_alice dk (lift ord0 j)) (v j) (rb1 j)) ; (R (val j), ASend alice (sw_c dk_alice dk v rb1 j))].</code></td>
+                    <td class="meaning">R-L3. Phase1 relay slice — uniform across the three relay shapes.</td>
+                </tr>
+            
+                <tr data-search="alice_loop_blocks_flatten lemma alice_loop_blocks_flatten (relays : seq &#39;i_n_relay.+1) : alice_loop_blocks relays = flatten [seq let dest : nat := id (alice_send_dest (val j)) in [:: (alice, aenc (sw_pk_of dk_alice dk (lift ord0 j)) (r j) (ra j)) ; (alice, apow (sw_c dk_alice dk v rb1 j) (u (lift ord0 j))) ; (alice, amul (sw_c dk_alice dk v rb1 j ^h u (lift ord0 j)) (enc (sw_pk_of dk_alice dk (lift ord0 j)) (r j) (ra j))) ; (alice, asend dest (sw_alpha dk_alice dk v u r ra rb1 j))] | j &lt;- relays]. auxiliary: alice_loop_blocks computes exactly the flatten in dsdp_n_phase2. proof by induction on the relay list.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_loop_blocks_flatten.html" class="lemma-name">alice_loop_blocks_flatten</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_loop_blocks_flatten (relays : seq &#39;I_n_relay.+1) : alice_loop_blocks relays = flatten [seq let dest : nat := id (alice_send_dest (val j)) in [:: (alice, AEnc (sw_pk_of dk_alice dk (lift ord0 j)) (r j) (ra j)) ; (alice, APow (sw_c dk_alice dk v rb1 j) (u (lift ord0 j))) ; (alice, AMul (sw_c dk_alice dk v rb1 j ^h u (lift ord0 j)) (enc (sw_pk_of dk_alice dk (lift ord0 j)) (r j) (ra j))) ; (alice, ASend dest (sw_alpha dk_alice dk v u r ra rb1 j))] | j &lt;- relays].</code></td>
+                    <td class="meaning">Auxiliary: alice_loop_blocks computes exactly the flatten in dsdp_n_phase2. Proof by induction on the relay list.</td>
+                </tr>
+            
+                <tr data-search="alice_loop_slice_eq lemma alice_loop_slice_eq : alice_loop_slice (enum &#39;i_n_relay.+1) (palice_raw_body (enum &#39;i_n_relay.+1) 0 palice_raw_tail) 0 = dsdp_n_phase2 dk_alice dk v u r ra rb1. r-l4. phase2 alice loop slice — n-generic. the slice on `palice_raw_body relays 0 palice_raw_tail` (which has shape `recv ...` whenever `relays` is non-empty) returns `alice_loop_blocks relays`. to match `dsdp_n_phase2` (which uses an `&#39;i_n_relay.+1`-comprehension), we instantiate at `enum &#39;i_n_relay.+1` and use the fact that `[seq f j | j : &#39;i_n_relay.+1]` unfolds to `[seq f j | j &lt;- enum &#39;i_n_relay.+1]`.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_loop_slice_eq.html" class="lemma-name">alice_loop_slice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">11</td>
+                    <td><code class="signature">Lemma alice_loop_slice_eq : alice_loop_slice (enum &#39;I_n_relay.+1) (palice_raw_body (enum &#39;I_n_relay.+1) 0 palice_raw_tail) 0 = dsdp_n_phase2 dk_alice dk v u r ra rb1.</code></td>
+                    <td class="meaning">R-L4. Phase2 alice loop slice — N-generic. The slice on `palice_raw_body relays 0 palice_raw_tail` (which has shape `Recv ...` whenever `relays` is non-empty) returns `alice_loop_blocks relays`. To match `dsdp_n_phase2` (which uses an `&#39;I_n_relay.+1`-comprehension), we instantiate at `enum &#39;I_n_relay.+1` and use the fact that `[seq f j | j : &#39;I_n_relay.+1]` unfolds to `[seq f j | j &lt;- enum &#39;I_n_relay.+1]`.</td>
+                </tr>
+            
+                <tr data-search="first_relay_beta_slice_eq lemma first_relay_beta_slice_eq (j : &#39;i_n_relay.+1) (hj : val j = 0) (a1 : &#39;i_n_relay.+1) : first_relay_beta_slice (id 1) (dk ord0) (sw_alpha dk_alice dk v u r ra rb1 ord0) (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_delta v u r ord0) (rb2 ord0) (sw_alpha dk_alice dk v u r ra rb1 a1) (sw_beta dk_alice dk v u r ra rb1 rb2 ord0 a1) (id 2) (relay_raw j) = let p1 : nat := id 1 in let fresh_enc := enc (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_delta v u r ord0) (rb2 ord0) in [:: (p1, adec (sw_alpha dk_alice dk v u r ra rb1 ord0) (dk ord0)) ; (p1, aenc (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_delta v u r ord0) (rb2 ord0)) ; (p1, amul (sw_alpha dk_alice dk v u r ra rb1 a1) fresh_enc) ; (p1, asend (id 2) (sw_beta dk_alice dk v u r ra rb1 rb2 ord0 a1))]. r-l5. phase3 first-relay slice.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/first_relay_beta_slice_eq.html" class="lemma-name">first_relay_beta_slice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma first_relay_beta_slice_eq (j : &#39;I_n_relay.+1) (Hj : val j = 0) (a1 : &#39;I_n_relay.+1) : first_relay_beta_slice (id 1) (dk ord0) (sw_alpha dk_alice dk v u r ra rb1 ord0) (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_Delta v u r ord0) (rb2 ord0) (sw_alpha dk_alice dk v u r ra rb1 a1) (sw_beta dk_alice dk v u r ra rb1 rb2 ord0 a1) (id 2) (relay_raw j) = let p1 : nat := id 1 in let fresh_enc := enc (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_Delta v u r ord0) (rb2 ord0) in [:: (p1, ADec (sw_alpha dk_alice dk v u r ra rb1 ord0) (dk ord0)) ; (p1, AEnc (sw_pk_of dk_alice dk (lift ord0 a1)) (sw_Delta v u r ord0) (rb2 ord0)) ; (p1, AMul (sw_alpha dk_alice dk v u r ra rb1 a1) fresh_enc) ; (p1, ASend (id 2) (sw_beta dk_alice dk v u r ra rb1 rb2 ord0 a1))].</code></td>
+                    <td class="meaning">R-L5. Phase3 first-relay slice.</td>
+                </tr>
+            
+                <tr data-search="intermediate_beta_slice_eq lemma intermediate_beta_slice_eq (j : &#39;i_n_relay.+1) (jnext : &#39;i_n_relay.+1) : (0 &lt; val j &lt; n_relay)%n -&gt; intermediate_beta_slice j (id (val j).+1) (dk j) (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_preds j) j) (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_delta v u r j) (rb2 j) (sw_alpha dk_alice dk v u r ra rb1 jnext) (sw_beta dk_alice dk v u r ra rb1 rb2 j jnext) (id (val j).+2) (relay_raw j) = let pj : nat := id (val j).+1 in let fresh_enc := enc (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_delta v u r j) (rb2 j) in [:: (pj, adec (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_preds j) j) (dk j)) ; (pj, aenc (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_delta v u r j) (rb2 j)) ; (pj, amul (sw_alpha dk_alice dk v u r ra rb1 jnext) fresh_enc) ; (pj, asend (id (val j).+2) (sw_beta dk_alice dk v u r ra rb1 rb2 j jnext))]. r-l6. phase3 intermediate-relay slice.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/intermediate_beta_slice_eq.html" class="lemma-name">intermediate_beta_slice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma intermediate_beta_slice_eq (j : &#39;I_n_relay.+1) (jnext : &#39;I_n_relay.+1) : (0 &lt; val j &lt; n_relay)%N -&gt; intermediate_beta_slice j (id (val j).+1) (dk j) (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_predS j) j) (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_Delta v u r j) (rb2 j) (sw_alpha dk_alice dk v u r ra rb1 jnext) (sw_beta dk_alice dk v u r ra rb1 rb2 j jnext) (id (val j).+2) (relay_raw j) = let pj : nat := id (val j).+1 in let fresh_enc := enc (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_Delta v u r j) (rb2 j) in [:: (pj, ADec (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_predS j) j) (dk j)) ; (pj, AEnc (sw_pk_of dk_alice dk (lift ord0 jnext)) (sw_Delta v u r j) (rb2 j)) ; (pj, AMul (sw_alpha dk_alice dk v u r ra rb1 jnext) fresh_enc) ; (pj, ASend (id (val j).+2) (sw_beta dk_alice dk v u r ra rb1 rb2 j jnext))].</code></td>
+                    <td class="meaning">R-L6. Phase3 intermediate-relay slice.</td>
+                </tr>
+            
+                <tr data-search="last_relay_beta_slice_eq lemma last_relay_beta_slice_eq (j : &#39;i_n_relay.+1) (hj : val j = n_relay) : last_relay_beta_slice (r n_relay) (dk (ord_max : &#39;i_n_relay.+1)) (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_preds (ord_max : &#39;i_n_relay.+1)) (ord_max : &#39;i_n_relay.+1)) (sw_pk_of dk_alice dk ord0) (sw_delta v u r (ord_max : &#39;i_n_relay.+1)) r_tail (sw_gamma dk_alice dk v u r r_tail) (relay_raw j) = let pn : nat := r n_relay in let jmax : &#39;i_n_relay.+1 := ord_max in [:: (pn, adec (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_preds jmax) jmax) (dk jmax)) ; (pn, aenc (sw_pk_of dk_alice dk ord0) (sw_delta v u r jmax) r_tail) ; (pn, asend alice (sw_gamma dk_alice dk v u r r_tail))]. r-l7. phase3 last-relay slice.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/last_relay_beta_slice_eq.html" class="lemma-name">last_relay_beta_slice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma last_relay_beta_slice_eq (j : &#39;I_n_relay.+1) (Hj : val j = n_relay) : last_relay_beta_slice (R n_relay) (dk (ord_max : &#39;I_n_relay.+1)) (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_predS (ord_max : &#39;I_n_relay.+1)) (ord_max : &#39;I_n_relay.+1)) (sw_pk_of dk_alice dk ord0) (sw_Delta v u r (ord_max : &#39;I_n_relay.+1)) r_tail (sw_gamma dk_alice dk v u r r_tail) (relay_raw j) = let pn : nat := R n_relay in let jmax : &#39;I_n_relay.+1 := ord_max in [:: (pn, ADec (sw_beta dk_alice dk v u r ra rb1 rb2 (ord_predS jmax) jmax) (dk jmax)) ; (pn, AEnc (sw_pk_of dk_alice dk ord0) (sw_Delta v u r jmax) r_tail) ; (pn, ASend alice (sw_gamma dk_alice dk v u r r_tail))].</code></td>
+                    <td class="meaning">R-L7. Phase3 last-relay slice.</td>
+                </tr>
+            
+                <tr data-search="alice_tail_slice_eq lemma alice_tail_slice_eq : alice_tail_slice (sw_gamma dk_alice dk v u r r_tail) dk_alice (sw_delta v u r (ord_max : &#39;i_n_relay.+1)) (u ord0 * v_alice) (\sum_(k &lt; n_relay.+1) r k) (sw_s v_alice v u r) palice_raw_tail = dsdp_n_phase4 dk_alice v_alice dk v u r r_tail. r-l8. phase4 alice tail slice.">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/alice_tail_slice_eq.html" class="lemma-name">alice_tail_slice_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">4</td>
+                    <td><code class="signature">Lemma alice_tail_slice_eq : alice_tail_slice (sw_gamma dk_alice dk v u r r_tail) dk_alice (sw_Delta v u r (ord_max : &#39;I_n_relay.+1)) (u ord0 * v_alice) (\sum_(k &lt; n_relay.+1) r k) (sw_S v_alice v u r) palice_raw_tail = dsdp_n_phase4 dk_alice v_alice dk v u r r_tail.</code></td>
+                    <td class="meaning">R-L8. Phase4 alice tail slice.</td>
+                </tr>
+            
+                <tr data-search="translate_raw_phase0_eq lemma translate_raw_phase0_eq : translate_raw_phase0 dsdp_raw_procs = dsdp_n_phase0 dk_alice v_alice dk v. ==========================================================================">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/translate_raw_phase0_eq.html" class="lemma-name">translate_raw_phase0_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">12</td>
+                    <td><code class="signature">Lemma translate_raw_phase0_eq : translate_raw_phase0 dsdp_raw_procs = dsdp_n_phase0 dk_alice v_alice dk v.</code></td>
+                    <td class="meaning">==========================================================================</td>
+                </tr>
+            
+                <tr data-search="translate_raw_phase1_eq lemma translate_raw_phase1_eq : translate_raw_phase1 dsdp_raw_procs = dsdp_n_phase1 dk_alice dk v rb1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/translate_raw_phase1_eq.html" class="lemma-name">translate_raw_phase1_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">8</td>
+                    <td><code class="signature">Lemma translate_raw_phase1_eq : translate_raw_phase1 dsdp_raw_procs = dsdp_n_phase1 dk_alice dk v rb1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="translate_raw_phase2_eq lemma translate_raw_phase2_eq : translate_raw_phase2 dsdp_raw_procs = dsdp_n_phase2 dk_alice dk v u r ra rb1. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/translate_raw_phase2_eq.html" class="lemma-name">translate_raw_phase2_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma translate_raw_phase2_eq : translate_raw_phase2 dsdp_raw_procs = dsdp_n_phase2 dk_alice dk v u r ra rb1.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="translate_raw_phase3_eq lemma translate_raw_phase3_eq : translate_raw_phase3 dsdp_raw_procs = dsdp_n_phase3 dk_alice dk v u r ra rb1 rb2 r_tail. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/translate_raw_phase3_eq.html" class="lemma-name">translate_raw_phase3_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">49</td>
+                    <td><code class="signature">Lemma translate_raw_phase3_eq : translate_raw_phase3 dsdp_raw_procs = dsdp_n_phase3 dk_alice dk v u r ra rb1 rb2 r_tail.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="translate_raw_phase4_eq lemma translate_raw_phase4_eq : translate_raw_phase4 dsdp_raw_procs = dsdp_n_phase4 dk_alice v_alice dk v u r r_tail. ">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/translate_raw_phase4_eq.html" class="lemma-name">translate_raw_phase4_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">5</td>
+                    <td><code class="signature">Lemma translate_raw_phase4_eq : translate_raw_phase4 dsdp_raw_procs = dsdp_n_phase4 dk_alice v_alice dk v u r r_tail.</code></td>
+                    <td class="meaning"></td>
+                </tr>
+            
+                <tr data-search="dsdp_raw_translate_eq lemma dsdp_raw_translate_eq : translate_raw dsdp_raw_procs = dsdp_n_program dk_alice v_alice dk v u r ra rb1 rb2 r_tail. ==========================================================================">
+                    <td>
+                        <span class="badge badge-helper">Helper</span>
+                        <a href="lemmas/dsdp_raw_translate_eq.html" class="lemma-name">dsdp_raw_translate_eq</a>
+                    </td>
+                    <td class="section-name">dsdp_stepwise_bridge</td>
+                    <td class="proof-lines">6</td>
+                    <td><code class="signature">Lemma dsdp_raw_translate_eq : translate_raw dsdp_raw_procs = dsdp_n_program dk_alice v_alice dk v u r ra rb1 rb2 r_tail.</code></td>
+                    <td class="meaning">==========================================================================</td>
                 </tr>
             
             </tbody>
@@ -8692,7 +9439,7 @@
     </main>
     
     <footer class="footer container">
-        <p>Generated: 2026-04-07 | 642 lemmas in 30 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/3ab2e108e525b45f3dab490d564546aa637b2cc4" target="_blank" rel="noopener" style="color: var(--accent);">3ab2e10</a></p>
+        <p>Generated: 2026-04-09 | 699 lemmas in 32 files | Source: <a href="https://github.com/weng-chenghui/infotheo/commit/b23662bac45a480a2ab8611b4a755bbb55acd1bf" target="_blank" rel="noopener" style="color: var(--accent);">b23662b</a></p>
     </footer>
     
     <script>
